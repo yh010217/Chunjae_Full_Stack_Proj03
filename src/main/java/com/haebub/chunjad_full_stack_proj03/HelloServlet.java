@@ -1,4 +1,4 @@
-package com.haebub.haebub;
+package com.haebub.chunjad_full_stack_proj03;
 
 import java.io.*;
 import javax.servlet.http.*;
