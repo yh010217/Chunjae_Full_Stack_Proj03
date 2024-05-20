@@ -39,6 +39,6 @@
 
 <!--    <context:component-scan base-package="com.chunjae.fileupload.service"/>-->
     <context:component-scan base-package="com.haebub.dao"/>
-    <spring:scan base-package="com.chunjae.fileupload.dao"></spring:scan>
+    <spring:scan base-package="com.haebub.dao"></spring:scan>
 
 </beans>
