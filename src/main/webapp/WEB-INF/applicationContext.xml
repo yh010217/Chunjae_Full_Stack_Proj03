@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:spring="http://mybatis.org/schema/mybatis-spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:property-placeholder  location="classpath:db.properties"/>
+
+    <bean name="dbconf" class="com.zaxxer.hikari.HikariConfig">
+        <property name="driverClassName" value="${db.driver}"></property>
+        <property name="jdbcUrl" value="${db.url}"></property>
+        <property name="username" value="${db.user}"></property>
+        <property name="password" value="${db.pwd}"></property>
+    </bean>
+
+    <bean name="dataSource" class="com.zaxxer.hikari.HikariDataSource"
+          destroy-method="close">
+        <constructor-arg ref="dbconf"></constructor-arg>
+    </bean>
+
+    <bean name="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations"  value="classpath:mapper/*.xml"></property>
+    </bean>
+
+    <bean name="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
+    <context:component-scan base-package="com.haebub.service"/>
+
+    <mybatis-spring:scan base-package="com.haebub.mapper"/>
+    <bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <tx:annotation-driven></tx:annotation-driven>
+
+<!--    <context:component-scan base-package="com.chunjae.fileupload.service"/>-->
+    <context:component-scan base-package="com.haebub.dao"/>
+    <spring:scan base-package="com.chunjae.fileupload.dao"></spring:scan>
+
+</beans>
