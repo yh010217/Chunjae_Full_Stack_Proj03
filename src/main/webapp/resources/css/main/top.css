@@ -1,0 +1,23 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header img {
+    width: 77%;
+}
+
+header ul li {
+    margin-left: 50px;
+    font-size: 1.3rem;
+}
+
+.top_ul_01 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+header ul {
+    display: flex;
+}
