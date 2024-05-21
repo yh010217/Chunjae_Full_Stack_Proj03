@@ -33,9 +33,15 @@
             <div class="site_status">
 
             </div>
-            <div id="myChartContainer" class="site_chart">
-                <button id="just_button">버튼</button>
-                <canvas id="myChart"></canvas>
+            <div class="site_chart">
+                <div class="button_div">
+                    <button>일단</button
+                    ><button>아무거나</button
+                    ><button id="hire_button">고용일</button>
+                </div>
+                <div id="myChartContainer">
+                    <canvas id="myChart"></canvas>
+                </div>
             </div>
         </div>
 
