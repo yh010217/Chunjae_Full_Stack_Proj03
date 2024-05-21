@@ -10,7 +10,6 @@ To change this template use File | Settings | File Templates.
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/admin/template.css">
-    <link rel="stylesheet" href="/resources/css/admin/main.css">
 </head>
 <body>
 
@@ -27,7 +26,7 @@ To change this template use File | Settings | File Templates.
                 <span class="side_bar_menu_name">회원 관리</span>
             </a>
             <a href="#" class="side_bar_menu">
-                <img class="side_bar_menu_image" src="/resources/image/teacher-gray.png" alt="강서 관리">
+                <img class="side_bar_menu_image" src="/resources/image/teacher-gray.png" alt="강사 관리">
                 <span class="side_bar_menu_name">강사 관리</span>
             </a>
             <a href="#" class="side_bar_menu">

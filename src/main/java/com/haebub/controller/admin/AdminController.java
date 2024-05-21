@@ -13,4 +13,12 @@ public class AdminController {
         return "admin/admin_main";
     }
 
+    @GetMapping("/admin/template")
+    public String adminTemplate(){
+
+
+        return "admin/admin_template";
+    }
+
+
 }
