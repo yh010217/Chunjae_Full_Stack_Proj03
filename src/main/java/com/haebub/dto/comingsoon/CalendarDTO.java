@@ -1,4 +1,4 @@
-package com.haebub.dto;
+package com.haebub.dto.comingsoon;
 
 import lombok.Getter;
 import lombok.Setter;

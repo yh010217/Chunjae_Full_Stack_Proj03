@@ -1,4 +1,4 @@
-import com.haebub.dao.CalendarMapper;
+import com.haebub.dao.comingsoon.CalendarMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

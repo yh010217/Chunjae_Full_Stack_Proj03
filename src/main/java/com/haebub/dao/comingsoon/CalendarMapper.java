@@ -1,6 +1,6 @@
-package com.haebub.dao;
+package com.haebub.dao.comingsoon;
 
-import com.haebub.dto.CalendarDTO;
+import com.haebub.dto.comingsoon.CalendarDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

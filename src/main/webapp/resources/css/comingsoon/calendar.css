@@ -1,4 +1,16 @@
 #calendar{
-    width: 700px;
+    width: 800px;
     height: 700px;
+    margin: auto;   /* 좌우 margin 동일하게 */
+    padding-top: 50px;
+}
+
+.center-align {
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
 }
