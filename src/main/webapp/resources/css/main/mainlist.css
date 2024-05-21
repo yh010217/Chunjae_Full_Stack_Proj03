@@ -1,0 +1,23 @@
+#article_1 {
+}
+
+.main_01 {
+    width: 60%;
+    position: relative;
+    margin: 20px auto;
+}
+.main_search {
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    padding: 17px 40px;
+    font-size: 15px;
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+.main_01 > img {
+    position: absolute;
+    top: 13px;
+    left: 11px;
+}
