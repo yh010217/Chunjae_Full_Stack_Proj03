@@ -11,4 +11,5 @@ public interface ChartTestMapper {
     int georgiCount();
 
     List<HashMap<String,Object>> getHireChart();
+
 }
