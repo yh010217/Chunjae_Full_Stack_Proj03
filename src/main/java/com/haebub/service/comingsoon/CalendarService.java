@@ -1,6 +1,6 @@
-package com.haebub.service;
+package com.haebub.service.comingsoon;
 
-import com.haebub.dto.CalendarDTO;
+import com.haebub.dto.comingsoon.CalendarDTO;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package com.haebub.service;
+package com.haebub.service.comingsoon;
 
-import com.haebub.dao.CalendarMapper;
-import com.haebub.dto.CalendarDTO;
+import com.haebub.dao.comingsoon.CalendarMapper;
+import com.haebub.dto.comingsoon.CalendarDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
