@@ -4,6 +4,7 @@ import com.haebub.dao.admin.ChartTestMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -17,5 +18,6 @@ public class ChartTestServiceImple implements ChartTestService{
         List<HashMap<String,Object>> list = mapper.getHireChart();
         return list;
     }
+
 
 }

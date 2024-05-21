@@ -1,5 +1,6 @@
 import com.haebub.controller.admin.AdminController;
 import com.haebub.dao.PaymentMapper;
+import com.haebub.dao.admin.ChartMapper;
 import com.haebub.dao.admin.ChartTestMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -44,5 +45,15 @@ public class DBTest {
         System.out.println(chartTestMapper.getHireChart());
     }
 
+    @Autowired
+    private ChartMapper chartMapper;
 
+    @Test
+    public void test6(){
+        assertNotNull(chartMapper);
+    }
+    @Test
+    public void test7(){
+        System.out.println(chartMapper.getUserChart());
+    }
 }
