@@ -27,7 +27,7 @@
 
     <bean name="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="mapperLocations"  value="classpath:mapper/**/*.xml"></property>
+        <property name="mapperLocations" value="classpath:mapper/**/*.xml"/>
     </bean>
 
     <bean name="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
@@ -37,7 +37,6 @@
     <context:component-scan base-package="com.haebub.service.**"/>
 
     <mybatis-spring:scan base-package="com.haebub.dao.**"/>
-
     <bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
