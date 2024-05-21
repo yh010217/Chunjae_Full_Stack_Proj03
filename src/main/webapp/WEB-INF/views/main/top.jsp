@@ -14,11 +14,11 @@
 <body>
     <header>
         <div>
-            <img src="/resources/image/main/logo.png" alt="로고">
+            <a href="/index"> <img src="/resources/image/main/logo.png" alt="로고"> </a>
         </div>
         <nav>
             <ul class="top_ul_01">
-                <li><a href="#">강의</a></li>
+                <li><a href="/index/lecturelist">강의</a></li>
                 <li><a href="#">선생님</a></li>
                 <li><a href="#">오픈예정</a></li>
                 <li><a href="#">공지사항</a></li>

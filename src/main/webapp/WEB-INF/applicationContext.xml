@@ -26,23 +26,23 @@
 
     <bean name="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="mapperLocations"  value="classpath:mapper/*.xml"></property>
+        <property name="mapperLocations" value="classpath:mapper/**/*.xml"/>
     </bean>
 
     <bean name="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
 
-    <context:component-scan base-package="com.haebub.service"/>
+    <context:component-scan base-package="com.haebub.service.**"/>
 
-    <mybatis-spring:scan base-package="com.haebub.dao"/>
+    <mybatis-spring:scan base-package="com.haebub.dao.**"/>
     <bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
     <tx:annotation-driven></tx:annotation-driven>
 
 <!--    <context:component-scan base-package="com.chunjae.fileupload.service"/>-->
-    <context:component-scan base-package="com.haebub.dao"/>
+    <context:component-scan base-package="com.haebub.dao.**"/>
     <spring:scan base-package="com.haebub.dao"></spring:scan>
 
 </beans>
