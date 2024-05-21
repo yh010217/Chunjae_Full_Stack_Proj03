@@ -6,8 +6,8 @@
        xmlns:tx="http://www.springframework.org/schema/tx" xmlns:spring="http://mybatis.org/schema/mybatis-spring"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-<!--    <context:property-placeholder  location="classpath:db.properties"/>-->
-    <context:property-placeholder  location="classpath:db2.properties"/>
+    <context:property-placeholder  location="classpath:db.properties"/>
+<!--    <context:property-placeholder  location="classpath:db2.properties"/>-->
 
     <bean name="dbconf" class="com.zaxxer.hikari.HikariConfig">
         <property name="driverClassName" value="${db.driver}"/>
