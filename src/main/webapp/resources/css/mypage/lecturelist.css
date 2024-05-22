@@ -1,0 +1,32 @@
+/* content */
+#content {
+    width: 1000px;
+    height: 700px;
+    border: 1px solid #A2A2A2;
+    padding: 30px 5px 5px 5px;
+    margin: 30px;
+}
+
+#line {
+    border-bottom: 1px solid gainsboro;
+}
+
+h3 {
+    padding-left: 48px;
+    font-size: 21px;
+}
+
+.lecture_btn {
+    display: inline-block;
+    padding: 10px 10px;
+    margin-right: 5px;
+    background-color: #EFE7E7;
+    color: #726E6E;
+    border-radius: 25px;
+}
+
+.lecture_btn:hover {
+    background-color: #F0C9CE;
+    color: #000000;
+    /*font-weight: bolder;*/
+}
