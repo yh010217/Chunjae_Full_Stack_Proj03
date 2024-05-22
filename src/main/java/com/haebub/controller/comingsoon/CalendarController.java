@@ -3,8 +3,6 @@ package com.haebub.controller.comingsoon;
 import com.haebub.dto.comingsoon.CalendarDTO;
 import com.haebub.service.comingsoon.CalendarService;
 import lombok.RequiredArgsConstructor;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
