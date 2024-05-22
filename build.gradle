@@ -40,7 +40,6 @@ dependencies {
     implementation 'org.mybatis:mybatis:3.5.11'
     implementation 'org.mybatis:mybatis-spring:2.0.6'
     implementation 'com.zaxxer:HikariCP:3.2.0'
-/*
 
     implementation 'org.slf4j:slf4j-api:1.7.31'
     implementation 'ch.qos.logback:logback-core:1.2.3'
@@ -52,7 +51,6 @@ dependencies {
     implementation group: 'org.logback-extensions', name: 'logback-ext-spring', version: '0.1.4'
     implementation 'commons-fileupload:commons-fileupload:1.5'
     implementation 'commons-io:commons-io:2.11.0'
-*/
 
     implementation 'org.springframework:spring-tx:5.3.15'
     implementation 'org.springframework:spring-aop:5.3.15'
