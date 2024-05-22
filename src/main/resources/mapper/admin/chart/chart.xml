@@ -5,15 +5,19 @@
 <mapper namespace="com.haebub.dao.admin.ChartMapper">
 
     <select id="getUserChart" resultType="hashmap">
-        SELECT COUNT(if(joindate BETWEEN CURDATE() - INTERVAL 9 MONTH AND CURDATE() - INTERVAL 8 MONTH,1,NULL))  AS unit1
-              ,COUNT(if(joindate BETWEEN CURDATE() - INTERVAL 8 MONTH AND CURDATE() - INTERVAL 7 MONTH,1,NULL))  AS unit2
-              ,COUNT(if(joindate BETWEEN CURDATE() - INTERVAL 7 MONTH AND CURDATE() - INTERVAL 6 MONTH,1,NULL))  AS unit3
-              ,COUNT(if(joindate BETWEEN CURDATE() - INTERVAL 6 MONTH AND CURDATE() - INTERVAL 5 MONTH,1,NULL))  AS unit4
-              ,COUNT(if(joindate BETWEEN CURDATE() - INTERVAL 5 MONTH AND CURDATE() - INTERVAL 4 MONTH,1,NULL))  AS unit5
-              ,COUNT(if(joindate BETWEEN CURDATE() - INTERVAL 4 MONTH AND CURDATE() - INTERVAL 3 MONTH,1,NULL))  AS unit6
-              ,COUNT(if(joindate BETWEEN CURDATE() - INTERVAL 3 MONTH AND CURDATE() - INTERVAL 2 MONTH,1,NULL))  AS unit7
-              ,COUNT(if(joindate BETWEEN CURDATE() - INTERVAL 2 MONTH AND CURDATE() - INTERVAL 1 MONTH,1,NULL))  AS unit8
-              ,COUNT(if(joindate BETWEEN CURDATE() - INTERVAL 1 MONTH AND CURDATE(),1,NULL))  AS unit9
-        FROM user
+        <![CDATA[
+
+        SELECT
+             COUNT(if(joindate > CURDATE() - INTERVAL 9 MONTH AND joindate <= CURDATE() - INTERVAL 8 MONTH,1,NULL))  AS unit1
+            ,COUNT(if(joindate > CURDATE() - INTERVAL 8 MONTH AND joindate <= CURDATE() - INTERVAL 7 MONTH,1,NULL))  AS unit2
+            ,COUNT(if(joindate > CURDATE() - INTERVAL 7 MONTH AND joindate <= CURDATE() - INTERVAL 6 MONTH,1,NULL))  AS unit3
+            ,COUNT(if(joindate > CURDATE() - INTERVAL 6 MONTH AND joindate <= CURDATE() - INTERVAL 5 MONTH,1,NULL))  AS unit4
+            ,COUNT(if(joindate > CURDATE() - INTERVAL 5 MONTH AND joindate <= CURDATE() - INTERVAL 4 MONTH,1,NULL))  AS unit5
+            ,COUNT(if(joindate > CURDATE() - INTERVAL 4 MONTH AND joindate <= CURDATE() - INTERVAL 3 MONTH,1,NULL))  AS unit6
+            ,COUNT(if(joindate > CURDATE() - INTERVAL 3 MONTH AND joindate <= CURDATE() - INTERVAL 2 MONTH,1,NULL))  AS unit7
+            ,COUNT(if(joindate > CURDATE() - INTERVAL 2 MONTH AND joindate <= CURDATE() - INTERVAL 1 MONTH,1,NULL))  AS unit8
+            ,COUNT(if(joindate > CURDATE() - INTERVAL 1 MONTH AND joindate <= CURDATE(),1,NULL))                     AS unit9
+        FROM user;
+        ]]>
     </select>
 </mapper>

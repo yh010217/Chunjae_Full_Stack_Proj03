@@ -6,24 +6,71 @@
 
 .site_status{
     min-width: 360px;
-    border: 1px solid silver;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
     flex-grow: 1;
     max-width: 500px;
     margin-right : 24px;
     margin-bottom : 24px;
     /*여기에 할 애가 많아지면 스크롤으로 처리하지 뭐*/
     height: 380px;
+
+    box-shadow: 4px 4px 10px -5px #FFB15C;
 }
+.div_title{
+    box-sizing: border-box;
+    display: inline-block;
+    height: 36px;
+    font-size: 24px;
+    padding-top: 2px;
+    padding-left: 20px;
+    font-weight: 600;
+}
+
+#status_container{
+    padding: 32px 8px 0;
+}
+.status_item{
+    width: 100%;
+    height: 80px;
+}
+.status_item_center{
+    display: flex;
+    justify-content: space-between;
+    width: 84%;
+    margin:0 8% 0 8%;
+}
+.status_item img{
+    object-fit: contain;
+    width: 48px;
+}
+.status_item .status_item_title{
+    font-size: 24px;
+    font-weight: 700;
+    margin: auto 0;
+}
+
+.status_item .status_item_content{
+    font-size: 20px;
+    font-weight: 600;
+    margin: auto 0;
+}
+
+
+
 .site_chart{
     min-width: 540px;
     max-width: 800px;
-    border: 1px solid silver;
+    border: 1px solid #e5e5e5;
     flex-grow: 2;
     height: 380px;
+    border-radius: 8px;
 }
 .button_div{
+    box-sizing: border-box;
     display: inline-block;
     height: 40px;
+    padding-right: 8px;
     float: right;
 }
 .button_div button{
@@ -53,6 +100,15 @@
     left: 0;
     top:-3px;
 }
+.selected:before{
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: #FFB15C;
+    position: absolute;
+    left: 0;
+    top:-3px;
+}
 
 #myChartContainer{
     clear: right;
@@ -60,7 +116,8 @@
     justify-content: center;
     height: 340px;
     margin : 0 auto;
-    padding:0 16px ;
+    padding:0 16px;
+    box-shadow: 0px 10px 20px -10px #dddddd inset;
 }
 
 
