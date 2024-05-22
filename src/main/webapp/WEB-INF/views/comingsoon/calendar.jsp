@@ -8,8 +8,15 @@
     <script src="/resources/js/comingsoon/calendar.js"></script>
 </head>
 <body>
-<div id='calendar'></div>
-<div id="eventList"></div>
+<div id="wrap">
+    <h4><span>오픈예정</span> 월별로 개강되는 강좌를 한눈에 확인하세요.</h4>
+    <div id="cal_wrap">
+        <div id='calendar'></div>
+    </div>
+    <div id="cal_list">
+        <div id="eventList"></div>
+    </div>
+</div>
 </body>
 
 </html>
