@@ -11,6 +11,7 @@
         from lecture
     </select>
 
+    <!-- 나중에 선생 아이디 받아서 넣어야 됨-->
     <insert id="insertData" parameterType="com.haebub.dto.Lecutre.LectureDTO">
         insert into lecture (ltitle
                             , lintro
@@ -23,6 +24,8 @@
                             , lgrade)
         values(#{ltitle}, #{lintro}, #{lbook}, #{lprice}, #{lopendate}, #{lperiod}, #{lcount}, 1, #{lgrade})
     </insert>
+
+    <!-- 간단 디테일 -->
     <select id="lecDatail" resultType="com.haebub.dto.Lecutre.LectureDTO" parameterType="int">
         select *
         from lecture

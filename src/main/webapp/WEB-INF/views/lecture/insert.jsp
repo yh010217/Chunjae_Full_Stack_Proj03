@@ -9,17 +9,18 @@
 <html>
 <head>
     <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="/resources/js/lecture/insert.js"></script>
 </head>
 <body>
-    <%--  enctype="multipart/form-data" --%>
-    <form method="post" action="/insertresult">
+    <form method="post" action="/insertresult" enctype="multipart/form-data">
         <ul>
             <li>
-                <div style="width: 200px; height: 200px; border-radius: 50%; background-color: gray" ></div>
+                <div class="thumbnail" id="thumbnail"><img src="" alt=""></div>
             </li>
             <li>
                 <label>썸네일(안됨)</label>
-                <%--<input type="file" id="lprofile" name="lprofile" onchange="chooseImage(this)">--%>
+                <input type="file" id="lprofile" name="lprofile">
             </li>
             <li>
                 <label for="ltitle">강의 제목</label>
@@ -38,8 +39,13 @@
                 <input type="text" id="lprice" name="lprice">
             </li>
             <li>
-                <label for="lgrade">학년</label>
-                <input type="text" id="lgrade" name="lgrade">
+                <label>학년</label>
+                <label for="one">1학년</label>
+                <input type="radio" id="one" name="lgrade" value="1" checked>
+                <label for="two">2학년</label>
+                <input type="radio" id="two" name="lgrade" value="2">
+                <label for="three">3학년</label>
+                <input type="radio" id="three" name="lgrade" value="3">
             </li>
             <li>
                 <label for="lopendate">오픈일자</label>
@@ -59,7 +65,5 @@
             </li>
         </ul>
     </form>
-<script>
-</script>
 </body>
 </html>

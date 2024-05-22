@@ -60,4 +60,9 @@ public class LectureController {
         model.addAttribute("dto", dto);
         return "/lecture/detail";
     }
+
+    @GetMapping("/aaa")
+    public String test() {
+        return "/lecture/test";
+    }
 }
