@@ -1,6 +1,6 @@
 package com.haebub.controller.login;
 
-import com.haebub.dto.UserDTO;
+import com.haebub.dto.User.UserDTO;
 import com.haebub.service.join.JoinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

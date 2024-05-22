@@ -31,5 +31,11 @@
         from lecture
         where lid = #{lid}
     </select>
+
+    <select id="getLid" resultType="int">
+        select max(lid)
+        from lecture
+    </select>
+
 </mapper>
 

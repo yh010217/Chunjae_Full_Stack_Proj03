@@ -1,9 +1,7 @@
 package com.haebub.dao.join;
 
-import com.haebub.dto.UserDTO;
+import com.haebub.dto.User.UserDTO;
 import org.apache.ibatis.annotations.Mapper;
-
-import java.util.HashMap;
 
 @Mapper
 public interface JoinMapper {
