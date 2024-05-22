@@ -26,6 +26,6 @@ public class LectureDTO {
     private int tid;
     private String sp_pcode; // 상품코드
     private String sp_pplan; // 가격 계획
-    private MultipartFile multipartFile; // ㅎ...
+    private MultipartFile file; // gg
     private String lgrade; // 학년
 }
