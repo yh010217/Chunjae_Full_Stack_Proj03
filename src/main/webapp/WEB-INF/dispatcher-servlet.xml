@@ -33,10 +33,13 @@
             <mvc:exclude-mapping path="/join"/>
             <mvc:exclude-mapping path="/index"/>
             <mvc:exclude-mapping path="/signup"/>
-            <mvc:exclude-mapping path="/js/**"/>
+            <mvc:exclude-mapping path="/resources/js/**"/>
             <mvc:exclude-mapping path="/css/**"/>
             <mvc:exclude-mapping path="/image/**"/>
-            <mvc:exclude-mapping path="join_result"/>
+            <mvc:exclude-mapping path="/join_result"/>
+            <mvc:exclude-mapping path="/lectureinsert"/>
+            <mvc:exclude-mapping path="/leturelist"/>
+            <mvc:exclude-mapping path="/insertresult"/>
             <ref bean="authInterrupt"/>
         </mvc:interceptor>
     </mvc:interceptors>

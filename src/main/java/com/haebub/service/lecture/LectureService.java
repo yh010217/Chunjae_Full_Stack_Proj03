@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.List;
 
 public interface LectureService {
-    void insertData(LectureDTO dto);
+    void insertData(String path, LectureDTO dto) throws IOException;
 
     List<LectureDTO> lectureList();
 

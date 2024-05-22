@@ -3,8 +3,6 @@ package com.haebub.controller.comingsoon;
 import com.haebub.dto.comingsoon.CalendarDTO;
 import com.haebub.service.comingsoon.CalendarService;
 import lombok.RequiredArgsConstructor;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -35,8 +33,6 @@ public class CalendarController {
     @GetMapping("/event")
     @ResponseBody
     public List<HashMap<String, Object>> calendar() {
-        JSONObject jsonObject = new JSONObject();
-        JSONArray jsonArray = new JSONArray();
 
         List<CalendarDTO> list = calendarService.calList();     // 강의 일정 목록
         List<HashMap<String, Object>> hmlist = new ArrayList<>();
@@ -49,8 +45,6 @@ public class CalendarController {
             hm.put("subject", dto.getTsubject());
             hm.put("name", dto.getName());
 
-            jsonObject = new JSONObject(hm);
-            jsonArray.put(jsonObject);
             hmlist.add(hm);
         }
 

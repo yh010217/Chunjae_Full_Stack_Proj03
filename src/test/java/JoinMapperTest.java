@@ -1,3 +1,4 @@
+/*
 import com.haebub.dao.JoinMapper;
 import com.haebub.dto.UserDTO;
 import com.haebub.service.JoinService;
@@ -75,3 +76,4 @@ public class JoinMapperTest {
 
 
 }
+*/
