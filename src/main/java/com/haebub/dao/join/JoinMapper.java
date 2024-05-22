@@ -1,4 +1,4 @@
-package com.haebub.dao;
+package com.haebub.dao.join;
 
 import com.haebub.dto.UserDTO;
 import org.apache.ibatis.annotations.Mapper;
@@ -20,4 +20,8 @@ public void joinresult(UserDTO dto);
     int login(String id, String pwd);
 
     String logincheck(UserDTO dto);
+
+    int checkEmail(String email);
+
+    int checkNick(String nickname);
 }

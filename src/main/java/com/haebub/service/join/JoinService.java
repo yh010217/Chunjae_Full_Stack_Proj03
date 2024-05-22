@@ -1,4 +1,4 @@
-package com.haebub.service;
+package com.haebub.service.join;
 
 import com.haebub.dto.UserDTO;
 
@@ -14,8 +14,11 @@ public interface JoinService {
 //    int idCheck(UserDTO dto);
 
     int checkId(String id);
+    int checkEmail(String email);
 
     int login(String id, String pwd);
 
-    String logincheck(UserDTO dto, HttpSession session);
+    String logincheck(UserDTO dto);
+
+    int checkNick(String nickname);
 }

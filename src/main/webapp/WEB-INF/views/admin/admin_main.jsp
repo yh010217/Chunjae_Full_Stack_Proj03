@@ -39,7 +39,7 @@
         <div class="content_row status_chart_row">
 
             <div class="site_status">
-                <div class="div_title">Status</div>
+                <div class="status_title">Status</div>
 
                 <div id="status_container">
                     <div class="status_item">
@@ -76,7 +76,7 @@
             </div>
 
             <div class="site_chart">
-                <span class="div_title">History</span>
+                <span class="history_title">History</span>
                 <div class="button_div">
                     <button id="user_chart">유저
                     </button
