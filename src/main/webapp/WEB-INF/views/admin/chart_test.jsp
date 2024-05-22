@@ -37,7 +37,7 @@
                 <div class="button_div">
                     <button>일단</button
                     ><button>아무거나</button
-                    ><button id="hire_button">고용일</button>
+                    ><button id="user_chart">유저</button>
                 </div>
                 <div id="myChartContainer">
                     <canvas id="myChart"></canvas>

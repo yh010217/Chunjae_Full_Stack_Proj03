@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haebub.dao.JoinMapper">
+<insert id="joinresult">
+    insert into user(id
+                    ,pwd
+                    ,name
+                    ,nickname
+                    ,addr
+                    ,tel
+                    ,email
+                    ,birthday
+                    ,usertype
+                    ,joindate
+                    ,sp_uid
+         )
+    values(
+                            #{id}
+                            ,#{pwd}
+                            ,#{name}
+                            ,#{nickname}
+                            ,#{addr}
+                            ,#{tel}
+                            ,#{email}
+                            ,#{birthday}
+                            ,0
+                            ,sysdate()
+                            ,"1234"
+                            )
+</insert>
+    <!-- 아이디 중복체크-->
+    <select id="checkId" resultType="int" parameterType="com.haebub.dto.UserDTO">
+        select count(*) from user
+        where id=#{id}
+    </select>
+    <select id="login" resultType="int">
+        select id from user
+        where id=#{id}
+    </select>
+    <select id="logincheck" resultType="string" parameterType="com.haebub.dto.UserDTO">
+        select count(*) from user
+        where id=#{id}
+    </select>
+
+</mapper>

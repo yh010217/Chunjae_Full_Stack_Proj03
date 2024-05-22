@@ -41,7 +41,14 @@
 
             </div>
             <div class="site_chart">
-
+                <div class="button_div">
+                    <button>일단</button
+                    ><button>아무거나</button
+                ><button id="user_chart">유저</button>
+                </div>
+                <div id="myChartContainer">
+                    <canvas id="myChart"></canvas>
+                </div>
             </div>
         </div>
 
@@ -51,5 +58,7 @@
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/resources/js/admin/chart_change.js"></script>
 </body>
 </html>

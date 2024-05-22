@@ -9,7 +9,7 @@
     </select>
     <select id="getHireChart" resultType="hashmap">
 
-        SELECT COUNT(if(YEAR(hire_date) = '1985',1,null)) as   'year1'
+        SELECT COUNT(if(YEAR(hire_date) = '1985',1,null))   as 'year1'
                 ,COUNT(if(YEAR(hire_date) = '1986',1,null)) as 'year2'
                 ,COUNT(if(YEAR(hire_date) = '1987',1,null)) as 'year3'
                 ,COUNT(if(YEAR(hire_date) = '1988',1,null)) as 'year4'
