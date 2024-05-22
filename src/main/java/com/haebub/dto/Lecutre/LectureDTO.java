@@ -28,4 +28,7 @@ public class LectureDTO {
     private String sp_pplan; // 가격 계획
     private MultipartFile file; // gg
     private String lgrade; // 학년
+    private String tsubject;
+    private String tintro;
+    private String name;
 }

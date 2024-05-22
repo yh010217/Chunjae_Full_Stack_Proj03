@@ -1,0 +1,89 @@
+#lecList {
+    width: 90%;
+    margin: 0 auto;
+}
+#lecList a:hover{
+    color: gray;
+}
+
+#lecList .lecList_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+#lecList .lecList_top h1 {
+    font-size: 54px;
+    margin: 10px 0;
+}
+#lecList .lecList_free{
+    flex-grow: 0.3;
+
+}
+#lecList .insert_search {
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    padding: 17px 40px;
+    font-size: 15px;
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+#lecList .search img {
+    position: relative;
+    top: -40px;
+    left: 9px;
+}
+
+#lecList .all_lecture h2, .lecList_free h2 {
+    font-size: 32px;
+    border-bottom: 3px solid;
+}
+
+#lecList .freeList_li {
+    display: flex;
+}
+
+#lecList .all_lecture ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+#lecList .all_lecture ul li {
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    border: 1px solid #000000;
+    padding: 17px;
+    margin: 20px 20px 20px 0;
+}
+
+#lecList .lecList_img {
+    width: 253px;
+    height: 150px;
+    background-color: #d9d9d9;
+    border-radius: 13px;
+}
+
+#lecList .li_2{
+    color: #514b4b;
+    font-size: 1rem;
+    margin: 5px 0 0 ;
+}
+
+#lecList .li_3 {
+    font-size: 1.4rem;
+    font-weight: bolder;
+    margin: 0;
+}
+
+#lecList .li_4{
+    font-size: 1.2rem;
+    color: #469B72;
+    margin: 15px 0 0;
+    font-weight: bolder;
+}
+

@@ -5,6 +5,7 @@
 <mapper namespace="com.haebub.dao.Lecture.LectureMapper">
     <select id="lectureList" resultType="com.haebub.dto.Lecutre.LectureDTO">
         select lid
+                , lprofile
                 , lgrade
                 , ltitle
                 , lprice
@@ -28,9 +29,31 @@
 
     <!-- 간단 디테일 -->
     <select id="lecDatail" resultType="com.haebub.dto.Lecutre.LectureDTO" parameterType="int">
-        select *
+        SELECT l.lid
+            , l.ltitle
+            , l.lintro
+            , l.lbook
+            , l.lprice
+            , l.lopendate
+            , l.lperiod
+            , l.lcount
+            , l.lprofile
+            , l.lgrade
+            , t.tintro
+            , t.tsubject
+            , u.name
+        FROM lecture l INNER JOIN teacher t ON l.tid = t.tid INNER
+                             JOIN user u ON t.uid = u.uid
+        WHERE lid = #{lid}
+    </select>
+
+    <select id="freeList" resultType="com.haebub.dto.Lecutre.LectureDTO">
+        select lid
+            , lgrade
+            , ltitle
+            , lprice
         from lecture
-        where lid = #{lid}
+        where lprice = 0
     </select>
 </mapper>
 
