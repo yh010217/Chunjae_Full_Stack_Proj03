@@ -11,7 +11,7 @@ public class indexController {
 
     @GetMapping(value={"/index/{path}","/index", "/index/{path}/{lid}"})
     public String main(@PathVariable(required = false) String path, @PathVariable(required = false)
-            String lid, Model model) {
+    String lid, Model model) {
         System.out.println("path : " + path);
         if(path!=null) {
             model.addAttribute("page", path);

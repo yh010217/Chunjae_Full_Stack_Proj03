@@ -16,7 +16,7 @@
     <ul>
         <li>이름 : ${item.ltitle}</li>
         <li>책 : ${item.lbook}</li>
-        <li>학년 : ${item.lgrade}</li>
+        <li>학년 : ${item.lgrade}학년</li>
         <li>강의 소개 : ${item.lintro}</li>
         <li>몇강 예정? : ${item.lcount}</li>
         <li>얼마나 들을 수 있음? : ${item.lperiod}</li>
