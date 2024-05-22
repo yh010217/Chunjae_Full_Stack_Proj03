@@ -1,9 +1,10 @@
 package com.haebub.controller.login;
 
-import com.haebub.dto.UserDTO;
+import com.haebub.dto.User.UserDTO;
 import com.haebub.service.join.JoinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -30,21 +31,11 @@ public class JoinController {
     }
     //회원가입 처리
     @PostMapping (value = "/join_result")
-    public String Joinresult(UserDTO dto) throws Exception{
+    public String Joinresult(UserDTO dto, Model model) throws Exception{
         service.joinresult(dto);
-//        int result=service.idcheck(dto);
-//        try {
-//            if (result==1){
-//                return "/member/join";
-//            }else if (result==0){
-//                service.joinresult(dto);
-//            }
-//            //존재한다면 다시 회원가입 페이지
-//            // 없다면 회원가입성공
-//        }catch (Exception e){
-//            throw new RuntimeException();
-//        }
-        return "redirect:/index";
+        model.addAttribute("dto",dto);
+        return "pay/make_customer";
+        //return "redirect:/index";
 //       return "redicrect:/";
 
     }

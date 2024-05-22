@@ -1,9 +1,6 @@
 package com.haebub.service.join;
 
-import com.haebub.dto.UserDTO;
-
-import javax.servlet.http.HttpSession;
-import java.util.HashMap;
+import com.haebub.dto.User.UserDTO;
 
 public interface JoinService {
 

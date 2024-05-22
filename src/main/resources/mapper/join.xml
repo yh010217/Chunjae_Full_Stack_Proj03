@@ -31,7 +31,7 @@
                             )
 </insert>
     <!-- 아이디 중복체크-->
-    <select id="checkId" resultType="int" parameterType="com.haebub.dto.UserDTO">
+    <select id="checkId" resultType="int" parameterType="com.haebub.dto.User.UserDTO">
         select count(*) from user
         where id=#{id}
     </select>
@@ -39,7 +39,7 @@
         select id from user
         where id=#{id}
     </select>
-    <select id="logincheck" resultType="string" parameterType="com.haebub.dto.UserDTO">
+    <select id="logincheck" resultType="string" parameterType="com.haebub.dto.User.UserDTO">
         select count(*) from user
         where id=#{id}
     </select>

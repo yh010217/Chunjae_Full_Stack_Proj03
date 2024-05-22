@@ -1,6 +1,6 @@
 package com.haebub.controller.login;
 
-import com.haebub.dto.UserDTO;
+import com.haebub.dto.User.UserDTO;
 import com.haebub.service.join.JoinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -58,7 +58,7 @@ public class LoginController {
             session.setAttribute("name",name);
             mav.setViewName("login/logout");
         }else {
-            mav.setViewName("login/login");
+            mav.setViewName("redirect:/index/login");
             mav.addObject("message","error");
         }
         return mav;

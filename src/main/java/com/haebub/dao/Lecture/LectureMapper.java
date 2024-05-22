@@ -12,5 +12,6 @@ public interface LectureMapper {
 
     LectureDTO lecDatail(int lid);
 
+    int getLid();
     List<LectureDTO> freeList();
 }

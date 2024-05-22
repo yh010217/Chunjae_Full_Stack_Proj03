@@ -55,5 +55,11 @@
         from lecture
         where lprice = 0
     </select>
+
+    <select id="getLid" resultType="int">
+        select max(lid)
+        from lecture
+    </select>
+
 </mapper>
 

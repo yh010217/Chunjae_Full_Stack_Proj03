@@ -4,6 +4,7 @@ import com.haebub.dao.Lecture.LectureMapper;
 import com.haebub.dto.Lecutre.LectureDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,6 +36,7 @@ public class LectureServiceImple implements LectureService {
     }
 
     @Override
+    @Transactional
     public List<LectureDTO> freeList() {
         return lecMapper.freeList();
     }
@@ -48,6 +50,8 @@ public class LectureServiceImple implements LectureService {
             System.out.println("fnames : " + fnames);
         }
         lecMapper.insertData(dto);
+        int lid = lecMapper.getLid();
+        dto.setLid(lid);
     }
 
     private String fileUpload(String path, LectureDTO dto) {
