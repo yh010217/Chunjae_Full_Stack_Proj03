@@ -21,3 +21,89 @@
     top: 13px;
     left: 11px;
 }
+
+.main_02 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main_02 .main_self {
+    border: 1px solid #555555;
+    border-radius: 10px;
+    width: 310px;
+    padding: 35px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.main_02 .login_mess {
+    font-size: 1.3rem;
+    color: #469B72;
+}
+.main_02 .board_1 {
+    width: 100%;
+    display: flex;
+    text-align: center;
+}
+
+.main_02 .board_1 > a {
+    border: 1px solid #333333;
+    padding: 10px 0;
+    width: 200px;
+}
+
+.main_02 .main_self_mypage, .main_self_myclass {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.main_self_mypage {
+    border: 1px solid #1D152D;
+    background-color: #1D152D;
+    color: #F0EEEF;
+}
+
+.main_self .main_self_div1 p {
+    height: 8px;
+}
+
+.main_self_myclass {
+    border: 1px solid #469B72;
+    color: #469B72;
+}
+
+.main_self .main_self_div2 .main_self_box {
+    margin-right: 15px;
+}
+
+.main_self .main_self_div2 .main_self_mypage {
+    margin : 15px 0;
+}
+
+#main_04 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#main_04 .main_04_1 h3 {
+    font-size: 2rem;
+}
+
+#main_04 h4 {
+    font-size: 1.7rem;
+}
+
+#main_04 .main_04_1 ul li {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+#main_04 .main_04_2 ul li {
+    display: inline-block;
+    margin: 0 15px;
+}

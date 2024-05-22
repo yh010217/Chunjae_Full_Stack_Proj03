@@ -26,31 +26,40 @@
             <img src="/resources/image/main/event.png" alt="이벤트 배너"/>
 
             <div class="main_self">
-                <p>환영합니다</p>
-                <a>로그인이 필요해요.</a>
-
-                <span class="main_self_box">장바구니</span>
-                <span class="main_self_mon">고객센터</span>
-                <span class="main_self_mypage">마이페이지 바로 가기</span>
-                <span class="main_self_myclass">내 강의 확인하기</span>
+                <div class="main_self_div1">
+                    <p>환영합니다</p>
+                    <a href="/login" class="login_mess">로그인이 필요해요.</a>
+                </div>
+                <div class="main_self_div2">
+                    <div class="board_1">
+                        <a href="#" class="main_self_box">찜확인</a>
+                        <a href="#" class="main_self_mon">고객센터</a>
+                    </div>
+                    <a href="#" class="main_self_mypage">마이페이지 바로 가기</a>
+                    <a href="#" class="main_self_myclass">내 강의 확인하기</a>
+                </div>
             </div>
         </div>
     </article>
-    <%--<article>
-        <div>
-            <img src="resources/image/main/call.png" alt="전화">
-            <h3>고객센터</h3>
-            <h4>1566-1566</h4>
-            <p>평일 09:00 ~ 20:00 (주말, 공휴일 x)</p>
+    <article id="main_04">
+        <div class="main_04_1">
+            <ul>
+                <li><img src="/resources/image/main/call.png" alt="전화"></li>
+                <li><h3>고객센터</h3></li>
+                <li><h4>1566-1566</h4></li>
+                <li><p>평일 09:00 ~ 20:00 (주말, 공휴일 x)</p></li>
+            </ul>
         </div>
 
-        <div>
-            <h3>공식 SNS</h3>
-            <img src="resources/image/main/instagram.png" alt="인스타">
-            <img src="resources/image/main/facebook.png" alt="페북">
-            <img src="resources/image/main/kakao.png" alt="카톡">
-            <img src="resources/image/main/youtube.png" alt="유튜브">
+        <div class="main_04_2">
+            <ul>
+                <li><h4>공식 SNS</h4></li>
+                <li><img src="/resources/image/main/instagram.png" alt="인스타"></li>
+                <li><img src="/resources/image/main/facebook.png" alt="페북"></li>
+                <li><img src="/resources/image/main/kakao.png" alt="카톡" width="45px"></li>
+                <li><img src="/resources/image/main/youtube.png" alt="유튜브"></li>
+            </ul>
         </div>
-    </article>--%>
+    </article>
 </body>
 </html>
