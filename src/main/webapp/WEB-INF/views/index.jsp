@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <link rel="icon" href="/resources/image/icon_love.png">
+    <title>해법학원</title>
     <style>
         @font-face {
             font-family: 'Pretendard-Regular';
