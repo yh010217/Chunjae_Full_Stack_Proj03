@@ -1,4 +1,4 @@
-package com.haebub.dto;
+package com.haebub.dto.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>회원가입</title>
-    <script type="text/javascript" src="/resources/js/jquery-1.11.3.min.js"></script>
-    <script defer src="/resources/js/addr.js"></script>
+    <script type="text/javascript" src="/resources/js/login/jquery-1.11.3.min.js"></script>
+    <script defer src="/resources/js/login/addr.js"></script>
     <link rel="stylesheet" href="/resources/css/login/join.css">
 
 

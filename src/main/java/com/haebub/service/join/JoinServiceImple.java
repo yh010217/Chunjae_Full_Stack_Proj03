@@ -1,11 +1,9 @@
 package com.haebub.service.join;
 
 import com.haebub.dao.join.JoinMapper;
-import com.haebub.dto.UserDTO;
+import com.haebub.dto.User.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.servlet.http.HttpSession;
 
 
 @Service/*(value = "JoinService")*/

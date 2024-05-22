@@ -1,6 +1,6 @@
 
 import com.haebub.dao.join.JoinMapper;
-import com.haebub.dto.UserDTO;
+import com.haebub.dto.User.UserDTO;
 //import com.haebub.service.join.JoinServiceImple;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
