@@ -37,9 +37,9 @@ public class LectureController {
         return "/lecture/insert";
     }
 
-    @PostMapping("/insertresult")
-    public String lectureInsertResult(LectureDTO dto) {
-        /*String base="/uploadImg";
+    @PostMapping("/index/insertresult")
+    public String lectureInsertResult(HttpServletRequest request, LectureDTO dto){
+        String base="/uploadImg";
 
         String realpath= request.getSession().getServletContext().getRealPath(base);  // 실제 경로를 받아서
         System.out.println("realpath....."+realpath);
@@ -48,9 +48,7 @@ public class LectureController {
         } catch(IOException e)
         {
             System.out.println(e);
-        }*/
-
-        lecService.insertData(dto);
+        }
         return "redirect:/index/lecturelist";
     }
 
