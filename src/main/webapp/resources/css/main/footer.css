@@ -1,0 +1,20 @@
+footer {
+    background-color: #F0EEEF;
+    padding: 2px 0 12px;
+    font-size: 14px;
+}
+
+footer ul li {
+    display: inline-block;
+    margin-right: 16px;
+}
+
+footer .footer_one {
+    border-bottom: 1px solid black;
+    width: 96%;
+    margin: 0 auto;
+}
+
+footer .footer_two {
+    text-align: center;
+}

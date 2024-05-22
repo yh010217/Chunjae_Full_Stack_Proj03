@@ -1,0 +1,35 @@
+ul li {
+    list-style: none;
+}
+
+#wrap {
+    display: flex;
+    justify-content: center;
+}
+
+#sidebar {
+    width: 300px;
+    height: 700px;
+    text-align: left;
+    padding-top: 30px;
+    margin: 30px;
+    border: 1px solid #A2A2A2;
+}
+
+#sidebar .side_title {
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+#sidebar .menu li {
+    padding: 15px 10px 15px 10px;
+    font-size: 21px;
+}
+
+#content {
+    width: 1000px;
+    height: 700px;
+    border: 1px solid #A2A2A2;
+    padding: 30px 5px 5px 5px;
+    margin: 30px;
+}
