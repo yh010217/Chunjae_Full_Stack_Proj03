@@ -24,5 +24,23 @@
         <property name="maxUploadSize" value="52428800"/> <!--50mb  -->
         <property name="maxInMemorySize" value="5242880"/> <!--5mb -->
     </bean>
+    <context:component-scan base-package="com.haebub.controller"/>
+    <bean id="authInterrupt" class="com.haebub.interrupt.UserInterrupt"/>
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/*"/>
+            <mvc:exclude-mapping path="/login*"/>
+            <mvc:exclude-mapping path="/logout*"/>
+            <mvc:exclude-mapping path="/join"/>
+            <mvc:exclude-mapping path="/index"/>
+            <mvc:exclude-mapping path="/signup"/>
+            <mvc:exclude-mapping path="/js/**"/>
+            <mvc:exclude-mapping path="/css/**"/>
+            <mvc:exclude-mapping path="/image/**"/>
+            <mvc:exclude-mapping path="join_result"/>
+            <ref bean="authInterrupt"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 
 </beans>
