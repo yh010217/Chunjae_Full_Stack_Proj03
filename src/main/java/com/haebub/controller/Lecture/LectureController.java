@@ -37,9 +37,10 @@ public class LectureController {
         return "/lecture/insert";
     }
 
-    @PostMapping("/insertresult")
-    public String lectureInsertResult(LectureDTO dto, Model model) {
-        /*String base="/uploadImg";
+    @PostMapping("/index/insertresult")
+    public String lectureInsertResult(HttpServletRequest request, LectureDTO dto, Model model){
+        /*
+        String base="/uploadImg";
 
         String realpath= request.getSession().getServletContext().getRealPath(base);  // 실제 경로를 받아서
         System.out.println("realpath....."+realpath);
@@ -51,12 +52,13 @@ public class LectureController {
         }*/
 
         lecService.insertData(dto);
-        //return "redirect:/index/lecturelist";
 
         model.addAttribute("lid",dto.getLid());
         String title5 = dto.getLtitle().substring(0,5);
         model.addAttribute("ltitle",title5);
         model.addAttribute("price",dto.getLprice());
+
+        //return "redirect:/index/lecturelist";
         return "pay/make_product";
     }
 
