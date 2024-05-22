@@ -18,10 +18,10 @@
             <li>
                 <div class="thumbnail" id="thumbnail"><img src="" alt=""></div>
             </li>
-            <li>
+            <%--<li>
                 <label>썸네일(안됨)</label>
                 <input type="file" id="lprofile" name="lprofile">
-            </li>
+            </li>--%>
             <li>
                 <label for="ltitle">강의 제목</label>
                 <input type="text" id="ltitle" name="ltitle">
