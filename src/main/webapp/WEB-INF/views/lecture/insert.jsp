@@ -23,26 +23,27 @@
                         <div class="thumbnail" id="thumbnail"><img src="" alt=""></div>
                     </li>
                     <li>
-                        <label>썸네일 등록</label>
+                        <label>썸네일 등록</label> <br>
                         <input type="file" id="file" name="file">
                     </li>
                     <li>
-                        <label for="ltitle">강의 제목</label>
+                        <label for="ltitle">강의 제목</label> <br>
                         <input type="text" id="ltitle" name="ltitle">
                     </li>
                     <li>
-                        <label for="lintro">강의 소개</label>
+                        <label for="lintro">강의 소개</label> <br>
                         <textarea id="lintro" name="lintro"></textarea>
                     </li>
                     <li>
-                        <label for="lbook">강의 교재</label>
+                        <label for="lbook">강의 교재</label> <br>
                         <input type="text" id="lbook" name="lbook">
                     </li>
                     <li>
-                        <label for="lprice">가격</label>
+                        <label for="lprice">가격</label> <br>
                         <input type="text" id="lprice" name="lprice">
                     </li>
                     <li>
+                        <label>학년</label> <br>
                         <label for="one">1학년</label>
                         <input type="radio" id="one" name="lgrade" value="1" checked>
                         <label for="two">2학년</label>
@@ -51,15 +52,15 @@
                         <input type="radio" id="three" name="lgrade" value="3">
                     </li>
                     <li>
-                        <label for="lopendate">오픈일자</label>
+                        <label for="lopendate">오픈일자</label> <br>
                         <input type="date" id="lopendate" name="lopendate">
                     </li>
                     <li>
-                        <label for="lperiod">수강기간</label>
+                        <label for="lperiod">수강기간</label> <br>
                         <input type="text" id="lperiod" name="lperiod">
                     </li>
                     <li>
-                        <label for="lcount">총 강의 수</label>
+                        <label for="lcount">총 강의 수</label> <br>
                         <input type="text" id="lcount" name="lcount">
                     </li>
                     <li>

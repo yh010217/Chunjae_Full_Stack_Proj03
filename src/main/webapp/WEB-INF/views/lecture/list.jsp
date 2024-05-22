@@ -10,25 +10,52 @@
 <html>
 <head>
     <title>Title</title>
-    <style>
-        a:hover{
-            color: gray;
-        }
-    </style>
+    <link rel="stylesheet" href="/resources/css/lecture/list.css">
 </head>
 <body>
-<a href="/index/lectureinsert">추가하기</a>
+<article id="lecList">
+    <a href="/index/lectureinsert">추가하기</a>
+    <div class="lecList_top">
+        <%-- 상단부 왼쪽--%>
+        <div class="lecList_search">
+            <h1>해영의 강의를 만나보세요.</h1>
+            <div class="search">
+                <label>
+                    <input class="insert_search" id="insert_search" name="insert_search" type="text" placeholder="검색어를 입력하세요.">
+                </label>
+                <img src="/resources/image/main/search.png" alt="search">
+            </div>
+        </div>
 
-<c:forEach var="item" items="${list}">
-    <ul>
-        <li>
-            ${item.lid}
-                ${item.lgrade}학년
-                <a href="/index/lecdetail/${item.lid}"> <${item.ltitle}> </a>
-                ${item.lprice}
-        </li>
-    </ul>
-</c:forEach>
+        <%-- 상단부 오른쪽 --%>
+        <div class="lecList_free">
+            <h2>무료 강의</h2>
+            <ul>
+            <c:forEach var="freelist" items="${free}">
+                <div class="freeList_li">
+                    <li>${freelist.lgrade}학년</li>
+                    <li><a href="/index/lecdetail/${freelist.lid}"> ${freelist.ltitle} </a></li>
+                </div>
+            </c:forEach>
+            </ul>
+        </div>
+    </div>
+    <%-- 전체 강의 리스트--%>
+    <div class="all_lecture">
+        <h2>전체 강의</h2>
+        <ul>
+        <c:forEach var="item" items="${list}">
+            <li>
+                <img class="lecList_img" src="/getImage/${item.lprofile}" alt="${item.lprofile}">
+                <p class="li_2"> ${item.lgrade}학년 </p>
+                <a class="li_3" href="/index/lecdetail/${item.lid}"> ${item.ltitle} </a>
+                <p class="li_4"> ${item.lprice}원</p>
+            </li>
+        </c:forEach>
+        </ul>
+    </div>
+
+</article>
 
 
 </body>

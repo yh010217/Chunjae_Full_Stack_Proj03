@@ -41,8 +41,25 @@
             </div>
         </div>
     </article>
+
+    <article id="main_03">
+        <h1>대표강사진</h1>
+        <span>더보기</span>
+    </article>
+
     <article id="main_04">
-        <div class="main_04_1">
+        <div>
+            <h1>BEST 강의</h1>
+            <a href="/index/lecturelist">더 많은 강의 보러 가기</a>
+        </div>
+        <div>
+            <h1>신규 강의</h1>
+            <a href="index/lecturelist">더 많은 강의 보러 가기</a>
+        </div>
+    </article>
+
+    <article id="main_05">
+        <div class="main_05_1">
             <ul>
                 <li><img src="/resources/image/main/call.png" alt="전화"></li>
                 <li><h3>고객센터</h3></li>
@@ -51,7 +68,7 @@
             </ul>
         </div>
 
-        <div class="main_04_2">
+        <div class="main_05_2">
             <ul>
                 <li><h4>공식 SNS</h4></li>
                 <li><img src="/resources/image/main/instagram.png" alt="인스타"></li>

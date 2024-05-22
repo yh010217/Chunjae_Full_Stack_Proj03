@@ -11,4 +11,6 @@ public interface LectureService {
     List<LectureDTO> lectureList();
 
     LectureDTO lecDatail(int lid);
+
+    List<LectureDTO> freeList();
 }
