@@ -14,8 +14,11 @@ public interface JoinService {
 //    int idCheck(UserDTO dto);
 
     int checkId(String id);
+    int checkEmail(String email);
 
     int login(String id, String pwd);
 
     String logincheck(UserDTO dto, HttpSession session);
+
+    int checkNick(String nickname);
 }

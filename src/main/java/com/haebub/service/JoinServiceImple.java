@@ -35,6 +35,16 @@ public class JoinServiceImple implements JoinService {
    }
 
    @Override
+   public int checkEmail(String email) {
+      return joinMapper.checkEmail(email);
+   }
+   @Override
+   public int checkNick(String nickname) {
+      return joinMapper.checkNick(nickname);
+   }
+
+
+   @Override
    public int login(String id, String pwd) {
       int result=0;
       result=joinMapper.login(id,pwd);

@@ -253,6 +253,7 @@ h2{
 .id_check_re_1{
  color: green;
     list-style: none;
+    display: none;
 }
 /* 아이디 불가능 */
 .id_check_re_2{

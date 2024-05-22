@@ -20,4 +20,8 @@ public void joinresult(UserDTO dto);
     int login(String id, String pwd);
 
     String logincheck(UserDTO dto);
+
+    int checkEmail(String email);
+
+    int checkNick(String nickname);
 }
