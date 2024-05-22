@@ -35,6 +35,11 @@ public class LectureServiceImple implements LectureService {
     }
 
     @Override
+    public List<LectureDTO> freeList() {
+        return lecMapper.freeList();
+    }
+
+    @Override
     public void insertData(String path, LectureDTO dto) throws IOException {
         if(dto.getFile() != null) {
             String fnames = fileUpload(path, dto);
