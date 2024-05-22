@@ -1,16 +1,73 @@
-#calendar{
-    width: 800px;
-    height: 700px;
+#wrap{
+    width: 1000px;
+    height: 1000px;
     margin: auto;   /* 좌우 margin 동일하게 */
-    padding-top: 50px;
 }
 
+#cal_wrap {
+    width: 1000px;
+    height: 750px;
+    border: 1px solid #797878;
+    padding: 15px;
+}
+
+#calendar{
+    width: 950px;
+    height: 700px;
+    padding-top: 50px;
+    margin: auto;
+}
+
+/* 날짜별 일정 목록*/
 .center-align {
     display: flex;
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-    width: 100%;
-    font-size: 15px;
-    padding: 10px;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    width: 96.5%;
+    font-size: 20px;
+    padding: 15px 10px 15px 55px;
+    border: 1px solid;
 }
+
+.center-align a {
+    padding-left: 15px;
+}
+
+h4 {
+    margin-top: 60px ;
+}
+
+h4 span {
+    font-size: 30px;
+    margin-right: 10px;
+    letter-spacing: 5px;
+}
+
+/* 이전, 이후 버튼 색 */
+.fc-icon-chevron-right::before, .fc-icon-chevron-left::before{
+     color: white;
+ }
+
+/* 일정 title */
+.fc-event-title{
+    color: #ffff;
+}
+
+/* 일정 배경 */
+.fc-event-title-container {
+    background-color: #556CE8;
+}
+
+/* 일요일 */
+.fc-day-sun a {
+    color: #f88686;
+    text-decoration: none;
+}
+
+/* 토요일 */
+.fc-day-sat a {
+    color: #6699f8;
+    text-decoration: none;
+}
+
