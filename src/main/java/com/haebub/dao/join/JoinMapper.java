@@ -1,4 +1,4 @@
-package com.haebub.dao;
+package com.haebub.dao.join;
 
 import com.haebub.dto.UserDTO;
 import org.apache.ibatis.annotations.Mapper;

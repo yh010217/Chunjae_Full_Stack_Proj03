@@ -1,7 +1,6 @@
-import com.haebub.dao.JoinMapper;
+import com.haebub.dao.join.JoinMapper;
 import com.haebub.dto.UserDTO;
-import com.haebub.service.JoinService;
-//import com.haebub.service.JoinServiceImple;
+//import com.haebub.service.join.JoinServiceImple;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -9,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -21,6 +18,12 @@ public class JoinMapperTest {
 
     @Autowired
     private JoinMapper joinMapper;
+
+    @Test
+    public void test123(){
+        System.out.println("\n\n\n\n\n joinMapper \n\n\n\n\n\n");
+        assertNotNull(joinMapper);
+    }
 
     @Transactional
     @Test
