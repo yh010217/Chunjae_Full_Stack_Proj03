@@ -29,30 +29,9 @@ public class AdminController {
     public String adminTemplate(){
         return "admin/admin_template";
     }
-    @GetMapping("/admin/chart_test")
-    public String adminChart(){
-        return "admin/chart_test";
-    }
     @GetMapping("/admin/chart/user")
     public @ResponseBody List<HashMap<String,Object>> user_join_chart(){
         List<HashMap<String,Object>> list = chartService.getJoinChart();
-        HashMap<String,Object> hm = new HashMap<>();
-        hm.put("user",list);
-        System.out.println(hm);
-
         return list;
     }
-/*
-@GetMapping("/admin/chart/user")
-    public @ResponseBody HashMap<String,Object> user_join_chart(){
-        List<HashMap<String,Object>> list = chartService.getJoinChart();
-        HashMap<String,Object> hm = new HashMap<>();
-        hm.put("user",list);
-        System.out.println(hm);
-
-        return hm;
-    }
-*/
-
-
 }

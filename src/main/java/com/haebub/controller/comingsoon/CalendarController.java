@@ -48,7 +48,6 @@ public class CalendarController {
             hmlist.add(hm);
         }
 
-//        logger.info("jsonArray..{}", jsonArray);
         return hmlist;
     }
 }

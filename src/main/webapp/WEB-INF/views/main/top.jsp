@@ -20,7 +20,7 @@
             <ul class="top_ul_01">
                 <li><a href="/index/lecturelist">강의</a></li>
                 <li><a href="#">선생님</a></li>
-                <li><a href="#">오픈예정</a></li>
+                <li><a href="/index/comingsoon">오픈예정</a></li>
                 <li><a href="#">공지사항</a></li>
             </ul>
         </nav>

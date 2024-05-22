@@ -17,20 +17,20 @@ To change this template use File | Settings | File Templates.
 
     <aside id="side_bar">
         <div id="side_bar_header">
-            <img class="header_img" src="/resources/image/HB-logo.png">
+            <img class="header_img" src="/resources/image/admin/main/HB-logo.png">
             <a href="#" class="header_title">해법학원</a>
         </div>
         <div id="side_bar_menus">
             <a href="#" class="side_bar_menu">
-                <img class="side_bar_menu_image" src="/resources/image/user-gray.png" alt="회원 관리">
+                <img class="side_bar_menu_image" src="/resources/image/admin/main/user-gray.png" alt="회원 관리">
                 <span class="side_bar_menu_name">회원 관리</span>
             </a>
             <a href="#" class="side_bar_menu">
-                <img class="side_bar_menu_image" src="/resources/image/teacher-gray.png" alt="강사 관리">
+                <img class="side_bar_menu_image" src="/resources/image/admin/main/teacher-gray.png" alt="강서 관리">
                 <span class="side_bar_menu_name">강사 관리</span>
             </a>
             <a href="#" class="side_bar_menu">
-                <img class="side_bar_menu_image" src="/resources/image/board-gray.png" alt="고객 지원 관리">
+                <img class="side_bar_menu_image" src="/resources/image/admin/main/board-gray.png" alt="고객 지원 관리">
                 <span class="side_bar_menu_name">고객 지원 관리</span>
             </a>
         </div>
