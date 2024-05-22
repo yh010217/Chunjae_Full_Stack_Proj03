@@ -36,23 +36,6 @@ public class AdminController {
     @GetMapping("/admin/chart/user")
     public @ResponseBody List<HashMap<String,Object>> user_join_chart(){
         List<HashMap<String,Object>> list = chartService.getJoinChart();
-        HashMap<String,Object> hm = new HashMap<>();
-        hm.put("user",list);
-        System.out.println(hm);
-
         return list;
     }
-/*
-@GetMapping("/admin/chart/user")
-    public @ResponseBody HashMap<String,Object> user_join_chart(){
-        List<HashMap<String,Object>> list = chartService.getJoinChart();
-        HashMap<String,Object> hm = new HashMap<>();
-        hm.put("user",list);
-        System.out.println(hm);
-
-        return hm;
-    }
-*/
-
-
 }
