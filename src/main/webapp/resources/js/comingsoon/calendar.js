@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     center: 'title',
                     right: 'prev,next'
                 }
-                , eventDidMount: function(info) {   // 과목별 색상 다르게 설정
+           /*     , eventDidMount: function(info) {   // 과목별 색상 다르게 설정
                     var gColor = 'lightGreen';
                     var bColor = 'lightBlue';
                     // console.log(info.event.extendedProps.subject);
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     } else if(info.event.extendedProps.subject == '수학') {
                         info.el.style.backgroundColor = bColor;
                     }
-                }
+                }*/
                 ,events: data,   // title, start 값 들어옴
                 dateClick: function(info) { // 날짜 클릭 시 실행
                     // 선택된 날짜에 해당하는 이벤트 데이터 필터링
