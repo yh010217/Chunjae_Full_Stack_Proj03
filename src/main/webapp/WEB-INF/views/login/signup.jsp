@@ -14,6 +14,8 @@
 </head>
 <body>
 <div id="join_title">
+
+
     <h1>회원가입</h1>
 
     <div id="wrap">
@@ -61,7 +63,7 @@
             <figcaption>
                 <label>
                     이용약관에 동의하십니까?
-                    <input type="checkbox">
+                    <input type="checkbox" required>
                     동의함 (필수)
                 </label>
             </figcaption>
@@ -73,6 +75,8 @@
             <a href="join">다음</a>
         </div>
     </div>
+
 </div>
+
 </body>
 </html>

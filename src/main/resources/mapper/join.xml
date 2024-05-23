@@ -26,7 +26,7 @@
         ,#{email}
         ,#{birthday}
         ,0
-        ,sysdate()
+        ,CURRENT_DATE()
         ,"1234"
         )
     </insert>
