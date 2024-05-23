@@ -50,6 +50,8 @@ public class CalendarController {
             hmlist.add(hm);
         }
 
+       // logger.info(hmlist.toString());
+
         return hmlist;
     }
 }

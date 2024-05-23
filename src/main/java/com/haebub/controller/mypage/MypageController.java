@@ -52,6 +52,7 @@ public class MypageController {
         }
     }
 
+    /** 내 강의 보기 - 수강중 */
     @GetMapping("/mypage/lecture")
     @ResponseBody
     public List<HashMap<String, Object>> lectureList(HttpServletRequest request){
@@ -82,6 +83,7 @@ public class MypageController {
         return hmlist;
     }
 
+    /** 내 강의 보기 - 수강완료 */
     @GetMapping("/mypage/lecture2")
     @ResponseBody
     public List<HashMap<String, Object>> lectureList2(HttpServletRequest request){
@@ -111,7 +113,6 @@ public class MypageController {
 
         return hmlist;
     }
-    /** 수강중 */
 
     /** 거래 내역 */
     @GetMapping("/mypage/paid")

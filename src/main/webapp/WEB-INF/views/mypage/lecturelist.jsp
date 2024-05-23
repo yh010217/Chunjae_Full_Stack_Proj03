@@ -14,7 +14,7 @@
     <!-- 왼쪽 사이드바 -->
     <div id="sidebar">
         <ul>
-            <li class="side_title">안녕하세요!<br> <c:out value="${sessionScope.username}"/> 님</li>
+            <li class="side_title">안녕하세요!<br> 님</li>
         </ul>
         <ul class="menu">
             <li class="menu_title"><a href="<c:url value='/index/mypage'/>">내 강의 보기</a></li>

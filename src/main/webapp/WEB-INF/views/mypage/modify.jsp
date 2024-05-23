@@ -23,36 +23,40 @@
         </ul>
     </div>
     <%-- content 영역  --%>
-        <c:set var="item" value="${userDTO}"/>
+    <c:set var="item" value="${userDTO}"/>
     <div id="content">
-        <form method="post" action="/modifyresult">
-            <ul>
-                <li>
-                    <label for="id">아이디</label>
-                    <input type="text" id="id" name="id" value="${item.id}" readonly>
-                </li>
-                <li>
-                    <label for="name">이름</label>
-                    <input type="text" id="name" name="name" value="${item.name}" readonly>
-                </li>
-                <li>
-                    <label for="nickname">닉네임</label>
-                    <input type="text" id="nickname" value="${item.nickname}" name="nickname">
-                    <button type="button">중복 체크</button>
-                </li>
-                <li>
-                    <label for="email">이메일</label>
-                    <input type="text" id="email" value="${item.email}" name="email">
-                </li>
-                <li>
-                    <label for="tel">전화번호</label>
-                    <input type="text" id="tel" value="${item.tel}" name="tel">
-                </li>
-                <li>
-                    <button type="submit">수정 완료</button>
-                </li>
-            </ul>
-        </form>
+        <div id="form">
+            <h3>회원 정보 수정.</h3>
+            <div id="line"></div>
+            <form method="post" action="/modifyresult">
+                <ul>
+                    <li>
+                        <label for="id">아이디</label>
+                        <input type="text" id="id" name="id" value="${item.id}" readonly>
+                    </li>
+                    <li>
+                        <label for="name">이름</label>
+                        <input type="text" id="name" name="name" value="${item.name}" readonly>
+                    </li>
+                    <li>
+                        <label for="nickname">닉네임</label>
+                        <input type="text" id="nickname" value="${item.nickname}" name="nickname">
+                        <button type="button">중복 체크</button>
+                    </li>
+                    <li>
+                        <label for="email">이메일</label>
+                        <input type="text" id="email" value="${item.email}" name="email">
+                    </li>
+                    <li>
+                        <label for="tel">전화번호</label>
+                        <input type="text" id="tel" value="${item.tel}" name="tel">
+                    </li>
+                    <li>
+                        <button type="submit">수정 완료</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
     </div>
 </div>
 </body>
