@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -24,12 +25,28 @@
                 <li><a href="#">공지사항</a></li>
             </ul>
         </nav>
-        <div>
+        <c:if test="${sessionScope.id == null}">
+            <!-- 회원가입, 로그인 -->
             <ul class="top_ul_02">
-                <li><a href="/index/login">로그인</a></li>
                 <li><a href="/index/signup">회원가입</a></li>
+                <li><a href="/index/login">로그인</a> </li>
             </ul>
-        </div>
+        </c:if>
+        <c:if test="${sessionScope.id != null}">
+            <!-- 로그아웃 마이페이지 -->
+            <ul class="top_ul_02">
+                <li><a href="/index/mypage">마이페이지</a></li>
+                <li><a href="/logout">로그아웃</a></li>
+            </ul>
+        </c:if>
+        <%--        <c:if test="#{sessionScope.id == admin}">--%>
+        <%--            <!-- 관리자페이지 로그아웃-->--%>
+        <%--            <ul class="top_ul_02">--%>
+        <%--                <li><input type="button" value="관리자페이지"onclick="location.href='/admin'"></li>--%>
+        <%--                <li><input type="button" value="로그아웃" onclick="location.href='/logout'"></li>--%>
+        <%--            </ul>--%>
+        <%--        </c:if>--%>
+
     </header>
 </body>
 </html>
