@@ -35,7 +35,7 @@
             <li class="lec_price">${item.lprice}원</li>
             <li class="lec_result">
                 <a href="/">장바구니</a>
-                <a href="/">결제하기</a>
+                <a href="/pay/purchase_one?lid=${item.lid}">결제하기</a>
             </li>
         </ul>
 

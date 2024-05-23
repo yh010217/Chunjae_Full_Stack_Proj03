@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: db400tea
-  Date: 2024-05-22
-  Time: 오후 7:37
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -50,6 +43,7 @@
         console.log(data.name);
         console.log(data.id);
         console.log(data.code);
+        let sp_pcode=data.code;
 
         //location.href = "/pay/success_product?email="+email_value+"&sp_uid=" + data.id;
 
@@ -68,8 +62,7 @@
                 },
                 "type" : "ONE_TIME",
                 "price": int_price,  // 숫자로 입력
-                "unit" : "case",
-                //"basicServing": 100  // 숫자로 입력
+                "unit" : "case"
             })
 
         }).then(response => {
@@ -83,16 +76,18 @@
                 });
             }
             return response.json();
-        }).then(data => {
+        }).then(pdata => {
 
-            console.log(data.id);
-            console.log(data.code);
+            let sp_pplan=pdata.code;
+
+            location.href = '/pay/success_product?lid='+'${lid}'+'&sp_pcode='+sp_pcode
+                +'&sp_pplan='+sp_pplan;
 
             //이건 controller 에서 보내시고, 아직 PayController에서 조져야함. update query 조지는거.
             // (lid 통해 sp_pcode,sp_pplan)
             //location.href = "/lecdetail/" + '{lid}';
         }).catch(error => {
-            console.error('Error:', error);
+            location.href='/pay/fail?error='+error;
         });
 
     }).catch(error => {

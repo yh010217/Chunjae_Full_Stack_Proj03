@@ -56,7 +56,7 @@ public class LectureController {
     public String lectureInsertResult(HttpServletRequest request, LectureDTO dto, Model model){
         String base="/uploadImg";
         String realpath= request.getSession().getServletContext().getRealPath(base);  // 실제 경로를 받아서
-        // System.out.println("realpath....."+realpath);
+        System.out.println("realpath....."+realpath);
         try {
             lecService.insertData(realpath, dto);
         } catch(IOException e)
@@ -65,8 +65,7 @@ public class LectureController {
         }
 
         model.addAttribute("lid",dto.getLid());
-        String title5 = dto.getLtitle().substring(0,5);
-        model.addAttribute("ltitle",title5);
+        model.addAttribute("ltitle",dto.getLtitle());
         model.addAttribute("price",dto.getLprice());
 
         //return "redirect:/index/lecturelist";
