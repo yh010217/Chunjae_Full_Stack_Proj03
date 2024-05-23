@@ -20,7 +20,7 @@
         <nav>
             <ul class="top_ul_01">
                 <li><a href="/index/lecturelist">강의</a></li>
-                <li><a href="#">선생님</a></li>
+                <li><a href="/index/teacher">선생님</a></li>
                 <li><a href="/index/comingsoon">오픈예정</a></li>
                 <li><a href="#">공지사항</a></li>
             </ul>
@@ -31,7 +31,7 @@
             <c:when test="${sessionScope.id == 'admin'}">
                 <!-- 관리자페이지 로그아웃-->
                 <ul class="top_ul_02">
-                    <li><a href="/index/admin">관리자페이지</a></li>
+                    <li><a href="/admin/main">관리자페이지</a></li>
                     <li><a href="/logout">로그아웃</a></li>
                 </ul>
             </c:when>

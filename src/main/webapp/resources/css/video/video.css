@@ -5,6 +5,19 @@
     padding: 50px;
 }
 
+.videolist {
+    width: 30%;
+    background-color: darkgray;
+}
+
+.videolist > a {
+    font-size: 30px;
+    font-weight: bold;
+}
+.videolist > ul > li > a {
+    font-size: 20px;
+}
+
 .videoresult {
-    max-width: 1080px;
+    width: 1080px;
 }

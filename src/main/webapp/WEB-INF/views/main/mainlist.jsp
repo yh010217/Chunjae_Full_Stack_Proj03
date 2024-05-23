@@ -31,7 +31,7 @@
                     <p>환영합니다</p>
                     <c:choose>
                         <c:when test="${sessionScope.id == 'admin'}">
-                            <a href="/index/admin" class="login_mess">관리자님 하이</a>
+                            <a href="/admin/main" class="login_mess">관리자님 하이</a>
                         </c:when>
                         <c:when test="${sessionScope.id == null}">
                             <a href="/login" class="login_mess">로그인이 필요해요.</a>
