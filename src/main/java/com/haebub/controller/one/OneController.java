@@ -28,14 +28,38 @@ public class OneController {
         return "one/oneinsert";
     }
 
-    @PostMapping("/index/one_result")
-    public String oneinsert(HttpServletRequest request
-                            , OneDTO oneDTO ){
-        HttpSession session=request.getSession();
+//    @PostMapping("/one_result")
+//    public String oneinsert(HttpServletRequest request
+//                            , OneDTO oneDTO ){
+//        String uid=request.getParameter("uid");
+//        String lid=request.getParameter("lid");
+//        request.setAttribute("uid",uid);
+//        request.setAttribute("lid",lid);
+//        request.setAttribute("oneinsert","/one/oneinsert.jsp");
+//
+//        oneSerivce.oneinsert(oneDTO);
+//
+//        return "redirect:/index";
+//    }
+    @PostMapping("/one_result")
+    public String oneinsert(HttpServletRequest request, HttpServletResponse response){
+       String otitle=request.getParameter("otitle");
+       String ocontent=request.getParameter("ocontent");
+       HttpSession session=request.getSession();
+       int uid=(int) session.getAttribute("uid");
+       int lid=(int) session.getAttribute("lid");
 
-        oneSerivce.oneinsert(oneDTO);
+       OneDTO oneDTO=new OneDTO();
+       oneDTO.setUid(uid);
+       oneDTO.setLid(lid);
+       oneDTO.setOtitle(otitle);
+       oneDTO.setOcontent(ocontent);
 
-        return "redirect:/index/mypage";
+       oneSerivce.oneinsert(oneDTO);
+
+        return "redirect:/index";
     }
+
+
 
 }

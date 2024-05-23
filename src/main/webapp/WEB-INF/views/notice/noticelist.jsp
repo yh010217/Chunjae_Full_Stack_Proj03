@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
+    <link rel="stylesheet" href="/resources/css/notice/notice.css">
 </head>
 <body>
 <div class="table">
@@ -24,7 +25,7 @@
         </c:forEach>
     </div>
 </div>
-<form method="get" action="noticelist">
+<form method="get" action="/noticelist">
     <select name="search">
         <option value="nno">글번호</option>
         <option value="ntitle">제목</option>
@@ -34,7 +35,7 @@
     <button type="submit">검색</button>
 </form>
     <c:if test="${startblock>1}">
-        <a href="noticelist/${startblock-1}?search=${search}&searchtxt=${searchtxt}">이전</a>
+        <a href="/index/noticelist/${startblock-1}?search=${search}&searchtxt=${searchtxt}">이전</a>
     </c:if>
     <c:forEach var="index" begin="${startblock}" end="${endblock}">
         <c:choose>
@@ -42,12 +43,12 @@
                 ${index}
             </c:when>
             <c:otherwise>
-                <a href="noticelist/${index}?serach">${index}</a>
+                <a href="/index/noticelist/${index}?serach">${index}</a>
             </c:otherwise>
         </c:choose>
     </c:forEach>
     <c:if test="${endblock<totalpage}">
-        <a href="noticelist/${endblock+1}?serach=&${search}&searchtxt=${searchtxt}">다음</a>
+        <a href="/index/noticelist/${endblock+1}?serach=&${search}&searchtxt=${searchtxt}">다음</a>
     </c:if>
 
 

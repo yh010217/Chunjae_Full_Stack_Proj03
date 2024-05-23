@@ -27,12 +27,13 @@ h2 {
 }
 
 textarea {
+
     width: 980px;
     height: 183px;
     font-size: 16px;
     border: 1px solid #FFB15c;
-    padding: 26px 50px 20px 10px;
-    margin: 12px 10px;
+    /*padding: 26px 50px 20px 10px;*/
+    /*margin: 12px 10px;*/
     resize: none;
     outline: none;
     /* resize: none; textarea 크기 조절 비활성화 */

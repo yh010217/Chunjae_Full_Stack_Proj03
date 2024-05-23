@@ -14,7 +14,7 @@
 
 <div id="join">
     <h2>회원가입</h2>
-    <form id="join_form" method="post" action="/index/join_result">
+    <form id="join_form" method="post" action="/join_result">
         <ul>
             <li>
                 <div>

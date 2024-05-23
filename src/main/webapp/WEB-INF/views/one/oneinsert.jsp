@@ -10,7 +10,7 @@
 <body>
 
     <div class="oneinsert_form">
-        <form method="post" action="/index/one_result">
+        <form method="post" action="/one_result">
             <h1>일대일 문의 게시판</h1>
             <div class="form-group row">
                 <label for="otitle" class="col-sm-2 col-form-label"><strong>제목</strong></label>
@@ -36,15 +36,17 @@
                     <input type="text" name="owriter" class="form-control" id="owriter"/>
                 </div>
             </div>
-            <div class="form-group row" hidden>
+            <div class="form-group row">
+                <label for="uid" class="col-sm-2 col-form-label"><strong>회원</strong></label>
                 <div class="col-sm-10">
-                    <input type="hidden" class="form-control" id="uid" value="${One.uid}"/>
+                    <input type="hidden" class="form-control" id="uid" value="${one.uid}"/>
                 </div>
             </div>
 
-            <div class="form-group row" hidden>
+            <div class="form-group row">
+                <label for="lid" class="col-sm-2 col-form-label"><strong>선생님</strong></label>
                 <div class="col-sm-10">
-                    <input type="hidden" class="form-control" id="lid" value="${One.lid}"/>
+                    <input type="hidden" class="form-control" id="lid" value="${one.lid}"/>
                 </div>
             </div>
 

@@ -16,10 +16,10 @@ public class OneServiceImple implements OneSerivce {
     @Override
     public void oneinsert(OneDTO oneDTO) {
         oneMapper.oneinsert(oneDTO);
-        int uid=oneMapper.getuid();
-        int lid=oneMapper.getlid();
-        oneDTO.setLid(lid);
-        oneDTO.setUid(uid);
+//        int uid=oneMapper.getuid();
+//        int lid=oneMapper.getlid();
+//        oneDTO.setLid(lid);
+//        oneDTO.setUid(uid);
     }
 
 }

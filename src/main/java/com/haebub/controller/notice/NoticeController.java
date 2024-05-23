@@ -45,7 +45,8 @@ public class NoticeController {
         model.addAttribute("currpage",currpage);
         model.addAttribute("search",search);
         model.addAttribute("searchtxt",searchtxt);
-        model.addAttribute("endbloeck",endblock);
+        model.addAttribute("startblock",startblock);
+        model.addAttribute("endblock",endblock);
         model.addAttribute("tottalpage",totalpage);
 
         return "notice/noticelist";
