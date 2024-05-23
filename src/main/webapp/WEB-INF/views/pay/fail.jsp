@@ -11,8 +11,11 @@
     <title>Title</title>
 </head>
 <body>
-에러발생~
-${error}
+
+<script>
+    alter('${error}');
+    location.href='/index';
+</script>
 
 </body>
 </html>

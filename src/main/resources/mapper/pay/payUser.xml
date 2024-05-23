@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haebub.dao.pay.PayUserMapper">
+    <select id="getUid" parameterType="string" resultType="hashmap">
+        SELECT uid, sp_uid
+        FROM user
+        WHERE id = #{id}
+    </select>
+
+    <select id="getLec" parameterType="string" resultType="hashmap">
+        SELECT sp_pcode,sp_pplan
+        FROM lecture
+        WHERE lid = #{lid}
+    </select>
+</mapper>

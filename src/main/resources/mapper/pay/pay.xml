@@ -8,4 +8,10 @@
         UPDATE user SET sp_uid = #{sp_uid}
         WHERE email = #{email};
     </update>
+    <update id="makeProduct" parameterType="hashmap">
+        UPDATE lecture
+            SET sp_pcode = #{sp_pcode}
+            ,sp_pplan = #{sp_pplan}
+        WHERE lid = #{lid}
+    </update>
 </mapper>
