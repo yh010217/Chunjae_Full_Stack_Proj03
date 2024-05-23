@@ -1,0 +1,10 @@
+#videoarticle {
+    background-color: #F0EEEF;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.videoresult {
+    max-width: 1080px;
+}
