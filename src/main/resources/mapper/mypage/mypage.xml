@@ -10,6 +10,7 @@
         , DATE_ADD(DATE(ptime), INTERVAL+lperiod DAY) AS 'endDate'
         , tsubject
         , NAME
+        , DATE(now()) AS 'now'
         FROM purchase p, lecture l, teacher t, user u
         <where>
                 p.lid = l.lid
