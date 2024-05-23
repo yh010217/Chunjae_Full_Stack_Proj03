@@ -73,7 +73,7 @@ public class LoginController {
         HttpSession session=request.getSession(false);
         if (session!=null || session.getAttribute("id")!=null)
             session.invalidate();
-        return "redirect:/login";
+        return "redirect:index/login";
     }
 
 
