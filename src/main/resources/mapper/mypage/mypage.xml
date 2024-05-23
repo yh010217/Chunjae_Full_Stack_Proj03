@@ -20,4 +20,9 @@
             AND DATE_ADD(DATE(ptime), INTERVAL+lperiod DAY) >= DATE(NOW())
         </where>
     </select>
+    <select id="getUid" parameterType="string" resultType="int">
+        SELECT uid
+        FROM user
+        WHERE id = #{id}
+    </select>
 </mapper>

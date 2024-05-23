@@ -5,6 +5,7 @@
     <title>마이페이지</title>
     <link rel="stylesheet" href="/resources/css/mypage/mypage_template.css">
     <link rel="stylesheet" href="/resources/css/mypage/lecturelist.css">
+    <script defer src="/resources/js/mypage/lecturelist.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -15,7 +16,7 @@
         </ul>
         <ul class="menu">
             <li class="menu_title"><a href="/index/mypage">내 강의 보기</a></li>
-            <li class="menu_title"><a href="#">거래 내역</a></li>
+            <li class="menu_title"><a href="/index/mypage/paid">거래 내역</a></li>
             <li class="menu_title"><a href="#">장바구니</a></li>
             <li class="menu_title"><a href="#">회원 정보 수정</a></li>
             <li class="menu_title"><a href="#">고객센터</a></li>
@@ -50,7 +51,6 @@
                 <li class="play_btn t">
                     <a href="#"><img src="/resources/image/icon-play.png" alt="play"> 온라인 강의 시청하기</a>
                 </li>
-
             </ul>
         </c:forEach>
     </div>

@@ -10,7 +10,7 @@ ul li {
 /* 사이드바 메뉴 */
 #sidebar {
     width: 245px;
-    height: 700px;
+    height: 765px;
     text-align: left;
     padding-top: 30px;
     margin: 30px;
@@ -44,11 +44,13 @@ ul li {
 }
 
 /* content */
+/*
 #content {
     width: 1000px;
-    height: 700px;
+    height: 7650px;
     border: 1px solid #A2A2A2;
     padding: 30px 5px 5px 5px;
     margin: 30px;
 }
+*/
 
