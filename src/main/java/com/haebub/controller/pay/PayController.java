@@ -81,46 +81,47 @@ public class PayController {
 
         HashMap<String, Object> user = userService.getUid(id);
         int uid = (Integer) user.get("uid");
-        String suid = uid+"";
+        String suid = uid + "";
 
         System.out.println(status);
         System.out.println(lid);
 
         //쿼리조지기
-        paymentService.purchaseOne(order_code, status,suid,lid);
+        paymentService.purchaseOne(order_code, status, suid, lid);
 
         return "redirect:/index/lecturelist";
     }
 
     @GetMapping("/insert_cart")
-    public String insertCart(HttpServletRequest request){
+    public String insertCart(HttpServletRequest request) {
         HttpSession session = request.getSession();
         String id = (String) session.getAttribute("id");
 
-        HashMap<String,Object> hm = userService.getUid(id);
+        HashMap<String, Object> hm = userService.getUid(id);
         int uid = (Integer) hm.get("uid");
-        String suid = uid+"";
+        String suid = uid + "";
 
         String lid = request.getParameter("lid");
 
-        paymentService.insertCart(suid,lid);
+        paymentService.insertCart(suid, lid);
 
         return "redirect:/index";
     }
 
 
     @GetMapping("/mypage/cart")
-    public String myCart(HttpServletRequest request){
+    public String myCart(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession();
         String id = (String) session.getAttribute("id");
 
-        HashMap<String,Object> hm = userService.getUid(id);
+        HashMap<String, Object> hm = userService.getUid(id);
         int uid = (Integer) hm.get("uid");
-        String suid = uid+"";
+        String suid = uid + "";
 
-        List<HashMap<String,Object>> hmlist = paymentService.getCartList(suid);
+        List<HashMap<String, Object>> hmlist = paymentService.getCartList(suid);
+        model.addAttribute("hmlist", hmlist);
 
-
+        System.out.println(hmlist);
         return "/pay/cart";
     }
 
