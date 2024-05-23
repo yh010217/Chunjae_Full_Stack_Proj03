@@ -23,9 +23,35 @@
             <div class="td">${item.ndate}</div>
         </c:forEach>
     </div>
-
-
 </div>
+<form method="get" action="noticelist">
+    <select name="search">
+        <option value="nno">글번호</option>
+        <option value="ntitle">제목</option>
+        <option value="ncontent">내용</option>
+    </select>
+    <input type="text" name="searchtxt">
+    <button type="submit">검색</button>
+</form>
+    <c:if test="${startblock>1}">
+        <a href="noticelist/${startblock-1}?search=${search}&searchtxt=${searchtxt}">이전</a>
+    </c:if>
+    <c:forEach var="index" begin="${startblock}" end="${endblock}">
+        <c:choose>
+            <c:when test="${currpage==index}">
+                ${index}
+            </c:when>
+            <c:otherwise>
+                <a href="noticelist/${index}?serach">${index}</a>
+            </c:otherwise>
+        </c:choose>
+    </c:forEach>
+    <c:if test="${endblock<totalpage}">
+        <a href="noticelist/${endblock+1}?serach=&${search}&searchtxt=${searchtxt}">다음</a>
+    </c:if>
+
+
+
 
 
 </body>

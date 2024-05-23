@@ -30,7 +30,7 @@ public class JoinController {
         return "login/join";
     }
     //회원가입 처리
-    @PostMapping (value = "/join_result")
+    @PostMapping (value = "/index/join_result")
     public String Joinresult(UserDTO dto, Model model) throws Exception{
         service.joinresult(dto);
         model.addAttribute("dto",dto);
