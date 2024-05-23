@@ -3,14 +3,51 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.haebub.dao.notice.NoticeMapper">
-    <select id="noticelist" resultType="com.haebub.dto.notice.NoticeDTO">
+    <select id="noticelist"  parameterType="hashmap" resultType="com.haebub.dto.notice.NoticeDTO">
         select nno
         ,ntitle
         ,ncontent
         ,ndate
         from notice
+        <where>
+            <if test="searchtxt!='' and !''.equals(searchtxt)">
+                <choose>
+                    <when test="search=='nno'">
+                        and nno=#{searchtxt}
+                    </when>
+                    <when test="search=='ntitle'">
+                        and ntitle like concat('%',#{searchtxt},'%')
+                    </when>
+                    <when test="search=='ncontent'">
+                        and ncontent like concat('%', #{searchtxt}, '%')
+                    </when>
+                </choose>
+            </if>
+        </where>
+        <![CDATA[
+            limit #{startrow}, #{pagesize}
+       ]]>
     </select>
 
+    <select id="totalCount"  parameterType="hashmap" resultType="int">
+        select count(*)
+        from notice
+        <where>
+            <if test="searchtxt!='' and !''.equals(searchtxt)">
+                <choose>
+                    <when test="search==' nno'">
+                        and  nno=#{searchtxt}
+                    </when>
+                    <when test="search=='ntitle'">
+                        and ncontent like concat('%', #{searchtxt}, '%')
+                    </when>
+                    <when test="search=='ncontent'">
+                        and ncontent like concat('%', #{searchtxt}, '%')
+                    </when>
+                </choose>
+            </if>
+        </where>
+    </select>
 
 
 </mapper>

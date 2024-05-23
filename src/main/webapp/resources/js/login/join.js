@@ -1,7 +1,7 @@
 let id_check = document.getElementById('id_check');
 id_check.onclick = function () {
     let id_value = document.getElementById('id').value;
-    fetch('checkId2?id=' + id_value, {
+    fetch('/checkId2?id=' + id_value, {
         method   : "GET"
         , mode   : "cors"
         , headers: {
@@ -29,7 +29,7 @@ let ncheck = document.getElementById('nickname_check2');
 ncheck.onclick = function () {
     let nvalue = document.getElementById('nickname').value;
 
-    fetch('nickcheck?nickname=' + nvalue, {
+    fetch('/nickcheck?nickname=' + nvalue, {
         method   : "GET"
         , mode   : "cors"
         , headers: {
@@ -66,7 +66,7 @@ echeck.onclick = function () {
         able.appendChild(text);
     }
     else{
-        fetch('echeck?email=' + evalue, {
+        fetch('/echeck?email=' + evalue, {
             method   : "GET"
             , mode   : "cors"
             , headers: {

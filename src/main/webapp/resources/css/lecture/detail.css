@@ -65,12 +65,13 @@ body {
 #lecDetail .lec_result {
     margin-top: 40px;
 }
-#lecDetail .lec_result a {
+#lecDetail .lec_result a,#lecDetail .lec_result button{
     background-color: #F0C9CE;
 
     padding: 10px 50px;
     font-size: 20px;
     border-radius: 35px;
+    border:0;
 }
 
 /* 강의 들어오는 자리 */

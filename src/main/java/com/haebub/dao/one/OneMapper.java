@@ -10,4 +10,8 @@ public interface OneMapper {
 
     void oneinsert(OneDTO oneDTO);
 
+    int getuid(String id);
+//
+//    int getlid();
+
 }

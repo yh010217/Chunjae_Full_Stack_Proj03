@@ -17,10 +17,10 @@
             <li class="side_title">안녕하세요!<br> 님</li>
         </ul>
         <ul class="menu">
-            <li class="menu_title"><a href="<c:url value='/index/mypage'/>">내 강의 보기</a></li>
-            <li class="menu_title"><a href="<c:url value='/index/mypage/paid'/>">거래 내역</a></li>
-            <li class="menu_title"><a href="#">장바구니</a></li>
-            <li class="menu_title"><a href="<c:url value='/index/mypage/modify'/>">회원 정보 수정</a></li>
+            <li class="menu_title"><a href="/index/mypage">내 강의 보기</a></li>
+            <li class="menu_title"><a href="/index/mypage/paid">거래 내역</a></li>
+            <li class="menu_title"><a href="/index/mypage/cart">장바구니</a></li>
+            <li class="menu_title"><a href="#">회원 정보 수정</a></li>
             <li class="menu_title"><a href="#">고객센터</a></li>
             <li class="menu_title"><a href="<c:url value='/logout'/>">로그아웃</a></li>
         </ul>

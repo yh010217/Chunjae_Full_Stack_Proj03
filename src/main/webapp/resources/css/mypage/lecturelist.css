@@ -10,12 +10,10 @@
 #line {
     border-bottom: 1px solid gainsboro;
 }
-
 h3 {
     padding: 4px 0px 22px 48px;
     font-size: 21px;
 }
-
 .lecture_btn {
     display: inline-block;
     padding: 10px 10px;
