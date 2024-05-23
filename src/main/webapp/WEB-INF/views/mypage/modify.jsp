@@ -4,8 +4,7 @@
 <head>
     <title>마이페이지</title>
     <link rel="stylesheet" href="/resources/css/mypage/mypage_template.css">
-    <link rel="stylesheet" href="/resources/css/mypage/lecturelist.css">
-    <script defer src="/resources/js/mypage/lecturelist.js"></script>
+    <link rel="stylesheet" href="/resources/css/mypage/modify.css">
 </head>
 <body>
 <div id="wrap">
@@ -24,35 +23,36 @@
         </ul>
     </div>
     <%-- content 영역  --%>
+        <c:set var="item" value="${userDTO}"/>
     <div id="content">
-        <h3>내 강의 보기.</h3>
-        <div id="line"></div>
-        <ul>
-            <li id="all" class="lecture_btn">전체 목록</li>
-            <li id="ing" class="lecture_btn">수강중</li>
-            <li id="done" class="lecture_btn">수강 완료</li>
-        </ul>
-        <c:forEach var="item" items="${list}">
-            <ul class="lecture_box">
+        <form method="post" action="/modifyresult">
+            <ul>
                 <li>
-                    <c:if test="${item.endDate >= item.now}">
-                        <p class="lecture_status">수강중</p>
-                    </c:if>
+                    <label for="id">아이디</label>
+                    <input type="text" id="id" name="id" value="${item.id}" readonly>
                 </li>
                 <li>
-                    [<c:out value="${item.tsubject}"/>] <c:out value="${item.name}"/> 선생님
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" value="${item.name}" readonly>
                 </li>
                 <li>
-                    <c:out value="${item.ltitle}"/>
+                    <label for="nickname">닉네임</label>
+                    <input type="text" id="nickname" value="${item.nickname}" name="nickname">
+                    <button type="button">중복 체크</button>
                 </li>
-                <li class="t">
-                    수강 기간 : <c:out value="${item.startDate}"/> ~ <c:out value="${item.endDate}"/>
+                <li>
+                    <label for="email">이메일</label>
+                    <input type="text" id="email" value="${item.email}" name="email">
                 </li>
-                <li class="play_btn t">
-                    <a href="#"><img src="/resources/image/icon-play.png" alt="play"> 온라인 강의 시청하기</a>
+                <li>
+                    <label for="tel">전화번호</label>
+                    <input type="text" id="tel" value="${item.tel}" name="tel">
+                </li>
+                <li>
+                    <button type="submit">수정 완료</button>
                 </li>
             </ul>
-        </c:forEach>
+        </form>
     </div>
 </div>
 </body>

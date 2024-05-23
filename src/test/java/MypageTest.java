@@ -1,16 +1,20 @@
 import com.haebub.dao.comingsoon.CalendarMapper;
 import com.haebub.dao.mypage.MypageMapper;
+import com.haebub.dto.User.UserDTO;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.transaction.annotation.Transactional;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/applicationContext.xml")
+@Transactional
 public class MypageTest {
 
     @Autowired
@@ -25,6 +29,25 @@ public class MypageTest {
     @Test
     public void test2(){
         assertEquals(7,mypageMapper.getUid("test"));
+    }
+
+    @Test
+    public void test3(){
+       assertEquals("2024-05-30",mypageMapper.paidList(7).get(1).getStartDate());
+    }
+
+    @Test
+    public void test4(){
+        assertNotNull(mypageMapper.getUser(7));
+        assertEquals("test", mypageMapper.getUser(7).getId());
+    }
+
+    @Test
+    public void test5(){
+        UserDTO dto = new UserDTO();
+        dto.setUid(7);
+        dto.setNickname("룰루");
+        assertEquals(1,mypageMapper.userModify(dto));
     }
 
 }

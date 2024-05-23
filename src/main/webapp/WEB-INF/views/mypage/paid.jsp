@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -16,7 +17,7 @@
             <li class="menu_title"><a href="/index/mypage">내 강의 보기</a></li>
             <li class="menu_title"><a href="/index/mypage/paid">거래 내역</a></li>
             <li class="menu_title"><a href="#">장바구니</a></li>
-            <li class="menu_title"><a href="#">회원 정보 수정</a></li>
+            <li class="menu_title"><a href="/index/mypage/modify">회원 정보 수정</a></li>
             <li class="menu_title"><a href="#">고객센터</a></li>
             <li class="menu_title"><a href="#">로그아웃</a></li>
         </ul>
@@ -29,7 +30,17 @@
                 <h3><a href="#">환불 내역</a></h3>
             </section>
             <section id="bill_content">
+                <c:forEach var="item" items="${paidList}">
+                    <ul>
+                        <li>결제 완료</li>
+                        <li><c:out value="${item.ptime}"/></li>
+                        <li>[<c:out value="${item.tsubject}"/>]<c:out value="${item.name}"/> 선생님</li>
+                        <li>수강 기간 : <c:out value="${item.startDate}"/> ~ <c:out value="${item.endDate}"/></li>
+                        <li>결제 금액 : <c:out value="${item.lprice}"/></li>
+                        <li><a href="#">환불 신청</a></li>
+                    </ul>
 
+                </c:forEach>
             </section>
 
         </div>

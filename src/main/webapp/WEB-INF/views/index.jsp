@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="icon" href="/resources/image/main/icon_love.png">
+    <link rel="icon" href="/resources/image/icon_love.png">
     <title>해법학원</title>
     <style>
         @font-face {
