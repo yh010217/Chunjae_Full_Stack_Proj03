@@ -32,20 +32,7 @@ public class JoinController {
     @PostMapping (value = "/join_result")
     public String Joinresult(UserDTO dto) throws Exception{
         service.joinresult(dto);
-//        int result=service.idcheck(dto);
-//        try {
-//            if (result==1){
-//                return "/member/join";
-//            }else if (result==0){
-//                service.joinresult(dto);
-//            }
-//            //존재한다면 다시 회원가입 페이지
-//            // 없다면 회원가입성공
-//        }catch (Exception e){
-//            throw new RuntimeException();
-//        }
         return "redirect:/index";
-//       return "redicrect:/";
 
     }
 

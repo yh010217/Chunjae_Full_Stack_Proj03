@@ -17,6 +17,8 @@
             color: black;
             text-decoration: none;
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
     </style>
 </head>
