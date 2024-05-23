@@ -6,13 +6,8 @@
 
 @media screen and (min-width: 768px),
 screen and (min-height: 760px) and (orientation: landscape) {
-    * {
-        font-family: "Noto Sans KR", sans-serif;
 
-    }
-    ul li{
-        list-style: none;
-    }
+
     .form-singin{
         max-width: 390px;
         position: relative;
@@ -67,13 +62,8 @@ screen and (min-height: 760px) and (orientation: landscape) {
 
 @media screen and (max-width: 767px),
 screen and (max-height: 479px) and (orientation: landscape) {
-    * {
-        font-family: "Noto Sans KR", sans-serif;
 
-    }
-    ul li{
-        list-style: none;
-    }
+
     .form-singin{
         max-width: 390px;
         position: relative;
