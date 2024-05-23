@@ -11,7 +11,6 @@
                         ,osecret
                         ,uid
                         ,lid
-                        ,oans
                         ,owriter
                         )
         values(
@@ -21,10 +20,15 @@
                 ,#{osecret}
                 ,#{uid}
                 ,#{lid}
-                ,#{oans}
                 ,#{owriter}
         )
 
     </insert>
+
+    <select id="getuid" parameterType="string" resultType="int">
+        select uid
+        from user
+        where id = #{id}
+    </select>
 
 </mapper>

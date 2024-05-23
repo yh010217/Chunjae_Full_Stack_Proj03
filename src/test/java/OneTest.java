@@ -1,5 +1,6 @@
 import com.haebub.dao.one.OneMapper;
 import com.haebub.dto.one.OneDTO;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,8 @@ public class OneTest {
     //assertNotNull(oneMapper);
     OneDTO dto=new OneDTO();
 
-    dto.setUid(6);
-    dto.setRegdate("2024-05-03");
+    dto.setUid(6);/*
+    dto.setRegdate("2024-05-03");*/
     dto.setLid(1);
     dto.setOcontent("test");
     dto.setOtitle("Test");
@@ -31,5 +32,12 @@ public class OneTest {
     oneMapper.oneinsert(dto);
 
 }
+
+    @Test
+    public void test2(){
+        assertNotNull(oneMapper);
+        assertEquals(1,oneMapper.getuid("admin"));
+    }
+
 
 }

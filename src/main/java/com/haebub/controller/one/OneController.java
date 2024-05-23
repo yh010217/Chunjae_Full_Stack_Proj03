@@ -24,7 +24,15 @@ public class OneController {
     public OneController(OneSerivce oneSerivce){this.oneSerivce = oneSerivce;}
 
     @GetMapping("/oneinsert")
-    public String onoform(){
+    public String onoform(@RequestParam String lid, HttpServletRequest request
+                          ,Model model){
+        HttpSession session = request.getSession();
+        String id = (String) session.getAttribute("id");
+        int uid = oneSerivce.getuid(id);
+        model.addAttribute("lid",lid);
+        model.addAttribute("uid",uid);
+
+
         return "one/oneinsert";
     }
 
@@ -42,20 +50,18 @@ public class OneController {
 //        return "redirect:/index";
 //    }
     @PostMapping("/one_result")
-    public String oneinsert(HttpServletRequest request, HttpServletResponse response){
-       String otitle=request.getParameter("otitle");
-       String ocontent=request.getParameter("ocontent");
-       HttpSession session=request.getSession();
-       int uid=(int) session.getAttribute("uid");
-       int lid=(int) session.getAttribute("lid");
+    public String oneinsert(HttpServletRequest request, OneDTO dto,Model model){
 
-       OneDTO oneDTO=new OneDTO();
-       oneDTO.setUid(uid);
-       oneDTO.setLid(lid);
-       oneDTO.setOtitle(otitle);
-       oneDTO.setOcontent(ocontent);
+       //HttpSession session=request.getSession();
 
-       oneSerivce.oneinsert(oneDTO);
+           oneSerivce.oneinsert(dto);
+/*
+      model.addAttribute("uid",dto.getUid());
+      model.addAttribute("lid",dto.getLid());
+      String otitle=dto.getOtitle();
+      String ocontent=dto.getOcontent();
+      model.addAttribute("otitle",otitle);
+      model.addAttribute("ocontent",ocontent);*/
 
         return "redirect:/index";
     }

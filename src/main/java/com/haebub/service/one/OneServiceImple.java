@@ -22,4 +22,9 @@ public class OneServiceImple implements OneSerivce {
 //        oneDTO.setUid(uid);
     }
 
+    @Override
+    public int getuid(String id) {
+        return oneMapper.getuid(id);
+    }
+
 }

@@ -29,24 +29,26 @@
                 <div class="col-sm-10">
                     <textarea type="text" name="ocontent" class="form-control" id="ocontent"></textarea>
                 </div>
-            </div>
+            </div><%--
             <div class="form-group row">
                 <label for="owriter" class="col-sm-2 col-form-label"><strong>작성자</strong></label>
                 <div class="col-sm-10">
                     <input type="text" name="owriter" class="form-control" id="owriter"/>
                 </div>
-            </div>
+            </div>--%>
+            <input type="hidden" name="owriter" class="form-control" value="${sessionScope.id}"/>
+
             <div class="form-group row">
                 <label for="uid" class="col-sm-2 col-form-label"><strong>회원</strong></label>
                 <div class="col-sm-10">
-                    <input type="hidden" class="form-control" id="uid" value="${one.uid}"/>
+                    <input type="hidden" class="form-control" id="uid" name="uid" value="${uid}"/>
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="lid" class="col-sm-2 col-form-label"><strong>선생님</strong></label>
                 <div class="col-sm-10">
-                    <input type="hidden" class="form-control" id="lid" value="${one.lid}"/>
+                    <input type="hidden" class="form-control" id="lid" name="lid" value="${lid}"/>
                 </div>
             </div>
 
