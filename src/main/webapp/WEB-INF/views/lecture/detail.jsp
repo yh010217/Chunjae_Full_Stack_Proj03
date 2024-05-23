@@ -34,7 +34,7 @@
             </li>
             <li class="lec_price">${item.lprice}원</li>
             <li class="lec_result">
-                <a href="/">장바구니</a>
+                <button type="button" id="go_cart">장바구니</button>
                 <a href="/pay/purchase_one?lid=${item.lid}">결제하기</a>
             </li>
         </ul>
@@ -53,5 +53,34 @@
     </article>
 
 
+<script>
+
+    document.getElementById('go_cart').onclick=function (){
+        //fetch로 할거는 다 하고 이래이래해야할듯
+        fetch('/insert_cart?lid='+'${item.lid}',{
+            method   : "GET"
+            , mode   : "cors"
+            , headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (!response.ok) {
+                return response.json().then(err => {
+                    console.error('Server Error:', err);
+                    throw new Error('Network response was not ok');
+                });
+            }
+            console.log('별 문제 없기를');
+        }).catch(error => {
+            console.error('Error:', error);
+        }).finally(()=>{
+            if (confirm("장바구니에 추가되었습니다 \n 장바구니로 이동하시겠습니까?") == true){    //확인
+                location.href='/index/mypage/cart';
+            }else{   //취소
+                return false;
+            }
+        });
+    }
+</script>
 </body>
 </html>

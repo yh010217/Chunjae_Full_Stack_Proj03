@@ -8,10 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -90,5 +92,36 @@ public class PayController {
         return "redirect:/index/lecturelist";
     }
 
+    @GetMapping("/insert_cart")
+    public String insertCart(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        String id = (String) session.getAttribute("id");
+
+        HashMap<String,Object> hm = userService.getUid(id);
+        int uid = (Integer) hm.get("uid");
+        String suid = uid+"";
+
+        String lid = request.getParameter("lid");
+
+        paymentService.insertCart(suid,lid);
+
+        return "redirect:/index";
+    }
+
+
+    @GetMapping("/mypage/cart")
+    public String myCart(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        String id = (String) session.getAttribute("id");
+
+        HashMap<String,Object> hm = userService.getUid(id);
+        int uid = (Integer) hm.get("uid");
+        String suid = uid+"";
+
+        List<HashMap<String,Object>> hmlist = paymentService.getCartList(suid);
+
+
+        return "/pay/cart";
+    }
 
 }
