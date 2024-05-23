@@ -65,7 +65,8 @@
 
             let ifr = document.createElement('iframe');
             ifr.src = 'https://api.steppay.kr/api/public/orders/'
-                +oid+'/pay';
+                +oid+'/pay?successUrl=http://localhost:8080/pay/'+'${lid}'+'/success_one';
+
             let divp = document.getElementById('purchase_window');
             divp.appendChild(ifr);
 
@@ -75,16 +76,6 @@
             //location.href='/pay/fail?error='+error;
         });
 
-
-
-
-
-    document.getElementById('div_purchase').onclick = function () {
-        let ifr = document.createElement('iframe');
-        ifr.src = 'https://api.steppay.kr/api/public/orders/341995/pay'
-        let divp = document.getElementById('purchase_window');
-        divp.appendChild(ifr);
-    }
 </script>
 
 </body>

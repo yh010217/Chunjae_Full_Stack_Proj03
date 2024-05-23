@@ -14,4 +14,11 @@
             ,sp_pplan = #{sp_pplan}
         WHERE lid = #{lid}
     </update>
+    <insert id="purchaseOne" parameterType="hashmap">
+
+        INSERT INTO purchase(ptime  ,uid  ,lid  ,pstatus  ,sp_ocode)
+        VALUES(NOW()  ,#{uid}  ,#{lid}  ,  #{success}  ,#{order_code} )
+
+
+    </insert>
 </mapper>

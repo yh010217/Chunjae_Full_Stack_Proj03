@@ -34,4 +34,17 @@ public class PaymentServiceImple implements PaymentService {
         return result;
     }
 
+    @Override
+    public int purchaseOne(String order_code, String status,String uid, String lid) {
+
+        HashMap<String, Object> hm = new HashMap<>();
+        hm.put("order_code",order_code);
+        hm.put("success",status);
+        hm.put("uid",uid);
+        hm.put("lid",lid);
+
+        int result = paymentMapper.purchaseOne(hm);
+        return result;
+    }
+
 }
