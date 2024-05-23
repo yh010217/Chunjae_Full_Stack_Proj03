@@ -25,27 +25,34 @@
                 <li><a href="#">공지사항</a></li>
             </ul>
         </nav>
-        <c:if test="${sessionScope.id == null}">
-            <!-- 회원가입, 로그인 -->
-            <ul class="top_ul_02">
-                <li><a href="/index/signup">회원가입</a></li>
-                <li><a href="/index/login">로그인</a> </li>
-            </ul>
-        </c:if>
-        <c:if test="${sessionScope.id != null}">
-            <!-- 로그아웃 마이페이지 -->
-            <ul class="top_ul_02">
-                <li><a href="/index/mypage">마이페이지</a></li>
-                <li><a href="/logout">로그아웃</a></li>
-            </ul>
-        </c:if>
-        <%--        <c:if test="#{sessionScope.id == admin}">--%>
-        <%--            <!-- 관리자페이지 로그아웃-->--%>
-        <%--            <ul class="top_ul_02">--%>
-        <%--                <li><input type="button" value="관리자페이지"onclick="location.href='/admin'"></li>--%>
-        <%--                <li><input type="button" value="로그아웃" onclick="location.href='/logout'"></li>--%>
-        <%--            </ul>--%>
-        <%--        </c:if>--%>
+
+
+        <c:choose>
+            <c:when test="${sessionScope.id == 'admin'}">
+                <!-- 관리자페이지 로그아웃-->
+                <ul class="top_ul_02">
+                    <li><a href="/index/admin">관리자페이지</a></li>
+                    <li><a href="/logout">로그아웃</a></li>
+                </ul>
+            </c:when>
+            <c:when test="${sessionScope.id == null}">
+                <!-- 회원가입, 로그인 -->
+                <ul class="top_ul_02">
+                    <li><a href="/index/signup">회원가입</a></li>
+                    <li><a href="/index/login">로그인</a> </li>
+                </ul>
+            </c:when>
+            <c:when test="${sessionScope.id != null || !sessionScope.id == 'admin'}">
+                <!-- 로그아웃 마이페이지 -->
+                <ul class="top_ul_02">
+                    <li><a href="/index/mypage">마이페이지</a></li>
+                    <li><a href="/logout">로그아웃</a></li>
+                </ul>
+            </c:when>
+            <c:otherwise>
+                <c:out value="어레레 이런 게 있ㄴ ㅏㅏㅏㅏㅏ"/>
+            </c:otherwise>
+        </c:choose>
 
     </header>
 </body>

@@ -37,6 +37,9 @@
                 <a href="/">장바구니</a>
                 <a href="/pay/purchase_one?lid=${item.lid}">결제하기</a>
             </li>
+
+            <br> <br>
+            <a href="/index/videoinsert"> 강의 등록... 나중에 수정할래</a>
         </ul>
 
         <div class="class">
