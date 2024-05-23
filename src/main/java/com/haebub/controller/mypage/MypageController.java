@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -18,12 +20,23 @@ public class MypageController {
 
     private final MypageService mypageService;
     @RequestMapping
-    public String mypage(Model model//, int uid
-                          ){
-        int uid = 7; // (수정) 임의 데이터
-        List<LectureListDTO> list = mypageService.getLectureList(uid);
-        model.addAttribute("list", list);
-        return "/mypage/lecturelist";
+    public String mypage(Model model
+                         , HttpServletRequest request){
+
+        // 로그인한 세션 가져오기
+        HttpSession session = request.getSession(false);
+        String id = (String) session.getAttribute("id");
+
+        if(id != null) {
+            // uid 가져오기
+            int uid = mypageService.getUid(id);
+
+            List<LectureListDTO> list = mypageService.getLectureList(uid);
+            model.addAttribute("list", list);
+            return "/mypage/lecturelist";
+        } else {
+            return "redirect:/index/login";
+        }
     }
 
     @GetMapping("/paid")

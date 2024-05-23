@@ -10,6 +10,7 @@
         , DATE_ADD(DATE(ptime), INTERVAL+lperiod DAY) AS 'endDate'
         , tsubject
         , NAME
+        , DATE(now()) AS 'now'
         FROM purchase p, lecture l, teacher t, user u
         <where>
                 p.lid = l.lid
@@ -18,5 +19,10 @@
             AND p.uid = #{uid}
             AND DATE_ADD(DATE(ptime), INTERVAL+lperiod DAY) >= DATE(NOW())
         </where>
+    </select>
+    <select id="getUid" parameterType="string" resultType="int">
+        SELECT uid
+        FROM user
+        WHERE id = #{id}
     </select>
 </mapper>

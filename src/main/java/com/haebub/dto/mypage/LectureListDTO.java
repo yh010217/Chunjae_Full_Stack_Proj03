@@ -10,4 +10,5 @@ public class LectureListDTO {
     private String endDate;
     private String tsubject;
     private String name;
+    private String now;
 }

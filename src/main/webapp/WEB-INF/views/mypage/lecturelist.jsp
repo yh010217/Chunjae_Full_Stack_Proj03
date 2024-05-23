@@ -5,6 +5,7 @@
     <title>마이페이지</title>
     <link rel="stylesheet" href="/resources/css/mypage/mypage_template.css">
     <link rel="stylesheet" href="/resources/css/mypage/lecturelist.css">
+    <script defer src="/resources/js/mypage/lecturelist.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -15,7 +16,7 @@
         </ul>
         <ul class="menu">
             <li class="menu_title"><a href="/index/mypage">내 강의 보기</a></li>
-            <li class="menu_title"><a href="#">거래 내역</a></li>
+            <li class="menu_title"><a href="/index/mypage/paid">거래 내역</a></li>
             <li class="menu_title"><a href="#">장바구니</a></li>
             <li class="menu_title"><a href="#">회원 정보 수정</a></li>
             <li class="menu_title"><a href="#">고객센터</a></li>
@@ -27,18 +28,28 @@
         <h3>내 강의 보기.</h3>
         <div id="line"></div>
         <ul>
-            <li class="lecture_btn">전체 목록</li>
-            <li class="lecture_btn">수강중</li>
-            <li class="lecture_btn">수강 완료</li>
+            <li id="all" class="lecture_btn">전체 목록</li>
+            <li id="ing" class="lecture_btn">수강중</li>
+            <li id="done" class="lecture_btn">수강 완료</li>
         </ul>
         <c:forEach var="item" items="${list}">
-            <ul>
+            <ul class="lecture_box">
+                <li>
+                    <c:if test="${item.endDate >= item.now}">
+                        <p class="lecture_status">수강중</p>
+                    </c:if>
+                </li>
+                <li>
+                    [<c:out value="${item.tsubject}"/>] <c:out value="${item.name}"/> 선생님
+                </li>
                 <li>
                     <c:out value="${item.ltitle}"/>
-                    <c:out value="${item.startDate}"/>
-                    <c:out value="${item.endDate}"/>
-                    <c:out value="${item.tsubject}"/>
-                    <c:out value="${item.name}"/>
+                </li>
+                <li class="t">
+                    수강 기간 : <c:out value="${item.startDate}"/> ~ <c:out value="${item.endDate}"/>
+                </li>
+                <li class="play_btn t">
+                    <a href="#"><img src="/resources/image/icon-play.png" alt="play"> 온라인 강의 시청하기</a>
                 </li>
             </ul>
         </c:forEach>

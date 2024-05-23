@@ -17,4 +17,9 @@ public class MypageServiceImple implements MypageService {
     public List<LectureListDTO> getLectureList(int uid) {
         return lectureListMapper.lectureListDtos(uid);
     }
+
+    @Override
+    public int getUid(String id) {
+        return lectureListMapper.getUid(id);
+    }
 }

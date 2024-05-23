@@ -12,8 +12,8 @@
             <li class="side_title">안녕하세요!<br> 님</li>
         </ul>
         <ul class="menu">
-            <li class="menu_title"><a href="/mypage">내 강의 보기</a></li>
-            <li class="menu_title"><a href="#">거래 내역</a></li>
+            <li class="menu_title"><a href="/index/mypage">내 강의 보기</a></li>
+            <li class="menu_title"><a href="/index/mypage/paid">거래 내역</a></li>
             <li class="menu_title"><a href="#">장바구니</a></li>
             <li class="menu_title"><a href="#">회원 정보 수정</a></li>
             <li class="menu_title"><a href="#">고객센터</a></li>

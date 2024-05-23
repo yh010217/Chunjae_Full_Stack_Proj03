@@ -22,4 +22,9 @@ public class MypageTest {
         assertEquals("단어특강~가자~",mypageMapper.lectureListDtos(7).get(1).getLtitle());
     }
 
+    @Test
+    public void test2(){
+        assertEquals(7,mypageMapper.getUid("test"));
+    }
+
 }

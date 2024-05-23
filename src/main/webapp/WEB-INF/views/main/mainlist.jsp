@@ -35,7 +35,7 @@
                         <a href="#" class="main_self_box">찜확인</a>
                         <a href="#" class="main_self_mon">고객센터</a>
                     </div>
-                    <a href="#" class="main_self_mypage">마이페이지 바로 가기</a>
+                    <a href="/index/mypage" class="main_self_mypage">마이페이지 바로 가기</a>
                     <a href="#" class="main_self_myclass">내 강의 확인하기</a>
                 </div>
             </div>
