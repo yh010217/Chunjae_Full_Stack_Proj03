@@ -12,24 +12,24 @@
     <link rel="stylesheet" href="/resources/css/main/top.css">
 </head>
 <body>
-<header>
-    <div>
-        <a href="/index"> <img src="/resources/image/main/logo.png" alt="로고"> </a>
-    </div>
-    <nav>
-        <ul class="top_ul_01">
-            <li><a href="/index/lecturelist">강의</a></li>
-            <li><a href="#">선생님</a></li>
-            <li><a href="/index/comingsoon">오픈예정</a></li>
-            <li><a href="#">공지사항</a></li>
-        </ul>
-    </nav>
-    <div>
-        <ul class="top_ul_02">
-            <li><a href="/index/login">로그인</a></li>
-            <li><a href="/index/signup">회원가입</a></li>
-        </ul>
-    </div>
-</header>
+    <header>
+        <div>
+            <a href="/index"> <img src="/resources/image/main/logo.png" alt="로고"> </a>
+        </div>
+        <nav>
+            <ul class="top_ul_01">
+                <li><a href="/index/lecturelist">강의</a></li>
+                <li><a href="#">선생님</a></li>
+                <li><a href="/index/comingsoon">오픈예정</a></li>
+                <li><a href="#">공지사항</a></li>
+            </ul>
+        </nav>
+        <div>
+            <ul class="top_ul_02">
+                <li><a href="/index/login">로그인</a></li>
+                <li><a href="/index/signup">회원가입</a></li>
+            </ul>
+        </div>
+    </header>
 </body>
 </html>

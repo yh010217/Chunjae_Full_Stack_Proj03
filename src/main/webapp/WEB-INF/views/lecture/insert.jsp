@@ -15,52 +15,56 @@
 </head>
 <body>
     <article id="lecInsert">
-        <h1>강의 등록하기</h1>
         <div class="lecInsert_form">
+            <h1>강의 등록하기</h1>
             <form method="post" action="/index/insertresult" enctype="multipart/form-data">
                 <ul>
                     <li>
                         <div class="thumbnail" id="thumbnail"><img src="" alt=""></div>
                     </li>
-                    <li>
-                        <label>썸네일 등록</label>
+                    <li class="input_th">
+                        <label>썸네일 등록</label> <br>
                         <input type="file" id="file" name="file">
                     </li>
                     <li>
-                        <label for="ltitle">강의 제목</label>
-                        <input type="text" id="ltitle" name="ltitle">
+                        <label for="ltitle">강의 제목</label> <br>
+                        <input type="text" id="ltitle" name="ltitle" placeholder="오타 주의">
                     </li>
                     <li>
-                        <label for="lintro">강의 소개</label>
-                        <textarea id="lintro" name="lintro"></textarea>
+                        <label for="lintro">강의 소개</label> <br>
+                        <input type="text" id="lintro" name="lintro" placeholder="15자 이내로 적어주세요.">
                     </li>
                     <li>
-                        <label for="lbook">강의 교재</label>
-                        <input type="text" id="lbook" name="lbook">
+                        <label for="lbook">강의 교재</label> <br>
+                        <input type="text" id="lbook" name="lbook" placeholder="교재 이름만...? 링크도 받아야?">
                     </li>
                     <li>
-                        <label for="lprice">가격</label>
-                        <input type="text" id="lprice" name="lprice">
+                        <label for="lprice">가격</label><br>
+                        <input type="text" id="lprice" name="lprice" placeholder="무료 강의일 경우, 0을 적어주세요.">
+                    </li>
+                    <div class="test">
+                        <li>
+                            <label>학년</label> <br>
+                            <input type="radio" id="one" name="lgrade" value="1" checked>
+                            <label for="one">1학년</label>
+                            <input type="radio" id="two" name="lgrade" value="2">
+                            <label for="two">2학년</label>
+                            <input type="radio" id="three" name="lgrade" value="3">
+                            <label for="three">3학년</label>
+
+                        </li>
+                        <li>
+                            <label for="lopendate">오픈일자</label> <br>
+                            <input type="date" id="lopendate" name="lopendate" >
+                        </li>
+                    </div>
+                    <li>
+                        <label for="lperiod">수강기간</label> <br>
+                        <input type="text" id="lperiod" name="lperiod" placeholder="숫자로만 적어주세요.">
                     </li>
                     <li>
-                        <label for="one">1학년</label>
-                        <input type="radio" id="one" name="lgrade" value="1" checked>
-                        <label for="two">2학년</label>
-                        <input type="radio" id="two" name="lgrade" value="2">
-                        <label for="three">3학년</label>
-                        <input type="radio" id="three" name="lgrade" value="3">
-                    </li>
-                    <li>
-                        <label for="lopendate">오픈일자</label>
-                        <input type="date" id="lopendate" name="lopendate">
-                    </li>
-                    <li>
-                        <label for="lperiod">수강기간</label>
-                        <input type="text" id="lperiod" name="lperiod">
-                    </li>
-                    <li>
-                        <label for="lcount">총 강의 수</label>
-                        <input type="text" id="lcount" name="lcount">
+                        <label for="lcount">총 강의 수</label> <br>
+                        <input type="text" id="lcount" name="lcount" placeholder="숫자로만 적어주세요.">
                     </li>
                     <li>
                         <input type="submit" value="추가하기">

@@ -7,8 +7,9 @@ ul li {
     justify-content: center;
 }
 
+/* 사이드바 메뉴 */
 #sidebar {
-    width: 300px;
+    width: 245px;
     height: 700px;
     text-align: left;
     padding-top: 30px;
@@ -17,15 +18,31 @@ ul li {
 }
 
 #sidebar .side_title {
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bolder;
 }
 
-#sidebar .menu li {
-    padding: 15px 10px 15px 10px;
-    font-size: 21px;
+#sidebar .menu {
+    margin: 0;
+    padding: 0;
 }
 
+#sidebar .menu li {
+    padding: 15px 10px 15px 40px;
+    font-size: 19px;
+}
+
+#sidebar .menu li:hover {
+   font-weight: bolder;
+}
+
+.menu_title {
+    border-top: 1px solid #A2A2A2;
+    border-bottom: 1px solid #A2A2A2;
+    padding-left: 10px;
+}
+
+/* content */
 #content {
     width: 1000px;
     height: 700px;
@@ -33,3 +50,4 @@ ul li {
     padding: 30px 5px 5px 5px;
     margin: 30px;
 }
+

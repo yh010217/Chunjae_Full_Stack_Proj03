@@ -84,26 +84,26 @@
     margin : 15px 0;
 }
 
-#main_04 {
+#main_05 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-#main_04 .main_04_1 h3 {
+#main_05 .main_05_1 h3 {
     font-size: 2rem;
 }
 
-#main_04 h4 {
+#main_05 h4 {
     font-size: 1.7rem;
 }
 
-#main_04 .main_04_1 ul li {
+#main_05 .main_05_1 ul li {
     display: inline-block;
     margin: 0 2px;
 }
 
-#main_04 .main_04_2 ul li {
+#main_05 .main_05_2 ul li {
     display: inline-block;
     margin: 0 15px;
 }

@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#lecDetail .lec_title{
+    text-align: center;
+}
+
+#lecDetail .lecDetail_img img {
+    width: 700px;
+    height: 370px;
+}
+
+#lecDetail .lecDetail_title {
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+/* 과목 한줄 소개 */
+#lecDetail .lecDetail_intro {
+    font-size: 18px;
+    color: #514b4b;
+}
+
+/* 과목, 선생님 디테일 잡기*/
+
+#lecDetail .lecDetail_teacher {
+    font-size: 20px;
+}
+#lecDetail .span1 {
+    border-radius: 16px;
+    background-color: #FFB15C;
+    padding: 0 15px;
+}
+
+#lecDetail .span2 {
+    color: #469B72;
+    font-weight: bolder;
+}
+
+/* 구분선 */
+#lecDetail .division-line {
+    border-bottom: 4px solid black;
+    width: 420px;
+    margin: 11px auto;
+}
+
+#lecDetail .lecDetail_etc {
+    font-size: 20px;
+    margin: 20px;
+}
+
+#lecDetail .lecDetail_etc span {
+    margin-right: 20px;
+}
+
+#lecDetail .lec_price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 결제, 장바구니 기타등등... 바뀌는 애들 */
+
+#lecDetail .lec_result {
+    margin-top: 40px;
+}
+#lecDetail .lec_result a {
+    background-color: #F0C9CE;
+
+    padding: 10px 50px;
+    font-size: 20px;
+    border-radius: 35px;
+}
+
+/* 강의 들어오는 자리 */
+#lecDetail .class {
+
+}
+
+
+/* 교재 */
+
+#lecDetail .class, .book {
+    margin: 0 auto;
+    width: 95%;
+}
+
+#lecDetail .book h3, .class h3{
+    font-size: 23px;
+    border-bottom: 3px solid black;
+}

@@ -48,35 +48,5 @@ public class JoinMapperTest {
         //assertEquals(1,joinMapper.joinresult(dto));
     }
 
-//    @Test
-//    public void test(){
-//        UserDTO dto = new UserDTO();
-//        dto.setId("test");
-//        System.out.println(joinMapper.idcheck(dto));
-//        assertEquals(1,joinMapper.idcheck(dto));
-//    }
-
-//    @Autowired
-//    private JoinService service;
-//
-//    @Test
-//    @Transactional
-//    public void test1(){
-//       // assertNotNull(service);
-//        HashMap<String,Object> o=new HashMap<>();
-//        o.put("id","test");
-//        o.put("pwd","test");
-//        o.put("name","test");
-//        o.put("nickname","test");
-//        o.put("addr","test");
-//        o.put("tel","010-2222-2222");
-//        o.put("birthday","1998-02-02");
-//        o.put("usertype",0);
-//        o.put("joindate","2024-05-21");
-//
-//        assertEquals(1,service.joinresult(o));
-//    }
-
-
 }
 

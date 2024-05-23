@@ -22,6 +22,8 @@ import java.util.List;
 public class CalendarController {
 
     private Logger logger = LoggerFactory.getLogger(CalendarController.class);
+
+    /** 캘린더 서비스 */
     private final CalendarService calendarService;
 
     @RequestMapping
