@@ -21,22 +21,34 @@
                     <img class="lecList_img" src="/getImage/${item.lprofile}" alt="${item.lprofile}">
                 </div>
             </li>
+            <li class="lecDetail_intro">${item.lintro}</li>
             <li class="lecDetail_title">${item.ltitle}</li> <%--과목 이름--%>
             <li class="lecDetail_teacher">
-                <span>${item.tsubject} ${item.name}선생님
+                <span class="span1">${item.tsubject}</span> <span class="span2">${item.name} </span> 선생님
             </li>
-            <li>강의 소개 : ${item.lintro}</li>
-            <li>
-                학년 : ${item.lgrade}학년
-                총 ${item.lcount}강
-                ${item.lperiod}일
+            <div class="division-line"></div> <%-- 구분선 --%>
+            <li class="lecDetail_etc">
+                <span>${item.lgrade}학년</span>
+                <span>총 ${item.lcount}강</span>
+                <span>${item.lperiod}일</span>
             </li>
-            <li>가격 : ${item.lprice}원</li>
-            <li>
+            <li class="lec_price">${item.lprice}원</li>
+            <li class="lec_result">
                 <a href="/">장바구니</a>
                 <a href="/">결제하기</a>
             </li>
         </ul>
+
+        <div class="class">
+            <h3>강의 들어오는 자리</h3>
+            <br> <br> <br> <br>
+        </div>
+
+        <div class="book">
+            <h3>함께 보면 좋은 교재</h3>
+            <a href="${item.lbook}">구매하러 가기</a>
+            <div>주의할 점 : 지금은 누르면 오류뜸 (링크 안 넣어서...), 책 링크 DB 만들기</div>
+        </div>
 
     </article>
 

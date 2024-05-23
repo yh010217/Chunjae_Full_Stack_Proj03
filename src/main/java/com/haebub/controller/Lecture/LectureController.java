@@ -56,7 +56,7 @@ public class LectureController {
     public String lectureInsertResult(HttpServletRequest request, LectureDTO dto, Model model){
         String base="/uploadImg";
         String realpath= request.getSession().getServletContext().getRealPath(base);  // 실제 경로를 받아서
-        System.out.println("realpath....."+realpath);
+        // System.out.println("realpath....."+realpath);
         try {
             lecService.insertData(realpath, dto);
         } catch(IOException e)

@@ -44,18 +44,18 @@ public class indexController {
         String fname = URLEncoder.encode(lid, StandardCharsets.UTF_8)
                 .replace("+", "%20");
         InputStream in = null;
-        System.out.println(fname + ">>>>>>>>>>> fname");
+        // System.out.println(fname + ">>>>>>>>>>> fname");
         ResponseEntity<byte[]> entity=null;
         try {
             in = new FileInputStream(realpath + "/" + fname);
-            System.out.println(realpath + " >>>>> realpath");
-            System.out.println(in + " >>>>> in ");
+            //System.out.println(realpath + " >>>>> realpath");
+            // System.out.println(in + " >>>>> in ");
             HttpHeaders headers=new HttpHeaders();
 
             entity=new ResponseEntity<byte[]>(FileCopyUtils.copyToByteArray(in)
                     ,headers,  HttpStatus.OK);
 
-            System.out.println(entity +  " >>>>> entity");
+            // System.out.println(entity +  " >>>>> entity");
         }catch(IOException e)
         {
             System.out.println(e+".....file not found 안녕!!!!!!!!!");
