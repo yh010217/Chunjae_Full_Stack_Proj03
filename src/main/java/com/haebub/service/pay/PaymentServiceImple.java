@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 
 @Service
 public class PaymentServiceImple implements PaymentService {
@@ -45,6 +46,23 @@ public class PaymentServiceImple implements PaymentService {
 
         int result = paymentMapper.purchaseOne(hm);
         return result;
+    }
+
+    @Override
+    public int insertCart(String uid, String lid) {
+
+        HashMap<String,Object> hm = new HashMap<>();
+        hm.put("uid",uid);
+        hm.put("lid",lid);
+        int result = paymentMapper.insertCart(hm);
+        return result;
+    }
+
+    @Override
+    public List<HashMap<String, Object>> getCartList(String uid) {
+        List<HashMap<String, Object>> hmlist
+                = paymentMapper.getCartList(uid);
+        return null;
     }
 
 }

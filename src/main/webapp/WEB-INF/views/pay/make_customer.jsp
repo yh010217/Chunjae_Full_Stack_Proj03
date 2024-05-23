@@ -32,7 +32,7 @@
         if (!response.ok) {
             return response.json().then(err => {
                 console.error('Server Error:', err);
-                throw new Error('Network response was not ok');
+                throw new Error(err+'Network response was not ok');
             });
         }
         return response.json();
