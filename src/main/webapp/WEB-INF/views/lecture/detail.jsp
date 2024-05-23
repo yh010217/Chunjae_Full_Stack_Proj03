@@ -41,6 +41,7 @@
 
         <div class="class">
             <h3>강의 들어오는 자리</h3>
+            <a href="/index/video/${item.lid}">누르면 플레이어 페이지로 이동</a>
             <br> <br> <br> <br>
         </div>
 
