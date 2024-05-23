@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
+    <script defer src="/resources/js/login/logout.js"></script>
 </head>
 <body>
 로그아웃페이지입니다.
