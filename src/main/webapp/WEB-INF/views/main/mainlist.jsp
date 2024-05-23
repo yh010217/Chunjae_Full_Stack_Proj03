@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: user
@@ -28,7 +29,21 @@
             <div class="main_self">
                 <div class="main_self_div1">
                     <p>환영합니다</p>
-                    <a href="/login" class="login_mess">로그인이 필요해요.</a>
+                    <c:choose>
+                        <c:when test="${sessionScope.id == 'admin'}">
+                            <a href="/admin/main" class="login_mess">관리자님 하이</a>
+                        </c:when>
+                        <c:when test="${sessionScope.id == null}">
+                            <a href="/login" class="login_mess">로그인이 필요해요.</a>
+                        </c:when>
+                        <c:when test="${sessionScope.id != null}">
+                            <a href="#" class="login_mess"> 수강중인 강의 들으러 가기</a>
+                        </c:when>
+                        <c:otherwise>
+                            <c:out value="무언가가 잘못되었어요"/>
+                        </c:otherwise>
+                    </c:choose>
+
                 </div>
                 <div class="main_self_div2">
                     <div class="board_1">

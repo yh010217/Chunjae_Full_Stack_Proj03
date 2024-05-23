@@ -1,9 +1,12 @@
 footer {
     background-color: #F0EEEF;
-    padding: 2px 0 12px;
     font-size: 14px;
+    padding: 8px 0;
 }
 
+footer ul {
+    margin: 15px;
+}
 footer ul li {
     display: inline-block;
     margin-right: 16px;

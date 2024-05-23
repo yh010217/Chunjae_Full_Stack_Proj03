@@ -1,0 +1,23 @@
+#videoarticle {
+    background-color: #F0EEEF;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.videolist {
+    width: 30%;
+    background-color: darkgray;
+}
+
+.videolist > a {
+    font-size: 30px;
+    font-weight: bold;
+}
+.videolist > ul > li > a {
+    font-size: 20px;
+}
+
+.videoresult {
+    width: 1080px;
+}

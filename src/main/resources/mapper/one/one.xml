@@ -3,23 +3,32 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.haebub.dao.one.OneMapper">
-    <insert id="oneinsert">
+
+    <insert id="oneinsert" parameterType="com.haebub.dto.one.OneDTO">
         insert into one( otitle
-        ,ocontent
-        ,oregdate
-        ,osecret
-        ,uid
-        ,lid
-        )
+                         ,ocontent
+                        ,oregdate
+                        ,osecret
+                        ,uid
+                        ,lid
+                        ,owriter
+                        )
         values(
-        #{otitle}
-        ,#{ocontent}
-        ,sysdate()
-        ,#{osecret}
-        ,(select uid from user where uid=#{uid})
-        ,(select lid from lecture where lid=#{lid})
+                #{otitle}
+                ,#{ocontent}
+                ,CURRENT_DATE()
+                ,#{osecret}
+                ,#{uid}
+                ,#{lid}
+                ,#{owriter}
         )
 
     </insert>
+
+    <select id="getuid" parameterType="string" resultType="int">
+        select uid
+        from user
+        where id = #{id}
+    </select>
 
 </mapper>

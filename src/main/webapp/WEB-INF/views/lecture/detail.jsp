@@ -37,10 +37,14 @@
                 <button type="button" id="go_cart">장바구니</button>
                 <a href="/pay/purchase_one?lid=${item.lid}">결제하기</a>
             </li>
+
+            <br> <br>
+            <a href="/index/videoinsert"> 강의 등록... 나중에 수정할래</a>
         </ul>
 
         <div class="class">
             <h3>강의 들어오는 자리</h3>
+            <a href="/index/video/${item.lid}">누르면 플레이어 페이지로 이동</a>
             <br> <br> <br> <br>
         </div>
 

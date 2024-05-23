@@ -27,7 +27,6 @@ public class indexController {
         System.out.println("path : " + path);
         if(path!=null) {
             model.addAttribute("page", path);
-
         }
         if(lid!=null)
         {
