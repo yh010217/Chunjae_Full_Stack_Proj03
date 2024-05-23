@@ -7,7 +7,7 @@
         SELECT
           ltitle
         , DATE(ptime) AS 'startDate'
-        , DATE_ADD(DATE(ptime), INTERVAL+lperiod DAY) AS 'endDate'
+        , DATE_ADD(DATE(ptime), INTERVAL + lperiod DAY) AS 'endDate'
         , tsubject
         , NAME
         , DATE(now()) AS 'now'
@@ -25,4 +25,38 @@
         FROM user
         WHERE id = #{id}
     </select>
+    <select id="paidList" parameterType="int" resultType="com.haebub.dto.mypage.PaidDTO">
+        SELECT ptime
+        , ltitle
+        , lprice
+        , tsubject
+        , NAME
+        , DATE(ptime) AS 'startDate'
+        , DATE_ADD(DATE(ptime), INTERVAL + lperiod DAY) AS 'endDate'
+        FROM purchase p, lecture l, teacher t, user u
+        WHERE p.lid = l.lid
+        AND l.tid = t.tid
+        AND t.uid = u.uid
+        <!-- pstatus 값 수정하기   -->
+        AND pstatus = '구매'
+        AND p.uid = #{uid}
+    </select>
+    <select id="getUser" parameterType="int" resultType="com.haebub.dto.User.UserDTO">
+        SELECT   id
+                ,name
+                ,nickname
+                ,email
+                ,tel
+                ,addr
+        FROM     user
+        where    uid = #{uid}
+    </select>
+    <update id="userModify" parameterType="com.haebub.dto.User.UserDTO">
+        UPDATE user
+        SET   nickname = #{nickname}
+            , email = #{email}
+            , tel = #{tel}
+            , addr = #{addr}
+        WHERE uid = #{uid}
+    </update>
 </mapper>
