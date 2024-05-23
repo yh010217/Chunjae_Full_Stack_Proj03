@@ -56,7 +56,7 @@ public class LoginController {
 
             session.setAttribute("id",dto.getId());
             session.setAttribute("name",name);
-            mav.setViewName("login/logout");
+            mav.setViewName("redirect:/index");
         }else {
             mav.setViewName("redirect:/index/login");
             mav.addObject("message","error");
