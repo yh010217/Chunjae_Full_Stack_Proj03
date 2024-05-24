@@ -1,15 +1,11 @@
-<%--
-Created by IntelliJ IDEA.
-User: db400tea
-Date: 2024-05-20
-Time: 오후 5:34
-To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="/resources/css/admin/template.css">
+    <link rel="stylesheet" href="/resources/css/admin/teacher.css">
     <link rel="icon" href="/resources/image/icon_love.png">
-    <title>해법학원 | 관리자</title></head>
+    <title>해법학원 | 강사관리</title></head>
+    <script src="/resources/js/admin/teacher.js"></script>
 <body>
 
 <div id="container">
@@ -17,7 +13,7 @@ To change this template use File | Settings | File Templates.
     <aside id="side_bar">
         <div id="side_bar_header">
             <img class="header_img" src="/resources/image/admin/main/HB-logo.png">
-            <a href="#" class="header_title">해법학원</a>
+            <a href="/admin/main" class="header_title">해법학원</a>
         </div>
         <div id="side_bar_menus">
             <a href="#" class="side_bar_menu">
@@ -36,7 +32,7 @@ To change this template use File | Settings | File Templates.
     </aside>
 
     <div id="content_container">
-
+            <a href="/admin/register">강사 등록</a>
     </div>
 </div>
 
