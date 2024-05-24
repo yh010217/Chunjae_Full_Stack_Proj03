@@ -20,6 +20,10 @@ public class MypageServiceImple implements MypageService {
     public List<LectureListDTO> getLectureList(int uid) {
         return mypageMapperr.lectureListDtos(uid);
     }
+    @Override
+    public List<LectureListDTO> getLectureList2(int uid) {
+        return mypageMapperr.lectureListDtos2(uid);
+    }
 
     /** 사용자 uid 가져오기 */
     @Override

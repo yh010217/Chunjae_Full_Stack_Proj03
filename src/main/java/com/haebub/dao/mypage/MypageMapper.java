@@ -10,10 +10,12 @@ import java.util.List;
 @Mapper
 public interface MypageMapper {
 
-    /* 강의 목록 */
+    /** 강의 목록 */
     List<LectureListDTO> lectureListDtos(int uid);
+    List<LectureListDTO> lectureListDtos2(int uid);
 
-    /* 사용자 uid */
+
+    /** 사용자 uid */
     int getUid(String id);
 
     /** 결제 내역 */
