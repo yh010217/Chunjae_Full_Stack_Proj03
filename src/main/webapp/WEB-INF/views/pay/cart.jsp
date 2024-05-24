@@ -38,7 +38,7 @@
         <div id="total_price"></div>
 
         <form method="post" action="/cart_buy">
-            <button type="submit" id="multi_button">선택 항목 결제</button>
+            <button type="button" id="multi_button">선택 항목 결제</button>
             <c:forEach items="${hmlist}" var="item" varStatus="status">
                 <div class="item_box">
                     <input type="checkbox" id="${item.lid}"
@@ -70,5 +70,7 @@
         document.getElementById('total_price').innerHTML = sum;
     }
 </script>
+
+<script src="/resources/js/pay/cart.js"></script>
 </body>
 </html>
