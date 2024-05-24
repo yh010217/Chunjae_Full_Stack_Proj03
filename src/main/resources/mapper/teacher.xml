@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haebub.dao.admin.TeacherMapper">
+    <!-- 선생님 uid 가져오기 -->
+    <select id="getTUid" parameterType="String" resultType="int">
+        SELECT uid
+        FROM   user
+        WHERE  id = #{id}
+    </select>
+    <!-- 선생님 등록-->
+    <insert id="teacherRegister" parameterType="com.haebub.dto.admin.TeacherDTO">
+        INSERT INTO teacher (    tsubject
+                               , tintro
+                               , tprofile
+                               , uid        )
+        VALUES (#{tsubject}, #{tintro}, #{tprofile}, #{uid})
+    </insert>
+    <!-- user 테이블 usertype 선생님으로 업데이트 -->
+    <update id="updateUsertype" parameterType="int">
+        UPDATE  user
+        SET     usertype = 2
+        WHERE   uid = #{uid}
+    </update>
+</mapper>

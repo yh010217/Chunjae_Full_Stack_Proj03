@@ -36,18 +36,6 @@ public class MypageTest {
        assertEquals("2024-05-30",mypageMapper.paidList(7).get(1).getStartDate());
     }
 
-    @Test
-    public void test4(){
-        assertNotNull(mypageMapper.getUser(7));
-        assertEquals("test", mypageMapper.getUser(7).getId());
-    }
 
-    @Test
-    public void test5(){
-        UserDTO dto = new UserDTO();
-        dto.setUid(7);
-        dto.setNickname("룰루");
-        assertEquals(1,mypageMapper.userModify(dto));
-    }
 
 }

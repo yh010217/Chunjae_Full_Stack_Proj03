@@ -46,9 +46,12 @@ public class CalendarController {
             hm.put("title", dto.getLtitle());
             hm.put("subject", dto.getTsubject());
             hm.put("name", dto.getName());
+            hm.put("lid", dto.getLid());
 
             hmlist.add(hm);
         }
+
+       // logger.info(hmlist.toString());
 
         return hmlist;
     }

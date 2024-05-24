@@ -8,9 +8,8 @@ To change this template use File | Settings | File Templates.
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
-    <link rel="stylesheet" href="/resources/css/admin/template.css">
-</head>
+    <link rel="icon" href="/resources/image/icon_love.png">
+    <title>해법학원 | 관리자</title></head>
 <body>
 
 <div id="container">

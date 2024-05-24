@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <link rel="icon" href="/resources/image/icon_love.png">
+    <title>해법학원 | 관리자</title>
     <link rel="stylesheet" href="/resources/css/admin/template.css">
     <link rel="stylesheet" href="/resources/css/admin/main.css">
 </head>
@@ -25,7 +26,7 @@
                 <img class="side_bar_menu_image" src="/resources/image/admin/main/user-gray.png" alt="회원 관리">
                 <span class="side_bar_menu_name">회원 관리</span>
             </a>
-            <a href="#" class="side_bar_menu">
+            <a href="/admin/teacher" class="side_bar_menu">
                 <img class="side_bar_menu_image" src="/resources/image/admin/main/teacher-gray.png" alt="강사 관리">
                 <span class="side_bar_menu_name">강사 관리</span>
             </a>

@@ -20,10 +20,14 @@ public class MypageServiceImple implements MypageService {
     public List<LectureListDTO> getLectureList(int uid) {
         return mypageMapperr.lectureListDtos(uid);
     }
+    @Override
+    public List<LectureListDTO> getLectureList2(int uid) {
+        return mypageMapperr.lectureListDtos2(uid);
+    }
 
     /** 사용자 uid 가져오기 */
     @Override
-    public int getUid(String id) {
+    public UserDTO getUid(String id) {
         return mypageMapperr.getUid(id);
     }
 
@@ -43,5 +47,11 @@ public class MypageServiceImple implements MypageService {
     @Override
     public int userModify(UserDTO dto) {
         return mypageMapperr.userModify(dto);
+    }
+
+    /** 닉네임 중복 체크 */
+    @Override
+    public int CheckNickname(int uid) {
+        return mypageMapperr.CheckNickname(uid);
     }
 }

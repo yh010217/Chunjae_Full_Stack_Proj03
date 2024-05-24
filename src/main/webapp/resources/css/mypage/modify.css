@@ -6,3 +6,93 @@
     padding: 30px 5px 5px 5px;
     margin: 30px;
 }
+
+
+.menu_title {
+    font-size: 16px;
+}
+
+/*#content {
+    padding: 20px;
+}*/
+
+#content h3 {
+    color: black;
+    margin-bottom: 20px;
+}
+
+#content #line {
+    border-bottom: 1px solid #726E6E;
+    margin-bottom: 20px;
+}
+
+/* 버튼 스타일 */
+form button {
+    background-color: #FFB15C;
+    color: #000000; /* 버튼 내 텍스트 색상 */
+    padding: 10px 20px; /* 상하, 좌우 패딩 */
+    border: none; /* 테두리 없음 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    cursor: pointer; /* 마우스 오버 시 커서 변경 */
+    transition: background-color 0.3s ease; /* 배경색 변경 애니메이션 */
+}
+
+button:hover {
+    background-color: #ec816b; /* 마우스 오버 시 색상 변경 */
+}
+
+/* id=form에 대한 그림자 효과 */
+#form {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    transition: 0.3s; /* 그림자 변화 애니메이션 */
+    padding: 20px; /* 내부 여백 */
+}
+
+#form:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* 마우스 오버 시 그림자 효과 강화 */
+}
+
+form ul {
+    list-style: none;
+    padding: 0;
+}
+
+form ul li {
+    margin-bottom: 10px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button[type="submit"],
+form button[type="button"] {
+    /*background-color: #007bff;*/
+    /*color: white;*/
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button[type="button"] {
+    background-color: #FBD5AC;
+}
+
+form button[type="submit"]:hover,
+form button[type="button"]:hover {
+    opacity: 0.9;
+}
