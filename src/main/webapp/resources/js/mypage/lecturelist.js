@@ -29,7 +29,9 @@ let fetchLectures = function (status) {
             });
         })
         .catch(error => console.error('Error:', error));
+}
 
+let fetchLectures2 = function (status) {
 
     fetch('/mypage/lecture2', {
         method : 'GET',
@@ -41,6 +43,7 @@ let fetchLectures = function (status) {
         .then(data => {
             const lectures = data;
             const contentDiv = document.getElementById('list');
+            contentDiv.innerHTML = '';
 
             lectures.forEach(lecture => {
                 if (status === 'All' || status === 'Completed') {
@@ -73,6 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
         fetchLectures('Ongoing');
     });
     document.getElementById("completed").addEventListener("click", function () {
-        fetchLectures('Completed');
+        fetchLectures2('Completed');
     });
 });
