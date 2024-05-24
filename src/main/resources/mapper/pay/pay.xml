@@ -38,14 +38,21 @@
         insert into purchase_test(uid,sp_ocode,p_time)
         values(#{uid},#{sp_ocode},now())
     </insert>
+
     <select id="getPid" parameterType="string" resultType="int">
         select pid
         from purchase_test
         where sp_ocode=#{sp_ocode}
     </select>
+
     <insert id="insertItem" parameterType="hashmap">
         insert into pitem(sp_oitem , lid , pid , pistatus)
-            values( #{sp_oitem}, #{lid} , #{pid} , '구매' )
+            values( #{sp_oitem}, #{lid} , #{pid} , 'cart' )
+    </insert>
+
+    <insert id="insertItemOne" parameterType="hashmap">
+        insert into pitem(sp_oitem , lid , pid , pistatus)
+        values( #{sp_oitem}, #{lid} , #{pid} , 'one' )
     </insert>
 
 </mapper>

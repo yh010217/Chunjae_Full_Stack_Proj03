@@ -16,4 +16,6 @@ public interface PaymentService {
     List<HashMap<String, Object>> getCartList(String uid);
 
     void insertCartPay(String uid, String order_code, String lid_attached, String order_item_code);
+
+    void insertOnePay(String uid, String lid, String order_code);
 }

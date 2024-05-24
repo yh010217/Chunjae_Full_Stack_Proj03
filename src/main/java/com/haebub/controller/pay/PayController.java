@@ -90,6 +90,8 @@ public class PayController {
         //쿼리조지기
         paymentService.purchaseOne(order_code, status, suid, lid);
 
+        paymentService.insertOnePay(suid, lid, order_code);
+
         return "redirect:/index/lecturelist";
     }
 
@@ -164,7 +166,7 @@ public class PayController {
     }
 
     @GetMapping("/pay/success_cart_insert")
-    public String arrTest(@RequestParam String order_code
+    public String successCartInsert(@RequestParam String order_code
             , @RequestParam String lid_attached
             , @RequestParam String order_item_code
             , HttpServletRequest request

@@ -21,4 +21,6 @@ public interface PaymentMapper {
     int getPid(String sp_ocode);
 
     int insertItem(HashMap<String, Object> itemhm);
+
+    int insertItemOne(HashMap<String, Object> itemhm);
 }
