@@ -14,7 +14,6 @@ public interface MypageMapper {
     List<LectureListDTO> lectureListDtos(int uid);
     List<LectureListDTO> lectureListDtos2(int uid);
 
-
     /** 사용자 uid */
     int getUid(String id);
 
@@ -26,4 +25,8 @@ public interface MypageMapper {
 
     /** 회원 정보 수정 */
     int userModify(UserDTO dto);
+
+    /** 닉네임 중복 체크 */
+    int CheckNickname(int uid);
+
 }

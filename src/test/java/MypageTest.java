@@ -47,6 +47,8 @@ public class MypageTest {
         UserDTO dto = new UserDTO();
         dto.setUid(7);
         dto.setNickname("룰루");
+        dto.setEmail("aaa");
+        dto.setTel("111");
         assertEquals(1,mypageMapper.userModify(dto));
     }
 

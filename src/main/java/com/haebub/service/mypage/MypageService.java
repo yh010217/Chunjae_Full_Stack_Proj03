@@ -23,4 +23,7 @@ public interface MypageService {
 
     /** 회원 정보 수정 */
     int userModify(UserDTO dto);
+
+    /** 닉네임 중복 체크 */
+    int CheckNickname(int uid);
 }

@@ -5,39 +5,37 @@
 <mapper namespace="com.haebub.dao.mypage.MypageMapper">
     <select id="lectureListDtos" parameterType="int" resultType="com.haebub.dto.mypage.LectureListDTO">
         SELECT
-        ltitle,
-        DATE(ptime) AS startDate,
-        DATE_ADD(DATE(ptime), INTERVAL lperiod DAY) AS endDate,
-        tsubject,
-        NAME,
-        DATE(NOW()) AS now,
-        CASE
-        WHEN DATEDIFF(DATE_ADD(DATE(ptime), INTERVAL lperiod DAY), DATE(NOW())) >= 0 THEN 'Ongoing'
-        WHEN DATE(NOW()) > DATE_ADD(DATE(ptime), INTERVAL lperiod DAY) THEN 'Completed' END AS status
-        FROM
-        purchase p
-        INNER JOIN lecture l ON p.lid = l.lid
-        INNER JOIN teacher t ON l.tid = t.tid
-        INNER JOIN user u ON t.uid = u.uid
+                 ltitle
+                , DATE(ptime) AS startDate
+                , DATE_ADD(DATE(ptime), INTERVAL lperiod DAY) AS endDate
+                , tsubject
+                , NAME
+                , DATE(NOW()) AS now
+                , CASE
+                      WHEN DATEDIFF(DATE_ADD(DATE(ptime), INTERVAL lperiod DAY), DATE(NOW())) >= 0 THEN 'Ongoing'
+                      WHEN DATE(NOW()) > DATE_ADD(DATE(ptime), INTERVAL lperiod DAY) THEN 'Completed' END AS status
+        FROM purchase p
+            INNER JOIN lecture l ON p.lid = l.lid
+            INNER JOIN teacher t ON l.tid = t.tid
+            INNER JOIN user u ON t.uid = u.uid
         WHERE  p.uid = #{uid}
         AND DATEDIFF(DATE_ADD(DATE(p.ptime), INTERVAL l.lperiod DAY), DATE(NOW())) >= 0
     </select>
     <select id="lectureListDtos2" parameterType="int" resultType="com.haebub.dto.mypage.LectureListDTO">
         SELECT
-        ltitle,
-        DATE(ptime) AS startDate,
-        DATE_ADD(DATE(ptime), INTERVAL lperiod DAY) AS endDate,
-        tsubject,
-        NAME,
-        DATE(NOW()) AS now,
-        CASE
-        WHEN DATEDIFF(DATE_ADD(DATE(ptime), INTERVAL lperiod DAY), DATE(NOW())) >= 0 THEN 'Ongoing'
-        WHEN DATE(NOW()) > DATE_ADD(DATE(ptime), INTERVAL lperiod DAY) THEN 'Completed' END AS status
-        FROM
-        purchase p
-        INNER JOIN lecture l ON p.lid = l.lid
-        INNER JOIN teacher t ON l.tid = t.tid
-        INNER JOIN user u ON t.uid = u.uid
+                  ltitle
+                , DATE(ptime) AS startDate
+                , DATE_ADD(DATE(ptime), INTERVAL lperiod DAY) AS endDate
+                , tsubject
+                , NAME
+                , DATE(NOW()) AS now
+                , CASE
+                    WHEN DATEDIFF(DATE_ADD(DATE(ptime), INTERVAL lperiod DAY), DATE(NOW())) >= 0 THEN 'Ongoing'
+                    WHEN DATE(NOW()) > DATE_ADD(DATE(ptime), INTERVAL lperiod DAY) THEN 'Completed' END AS status
+        FROM purchase p
+            INNER JOIN lecture l ON p.lid = l.lid
+            INNER JOIN teacher t ON l.tid = t.tid
+            INNER JOIN user u ON t.uid = u.uid
         WHERE  p.uid = #{uid}
         AND DATE(NOW()) > DATE_ADD(DATE(p.ptime), INTERVAL l.lperiod DAY)
     </select>
@@ -63,7 +61,9 @@
         AND p.uid = #{uid}
     </select>
     <select id="getUser" parameterType="int" resultType="com.haebub.dto.User.UserDTO">
-        SELECT id
+        SELECT
+        uid
+        ,id
         ,name
         ,nickname
         ,email
@@ -74,10 +74,12 @@
     </select>
     <update id="userModify" parameterType="com.haebub.dto.User.UserDTO">
         UPDATE user
-        SET nickname = #{nickname}
+        SET
+          id = #{id}
+        , name = #{name}
+        , nickname = #{nickname}
         , email = #{email}
         , tel = #{tel}
-        , addr = #{addr}
         WHERE uid = #{uid}
     </update>
 </mapper>

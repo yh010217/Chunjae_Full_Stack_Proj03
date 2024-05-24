@@ -22,14 +22,14 @@
 }
 
 #content #line {
-    border-bottom: 2px solid  #ff7f50;
+    border-bottom: 1px solid #726E6E;
     margin-bottom: 20px;
 }
 
 /* 버튼 스타일 */
 form button {
     background-color: #FFB15C;
-    color: white; /* 버튼 내 텍스트 색상 */
+    color: #000000; /* 버튼 내 텍스트 색상 */
     padding: 10px 20px; /* 상하, 좌우 패딩 */
     border: none; /* 테두리 없음 */
     border-radius: 5px; /* 모서리 둥글게 */
@@ -38,7 +38,7 @@ form button {
 }
 
 button:hover {
-    background-color: #ff5733; /* 마우스 오버 시 색상 변경 */
+    background-color: #ec816b; /* 마우스 오버 시 색상 변경 */
 }
 
 /* id=form에 대한 그림자 효과 */
@@ -89,7 +89,7 @@ form button[type="button"] {
 }
 
 form button[type="button"] {
-    background-color: #6c757d;
+    background-color: #FBD5AC;
 }
 
 form button[type="submit"]:hover,

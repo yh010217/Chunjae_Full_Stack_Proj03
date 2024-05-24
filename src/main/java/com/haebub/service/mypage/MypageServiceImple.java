@@ -48,4 +48,10 @@ public class MypageServiceImple implements MypageService {
     public int userModify(UserDTO dto) {
         return mypageMapperr.userModify(dto);
     }
+
+    /** 닉네임 중복 체크 */
+    @Override
+    public int CheckNickname(int uid) {
+        return mypageMapperr.CheckNickname(uid);
+    }
 }

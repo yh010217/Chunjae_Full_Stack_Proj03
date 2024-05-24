@@ -12,10 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -136,19 +133,25 @@ public class MypageController {
 
         int uid = mypageService.getUid(id);
 
-        UserDTO userDTO = mypageService.getUser(uid);
+        UserDTO dto = mypageService.getUser(uid);
 
-        model.addAttribute("userDTO", userDTO);
+        model.addAttribute("dto", dto);
 
         return "/mypage/modify";
     }
 
     /** 회원 정보 수정 */
-    @PostMapping("/mypage/modifyresult")
+    @PostMapping("/modifyresult")
     public String userModifyResult(UserDTO dto){
-        mypageService.userModify(dto);
+
+        logger.info("dto..",dto.toString());
+        logger.info("uid.."+dto.getUid());
+        logger.info("nickname.."+dto.getNickname());
+
+        int result = mypageService.userModify(dto);
+        //logger.info("result....",result);
+
        return "redirect:/index/mypage";
     }
-
 
 }
