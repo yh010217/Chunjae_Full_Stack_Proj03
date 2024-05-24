@@ -5,6 +5,7 @@
 <mapper namespace="com.haebub.dao.mypage.MypageMapper">
     <!-- 수강중인 강의 리스트 -->
     <select id="lectureListDtos" parameterType="int" resultType="com.haebub.dto.mypage.LectureListDTO">
+        <!--
         SELECT
                   p.lid AS lid
                 , ltitle
@@ -22,6 +23,30 @@
             INNER JOIN user u ON t.uid = u.uid
         WHERE  p.uid = #{uid}
         AND DATEDIFF(DATE_ADD(DATE(p.ptime), INTERVAL l.lperiod DAY), DATE(NOW())) >= 0
+        -->
+
+        SELECT
+        pit.lid AS lid
+        , ltitle
+        , DATE(ptime) AS startDate
+        , DATE_ADD(DATE(ptime), INTERVAL lperiod DAY) AS endDate
+        , tsubject
+        , NAME
+        , DATE(NOW()) AS now
+        , CASE
+        WHEN pit.pistatus = 'refund' THEN 'Refund'
+        WHEN DATEDIFF(DATE_ADD(DATE(ptime), INTERVAL lperiod DAY), DATE(NOW())) >= 0 THEN 'Ongoing'
+        WHEN DATE(NOW()) > DATE_ADD(DATE(ptime), INTERVAL lperiod DAY) THEN 'Completed'
+        END AS status
+        , pit.piid as piid
+        FROM purchase_test p
+        INNER JOIN pitem pit ON p.pid = pit.pid
+        INNER JOIN lecture l ON pit.lid = l.lid
+        INNER JOIN teacher t ON l.tid = t.tid
+        INNER JOIN user u ON t.uid = u.uid
+        WHERE  p.uid = #{uid}
+        AND DATEDIFF(DATE_ADD(DATE(p.ptime), INTERVAL l.lperiod DAY), DATE(NOW())) >= 0
+
     </select>
     <!-- 수강 완료 강의 리스트 -->
     <select id="lectureListDtos2" parameterType="int" resultType="com.haebub.dto.mypage.LectureListDTO">

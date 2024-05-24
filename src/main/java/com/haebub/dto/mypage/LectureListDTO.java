@@ -13,4 +13,5 @@ public class LectureListDTO {
     private String name;
     private String now;
     private String status;
+    private int piid;
 }

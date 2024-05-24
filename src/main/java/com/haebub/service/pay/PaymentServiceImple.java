@@ -94,6 +94,27 @@ public class PaymentServiceImple implements PaymentService {
             itemhm.put("pid",pid);
             paymentMapper.insertItem(itemhm);
         }
+
+    }
+
+    @Override
+    public void insertOnePay(String uid, String lid, String order_code) {
+
+        HashMap<String,Object> orderhm = new HashMap<>();
+        orderhm.put("uid",uid);
+        orderhm.put("sp_ocode",order_code);
+
+        paymentMapper.insertCartOrder(orderhm);
+
+        int pid = paymentMapper.getPid(order_code);
+
+
+        HashMap<String,Object> itemhm= new HashMap<>();
+        itemhm.put("sp_oitem",order_code);
+        itemhm.put("lid",lid);
+        itemhm.put("pid",pid);
+        paymentMapper.insertItemOne(itemhm);
+
     }
 
 }
