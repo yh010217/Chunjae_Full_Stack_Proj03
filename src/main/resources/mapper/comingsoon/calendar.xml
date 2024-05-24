@@ -9,8 +9,8 @@
               , ltitle
               , NAME
               , lid
-        FROM   user u, teacher t, lecture l
-        WHERE  u.uid = t.uid
-        AND    t.tid = l.tid
+        FROM   user u
+            INNER JOIN teacher t ON u.uid = t.uid
+            INNER JOIN lecture l ON t.tid = l.tid
     </select>
 </mapper>
