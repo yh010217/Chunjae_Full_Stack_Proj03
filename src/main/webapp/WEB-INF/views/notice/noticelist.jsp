@@ -25,7 +25,7 @@
         </c:forEach>
     </div>
 </div>
-<form method="get" action="/noticelist">
+<form method="get" action="/index/noticelist">
     <select name="search">
         <option value="nno">글번호</option>
         <option value="ntitle">제목</option>

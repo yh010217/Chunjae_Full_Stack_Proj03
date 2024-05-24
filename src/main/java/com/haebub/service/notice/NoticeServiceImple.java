@@ -19,7 +19,7 @@ public class NoticeServiceImple implements NoticeService{
     public int totalCount(String search, String searchtxt) {
         HashMap<String, Object> hm=new HashMap<>();
         hm.put("search",search);
-        hm.put("sarchtxt",searchtxt);
+        hm.put("searchtxt",searchtxt);
         return noticeMapper.totalCount(hm);
     }
 
