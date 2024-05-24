@@ -42,6 +42,12 @@
 
 #lecList .freeList_li {
     display: flex;
+    font-size: 19px;
+    margin: 4px 0;
+}
+
+#lecList .gradeli {
+    margin-right: 10px;
 }
 
 #lecList .all_lecture ul {

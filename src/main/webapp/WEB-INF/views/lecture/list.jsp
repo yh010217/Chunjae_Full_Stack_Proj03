@@ -33,7 +33,7 @@
             <ul>
             <c:forEach var="freelist" items="${free}">
                 <div class="freeList_li">
-                    <li>${freelist.lgrade}학년</li>
+                    <li class="gradeli">${freelist.lgrade}학년</li>
                     <li><a href="/index/lecdetail/${freelist.lid}"> ${freelist.ltitle} </a></li>
                 </div>
             </c:forEach>

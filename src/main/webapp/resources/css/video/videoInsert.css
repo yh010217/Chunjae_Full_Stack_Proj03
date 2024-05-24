@@ -1,0 +1,52 @@
+#insertVideo {
+    width: 670px;
+    height: 300px;
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 20px;
+
+    margin: 20px auto;
+    padding: 20px 100px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+/* ul li 폰트, margin 설정 */
+#insertVideo ul li {
+    font-size: 17px;
+    margin: 10px;
+}
+
+#insertVideo h1, li:last-child {
+    text-align: center;
+}
+
+/* input 꾸미기 */
+#lid, #vtitle {
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #CFCFCF;
+    width: 466px;
+    height: 30px;
+}
+
+input[type='submit'], input[type='reset'] {
+    width:120px;
+    height: 40px;
+    color:#fff;
+    background: #FFB15c;
+    font-size: 16px;
+    border:none;
+    transition:0.3s;
+    box-shadow: 0 5px 0 0 #7F582E;
+}
+input[type='submit']:hover, input[type='reset']:hover{
+    transform: translateY(10px);
+    box-shadow: 0 0 0 0 #7F582E;
+}
+
+input[type='submit']::before, input[type='reset']::before {
+    display: none;
+}

@@ -33,21 +33,46 @@
                 <span>${item.lperiod}일</span>
             </li>
             <li class="lec_price">${item.lprice}원</li>
+
+            <c:choose>
+                <c:when test="${sessionScope.id == 'admin'}">
+                    <a href="/index/videoinsert/${item.lid}"> 강의 등록... 나중에 수정할래(클릭됨)</a>
+                    <p>나중에 해당 선생님도 클릭할 수 있다는... 쿼리를 짜야 함... 할 게 많네... </p>
+                </c:when>
+                <c:otherwise>
+                    아 아직 작업 안 함~~~! 쿼리짜~~~~!@!!
+                </c:otherwise>
+            </c:choose>
             <li class="lec_result">
                 <button type="button" id="go_cart">장바구니</button>
                 <a href="/pay/purchase_one?lid=${item.lid}">결제하기</a>
             </li>
-
             <br> <br>
-            <a href="/index/videoinsert"> 강의 등록... 나중에 수정할래</a>
+
         </ul>
 
+        <%-- 강의 리스트 --%>
         <div class="class">
             <h3>강의 들어오는 자리</h3>
             <a href="/index/video/${item.lid}">누르면 플레이어 페이지로 이동</a>
-            <br> <br> <br> <br>
+            <p>바꿔야 할 것 => 수강 신청한 애들만 들어갈 수 있게 해야 함. 신청 안 했으면 경고창 띄우기</p>
+
+            <br> <br>
+            <ul>
+                <c:forEach var="video" items="${video}">
+                    <c:choose>
+                        <c:when test="${video == '' || video == null || video.equals('')}">
+                            <li>등록된 강의가 없습니다.</li>
+                        </c:when>
+                        <c:otherwise>
+                            <li>${video.vtitle}</li>
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
+            </ul>
         </div>
 
+        <%-- 교재 --%>
         <div class="book">
             <h3>함께 보면 좋은 교재</h3>
             <a href="${item.lbook}">구매하러 가기</a>

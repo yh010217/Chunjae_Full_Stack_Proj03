@@ -47,6 +47,7 @@
         WHERE lid = #{lid}
     </select>
 
+    <!-- 무료 강의 리스트 -->
     <select id="freeList" resultType="com.haebub.dto.Lecutre.LectureDTO">
         select lid
             , lgrade
@@ -54,11 +55,19 @@
             , lprice
         from lecture
         where lprice = 0
+        limit 4;
     </select>
 
     <select id="getLid" resultType="int">
         select max(lid)
         from lecture
+    </select>
+
+    <select id="video" parameterType="int" resultType="com.haebub.dto.video.VideoDTO">
+        select vid
+            , vtitle
+        from video
+        where lid = #{lid}
     </select>
 
 </mapper>
