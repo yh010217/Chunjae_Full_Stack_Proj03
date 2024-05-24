@@ -5,7 +5,8 @@
 <mapper namespace="com.haebub.dao.mypage.MypageMapper">
     <select id="lectureListDtos" parameterType="int" resultType="com.haebub.dto.mypage.LectureListDTO">
         SELECT
-                 ltitle
+                  p.lid AS lid
+                , ltitle
                 , DATE(ptime) AS startDate
                 , DATE_ADD(DATE(ptime), INTERVAL lperiod DAY) AS endDate
                 , tsubject

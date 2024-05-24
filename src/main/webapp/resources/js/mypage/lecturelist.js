@@ -20,7 +20,7 @@ let fetchLectures = function(status) {
               <li>[${lecture.tsubject}] ${lecture.name} 선생님</li>
               <li>${lecture.ltitle}</li>
               <li class="t">수강 기간 : ${lecture.startDate} ~ ${lecture.endDate}</li>
-              <li class="play_btn t"><a href="#"><img src="/resources/image/icon-play.png" alt="play">온라인 강의 시청하기</a></li>
+              <li class="play_btn t"><a href="/index/lecdetail/${lecture.lid}"><img src="/resources/image/icon-play.png" alt="play">온라인 강의 시청하기</a></li>
             </ul>
           `;
                     contentDiv.appendChild(lectureElement);
@@ -51,7 +51,6 @@ let fetchLectures = function(status) {
               <li>[${lecture.tsubject}] ${lecture.name} 선생님</li>
               <li>${lecture.ltitle}</li>
               <li class="t">수강 기간 : ${lecture.startDate} ~ ${lecture.endDate}</li>
-              <li class="play_btn t"><a href="#"><img src="/resources/image/icon-play.png" alt="play">온라인 강의 시청하기</a></li>
             </ul>
           `;
                     contentDiv.appendChild(lectureElement);

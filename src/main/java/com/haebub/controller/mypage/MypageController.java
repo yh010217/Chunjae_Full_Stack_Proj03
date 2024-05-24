@@ -64,6 +64,7 @@ public class MypageController {
         for (LectureListDTO dto : list) {
 
             HashMap<String, Object> hm = new HashMap<>();
+            hm.put("lid", dto.getLid());
             hm.put("ltitle", dto.getLtitle());
             hm.put("startDate", dto.getStartDate());
             hm.put("endDate", dto.getEndDate());
@@ -75,7 +76,7 @@ public class MypageController {
             hmlist.add(hm);
         }
 
-       //  logger.info(hmlist.toString());
+         logger.info(hmlist.toString());
 
         return hmlist;
     }
