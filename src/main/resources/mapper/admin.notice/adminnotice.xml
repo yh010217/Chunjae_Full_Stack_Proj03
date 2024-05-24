@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.haebub.dao.notice.NoticeMapper">
+<mapper namespace="com.haebub.dao.admin.AdminNoticeMapper">
     <select id="noticelist"  parameterType="hashmap" resultType="com.haebub.dto.notice.NoticeDTO">
         select nno
         ,ntitle
@@ -48,7 +48,18 @@
             </if>
         </where>
     </select>
+    <insert id="noticelistresult" parameterType="com.haebub.dto.notice.NoticeDTO">
+        insert into notice( ntitle
+                            ,ncontent
+                            ,ndate
+                            )
+        values(
+                #{ntitle}
+                ,#{ncontent}
+                ,CURRENT_DATE()
+                )
 
+    </insert>
 
 
 

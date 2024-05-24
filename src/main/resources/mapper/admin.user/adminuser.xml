@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haebub.dao.admin.UserMapper">
+    <select id="list"  parameterType="hashmap" resultType="com.haebub.dto.User.UserDTO">
+        select uid
+            ,name
+            ,nickname
+            ,id
+            ,email
+        from user
+        <where>
+            id not in ('admin')
+            <if test="searchtxt!='' and !''.equals(searchtxt)">
+                <choose>
+                    <when test="search=='uid'">
+                        and uid=#{searchtxt}
+                    </when>
+                    <when test="search=='name'">
+                        and name like concat('%',#{searchtxt},'%')
+                    </when>
+                    <when test="search=='id'">
+                        and id like concat('%', #{searchtxt}, '%')
+                    </when>
+                </choose>
+            </if>
+        </where>
+        <![CDATA[
+            limit #{startrow}, #{pagesize}
+       ]]>
+    </select>
+
+    <select id="totalCount"  parameterType="hashmap" resultType="int">
+        select count(*)
+        from user
+        <where>
+            <if test="searchtxt!='' and !''.equals(searchtxt)">
+                <choose>
+                    <when test="search=='uid'">
+                        and  uid=#{searchtxt}
+                    </when>
+                    <when test="search=='name'">
+                        and name like concat('%', #{searchtxt}, '%')
+                    </when>
+                    <when test="search=='id'">
+                        and id like concat('%', #{searchtxt}, '%')
+                    </when>
+                </choose>
+            </if>
+        </where>
+    </select>
+    <select id="adminmodify" parameterType="int" resultType="com.haebub.dto.User.UserDTO">
+        select uid
+                ,id
+                ,name
+                ,nickname
+                ,email
+                ,tel
+           from user
+        where uid=#{uid}
+    </select>
+    <update id="adminmodifyresult" parameterType="com.haebub.dto.User.UserDTO">
+        update user
+        set nickname=#{nickname}
+        where uid=#{uid}
+    </update>
+    <delete id="deleteUser" parameterType="int">
+        delete from user
+        where uid =#{uid}
+    </delete>
+<!--    <select id="getUid" parameterType="string" resultType="int">-->
+<!--        select uid-->
+<!--        from user-->
+<!--        from id=#{id}-->
+<!--    </select>-->
+
+
+</mapper>

@@ -1,17 +1,14 @@
-<%--
-Created by IntelliJ IDEA.
-User: db400tea
-Date: 2024-05-20
-Time: 오후 5:34
-To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="icon" href="/resources/image/icon_love.png">
-    <title>해법학원 | 관리자</title></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="/resources/css/admin/template.css">
+</head>
 <body>
-
 <div id="container">
 
     <aside id="side_bar">
@@ -35,10 +32,31 @@ To change this template use File | Settings | File Templates.
         </div>
     </aside>
 
+
     <div id="content_container">
+        <form method="post" action="/modify_result">
+            <ul>
+                <input type="hidden" name="uid" value="${dto.uid}"/>
+                <li>아이디 : ${dto.id}</li>
+                <li>
+                    <label for="nickname">닉네임</label>
+                    <input type="text" id="nickname" value="${dto.nickname}" name="nickname">
+                    <button type="button">중복 체크</button>
+                </li>
+                <li>이메일: ${dto.email}</li>
+                <li>전화번호: ${dto.tel}</li>
+                <li>
+                    <button type="submit">수정 완료</button>
+                </li>
+            </ul>
+        </form>
 
-    </div>
+
+    </div><!--content_container-->
+
+
+
 </div>
-
 </body>
 </html>
+    
