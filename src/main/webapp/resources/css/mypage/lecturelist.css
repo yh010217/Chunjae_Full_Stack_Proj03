@@ -30,12 +30,19 @@ h3 {
 }
 
 .lecture_status{
-    background-color: #F0C9CE;
+  /*  background-color: #F0C9CE;
     color: #000000;
     border-radius: 25px;
     width: 64px;
     height: 24px;
-    padding: 7px 0px 0px 19px;
+    padding: 7px 0px 0px 19px;*/
+    background-color: #F0C9CE;
+    color: #000000;
+    border-radius: 25px;
+    width: 64px;
+    height: 18px;
+    padding: 10px 10px;
+    text-align: center;
 }
 
 .lecture_status p {
