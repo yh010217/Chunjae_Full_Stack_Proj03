@@ -1,6 +1,7 @@
 package com.haebub.service.lecture;
 
 import com.haebub.dto.Lecutre.LectureDTO;
+import com.haebub.dto.video.VideoDTO;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,4 +14,6 @@ public interface LectureService {
     LectureDTO lecDatail(int lid);
 
     List<LectureDTO> freeList();
+
+    List<VideoDTO> video(int lid);
 }

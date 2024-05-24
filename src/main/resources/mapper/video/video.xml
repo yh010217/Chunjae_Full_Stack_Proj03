@@ -16,7 +16,7 @@
 
     <!-- 강의 타이틀명 출력하기 -->
     <select id="lecTitle" parameterType="int" resultType="com.haebub.dto.video.VideoDTO">
-        SELECT l.ltitle, l.lid, l.lcount
+        SELECT l.ltitle, l.lid, l.lcount, l.lprofile
         FROM lecture l LEFT JOIN video v ON l.lid = v.lid
         WHERE l.lid = #{lid}
         LIMIT 1;

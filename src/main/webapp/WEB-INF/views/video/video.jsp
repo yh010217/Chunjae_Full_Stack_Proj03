@@ -17,20 +17,21 @@
     <article id="videoarticle">
         <div class="videolist">
             <a href="/index/video/${title.lid}" id="title"> ${title.ltitle} </a> <%-- 타이틀 제목 --%>
+            <div class="division-line"></div>
             <ul>
                 <%-- 동영상 리스트 출력 --%>
                     <c:forEach var="i" begin="1" end="${title.lcount}" >
                         <c:set var="currentVideo" value="${list[i - 1]}" />
-                        <li class="video"> <a href="#" onclick="loadVideo(${currentVideo.lid}, '${currentVideo.vlink}')"> ${currentVideo.vtitle} </a></li>
-
+                        <li class="video{i}"> <a href="#" onclick="loadVideo(${currentVideo.lid}, '${currentVideo.vlink}', '${title.lprofile}')"> ${currentVideo.vtitle} </a></li>
+                        <li class="videoTime"></li>
                     </c:forEach>
             </ul>
         </div>
         <div class="videoresult">
             <%-- 동영상 출력 --%>
-            <video controls width="100%" id="streaming">
+            <%--<video controls width="100%" id="streaming">
 
-            </video>
+            </video>--%>
         </div>
     </article>
 

@@ -1,4 +1,7 @@
-let loadVideo =  function(videoId, link) {
+
+const li = document.querySelector('video')
+
+let loadVideo =  function(videoId, link, lprofile) {
     fetch('/video/' + videoId, {
         method: 'GET',
         headers: {
@@ -14,14 +17,27 @@ let loadVideo =  function(videoId, link) {
         // console.log(data);
         console.log(link)
         if (data) {
-            let source = document.createElement('source');
-            source.src = "/getVideo/" + link;
-            source.type = "video/webm";
+            let videoresult = document.querySelector('.videoresult');
+            let video = document.createElement('video');
+            video.src = "/getVideo/" + link;
+            video.width = 1440;
+            video.controls = true
+            video.controlsList = "nodownload" // 다운로드 속성 제거
+            video.autoplay = true
+            video.muted = true
+            video.poster = "/getImage/" + lprofile;
 
-            // 새로운 비디오 소스 추가
-            document.getElementById('streaming').innerHTML='';
-            document.getElementById('streaming').appendChild(source);
-        } else {
+            if (video.ended) {
+                // 비디오 재생 끝나면 다 들었다는 표시하기 위해서...
+                alert('학습 완료!');
+
+            }
+            console.log(video);
+
+            videoresult.innerHTML = '';
+            videoresult.appendChild(video);
+
+        } else {z
             console.log('no 작동');
         }
         console.log("작동이 되는 건가");

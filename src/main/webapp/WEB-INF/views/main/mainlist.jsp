@@ -46,12 +46,29 @@
 
                 </div>
                 <div class="main_self_div2">
-                    <div class="board_1">
-                        <a href="#" class="main_self_box">찜확인</a>
-                        <a href="#" class="main_self_mon">고객센터</a>
-                    </div>
-                    <a href="/index/mypage" class="main_self_mypage">마이페이지 바로 가기</a>
-                    <a href="#" class="main_self_myclass">내 강의 확인하기</a>
+                    <c:choose>
+                        <c:when test="${sessionScope.id == null}">
+                            <%-- session 없다는 뜻 --%>
+                            <div onclick="alert('로그인하시면 이용할 수 있습니다.')">
+                                <div class="board_1">
+                                    <a href="/index/login" class="main_self_box">찜확인</a>
+                                    <a href="/index/login" class="main_self_mon">고객센터</a>
+                                </div>
+                                <a href="/index/login" class="main_self_mypage">마이페이지 바로 가기</a>
+                                <a href="/index/login" class="main_self_myclass">내 강의 확인하기</a>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <%-- session 있다는 뜻 --%>
+                            <div class="board_1">
+                                <a href="#" class="main_self_box">찜확인</a>
+                                <a href="#" class="main_self_mon">고객센터</a>
+                            </div>
+                            <a href="/index/mypage" class="main_self_mypage">마이페이지 바로 가기</a>
+                            <a href="#" class="main_self_myclass">내 강의 확인하기</a>
+                        </c:otherwise>
+                    </c:choose>
+
                 </div>
             </div>
         </div>

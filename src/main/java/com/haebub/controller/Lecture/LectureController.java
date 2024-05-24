@@ -1,6 +1,7 @@
 package com.haebub.controller.Lecture;
 
 import com.haebub.dto.Lecutre.LectureDTO;
+import com.haebub.dto.video.VideoDTO;
 import com.haebub.service.lecture.LectureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -76,6 +77,11 @@ public class LectureController {
     public String lectureDetail(@PathVariable int lid, Model model) {
         LectureDTO dto = lecService.lecDatail(lid);
         model.addAttribute("dto", dto);
+
+        // 강의 리스트 뽑아오기
+        List<VideoDTO> video = lecService.video(lid);
+        model.addAttribute("video", video);
+
         return "/lecture/detail";
     }
 }

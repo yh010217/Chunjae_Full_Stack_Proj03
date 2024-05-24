@@ -16,5 +16,6 @@ public class VideoDTO {
     private int lid; // 어느 강의인지 연결하기
     private String ltitle; // 강의 제목
     private int lcount; // 강의 수
+    private String lprofile; // 썸네일
     private MultipartFile file;
 }

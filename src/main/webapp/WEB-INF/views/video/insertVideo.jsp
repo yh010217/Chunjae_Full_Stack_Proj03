@@ -10,20 +10,30 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="/resources/css/video/videoInsert.css">
 </head>
 <body>
-  <article>
+  <article id="insertVideo">
       <h2>동영상 등록하기</h2>
       <form method="POST" action="/videoAction/${item}" enctype="multipart/form-data">
-          <label for="lid">강의명</label>
-          <input type="text" id="lid" name="lid" value="${item}">
-
-          <label for="file">동영상</label>
-          <input type="file" id="file" name="file">
-          <label for="vtitle">동영상 제목</label>
-          <input type="text" id="vtitle" name="vtitle">
-          <input type="submit" value="추가"/>
-          <input type="reset" value="삭제"/>
+          <ul>
+              <li>
+                  <label for="file">동영상</label>
+                  <input type="file" id="file" name="file">
+              </li>
+              <li>
+                  <label for="lid">강의코드</label>
+                  <input type="text" id="lid" name="lid" value="${item}" readonly>
+              </li>
+              <li>
+                  <label for="vtitle">동영상 제목</label>
+                  <input type="text" id="vtitle" name="vtitle" placeholder="강의 제목을 입력하세요.">
+              </li>
+              <li>
+                  <input type="submit" value="추가"/>
+                  <input type="reset" value="삭제"/>
+              </li>
+          </ul>
       </form>
   </article>
 </body>

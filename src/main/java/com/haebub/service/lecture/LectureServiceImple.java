@@ -2,6 +2,7 @@ package com.haebub.service.lecture;
 
 import com.haebub.dao.Lecture.LectureMapper;
 import com.haebub.dto.Lecutre.LectureDTO;
+import com.haebub.dto.video.VideoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,6 +40,11 @@ public class LectureServiceImple implements LectureService {
     @Transactional
     public List<LectureDTO> freeList() {
         return lecMapper.freeList();
+    }
+
+    @Override // 디테일 화면에서 강의 리스트 출력하기
+    public List<VideoDTO> video(int lid) {
+        return lecMapper.video(lid);
     }
 
     @Override

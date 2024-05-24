@@ -3,11 +3,11 @@
     display: flex;
     justify-content: space-between;
     padding: 50px;
+    height: 580px;
 }
 
 .videolist {
     width: 30%;
-    background-color: darkgray;
 }
 
 .videolist > a {
@@ -18,6 +18,20 @@
     font-size: 20px;
 }
 
+.videolist > ul > li {
+    margin-top: 10px;
+}
+
 .videoresult {
     width: 1080px;
+}
+
+video {
+    width: 100%;
+    object-fit: fill;
+}
+
+.division-line {
+    border-bottom: 3px solid black;
+    width: 80%;
 }
