@@ -27,9 +27,11 @@
     </insert>
 
     <select id="getCartList" parameterType="string" resultType="hashmap">
-        select uid,lid
-        from fav
-        where uid=#{uid}
+        SELECT l.lid, l.ltitle, l.lprice , t.tid, u.name
+        from fav f INNER JOIN lecture l ON f.lid = l.lid
+        INNER JOIN teacher t ON l.tid = t.tid
+        INNER JOIN user u ON t.uid = u.uid
+        WHERE f.uid=#{uid}
     </select>
 
 </mapper>

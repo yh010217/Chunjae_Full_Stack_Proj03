@@ -62,7 +62,7 @@ public class PaymentServiceImple implements PaymentService {
     public List<HashMap<String, Object>> getCartList(String uid) {
         List<HashMap<String, Object>> hmlist
                 = paymentMapper.getCartList(uid);
-        return null;
+        return hmlist;
     }
 
 }
