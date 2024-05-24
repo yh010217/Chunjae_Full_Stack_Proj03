@@ -1,0 +1,80 @@
+
+.bill_content ul li{
+    padding: 10px;
+}
+
+#bill_box {
+    background-color: #fff; /* 배경색 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    max-width: 600px; /* 최대 너비 */
+    margin: 20px auto; /* 위아래 마진 20px, 좌우 마진 자동 */
+    padding: 20px; /* 안쪽 여백 */
+}
+
+#bill_title {
+    display: flex;
+    justify-content: center;
+    gap: 136px;
+    background: #469B72;
+    width: 600px;
+    height: 64px;
+    padding-top: 40px;
+    position: relative;
+    top:-10px
+}
+
+#bill_content ul li {
+    display: flex; /* 플렉스박스 사용 */
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: space-between; /* 요소 사이 공간 동일 분배 */
+}
+
+
+/* 제목 스타일 */
+#bill_title h3 {
+    color: #333; /* 글자색 */
+    font-size: 1.3em; /* 글자 크기 */
+    margin-bottom: 20px; /* 아래쪽 마진 */
+}
+
+#bill_title h3 a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #ffffff; /* 링크 색상 */
+    transition: color 0.3s; /* 색상 변경 애니메이션 */
+}
+
+#bill_title h3 a:hover {
+    color: #0056b3; /* 링크에 마우스를 올렸을 때 색상 */
+}
+
+/* 내용 스타일 */
+#bill_content ul {
+    list-style: none; /* 목록 기호 제거 */
+    padding: 0; /* 안쪽 여백 제거 */
+    margin-bottom: 15px; /* 아래쪽 마진 */
+    border-bottom: 1px solid #eee; /* 아래쪽 테두리 */
+    padding-bottom: 15px; /* 아래쪽 패딩 */
+}
+
+#bill_content li {
+    margin-bottom: 5px; /* 아래쪽 마진 */
+}
+
+#bill_content li:last-child {
+    margin-bottom: 0; /* 마지막 항목 아래쪽 마진 제거 */
+}
+
+/* 환불 신청 링크 스타일 */
+#bill_content li a {
+    background-color: #aac9ee; /* 배경색 */
+    color: #fff; /* 글자색 */
+    padding: 5px 10px; /* 안쪽 여백 */
+    text-decoration: none; /* 밑줄 제거 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    transition: background-color 0.3s; /* 배경색 변경 애니메이션 */
+}
+
+#bill_content li a:hover {
+    background-color: #0056b3; /* 배경색 변경 */
+}

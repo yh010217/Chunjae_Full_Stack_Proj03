@@ -37,8 +37,9 @@
             order_item_code.push(data.items[i].code);
         }
         console.log(order_item_code);
-        fetch('/pay/success_cart_insert?lid_attached='+lid_attached+'&order_item_code='+order_item_code
-        +'&order_code='+order_code)
+
+        location.href = '/pay/success_cart_insert?lid_attached='+lid_attached+'&order_item_code='+order_item_code
+        +'&order_code='+order_code;
 
     }).catch(error => {
         console.error('Error:', error);
