@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haebub.dao.video.VideoMapper">
+
+    <!-- 비디오 제목 출력, list 출력!! -->
+    <select id="videoResult" parameterType="int" resultType="com.haebub.dto.video.VideoDTO">
+        select v.vid
+                , v.vtitle
+                , v.vlink
+                , l.lid
+        from lecture l inner JOIN video v ON l.lid = v.lid
+        WHERE l.lid = #{lid}
+    </select>
+
+    <!-- 강의 타이틀명 출력하기 -->
+    <select id="lecTitle" parameterType="int" resultType="com.haebub.dto.video.VideoDTO">
+        SELECT l.ltitle, l.lid, l.lcount
+        FROM lecture l LEFT JOIN video v ON l.lid = v.lid
+        WHERE l.lid = #{lid}
+        LIMIT 1;
+    </select>
+
+    <!-- 동영상을 넣어보자 -->
+    <insert id="insertVideo" parameterType="hashmap">
+        insert into video(vtitle, vlink, lid)
+        values(#{vtitle}, #{vlink}, #{lid});
+    </insert>
+
+    <!-- 이건 뭐지? -->
+    <select id="lid" resultType="int" parameterType="int">
+        select l.lid, ltitle
+        from lecture l left JOIN video v ON l.lid = v.lid
+        where l.lid = #{lid}
+        limit 1
+    </select>
+
+    <!-- 비디오 링크 따오자ㅏㅏㅏ -->
+    <select id="link" resultType="String" parameterType="hashmap">
+        select vlink
+        from video
+        where lid = #{lid} and vtitle = #{vtitle}
+    </select>
+
+</mapper>

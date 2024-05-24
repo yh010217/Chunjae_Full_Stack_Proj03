@@ -14,13 +14,16 @@
 <body>
   <article>
       <h2>동영상 등록하기</h2>
-      <form method="POST" action="/videoAction" enctype="multipart/form-data">
-          <label>강의명</label>
-          <input type="text" id="ltitle" name="ltitle" value="${item.toString()}">
-          <label for="vlink">동영상</label>
-          <input type="file" id="vlink" name="vlink">
+      <form method="POST" action="/videoAction/${item}" enctype="multipart/form-data">
+          <label for="lid">강의명</label>
+          <input type="text" id="lid" name="lid" value="${item}">
+
+          <label for="file">동영상</label>
+          <input type="file" id="file" name="file">
           <label for="vtitle">동영상 제목</label>
           <input type="text" id="vtitle" name="vtitle">
+          <input type="submit" value="추가"/>
+          <input type="reset" value="삭제"/>
       </form>
   </article>
 </body>

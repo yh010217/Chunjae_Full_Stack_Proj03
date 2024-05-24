@@ -39,7 +39,7 @@
             </li>
 
             <br> <br>
-            <a href="/index/videoinsert"> 강의 등록... 나중에 수정할래</a>
+            <a href="/index/videoinsert/${item.lid}"> 강의 등록... 나중에 수정할래</a>
         </ul>
 
         <div class="class">
