@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         li.classList.add('center-align'); // CSS 클래스 추가
                         // 제목, 날짜, 선생님 이름, 과목
                         li.innerHTML = `${event.start} 
-                                        <a href="#"> 
+                                        <a href="/index/lecdetail/${event.lid}"> 
                                         ${event.subject}                  
                                         ${event.name} 선생님 
                                         ${event.title}

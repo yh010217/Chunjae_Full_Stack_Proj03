@@ -5,24 +5,24 @@
 <head>
     <meta charset="UTF-8">
     <title>마이페이지</title>
-    <link rel="stylesheet" href="<c:url value='/resources/css/mypage/mypage_template.css'/>">
-    <link rel="stylesheet" href="<c:url value='/resources/css/mypage/lecturelist.css'/>">
-    <script defer src="<c:url value='/resources/js/mypage/lecturelist.js'/>"></script>
+    <link rel="stylesheet" href="/resources/css/mypage/mypage_template.css">
+    <link rel="stylesheet" href="/resources/css/mypage/lecturelist.css">
+    <script defer src="/resources/js/mypage/lecturelist.js"></script>
 </head>
 <body>
 <div id="wrap">
     <!-- 왼쪽 사이드바 -->
     <div id="sidebar">
         <ul>
-            <li class="side_title">안녕하세요!<br> 님</li>
+            <li class="side_title">안녕하세요!<br><c:out value="${nickname}"/> 님</li>
         </ul>
         <ul class="menu">
             <li class="menu_title"><a href="/index/mypage">내 강의 보기</a></li>
             <li class="menu_title"><a href="/index/mypage/paid">거래 내역</a></li>
             <li class="menu_title"><a href="/index/mypage/cart">장바구니</a></li>
-            <li class="menu_title"><a href="/index/mypage/modifyresult">회원 정보 수정</a></li>
+            <li class="menu_title"><a href="/index/mypage/modify">회원 정보 수정</a></li>
             <li class="menu_title"><a href="#">고객센터</a></li>
-            <li class="menu_title"><a href="<c:url value='/logout'/>">로그아웃</a></li>
+            <li class="menu_title"><a href="/logout">로그아웃</a></li>
         </ul>
     </div>
     <!-- content 영역 -->

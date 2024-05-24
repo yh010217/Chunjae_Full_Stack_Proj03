@@ -5,6 +5,7 @@ import lombok.Setter;
 
 @Getter @Setter
 public class LectureListDTO {
+    private int lid;
     private String ltitle;
     private String startDate;
     private String endDate;

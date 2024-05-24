@@ -12,10 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -42,10 +39,11 @@ public class MypageController {
 
         if(id != null) {
             // uid 가져오기
-            int uid = mypageService.getUid(id);
+            UserDTO userDTO = mypageService.getUid(id);
 
-            List<LectureListDTO> list = mypageService.getLectureList(uid);
+            List<LectureListDTO> list = mypageService.getLectureList(userDTO.getUid());
             model.addAttribute("list", list);
+            model.addAttribute("nickname", userDTO.getNickname());
             return "/mypage/lecturelist";
         } else {
             return "redirect:/index/login";
@@ -60,8 +58,9 @@ public class MypageController {
         HttpSession session = request.getSession(false);
         String id = (String) session.getAttribute("id");
 
-        int uid = mypageService.getUid(id);
-        List<LectureListDTO> list = mypageService.getLectureList(uid);
+        UserDTO userDTO = mypageService.getUid(id);
+
+        List<LectureListDTO> list = mypageService.getLectureList(userDTO.getUid());
         List<HashMap<String, Object>> hmlist = new ArrayList<>();
 
         for (LectureListDTO dto : list) {
@@ -74,6 +73,7 @@ public class MypageController {
             hm.put("name", dto.getName());
             hm.put("now", dto.getNow());
             hm.put("status", dto.getStatus());
+            hm.put("lid", dto.getLid());
 
             hmlist.add(hm);
         }
@@ -91,8 +91,9 @@ public class MypageController {
         HttpSession session = request.getSession(false);
         String id = (String) session.getAttribute("id");
 
-        int uid = mypageService.getUid(id);
-        List<LectureListDTO> list = mypageService.getLectureList2(uid);
+        UserDTO userDTO = mypageService.getUid(id);
+
+        List<LectureListDTO> list = mypageService.getLectureList2(userDTO.getUid());
         List<HashMap<String, Object>> hmlist = new ArrayList<>();
 
         for (LectureListDTO dto : list) {
@@ -120,9 +121,10 @@ public class MypageController {
         HttpSession session = request.getSession(false);
         String id = (String) session.getAttribute("id");
 
-        int uid = mypageService.getUid(id);
+        UserDTO userDTO = mypageService.getUid(id);
 
-        List<PaidDTO> paidList = mypageService.getPaidList(uid);
+        List<PaidDTO> paidList = mypageService.getPaidList(userDTO.getUid());
+        model.addAttribute("nickname", userDTO.getNickname());
         model.addAttribute("paidList", paidList);
 
         return "/mypage/paid";
@@ -134,21 +136,22 @@ public class MypageController {
         HttpSession session = request.getSession(false);
         String id = (String) session.getAttribute("id");
 
-        int uid = mypageService.getUid(id);
+        UserDTO userDTO = mypageService.getUid(id);
 
-        UserDTO userDTO = mypageService.getUser(uid);
+        UserDTO dto = mypageService.getUser(userDTO.getUid());
 
-        model.addAttribute("userDTO", userDTO);
-
+        model.addAttribute("dto", dto);
+        model.addAttribute("nickname", userDTO.getNickname());
         return "/mypage/modify";
     }
 
     /** 회원 정보 수정 */
-    @PostMapping("/mypage/modifyresult")
+    @PostMapping("/modifyresult")
     public String userModifyResult(UserDTO dto){
-        mypageService.userModify(dto);
+        int result = mypageService.userModify(dto);
+        //logger.info("result....",result);
+
        return "redirect:/index/mypage";
     }
-
 
 }
