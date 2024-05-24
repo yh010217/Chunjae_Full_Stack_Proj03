@@ -29,7 +29,22 @@ let fetchLectures = function (status) {
           `;
                         contentDiv.appendChild(lectureElement);
 
+                    }else if(lecture.status == 'Completed'){
+
+                        const lectureElement = document.createElement('div');
+                        lectureElement.innerHTML = `
+                <ul class="lecture_box">
+                  <li><p class="lecture_status">수강 완료</p></li>
+                  <li>[${lecture.tsubject}] ${lecture.name} 선생님</li>
+                  <li>${lecture.ltitle}</li>
+                  <li class="t">수강 기간 : ${lecture.startDate} ~ ${lecture.endDate}</li>
+                  <li class="play_btn t"><a href="/index/lecdetail/${lecture.lid}"><img src="/resources/image/icon-play.png" alt="play">온라인 강의 시청하기</a></li>
+                </ul>
+          `;
+                        contentDiv.appendChild(lectureElement);
                     }
+
+
                 }
             });
         })

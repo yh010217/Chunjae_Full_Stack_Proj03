@@ -154,4 +154,19 @@ public class MypageController {
        return "redirect:/index/mypage";
     }
 
+    @GetMapping("/mypage/refund")
+    public String refund(Model model, HttpServletRequest request){
+
+        HttpSession session = request.getSession(false);
+        String id = (String) session.getAttribute("id");
+
+        UserDTO userDTO = mypageService.getUid(id);
+
+        List<PaidDTO> paidList = mypageService.getPaidList(userDTO.getUid());
+        model.addAttribute("nickname", userDTO.getNickname());
+        model.addAttribute("paidList", paidList);
+
+        return "/mypage/refund";
+    }
+
 }

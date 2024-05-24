@@ -45,11 +45,12 @@
         INNER JOIN teacher t ON l.tid = t.tid
         INNER JOIN user u ON t.uid = u.uid
         WHERE  p.uid = #{uid}
-        AND DATEDIFF(DATE_ADD(DATE(p.ptime), INTERVAL l.lperiod DAY), DATE(NOW())) >= 0
+        <!--AND DATEDIFF(DATE_ADD(DATE(p.ptime), INTERVAL l.lperiod DAY), DATE(NOW())) >= 0-->
 
     </select>
     <!-- 수강 완료 강의 리스트 -->
     <select id="lectureListDtos2" parameterType="int" resultType="com.haebub.dto.mypage.LectureListDTO">
+        <!--
         SELECT
                   ltitle
                 , DATE(ptime) AS startDate
@@ -66,6 +67,28 @@
             INNER JOIN user u ON t.uid = u.uid
         WHERE  p.uid = #{uid}
         AND DATE(NOW()) > DATE_ADD(DATE(p.ptime), INTERVAL l.lperiod DAY)
+        -->
+
+
+        SELECT
+        ltitle
+        , DATE(ptime) AS startDate
+        , DATE_ADD(DATE(ptime), INTERVAL lperiod DAY) AS endDate
+        , tsubject
+        , NAME
+        , DATE(NOW()) AS now
+        , CASE
+        WHEN DATEDIFF(DATE_ADD(DATE(ptime), INTERVAL lperiod DAY), DATE(NOW())) >= 0 THEN 'Ongoing'
+        WHEN DATE(NOW()) > DATE_ADD(DATE(ptime), INTERVAL lperiod DAY) THEN 'Completed' END AS status
+        , pit.piid
+        FROM purchase_test p
+        INNER JOIN pitem pit ON p.pid=pit.pid
+        INNER JOIN lecture l ON pit.lid = l.lid
+        INNER JOIN teacher t ON l.tid = t.tid
+        INNER JOIN user u ON t.uid = u.uid
+        WHERE  p.uid = #{uid}
+        AND DATE(NOW()) > DATE_ADD(DATE(p.ptime), INTERVAL l.lperiod DAY)
+
     </select>
     <!-- 로그인한 사용자 uid, nickname 조회 -->
     <select id="getUid" parameterType="string" resultType="com.haebub.dto.User.UserDTO">
@@ -75,6 +98,7 @@
     </select>
     <!-- 결제 내역 조회 -->
     <select id="paidList" parameterType="int" resultType="com.haebub.dto.mypage.PaidDTO">
+        <!--
         SELECT ptime
         , ltitle
         , lprice
@@ -86,9 +110,25 @@
         WHERE p.lid = l.lid
         AND l.tid = t.tid
         AND t.uid = u.uid
-        <!-- pstatus 값 수정하기   -->
         AND pstatus = 'success'
         AND p.uid = #{uid}
+-->
+        SELECT ptime
+        , ltitle
+        , lprice
+        , tsubject
+        , u.NAME
+        , DATE(ptime) AS 'startDate'
+        , DATE_ADD(DATE(ptime), INTERVAL + lperiod DAY) AS 'endDate'
+        ,pit.piid
+        ,pit.pistatus
+        FROM purchase_test p
+            INNER JOIN user up ON p.uid = up.uid
+            INNER JOIN pitem pit ON p.pid = pit.pid
+            INNER JOIN lecture l ON pit.lid = l.lid
+            INNER JOIN teacher t ON l.tid = t.tid
+            INNER JOIN user u ON t.uid = u.uid
+        WHERE p.uid = #{uid}
     </select>
     <!-- 로그인한 사용자 조회 -->
     <select id="getUser" parameterType="int" resultType="com.haebub.dto.User.UserDTO">
