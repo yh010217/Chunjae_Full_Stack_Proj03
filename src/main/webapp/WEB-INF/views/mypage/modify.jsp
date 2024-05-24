@@ -12,7 +12,7 @@
     <%-- 왼쪽 사이드바  --%>
     <div id="sidebar">
         <ul>
-            <li class="side_title">안녕하세요!<br> 님</li>
+            <li class="side_title">안녕하세요!<br> <c:out value="${nickname}"/> 님</li>
         </ul>
         <ul class="menu">
             <li class="menu_title"><a href="/index/mypage">내 강의 보기</a></li>

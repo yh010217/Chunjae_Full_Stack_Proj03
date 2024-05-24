@@ -14,8 +14,8 @@ public interface MypageMapper {
     List<LectureListDTO> lectureListDtos(int uid);
     List<LectureListDTO> lectureListDtos2(int uid);
 
-    /** 사용자 uid */
-    int getUid(String id);
+    /** 사용자 uid, nickname */
+    UserDTO getUid(String id);
 
     /** 결제 내역 */
     List<PaidDTO> paidList(int uid);

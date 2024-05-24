@@ -8,12 +8,14 @@ import java.util.List;
 
 public interface MypageService {
 
-    /** 강의 목록 */
+    /** 수강중인 강의 목록 */
     List<LectureListDTO> getLectureList(int uid);
+
+    /** 수강완료 강의 목록 */
     List<LectureListDTO> getLectureList2(int uid);
 
-    /** 로그인한 사용자 uid 가져오기 */
-    int getUid(String id);
+    /** 로그인한 사용자 정보 가져오기 */
+    UserDTO getUid(String id);
 
     /** 결재 내역 */
     List<PaidDTO> getPaidList(int uid);

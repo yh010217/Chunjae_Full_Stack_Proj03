@@ -27,7 +27,7 @@ public class MypageServiceImple implements MypageService {
 
     /** 사용자 uid 가져오기 */
     @Override
-    public int getUid(String id) {
+    public UserDTO getUid(String id) {
         return mypageMapperr.getUid(id);
     }
 

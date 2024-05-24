@@ -39,10 +39,11 @@ public class MypageController {
 
         if(id != null) {
             // uid 가져오기
-            int uid = mypageService.getUid(id);
+            UserDTO userDTO = mypageService.getUid(id);
 
-            List<LectureListDTO> list = mypageService.getLectureList(uid);
+            List<LectureListDTO> list = mypageService.getLectureList(userDTO.getUid());
             model.addAttribute("list", list);
+            model.addAttribute("nickname", userDTO.getNickname());
             return "/mypage/lecturelist";
         } else {
             return "redirect:/index/login";
@@ -57,14 +58,14 @@ public class MypageController {
         HttpSession session = request.getSession(false);
         String id = (String) session.getAttribute("id");
 
-        int uid = mypageService.getUid(id);
-        List<LectureListDTO> list = mypageService.getLectureList(uid);
+        UserDTO userDTO = mypageService.getUid(id);
+
+        List<LectureListDTO> list = mypageService.getLectureList(userDTO.getUid());
         List<HashMap<String, Object>> hmlist = new ArrayList<>();
 
         for (LectureListDTO dto : list) {
 
             HashMap<String, Object> hm = new HashMap<>();
-            hm.put("lid", dto.getLid());
             hm.put("ltitle", dto.getLtitle());
             hm.put("startDate", dto.getStartDate());
             hm.put("endDate", dto.getEndDate());
@@ -72,11 +73,12 @@ public class MypageController {
             hm.put("name", dto.getName());
             hm.put("now", dto.getNow());
             hm.put("status", dto.getStatus());
+            hm.put("lid", dto.getLid());
 
             hmlist.add(hm);
         }
 
-         logger.info(hmlist.toString());
+       //  logger.info(hmlist.toString());
 
         return hmlist;
     }
@@ -89,8 +91,9 @@ public class MypageController {
         HttpSession session = request.getSession(false);
         String id = (String) session.getAttribute("id");
 
-        int uid = mypageService.getUid(id);
-        List<LectureListDTO> list = mypageService.getLectureList2(uid);
+        UserDTO userDTO = mypageService.getUid(id);
+
+        List<LectureListDTO> list = mypageService.getLectureList2(userDTO.getUid());
         List<HashMap<String, Object>> hmlist = new ArrayList<>();
 
         for (LectureListDTO dto : list) {
@@ -118,9 +121,10 @@ public class MypageController {
         HttpSession session = request.getSession(false);
         String id = (String) session.getAttribute("id");
 
-        int uid = mypageService.getUid(id);
+        UserDTO userDTO = mypageService.getUid(id);
 
-        List<PaidDTO> paidList = mypageService.getPaidList(uid);
+        List<PaidDTO> paidList = mypageService.getPaidList(userDTO.getUid());
+        model.addAttribute("nickname", userDTO.getNickname());
         model.addAttribute("paidList", paidList);
 
         return "/mypage/paid";
@@ -132,23 +136,18 @@ public class MypageController {
         HttpSession session = request.getSession(false);
         String id = (String) session.getAttribute("id");
 
-        int uid = mypageService.getUid(id);
+        UserDTO userDTO = mypageService.getUid(id);
 
-        UserDTO dto = mypageService.getUser(uid);
+        UserDTO dto = mypageService.getUser(userDTO.getUid());
 
         model.addAttribute("dto", dto);
-
+        model.addAttribute("nickname", userDTO.getNickname());
         return "/mypage/modify";
     }
 
     /** 회원 정보 수정 */
     @PostMapping("/modifyresult")
     public String userModifyResult(UserDTO dto){
-
-        logger.info("dto..",dto.toString());
-        logger.info("uid.."+dto.getUid());
-        logger.info("nickname.."+dto.getNickname());
-
         int result = mypageService.userModify(dto);
         //logger.info("result....",result);
 
