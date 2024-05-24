@@ -3,7 +3,6 @@ package com.haebub.service.admin;
 import com.haebub.dao.admin.UserMapper;
 import com.haebub.dto.User.UserDTO;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -41,6 +40,30 @@ public class UserServiceImple implements UserService{
 
     }
 
+    @Override
+    public int getUid(String id) {
+        return userMapper.getUid(id);
+    }
+
+    @Override
+    public UserDTO getUser(int uid) {
+        return userMapper.getUser(uid);
+    }
+
+    @Override
+    public UserDTO adminmodify(int uid) {
+        return userMapper.adminmodify(uid);
+    }
+
+    @Override
+    public void adminmodifyresult(UserDTO dto) {
+        userMapper.adminmodifyresult(dto);
+    }
+
+    @Override
+    public void deleteUser(int uid) {
+        userMapper.deleteUser(uid);
+    }
 
 
 }

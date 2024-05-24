@@ -6,10 +6,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -33,8 +33,8 @@ public class AdminUserController {
         int pageblock=5;
         int startrow=(currpage-1)*pagesize;
 
-        int totalcunt=userService.totalCount(search, searchtxt);
-        int totalpage=(int)Math.ceil(totalcunt/(float)pagesize);
+        int totalCount=userService.totalCount(search, searchtxt);
+        int totalpage=(int)Math.ceil(totalCount/(float)pagesize);
 
         int startblock=((currpage-1)/pageblock)*pageblock+1;
         int endblock=startblock+pageblock-1;
@@ -47,9 +47,29 @@ public class AdminUserController {
         model.addAttribute("searchtxt",searchtxt);
         model.addAttribute("startblock",startblock);
         model.addAttribute("endblock",endblock);
-        model.addAttribute("tottalpage",totalpage);
+        model.addAttribute("totalpage",totalpage);
         return "admin/admin_user";
     }
+
+    @GetMapping("/admin/user/modify/{uid}")
+    public String adminmodify(@PathVariable int uid,Model model){
+        UserDTO dto=userService.adminmodify(uid);
+        model.addAttribute("dto",dto);
+       return "admin/admin_usermodify";
+    }
+
+    @PostMapping("/modify_result")
+    public String adminmodifyresult(@ModelAttribute UserDTO dto){
+        userService.adminmodifyresult(dto);
+        return "redirect:/admin/user";
+    }
+
+    @GetMapping("/admin/user/delete/{uid}")
+    public String delete(@PathVariable int uid){
+        userService.deleteUser(uid);
+        return "redirect:/admin/user";
+    }
+
 
 
 

@@ -10,8 +10,8 @@
             ,id
             ,email
         from user
-        where uid not in(1)
         <where>
+            id not in ('admin')
             <if test="searchtxt!='' and !''.equals(searchtxt)">
                 <choose>
                     <when test="search=='uid'">
@@ -50,6 +50,30 @@
             </if>
         </where>
     </select>
+    <select id="adminmodify" parameterType="int" resultType="com.haebub.dto.User.UserDTO">
+        select uid
+                ,id
+                ,name
+                ,nickname
+                ,email
+                ,tel
+           from user
+        where uid=#{uid}
+    </select>
+    <update id="adminmodifyresult" parameterType="com.haebub.dto.User.UserDTO">
+        update user
+        set nickname=#{nickname}
+        where uid=#{uid}
+    </update>
+    <delete id="deleteUser" parameterType="int">
+        delete from user
+        where uid =#{uid}
+    </delete>
+<!--    <select id="getUid" parameterType="string" resultType="int">-->
+<!--        select uid-->
+<!--        from user-->
+<!--        from id=#{id}-->
+<!--    </select>-->
 
 
 </mapper>

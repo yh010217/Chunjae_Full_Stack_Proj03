@@ -16,5 +16,17 @@ public interface UserService {
 
 
 
+    int getUid(String id);
+
+    UserDTO getUser(int uid);
+
+
+    UserDTO adminmodify(int uid);
+
+
+    void adminmodifyresult(UserDTO dto);
+
+
+    void deleteUser(int uid);
 
 }

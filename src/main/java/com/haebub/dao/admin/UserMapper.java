@@ -11,9 +11,25 @@ import java.util.List;
 public interface UserMapper {
 
 
+
+
     List<UserDTO> list(HashMap<String, Object> li);
 
     int totalCount(HashMap<String, Object> hm);
+
+
+    int getUid(String id);
+
+    UserDTO getUser(int uid);
+
+
+    UserDTO adminmodify(int uid);
+
+
+    void adminmodifyresult(UserDTO dto);
+
+
+    void deleteUser(int uid);
 
 
 }
