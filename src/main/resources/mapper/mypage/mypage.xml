@@ -59,7 +59,7 @@
         AND l.tid = t.tid
         AND t.uid = u.uid
         <!-- pstatus 값 수정하기   -->
-        AND pstatus = '구매'
+        AND pstatus = 'success'
         AND p.uid = #{uid}
     </select>
     <select id="getUser" parameterType="int" resultType="com.haebub.dto.User.UserDTO">
