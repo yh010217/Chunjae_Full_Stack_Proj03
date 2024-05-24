@@ -22,10 +22,10 @@
                 <span class="side_bar_menu_name">회원 관리</span>
             </a>
             <a href="#" class="side_bar_menu">
-                <img class="side_bar_menu_image" src="/resources/image/admin/main/teacher-gray.png" alt="강서 관리">
+                <img class="side_bar_menu_image" src="/resources/image/admin/main/teacher-gray.png" alt="강사 관리">
                 <span class="side_bar_menu_name">강사 관리</span>
             </a>
-            <a href="#" class="side_bar_menu">
+            <a href="/admin/noticelist" class="side_bar_menu">
                 <img class="side_bar_menu_image" src="/resources/image/admin/main/board-gray.png" alt="고객 지원 관리">
                 <span class="side_bar_menu_name">고객 지원 관리</span>
             </a>

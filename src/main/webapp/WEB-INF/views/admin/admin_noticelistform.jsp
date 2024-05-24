@@ -1,18 +1,14 @@
-<%--
-Created by IntelliJ IDEA.
-User: db400tea
-Date: 2024-05-20
-Time: 오후 5:34
-To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항쓰기</title>
     <link rel="stylesheet" href="/resources/css/admin/template.css">
+
 </head>
 <body>
-
 <div id="container">
 
     <aside id="side_bar">
@@ -37,9 +33,20 @@ To change this template use File | Settings | File Templates.
     </aside>
 
     <div id="content_container">
-
+        <h2>공지사항 작성</h2>
+        <form action="noticelist_result" method="post" style="text-align:center;" onsubmit="return writeCheck();">
+            제목 : <input type="text" name="ntitle"><br>
+            내용 : <br> <textarea rows="30" cols="100" name = "ncontent"></textarea> <br>
+            <input type = "submit" value = "공지사항 작성" />
+        </form>
     </div>
 </div>
+<script type="text/javascript">
+    function writeCheck(){
+        return confirm("작성하시겠습니까?");
+    }
+</script>
 
 </body>
 </html>
+    

@@ -1,27 +1,27 @@
-package com.haebub.service.notice;
+package com.haebub.service.admin;
 
-import com.haebub.dao.notice.NoticeMapper;
+import com.haebub.dao.admin.AdminNoticeMapper;
 import com.haebub.dto.notice.NoticeDTO;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
 
 @Service
-public class NoticeServiceImple implements NoticeService{
-    private final NoticeMapper noticeMapper;
+@RequiredArgsConstructor
+public class AdminNoticeServiceImple implements AdminNoticeSerivce{
 
-    @Autowired
-    public NoticeServiceImple(NoticeMapper noticeMapper){this.noticeMapper=noticeMapper;}
+
+    private final AdminNoticeMapper mapper;
+
 
     @Override
     public int totalCount(String search, String searchtxt) {
         HashMap<String, Object> hm=new HashMap<>();
         hm.put("search",search);
         hm.put("searchtxt",searchtxt);
-        return noticeMapper.totalCount(hm);
-    }
+        return mapper.totalCount(hm);}
 
     @Override
     public List<NoticeDTO> noticelist(int startrow, int pagesize, String search, String searchtxt) {
@@ -31,10 +31,13 @@ public class NoticeServiceImple implements NoticeService{
         hm.put("search",search);
         hm.put("searchtxt",searchtxt);
 
-        List<NoticeDTO> list=noticeMapper.noticelist(hm);
+        List<NoticeDTO> list=mapper.noticelist(hm);
         return list;
     }
 
-
-
+    @Override
+    public int noticelistresult(NoticeDTO dto) {
+        int result=mapper.noticelistresult(dto);
+        return result;
+    }
 }

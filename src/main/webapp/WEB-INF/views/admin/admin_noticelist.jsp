@@ -1,16 +1,15 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원관리</title>
+    <title>고객지원관리</title>
     <link rel="stylesheet" href="/resources/css/admin/template.css">
-    <link rel="stylesheet" href="/resources/css/admin/user.css">
+    <script defer src="/resources/js/admin/adminins.js"></script>
 </head>
 <body>
-
 <div id="container">
 
     <aside id="side_bar">
@@ -35,37 +34,35 @@
     </aside>
 
     <div id="content_container">
-        <div class="usertable">
+        <h1>공지사항</h1>
+        <div class="table">
+            <button type="button" id="append">글쓰기</button>
             <div class="tr">
-                <div class="th">회원번호</div>
-                <div class="th">이름</div>
-                <div class="th">닉네임</div>
-                <div class="th">아이디</div>
-                <div class="th">이메일</div>
-                <div class="th">회원계정삭제</div>
+                <div class="th">글번호</div>
+                <div class="th">제목</div>
+                <div class="th">글내용</div>
+                <div class="th">등록날짜</div>
             </div>
             <div class="tr">
-                <c:forEach var="item" items="${userDTOList}">
-                    <div class="td"><a href="/admin/user/modify/${item.uid}"><c:out value="${item.uid}"/></a></div>
-                    <div class="td">${item.name}</div>
-                    <div class="td">${item.nickname}</div>
-                    <div class="td">${item.id}</div>
-                    <div class="td">${item.email}</div>
-                    <div class="td"><a href="/admin/user/delete/${item.uid}">삭제하기</a></div>
+                <c:forEach var="item" items="${noticelist}">
+                    <div class="td"><a href="/admin/noticelist/detail/${item.nno}"><c:out value="${item.nno}"/></a></div>
+                    <div class="td">${item.ntitle}</div>
+                    <div class="td">${item.ncontent}</div>
+                    <div class="td">${item.ndate}</div>
                 </c:forEach>
             </div>
-        </div> <!--회원리스트끝 -->
-        <form method="get" action="/admin/user">
+        </div>
+        <form method="get" action="/admin/noticelist">
             <select name="search">
-                <option value="uid">회원번호</option>
-                <option value="name">이름</option>
-                <option value="id">아이디</option>
+                <option value="nno">글번호</option>
+                <option value="ntitle">제목</option>
+                <option value="ncontent">내용</option>
             </select>
             <input type="text" name="searchtxt">
             <button type="submit">검색</button>
         </form>
         <c:if test="${startblock>1}">
-            <a href="/admin/user/${startblock-1}?search=${search}&searchtxt=${searchtxt}">이전</a>
+            <a href="/admin/noticelist/${startblock-1}?search=${search}&searchtxt=${searchtxt}">이전</a>
         </c:if>
         <c:forEach var="index" begin="${startblock}" end="${endblock}">
             <c:choose>
@@ -73,22 +70,17 @@
                     ${index}
                 </c:when>
                 <c:otherwise>
-                    <a href="/admin/user/${index}?serach">${index}</a>
+                    <a href="/admin/noticelist/${index}?serach">${index}</a>
                 </c:otherwise>
             </c:choose>
         </c:forEach>
         <c:if test="${endblock<totalpage}">
-            <a href="/admin/user/${endblock+1}?serach=&${search}&searchtxt=${searchtxt}">다음</a>
+            <a href="/admin/noticelist/${endblock+1}?serach=&${search}&searchtxt=${searchtxt}">다음</a>
         </c:if>
 
 
-    </div><!--content_container-->
 
-
-</div><!--container-->
-
-
-
+    </div>
+</div>
 </body>
 </html>
-    
