@@ -8,6 +8,7 @@
               , tsubject
               , ltitle
               , NAME
+              , lid
         FROM   user u, teacher t, lecture l
         WHERE  u.uid = t.uid
         AND    t.tid = l.tid
