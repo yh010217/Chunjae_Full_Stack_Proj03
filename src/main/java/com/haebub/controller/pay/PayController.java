@@ -67,6 +67,7 @@ public class PayController {
         model.addAttribute("lid", lid);
         model.addAttribute("sp_pcode", lec.get("sp_pcode"));
         model.addAttribute("sp_pplan", lec.get("sp_pplan"));
+
         return "pay/purchase_one";
     }
 
@@ -124,5 +125,62 @@ public class PayController {
         System.out.println(hmlist);
         return "/pay/cart";
     }
+
+    @GetMapping("/mypage/purchase_cart")
+    public String purchaseCart(HttpServletRequest request, Model model) {
+
+        HttpSession session = request.getSession();
+        String id = (String) session.getAttribute("id");
+        HashMap<String, Object> user = userService.getUid(id);
+        model.addAttribute("sp_uid", user.get("sp_uid"));
+
+        String lid_attached = request.getParameter("lid");
+        String[] lid_arr = lid_attached.split("_");
+
+        List<HashMap<String, Object>> lec_hmlist = new ArrayList<>();
+        for (int i = 0; i < lid_arr.length; i++) {
+            lec_hmlist.add(userService.getLec(lid_arr[i]));
+            System.out.println(userService.getLec(lid_arr[i]));
+        }
+        model.addAttribute("lec_hmlist", lec_hmlist);
+        model.addAttribute("lid_attached", lid_attached);
+
+        return "pay/purchase_cart";
+    }
+
+    @GetMapping("/pay/{lid_attached}/success_cart")
+    public String successCart(@PathVariable String lid_attached
+            , HttpServletRequest request
+            , Model model) {
+        /*
+            @RequestParam String order_code
+            @RequestParam String status
+            얘네들은 jsp의 param.으로 감당 가능
+        */
+        model.addAttribute("lid_attached", lid_attached);
+
+
+        return "/pay/get_itemcode";
+    }
+
+    @GetMapping("/pay/success_cart_insert")
+    public String arrTest(@RequestParam String order_code
+            , @RequestParam String lid_attached
+            , @RequestParam String order_item_code
+            , HttpServletRequest request
+    ) {
+
+        HttpSession session = request.getSession();
+        String id = (String) session.getAttribute("id");
+
+
+        int uid = (Integer) userService.getUid(id).get("uid");
+        String suid = uid + "";
+
+        paymentService.insertCartPay(suid, order_code, lid_attached, order_item_code);
+
+        return "redirect:/index";
+    }
+
 
 }

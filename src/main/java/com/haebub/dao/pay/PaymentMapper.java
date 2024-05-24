@@ -15,4 +15,10 @@ public interface PaymentMapper {
     int insertCart(HashMap<String, Object> hm);
 
     List<HashMap<String, Object>> getCartList(String uid);
+
+    int insertCartOrder(HashMap<String,Object> hm);
+
+    int getPid(String sp_ocode);
+
+    int insertItem(HashMap<String, Object> itemhm);
 }
