@@ -46,7 +46,9 @@
                             <li>[<c:out value="${item.tsubject}"/>]<c:out value="${item.name}"/> 선생님</li>
                             <li>수강 기간 : <c:out value="${item.startDate}"/> ~ <c:out value="${item.endDate}"/></li>
                             <li>결제 금액 : <c:out value="${item.lprice}"/></li>
-                            <li><a href="/pay/refund/${item.pistatus}/${item.pid}/${item.piid}">환불 신청</a></li>
+                            <c:if test="${item.can_refund eq 'can_refund'}">
+                                <li><a href="/pay/refund/${item.pistatus}/${item.pid}/${item.piid}">환불 신청</a></li>
+                            </c:if>
                         </ul>
                     </c:if>
                 </c:forEach>

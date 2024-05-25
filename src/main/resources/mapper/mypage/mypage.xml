@@ -44,7 +44,7 @@
         INNER JOIN lecture l ON pit.lid = l.lid
         INNER JOIN teacher t ON l.tid = t.tid
         INNER JOIN user u ON t.uid = u.uid
-        WHERE  p.uid = #{uid}
+        WHERE p.uid = #{uid}
         <!--AND DATEDIFF(DATE_ADD(DATE(p.ptime), INTERVAL l.lperiod DAY), DATE(NOW())) >= 0-->
 
     </select>
@@ -86,7 +86,7 @@
         INNER JOIN lecture l ON pit.lid = l.lid
         INNER JOIN teacher t ON l.tid = t.tid
         INNER JOIN user u ON t.uid = u.uid
-        WHERE  p.uid = #{uid}
+        WHERE p.uid = #{uid}
         AND DATE(NOW()) > DATE_ADD(DATE(p.ptime), INTERVAL l.lperiod DAY)
 
     </select>
@@ -98,38 +98,41 @@
     </select>
     <!-- 결제 내역 조회 -->
     <select id="paidList" parameterType="int" resultType="com.haebub.dto.mypage.PaidDTO">
-        <!--
-        SELECT ptime
-        , ltitle
-        , lprice
-        , tsubject
-        , NAME
-        , DATE(ptime) AS 'startDate'
-        , DATE_ADD(DATE(ptime), INTERVAL + lperiod DAY) AS 'endDate'
-        FROM purchase p, lecture l, teacher t, user u
-        WHERE p.lid = l.lid
-        AND l.tid = t.tid
-        AND t.uid = u.uid
-        AND pstatus = 'success'
-        AND p.uid = #{uid}
--->
-        SELECT ptime
-        , ltitle
-        , lprice
-        , tsubject
-        , u.NAME
-        , DATE(ptime) AS 'startDate'
-        , DATE_ADD(DATE(ptime), INTERVAL + lperiod DAY) AS 'endDate'
-        , p.pid
-        , pit.piid
-        , pit.pistatus
-        FROM purchase_test p
+
+        <![CDATA[
+            SELECT ptime
+            , ltitle
+            , lprice
+            , tsubject
+            , u.NAME
+            ,CASE
+            WHEN DATE(lopendate) > DATE(ptime) THEN DATE(lopendate)
+            ELSE DATE(ptime) END AS 'startDate'
+            , DATE_ADD(
+            CASE
+            WHEN DATE(lopendate) > DATE(ptime) THEN DATE(lopendate)
+            ELSE DATE(ptime) END
+            , INTERVAL + lperiod DAY) AS 'endDate'
+            , p.pid
+            , pit.piid
+            , pit.pistatus
+            ,CASE
+            WHEN
+            CURDATE() <
+                DATE_ADD(
+            CASE
+            WHEN DATE(lopendate) > DATE(ptime) THEN DATE(lopendate)
+            ELSE DATE(ptime) END
+            ,INTERVAL + 7 DAY)  THEN 'can_refund'
+            ELSE 'cannot_refund' END  AS 'can_refund'
+            FROM purchase_test p
             INNER JOIN user up ON p.uid = up.uid
             INNER JOIN pitem pit ON p.pid = pit.pid
             INNER JOIN lecture l ON pit.lid = l.lid
             INNER JOIN teacher t ON l.tid = t.tid
             INNER JOIN user u ON t.uid = u.uid
-        WHERE p.uid = #{uid}
+            WHERE p.uid = #{uid};
+        ]]>
     </select>
     <!-- 로그인한 사용자 조회 -->
     <select id="getUser" parameterType="int" resultType="com.haebub.dto.User.UserDTO">
@@ -148,7 +151,7 @@
     <update id="userModify" parameterType="com.haebub.dto.User.UserDTO">
         UPDATE user
         SET
-          id = #{id}
+        id = #{id}
         , name = #{name}
         , nickname = #{nickname}
         , email = #{email}
