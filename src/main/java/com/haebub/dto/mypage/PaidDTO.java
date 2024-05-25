@@ -13,6 +13,7 @@ public class PaidDTO {
     private String startDate;
     private String endDate;
     private String now;
+    private String pid;
     private String piid;
     private String pistatus;
 }

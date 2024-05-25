@@ -184,5 +184,43 @@ public class PayController {
         return "redirect:/index";
     }
 
+    @GetMapping("/pay/refund/{pistatus}/{pid}/{piid}")
+    public String refund(Model model
+        ,@PathVariable String pistatus
+        ,@PathVariable String pid
+        ,@PathVariable String piid){
+        /*
+        pistatus가 one 이면 굳이 pid 까지도 안보고 piid 로 sp_oitem만으로 환불 진행 가능
+        pistatus가 cart 면 pid 로 sp_ocode까지 가져오고 piid의 sp_oitem을 가져와야 환불 진행 가능
+
+        공통 : pitem에는 lid 도 가지고 있는데, 그 lid에서 lecture를 타고가 lprice까지 받기
+
+        그리고 model에는 pistatus까지 집어넣어서 jstl,js 로 확인하고 들어가기,
+        뭐 자바스크립트 함수를 두개 만들어놓고 jstl의 if 로 실행시키면 되지 않을까
+        */
+
+        if(pistatus.equals("one")){
+            HashMap<String,Object> hm = paymentService.getOneItem(piid);
+            model.addAttribute("hm",hm);
+        }else if(pistatus.equals("cart")){
+            HashMap<String,Object> hm = paymentService.getCartItem(pid,piid);
+            model.addAttribute("hm",hm);
+        }
+
+        model.addAttribute("piid",piid);
+        model.addAttribute("pistatus",pistatus);
+
+        return "pay/refund"; // 이 페이지에서 js fetch 로 환불 진행
+    }
+
+    @GetMapping("pay/refund_success/{piid}")
+    public String refundSuccess(@PathVariable String piid){
+        //refund 성공시 refund 테이블에 insert
+        //pitem 테이블에서 해당 piid의 status를 refund로 update
+        paymentService.refundUpdate(piid);
+
+        return "redirect:/index/mypage/refund";
+    }
+
 
 }

@@ -55,4 +55,22 @@
         values( #{sp_oitem}, #{lid} , #{pid} , 'one' )
     </insert>
 
+    <select id="getOneItem" parameterType="string" resultType="hashmap">
+        select l.lprice, p.sp_oitem
+        from pitem p INNER JOIN lecture l ON p.lid = l.lid
+        where p.piid = #{piid} and p.pistatus = 'one'
+    </select>
+    <select id="getCartItem" parameterType="hashmap" resultType="hashmap">
+        select l.lprice, pit.sp_oitem, p.sp_ocode
+        from pitem pit INNER JOIN lecture l ON pit.lid = l.lid
+            INNER JOIN purchase_test p on pit.pid = p.pid
+        where pit.piid = #{piid} and pit.pistatus = 'cart'
+    </select>
+    <update id="refundUpdate" parameterType="string">
+        update pitem
+        set pistatus = 'refund'
+            ,rdate = now()
+        where piid = #{piid}
+    </update>
+
 </mapper>

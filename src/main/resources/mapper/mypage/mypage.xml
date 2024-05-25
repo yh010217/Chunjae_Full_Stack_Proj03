@@ -120,8 +120,9 @@
         , u.NAME
         , DATE(ptime) AS 'startDate'
         , DATE_ADD(DATE(ptime), INTERVAL + lperiod DAY) AS 'endDate'
-        ,pit.piid
-        ,pit.pistatus
+        , p.pid
+        , pit.piid
+        , pit.pistatus
         FROM purchase_test p
             INNER JOIN user up ON p.uid = up.uid
             INNER JOIN pitem pit ON p.pid = pit.pid
