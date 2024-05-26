@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -33,6 +34,20 @@
 
     <div id="content_container">
             <a href="/admin/register">강사 등록</a>
+        <div class="teacher">
+            <h2>전체 강사</h2>
+            <ul>
+                <c:forEach var="item" items="${list}">
+                    <li>
+                        <p class="t_1"><c:out value="${item.tid}"/> </p>
+                        <p class="t_2"><c:out value="${item.tsubject}"/></p>
+                        <img class="teacher_img" src="/getImg/${item.tprofile}" alt="${item.tprofile}">
+                        <p class="t_3"><c:out value="${item.name}"/></p>
+                        <p class="t_4"><c:out value="${item.tintro}"/></p>
+                    </li>
+                </c:forEach>
+            </ul>
+        </div>
     </div>
 </div>
 

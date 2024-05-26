@@ -23,4 +23,18 @@
         SET     usertype = 2
         WHERE   uid = #{uid}
     </update>
+    <select id="isUidExist" parameterType="int" resultType="int">
+        SELECT count(*)
+        from teacher
+        where uid = #{uid}
+    </select>
+    <select id="getTeacherList" resultType="com.haebub.dto.admin.TeacherDTO">
+        SELECT   tprofile
+               , tsubject
+               , tintro
+               , tid
+               , name
+        FROM   teacher t
+            INNER JOIN user u ON t.uid = u.uid
+    </select>
 </mapper>

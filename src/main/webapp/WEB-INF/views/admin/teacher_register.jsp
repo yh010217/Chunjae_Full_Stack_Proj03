@@ -33,7 +33,7 @@
 
   <div id="content_container">
       <h2>강사 등록 go ,,</h2>
-    <form method="post" action="/registerResult" enctype="multipart/form-data">
+    <form method="post" action="/admin/registerResult" enctype="multipart/form-data">
       <ul>
         <li>
           <div class="show" id="show"><img src="" alt=""></div>
@@ -45,16 +45,16 @@
         <li>
           <label for="id">강사 ID</label>
           <input type="text" name="id" id="id"/>
-          <%-- 회원 확인 후 입력하게 하기 --%>
-          <button type="button" id="UserCk">회원 확인</button>
+     <%--     &lt;%&ndash; 회원 확인 후 입력하게 하기 &ndash;%&gt;
+          <button type="button" id="UserCk">회원 확인</button>--%>
         </li>
         <li>
-          <label for="subject">과목</label>
-          <input type="text" name="subejct" id="subject">
+          <label for="tsubject">과목</label>
+          <input type="text" name="tsubject" id="tsubject">
         </li>
         <li>
-          <label for="intro">소개</label>
-          <input type="text" name="intro" id="intro"/>
+          <label for="tintro">소개</label>
+          <input type="text" name="tintro" id="tintro"/>
         </li>
         <li>
           <input type="submit" value="등록하기">
