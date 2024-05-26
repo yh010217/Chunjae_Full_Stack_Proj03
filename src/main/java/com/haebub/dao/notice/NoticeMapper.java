@@ -13,6 +13,9 @@ public interface NoticeMapper {
 
     int totalCount(HashMap<String, Object> hm);
 
+    NoticeDTO detailNot(int nno);
+
+
 
 
 }

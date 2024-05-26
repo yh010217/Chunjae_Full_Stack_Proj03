@@ -18,13 +18,16 @@
     </div>
     <div class="tr">
         <c:forEach var="item" items="${noticelist}">
-            <div class="td"><a href="/detail/${item.nno}"><c:out value="${item.nno}"/></a></div>
-            <div class="td">${item.ntitle}</div>
-            <div class="td">${item.ncontent}</div>
-            <div class="td">${item.ndate}</div>
+            <div class="td">
+                <a href="/index/notdetail/${item.nno}"><c:out value="${item.nno}"/></a>
+                <c:out value="${item.ntitle}"/>
+                <c:out value="${item.ncontent}"/>
+                <c:out value="${item.ndate}"/>
+            </div>
         </c:forEach>
     </div>
 </div>
+<!-- 검색 -->
 <form method="get" action="/index/noticelist">
     <select name="search">
         <option value="nno">글번호</option>

@@ -60,7 +60,14 @@
                 )
 
     </insert>
-
+    <select id="detadetailNot" parameterType="int" resultType="com.haebub.dto.notice.NoticeDTO">
+        select nno
+        ,ntitle
+        ,ncontent
+        ,ndate
+        from notice
+        where nno=#{nno}
+    </select>
 
 
 

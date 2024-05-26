@@ -65,6 +65,12 @@ public class AdminNoticeController {
         int result=adminNoticeSerivce.noticelistresult(dto);
         return "redirect:/admin/noticelist";
     }
+    @GetMapping("/admin/noticelist/detail/{nno}")
+    public String notDetail(@PathVariable int nno, Model model){
+        NoticeDTO detailNot=adminNoticeSerivce.detadetailNot(nno);
+        model.addAttribute("detailNot",detailNot);
+        return "admin/admin_noticelistdetail";
+    }
 
 
 

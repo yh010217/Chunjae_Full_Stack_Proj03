@@ -15,4 +15,6 @@ public interface AdminNoticeSerivce {
 
     int noticelistresult(NoticeDTO dto);
 
+    NoticeDTO detadetailNot(int nno);
+
 }

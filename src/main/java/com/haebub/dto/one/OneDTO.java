@@ -9,6 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OneDTO {
+    private int ono;
 
     private String otitle;
     private String ocontent;
