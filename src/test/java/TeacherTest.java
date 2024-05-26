@@ -1,5 +1,6 @@
 import com.haebub.dao.admin.TeacherMapper;
 import com.haebub.dto.admin.TeacherDTO;
+import com.haebub.service.admin.TeacherService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ public class TeacherTest {
 
     @Autowired
     private TeacherMapper teacherMapper;
+
+    @Autowired
+    private TeacherService service;
 
     @Test
     public void test1() {
@@ -38,5 +42,14 @@ public class TeacherTest {
     public void test3(){
         assertEquals(1, teacherMapper.updateUsertype(28));
     }
+
+    @Test
+    public void test4() {
+        assertNotNull(teacherMapper.getTeacherList());
+    }
+
+
+
+
 
 }
