@@ -10,17 +10,25 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="/resources/css/teacher/list.css">
 </head>
 <body>
-  <h2>해영 대표 강사진</h2>
-  <div class="tea_list">
-    <%-- 필요한 것 : 사진, 과목, 선생 이름, 소개--%>
-    <c:forEach var="item" items="${list}">
-      ${item.tprofile}
-      <a href="/index/teacher/${item.tid}" style="color: #00AE68"> ${item.name}선생님 </a>
-      ${item.tsubject}
-      ${item.tintro}
-    </c:forEach>
-  </div>
+<article id="teaList">
+    <h2>해영 대표 강사진</h2>
+    <div class="tea_list">
+        <ul>
+            <%-- 필요한 것 : 사진, 과목, 선생 이름, 소개--%>
+            <c:forEach var="item" items="${list}">
+                <li>
+                  <div class="teaList_img"> <img src="/getImg/${item.tprofile}" alt="${item.tprofile}"> </div>
+                  <p class="teaList_p1">${item.tsubject}</p>
+                  <a class="teaList_a" href="/index/teacher/${item.tid}" style="color: #00AE68"> ${item.name}선생님 </a>
+                  <p class="teaList_p2">${item.tintro}</p>
+                </li>
+            </c:forEach>
+        </ul>
+    </div>
+</article>
+
 </body>
 </html>

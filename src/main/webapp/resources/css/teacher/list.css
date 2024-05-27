@@ -1,0 +1,54 @@
+#teaList {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#teaList > h2 {
+    text-align: center;
+    border-bottom: 4px solid black;
+    font-size: 48px;
+    letter-spacing: 18px;
+    margin-bottom: 10px;
+
+}
+
+#teaList .tea_list ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+#teaList .tea_list ul li {
+    border: 1px solid black;
+    width: 210px;
+    height: 320px;
+    padding: 20px;
+}
+
+#teaList .teaList_img {
+    width: 210px;
+    height: 210px;
+    background-color: #726E6E;
+    margin-bottom: 12px;
+}
+
+#teaList .teaList_img img {
+    object-fit: cover;
+    width: 210px;
+    height: 210px;
+}
+
+#teaList .teaList_p1 {
+    font-size: 18px;
+    color: #000;
+}
+
+#teaList .teaList_a {
+    font-size: 28px;
+
+}
+
+#teaList .teaList_p2 {
+    margin-top: 12px;
+    font-size: 14px;
+}

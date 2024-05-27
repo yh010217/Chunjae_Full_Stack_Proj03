@@ -13,9 +13,16 @@
 </head>
 <body>
     <c:set var="item" value="${list}"/>
-    ${item.name}
-    ${item.tintro}
-    ${item.tsubject}
+
+    <div>
+        ${item.tsubject} ${item.name} 선생님 <br>
+        ${item.tintro}
+    </div>
+
+    개설 강좌 개
+
+    <h2> 강좌 보기 </h2>
+
 
 
     <a href="/index/lecInsert/${item.tid}">추가하기</a>

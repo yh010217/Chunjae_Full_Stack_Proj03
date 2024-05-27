@@ -31,13 +31,14 @@ public class TeacherServiceImple2 implements TeacherService{
 
     @Override // insert 하기...
     public void insertData(String path, LectureDTO dto, int tid) throws IOException{
+
+        HashMap<String, Object> o = new HashMap<>();
+
         if(dto.getFile() != null) {
             String fnames = fileUpload(path, dto);
             dto.setLprofile(fnames);
         }
-        System.out.println("tid >>>>>>>>> " + tid);
 
-        HashMap<String, Object> o = new HashMap<>();
         o.put("ltitle", dto.getLtitle());
         o.put("lprofile", dto.getLprofile());
         o.put("lintro", dto.getLintro());
@@ -63,10 +64,15 @@ public class TeacherServiceImple2 implements TeacherService{
         UUID uuid = UUID.randomUUID();
 
         String fname = dto.getFile().getOriginalFilename();
-        System.out.println("original name : " + fname);
+
+        // 파일 이름이 null인 경우 예외 처리
+        if (fname == null) {
+            throw new RuntimeException("File name is null");
+        }
+
         fname = URLEncoder.encode(fname, StandardCharsets.UTF_8).replace("+", "%20");
         String filename = uuid + "_" + fname;
-        System.out.println(filename + " >> filename");
+
         File saveFile = new File(path, filename);
 
         try {
