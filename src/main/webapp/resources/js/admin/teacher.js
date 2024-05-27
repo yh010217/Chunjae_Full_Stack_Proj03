@@ -1,9 +1,7 @@
 window.onload = function () {
 
-    document.getElementById('teacher').onclick = function () {
-        console.log("강사 등록 버튼!");
-    };
-}
+
+
 
 // 강사 프로필 미리보기
 document.addEventListener("DOMContentLoaded", function() {
@@ -24,3 +22,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+}

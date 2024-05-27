@@ -37,7 +37,6 @@ public class ATeacherController {
         return "admin/admin_teacher";
     }
 
-
     /** 강사 등록 */
     @GetMapping("/admin/register")
     public String register(TeacherDTO dto, Model model )
@@ -70,8 +69,15 @@ public class ATeacherController {
             , HttpServletRequest request) {
         String path="/uploadImg/teacher";
         String realpath= request.getSession().getServletContext().getRealPath(path);
-        String fname = URLEncoder.encode(tid, StandardCharsets.UTF_8)
-                .replace("+", "%20");
+
+        String fname = "";
+        if (tid.contains("_")) {
+            String[] truename = tid.split("_");
+            fname = URLEncoder.encode(truename[1], StandardCharsets.UTF_8).replace("+", "%20");
+        } else {
+            fname = URLEncoder.encode(tid, StandardCharsets.UTF_8).replace("+", "%20");
+        }
+        // String fname = URLEncoder.encode(tid, StandardCharsets.UTF_8).replace("+", "%20");
         InputStream in = null;
         ResponseEntity<byte[]> entity=null;
         try {
