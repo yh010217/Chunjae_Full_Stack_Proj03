@@ -14,6 +14,7 @@
 <div id="wrap">
     <%-- 왼쪽 사이드바  --%>
 
+    <div id="sidebar_margin"></div>
     <div id="sidebar_container">
         <div id="sidebar">
             <ul>
@@ -43,6 +44,9 @@
                         <ul>
                             <li>결제 완료</li>
                             <li><c:out value="${item.ptime}"/></li>
+                            <a href="/index/lecdetail/${item.lid}">
+                                <li><c:out value="${item.ltitle}"/></li>
+                            </a>
                             <li>[<c:out value="${item.tsubject}"/>]<c:out value="${item.name}"/> 선생님</li>
                             <li>수강 기간 : <c:out value="${item.startDate}"/> ~ <c:out value="${item.endDate}"/></li>
                             <li>결제 금액 : <c:out value="${item.lprice}"/></li>

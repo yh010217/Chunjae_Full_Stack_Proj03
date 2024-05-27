@@ -17,4 +17,5 @@ public class PaidDTO {
     private String piid;
     private String pistatus;
     private String can_refund;
+    private String lid;
 }

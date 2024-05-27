@@ -27,7 +27,7 @@
     </insert>
 
     <select id="getCartList" parameterType="string" resultType="hashmap">
-        SELECT l.lid, l.ltitle, l.lprice , t.tid, u.name
+        SELECT l.lid, l.ltitle, l.lprice , t.tid, u.name , t.tsubject , l.lperiod
         from fav f INNER JOIN lecture l ON f.lid = l.lid
         INNER JOIN teacher t ON l.tid = t.tid
         INNER JOIN user u ON t.uid = u.uid
@@ -72,9 +72,9 @@
             ,rdate = now()
         where piid = #{piid}
     </update>
-    <delete id="deleteFav" parameterType="string">
+    <delete id="deleteFav" parameterType="hashmap">
         delete from fav
-        where lid = #{lid}
+        where lid = #{lid} and uid = #{uid}
     </delete>
 
 </mapper>

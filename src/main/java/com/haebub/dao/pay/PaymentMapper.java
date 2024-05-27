@@ -30,5 +30,5 @@ public interface PaymentMapper {
 
     int refundUpdate(String piid);
 
-    void deleteFav(String lid);
+    void deleteFav(HashMap<String,Object> hm);
 }

@@ -25,5 +25,5 @@ public interface PaymentService {
 
     int refundUpdate(String piid);
 
-    void deleteFav(String lid_attached);
+    void deleteFav(String lid_attached, String uid);
 }

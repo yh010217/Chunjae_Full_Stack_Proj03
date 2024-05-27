@@ -92,6 +92,10 @@ public class PaymentServiceImple implements PaymentService {
             itemhm.put("sp_oitem",oicodes[i]);
             itemhm.put("lid",lids[i]);
             itemhm.put("pid",pid);
+            System.out.println("===========");
+            System.out.println(oicodes[i]);
+            System.out.println(lids[i]);
+            System.out.println(pid);
             paymentMapper.insertItem(itemhm);
         }
 
@@ -139,11 +143,17 @@ public class PaymentServiceImple implements PaymentService {
     }
 
     @Override
-    public void deleteFav(String lid_attached) {
+    public void deleteFav(String lid_attached, String uid) {
+        HashMap<String, Object> hm;
+
         String[] lids = lid_attached.split("_");
         int size = lids.length;
+
         for(int i = 0 ; i < size ; i ++){
-            paymentMapper.deleteFav(lids[i]);
+            hm = new HashMap<>();
+            hm.put("uid",uid);
+            hm.put("lid",lids[i]);
+            paymentMapper.deleteFav(hm);
         }
     }
 

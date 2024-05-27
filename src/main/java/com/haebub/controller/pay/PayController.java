@@ -161,7 +161,14 @@ public class PayController {
         */
         // 이제 이걸 샀다는 거니깐 fav 에서 지우기
 
-        paymentService.deleteFav(lid_attached);
+
+        HttpSession session = request.getSession();
+        String id = (String) session.getAttribute("id");
+
+        int uid = (Integer) userService.getUid(id).get("uid");
+        String suid = uid + "";
+
+        paymentService.deleteFav(lid_attached, suid);
 
         model.addAttribute("lid_attached", lid_attached);
 
@@ -221,10 +228,24 @@ public class PayController {
     public String refundSuccess(@PathVariable String piid){
         //refund 성공시 refund 테이블에 insert
         //pitem 테이블에서 해당 piid의 status를 refund로 update
+
         paymentService.refundUpdate(piid);
 
         return "redirect:/index/mypage/refund";
     }
 
+    @GetMapping("/pay/delete_fav/{lid}")
+    public String deleteFav(@PathVariable String lid, HttpServletRequest request){
+
+        HttpSession session = request.getSession();
+        String id = (String) session.getAttribute("id");
+
+        int uid = (Integer) userService.getUid(id).get("uid");
+        String suid = uid + "";
+
+        paymentService.deleteFav(lid,suid);
+
+        return "redirect:/index/mypage/cart";
+    }
 
 }
