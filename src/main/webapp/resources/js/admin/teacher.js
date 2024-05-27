@@ -1,9 +1,9 @@
 window.onload = function () {
 
 
+}
 
-
-// 강사 프로필 미리보기
+// 선생님 프로필 미리보기
 document.addEventListener("DOMContentLoaded", function() {
 
     var fileInput = document.getElementById('file');
@@ -23,4 +23,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-}

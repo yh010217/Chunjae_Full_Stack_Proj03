@@ -45,19 +45,19 @@
                     </li>
                     <li>
                         <label for="id" class="label_id">ID</label>
-                        <input type="text" name="id" id="id" placeholder="ID를 입력하세요."/>
+                        <input type="text" name="id" id="id" class="input_box" placeholder="ID를 입력하세요."/>
                     </li>
                     <li>
                         <label for="tsubject" class="label_tsubject">과목</label>
-                        <input type="text" name="tsubject" id="tsubject" placeholder="과목을 입력하세요.">
+                        <input type="text" name="tsubject" id="tsubject" class="input_box" placeholder="과목을 입력하세요.">
                     </li>
                     <li>
                         <label for="tintro" class="label_tintro">소개</label>
-                        <input type="text" name="tintro" id="tintro" placeholder="선생님 소개를 입력하세요."/>
+                        <input type="text" name="tintro" id="tintro" class="input_box"placeholder="선생님 소개를 입력하세요."/>
                     </li>
                     <li>
-                        <input type="submit" class="btn submit_btn" value="등록하기">
-                        <input type="reset" class="btn reset_btn" value="취소하기">
+                        <input type="submit" class="btn submit_btn" value="등 록">
+                        <input type="reset" class="btn reset_btn" value="취 소">
                     </li>
                 </ul>
             </form>

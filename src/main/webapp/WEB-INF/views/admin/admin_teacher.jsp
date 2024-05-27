@@ -36,9 +36,17 @@
             <a href="/admin/register">강사 등록</a>
         <div class="teacher">
             <h3>강사 관리</h3>
-            <ul>
+            <ul class="teacher_title">
+                <li>프로필</li>
+                <li>번호</li>
+                <li>과목</li>
+                <li>이름</li>
+                <li>소개</li>
+            </ul>
+            <ul class="teacher_list">
                 <c:forEach var="item" items="${list}">
-                    <li>
+                    <input type="checkbox" name="${item.tid}"/>
+                    <li class="teacher_block">
                         <img class="teacher_img" src="/getImg/${item.tprofile}" alt="${item.tprofile}">
                         <p class="t_1"><c:out value="${item.tid}"/> </p>
                         <p class="t_2"><c:out value="${item.tsubject}"/></p>
