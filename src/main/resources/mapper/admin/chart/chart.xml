@@ -20,4 +20,46 @@
         FROM user;
         ]]>
     </select>
+    <select id="getPayChart" resultType="hashmap">
+
+        SELECT
+        SUM(if(DATE(ptime) = (CURDATE() - INTERVAL 6 day),lprice,0))  AS unit1
+        ,SUM(if(DATE(ptime) = (CURDATE() - INTERVAL 5 day),lprice,0))  AS unit2
+        ,SUM(if(DATE(ptime) = (CURDATE() - INTERVAL 4 day),lprice,0))  AS unit3
+        ,SUM(if(DATE(ptime) = (CURDATE() - INTERVAL 3 day),lprice,0))  AS unit4
+        ,SUM(if(DATE(ptime) = (CURDATE() - INTERVAL 2 day),lprice,0))  AS unit5
+        ,SUM(if(DATE(ptime) = (CURDATE() - INTERVAL 1 day),lprice,0))  AS unit6
+        ,SUM(if(DATE(ptime) = CURDATE(),lprice,0))  AS unit7
+        FROM lecture l INNER JOIN pitem pit ON l.lid = pit.lid
+        inner JOIN purchase_test p ON p.pid = pit.pid
+    </select>
+
+    <select id="getStudentCount" resultType="int">
+        SELECT COUNT(*)
+        FROM user
+        WHERE usertype = 0
+    </select>
+
+    <select id="getTeacherCount" resultType="int">
+        SELECT COUNT(*)
+        FROM user
+        WHERE usertype = 2
+    </select>
+
+    <select id="getPayPerWeek" resultType="int">
+        SELECT SUM(lprice)
+        FROM lecture l INNER JOIN pitem pit ON l.lid = pit.lid
+        inner JOIN purchase_test p ON p.pid = pit.pid
+        WHERE ptime BETWEEN CURDATE() - INTERVAL 1 WEEK AND CURDATE()
+    </select>
+
+    <select id="getLectureCount" resultType="int">
+        SELECT count(*)
+        FROM lecture
+    </select>
+
+
+
+
+
 </mapper>

@@ -7,6 +7,7 @@ import com.haebub.service.admin.ChartTestService;
 import com.haebub.service.admin.ChartTestServiceImple;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -21,7 +22,9 @@ public class AdminController {
     private final ChartService chartService;
 
     @GetMapping("/admin/main")
-    public String adminMain(){
+    public String adminMain(Model model){
+        HashMap<String,Object> hm = chartService.getStatus();
+        model.addAttribute("hm",hm);
         return "admin/admin_main";
     }
 
@@ -34,4 +37,11 @@ public class AdminController {
         List<HashMap<String,Object>> list = chartService.getJoinChart();
         return list;
     }
+    @GetMapping("/admin/chart/pay")
+    public @ResponseBody List<HashMap<String,Object>> pay_chart(){
+        List<HashMap<String,Object>> list = chartService.getPayChart();
+        return list;
+    }
+
+
 }

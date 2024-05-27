@@ -88,8 +88,9 @@ public class PayController {
         System.out.println(lid);
 
         //쿼리조지기
-        paymentService.purchaseOne(order_code, status, suid, lid);
+        //paymentService.purchaseOne(order_code, suid);
 
+        //여기서 그냥 purchase_test에 까지 넣고 있었음
         paymentService.insertOnePay(suid, lid, order_code);
 
         return "redirect:/index/lecturelist";

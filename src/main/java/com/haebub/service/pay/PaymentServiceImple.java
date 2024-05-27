@@ -38,16 +38,35 @@ public class PaymentServiceImple implements PaymentService {
     }
 
     @Override
-    public int purchaseOne(String order_code, String status, String uid, String lid) {
+    public int purchaseOne(String order_code, String uid) {
 
         HashMap<String, Object> hm = new HashMap<>();
         hm.put("order_code", order_code);
-        hm.put("success", status);
         hm.put("uid", uid);
-        hm.put("lid", lid);
 
         int result = paymentMapper.purchaseOne(hm);
         return result;
+    }
+
+
+    @Override
+    public void insertOnePay(String uid, String lid, String order_code) {
+
+        HashMap<String,Object> orderhm = new HashMap<>();
+        orderhm.put("uid",uid);
+        orderhm.put("sp_ocode",order_code);
+
+        paymentMapper.insertCartOrder(orderhm);
+
+        int pid = paymentMapper.getPid(order_code);
+
+
+        HashMap<String,Object> itemhm= new HashMap<>();
+        itemhm.put("sp_oitem",order_code);
+        itemhm.put("lid",lid);
+        itemhm.put("pid",pid);
+        paymentMapper.insertItemOne(itemhm);
+
     }
 
     @Override
@@ -98,26 +117,6 @@ public class PaymentServiceImple implements PaymentService {
             System.out.println(pid);
             paymentMapper.insertItem(itemhm);
         }
-
-    }
-
-    @Override
-    public void insertOnePay(String uid, String lid, String order_code) {
-
-        HashMap<String,Object> orderhm = new HashMap<>();
-        orderhm.put("uid",uid);
-        orderhm.put("sp_ocode",order_code);
-
-        paymentMapper.insertCartOrder(orderhm);
-
-        int pid = paymentMapper.getPid(order_code);
-
-
-        HashMap<String,Object> itemhm= new HashMap<>();
-        itemhm.put("sp_oitem",order_code);
-        itemhm.put("lid",lid);
-        itemhm.put("pid",pid);
-        paymentMapper.insertItemOne(itemhm);
 
     }
 

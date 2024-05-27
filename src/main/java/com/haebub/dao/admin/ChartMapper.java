@@ -10,4 +10,14 @@ public interface ChartMapper {
 
     //List<HashMap<String, Object>> getUserChart();
     List<HashMap<String, Object>> getUserChart();
+
+    List<HashMap<String, Object>> getPayChart();
+
+    int getStudentCount();
+
+    int getTeacherCount();
+
+    int getPayPerWeek();
+
+    int getLectureCount();
 }

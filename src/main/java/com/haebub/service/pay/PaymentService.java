@@ -9,7 +9,7 @@ public interface PaymentService {
 
     int makeProduct(String lid, String sp_pcode, String sp_pplan);
 
-    int purchaseOne(String order_code, String status, String uid, String lid);
+    int purchaseOne(String order_code, String uid);
 
     int insertCart(String uid, String lid);
 
