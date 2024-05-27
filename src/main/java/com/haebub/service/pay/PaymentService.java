@@ -18,4 +18,12 @@ public interface PaymentService {
     void insertCartPay(String uid, String order_code, String lid_attached, String order_item_code);
 
     void insertOnePay(String uid, String lid, String order_code);
+
+    HashMap<String, Object> getOneItem(String piid);
+
+    HashMap<String, Object> getCartItem(String pid, String piid);
+
+    int refundUpdate(String piid);
+
+    void deleteFav(String lid_attached, String uid);
 }

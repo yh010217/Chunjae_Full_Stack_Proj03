@@ -92,6 +92,10 @@ public class PaymentServiceImple implements PaymentService {
             itemhm.put("sp_oitem",oicodes[i]);
             itemhm.put("lid",lids[i]);
             itemhm.put("pid",pid);
+            System.out.println("===========");
+            System.out.println(oicodes[i]);
+            System.out.println(lids[i]);
+            System.out.println(pid);
             paymentMapper.insertItem(itemhm);
         }
 
@@ -115,6 +119,42 @@ public class PaymentServiceImple implements PaymentService {
         itemhm.put("pid",pid);
         paymentMapper.insertItemOne(itemhm);
 
+    }
+
+    @Override
+    public HashMap<String, Object> getOneItem(String piid) {
+        HashMap<String,Object> itemhm = paymentMapper.getOneItem(piid);
+        return itemhm;
+    }
+
+    @Override
+    public HashMap<String, Object> getCartItem(String pid, String piid) {
+        HashMap<String,Object> hm = new HashMap<>();
+        hm.put("pid",pid);
+        hm.put("piid",piid);
+        HashMap<String,Object> itemhm = paymentMapper.getCartItem(hm);
+        return itemhm;
+    }
+
+    @Override
+    public int refundUpdate(String piid) {
+        int result = paymentMapper.refundUpdate(piid);
+        return result;
+    }
+
+    @Override
+    public void deleteFav(String lid_attached, String uid) {
+        HashMap<String, Object> hm;
+
+        String[] lids = lid_attached.split("_");
+        int size = lids.length;
+
+        for(int i = 0 ; i < size ; i ++){
+            hm = new HashMap<>();
+            hm.put("uid",uid);
+            hm.put("lid",lids[i]);
+            paymentMapper.deleteFav(hm);
+        }
     }
 
 }
