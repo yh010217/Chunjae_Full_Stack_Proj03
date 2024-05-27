@@ -50,11 +50,12 @@ public class LoginController {
     /** 로그인*/
     @PostMapping("/login_check")
     public ModelAndView login_check(@ModelAttribute UserDTO dto,HttpSession session){
-        String name=service.logincheck(dto);
+        String id=service.logincheck(dto);
+        System.out.println("eee"+id);
         ModelAndView mav=new ModelAndView();
-        if (name!= null){
+        if (id!= null){
+            session.setAttribute("id",id);
             mav.setViewName("redirect:/index");
-
         }else {
             mav.setViewName("redirect:/index/login");
             mav.addObject("message","error");
