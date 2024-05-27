@@ -1,6 +1,10 @@
 package com.haebub.controller;
 
+import com.haebub.dto.IndexDTO;
+import com.haebub.service.IndexService;
+import lombok.RequiredArgsConstructor;
 import org.aspectj.apache.bcel.classfile.Module;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -17,9 +21,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 @Controller
+@RequiredArgsConstructor
 public class indexController {
+
+    private final IndexService indService;
 
     @GetMapping(value={"/index/{path}","/index", "/index/{path}/{lid}"})
     public String main(@PathVariable(required = false) String path, @PathVariable(required = false)
@@ -35,13 +43,35 @@ public class indexController {
         return "/index";
     }
 
+    // 메인 중앙
+    @GetMapping(value = "mainlist")
+    public String mainlist(Model model) {
+        
+        // 최신순
+        List<IndexDTO> newList = indService.newlist();
+        model.addAttribute("newList", newList);
+
+        // 인기순
+        List<IndexDTO> popList = indService.popList();
+        model.addAttribute("popList", popList);
+
+        return "/main/mainlist";
+    }
+
+
+
     @GetMapping( value="/getImage/{lid}", produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_PNG_VALUE})
     public ResponseEntity<byte[]> getImage(@PathVariable String lid
             , HttpServletRequest request) {
         String path="/uploadImg";
         String realpath= request.getSession().getServletContext().getRealPath(path);
-        String fname = URLEncoder.encode(lid, StandardCharsets.UTF_8)
-                .replace("+", "%20");
+        String fname = "";
+        if (lid.contains("_")) {
+            String[] truename = lid.split("_");
+            fname = URLEncoder.encode(truename[1], StandardCharsets.UTF_8).replace("+", "%20");
+        } else {
+            fname = URLEncoder.encode(lid, StandardCharsets.UTF_8).replace("+", "%20");
+        }
         InputStream in = null;
         // System.out.println(fname + ">>>>>>>>>>> fname");
         ResponseEntity<byte[]> entity=null;

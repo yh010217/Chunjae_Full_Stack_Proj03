@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/resources/css/main/mainlist.css">
 </head>
 <body>
+<div class="wrap">
     <article id="article_1">
         <div class="main_01">
             <label>
@@ -74,21 +75,50 @@
         </div>
     </article>
 
-    <article id="main_03">
-        <h1>대표강사진</h1>
-        <span>더보기</span>
-    </article>
 
-    <article id="main_04">
-        <div>
-            <h1>BEST 강의</h1>
-            <a href="/index/lecturelist">더 많은 강의 보러 가기</a>
-        </div>
-        <div>
-            <h1>신규 강의</h1>
-            <a href="index/lecturelist">더 많은 강의 보러 가기</a>
-        </div>
-    </article>
+        <article id="main_03">
+            <div class="lec_title">
+                <h1>대표강사진</h1>
+                <a class="morelec" href="/index/teacher">더보기</a>
+            </div>
+
+        </article>
+
+        <article id="main_04">
+            <div class="bestLecture">
+                <div class="lec_title">
+                    <h1>BEST 강의</h1>
+                    <a class="morelec" href="/index/lecturelist">더보기</a>
+                </div>
+                <div class="lecture_list">
+                    <c:forEach var="item" items="${popList}">
+                        <ul>
+                            <li class="li_1"><img class="lecList_img" src="/getImage/${item.lprofile}" alt="${item.lprofile}"></li>
+                            <li class="li_2">${item.lgrade}학년</li>
+                            <li class="li_3">${item.ltitle}</li>
+                            <li class="li_4">${item.lprice}</li>
+                        </ul>
+                    </c:forEach>
+                </div>
+            </div>
+            <div class="newLecture">
+                <div class="lec_title">
+                    <h1>신규 강의</h1>
+                    <a class="morelec" href="/index/comingsoon">더보기</a>
+                </div>
+                <div class="lecture_list">
+                    <c:forEach var="item" items="${newList}">
+                        <ul>
+                            <li class="li_1"><img class="lecList_img" src="/getImage/${item.lprofile}" alt="${item.lprofile}"></li>
+                            <li class="li_2">${item.lgrade}학년</li>
+                            <li class="li_3">${item.ltitle}</li>
+                            <li class="li_4">${item.lprice}</li>
+                        </ul>
+                    </c:forEach>
+                </div>
+            </div>
+        </article>
+
 
     <article id="main_05">
         <div class="main_05_1">
@@ -110,5 +140,6 @@
             </ul>
         </div>
     </article>
+    </div>
 </body>
 </html>

@@ -17,7 +17,6 @@
     </style>
 </head>
 <body>
-아마 이 밑에 결제창이 뜰 거임
 <div id="purchase_window"></div>
 <script>
 
