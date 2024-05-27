@@ -46,12 +46,14 @@
             </div>
             <div class="tr">
                 <c:forEach var="item" items="${userDTOList}">
-                    <div class="td"><a href="/admin/user/modify/${item.uid}"><c:out value="${item.uid}"/></a></div>
-                    <div class="td">${item.name}</div>
-                    <div class="td">${item.nickname}</div>
-                    <div class="td">${item.id}</div>
-                    <div class="td">${item.email}</div>
-                    <div class="td"><a href="/admin/user/delete/${item.uid}">삭제하기</a></div>
+                    <div class="td">
+                        <a href="/admin/user/modify/${item.uid}"><c:out value="${item.uid}"/></a>
+                        <c:out value="${item.name}"/>
+                        <c:out value="${item.nickname}"/>
+                        <c:out value="${item.id}"/>
+                        <c:out value="${item.email}"/>
+                        <a href="/admin/user/delete/${item.uid}">삭제하기</a>
+                    </div>
                 </c:forEach>
             </div>
         </div> <!--회원리스트끝 -->

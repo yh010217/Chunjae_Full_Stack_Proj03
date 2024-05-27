@@ -11,6 +11,8 @@ public interface NoticeService {
 
     List<NoticeDTO> noticelist(int startrow, int pagesize, String search, String searchtxt);
 
+    NoticeDTO detailNot(int nno);
+
 
 
 }

@@ -15,4 +15,6 @@ public interface AdminNoticeMapper {
 
     int noticelistresult(NoticeDTO dto);
 
+    NoticeDTO detadetailNot(int nno);
+
 }

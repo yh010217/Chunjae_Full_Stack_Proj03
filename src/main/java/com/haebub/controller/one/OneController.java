@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.List;
 
 @Controller
 public class OneController {
@@ -64,6 +66,20 @@ public class OneController {
       model.addAttribute("ocontent",ocontent);*/
 
         return "redirect:/index";
+    }
+
+    @GetMapping("/onelist")
+    public String onelist(Model model){
+
+        List<OneDTO> list=oneSerivce.onelist();
+        model.addAttribute("list",list);
+        return "/one/onelist";
+    }
+    @GetMapping("/onedetail/{ono}")
+    public String oneDetail(@PathVariable int ono,Model model){
+        OneDTO  oneDetail=oneSerivce.oneDetail(ono);
+        model.addAttribute("oneDetail",oneDetail);
+        return "/one/onedetail";
     }
 
 

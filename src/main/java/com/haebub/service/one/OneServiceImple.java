@@ -5,6 +5,8 @@ import com.haebub.dto.one.OneDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class OneServiceImple implements OneSerivce {
     private final OneMapper oneMapper;
@@ -25,6 +27,18 @@ public class OneServiceImple implements OneSerivce {
     @Override
     public int getuid(String id) {
         return oneMapper.getuid(id);
+    }
+
+    @Override
+    public List<OneDTO> onelist() {
+        List<OneDTO> list=oneMapper.onelist();
+        return list;
+    }
+
+    @Override
+    public OneDTO oneDetail(int ono) {
+        OneDTO dto=oneMapper.oneDetail(ono);
+        return dto;
     }
 
 }

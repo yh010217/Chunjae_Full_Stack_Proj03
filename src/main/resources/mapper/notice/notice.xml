@@ -48,9 +48,13 @@
             </if>
         </where>
     </select>
-
-
-
-
+    <select id="detailNot" parameterType="int" resultType="com.haebub.dto.notice.NoticeDTO">
+        select nno
+        ,ntitle
+        ,ncontent
+        ,ndate
+        from notice
+        where nno=#{nno}
+    </select>
 
 </mapper>

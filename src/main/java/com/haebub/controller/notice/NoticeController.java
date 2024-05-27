@@ -49,8 +49,15 @@ public class NoticeController {
         model.addAttribute("endblock",endblock);
         model.addAttribute("totalpage",totalpage);
 
-        return "notice/noticelist";
+        return "/notice/noticelist";
 
+    }
+
+    @GetMapping("/notdetail/{nno}")
+    public String notDetail(@PathVariable int nno, Model model){
+        NoticeDTO detailNot=noticeService.detailNot(nno);
+        model.addAttribute("detailNot",detailNot);
+        return "/notice/noticedetail";
     }
 
 

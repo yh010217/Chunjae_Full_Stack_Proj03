@@ -35,6 +35,11 @@ public class NoticeServiceImple implements NoticeService{
         return list;
     }
 
+    @Override
+    public NoticeDTO detailNot(int nno) {
+       NoticeDTO dto=noticeMapper.detailNot(nno);
+       return dto;
+    }
 
 
 }

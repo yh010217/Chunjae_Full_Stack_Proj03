@@ -40,4 +40,10 @@ public class AdminNoticeServiceImple implements AdminNoticeSerivce{
         int result=mapper.noticelistresult(dto);
         return result;
     }
+
+    @Override
+    public NoticeDTO detadetailNot(int nno) {
+        NoticeDTO dto=mapper.detadetailNot(nno);
+        return dto;
+    }
 }

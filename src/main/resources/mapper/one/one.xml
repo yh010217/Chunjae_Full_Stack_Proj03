@@ -30,5 +30,26 @@
         from user
         where id = #{id}
     </select>
+    <select id="onelist" resultType="com.haebub.dto.one.OneDTO">
+        select   ono
+                ,otitle
+              ,ocontent
+              ,oregdate
+                ,osecret
+                ,oans
+        from one
+    </select>
+    <select id="oneDetail" parameterType="int" resultType="com.haebub.dto.one.OneDTO">
+        select   ono
+                ,otitle
+                ,ocontent
+                ,oregdate
+                ,osecret
+                ,owriter
+                ,oans
+        from one
+        where ono=#{ono}
+    </select>
+
 
 </mapper>
