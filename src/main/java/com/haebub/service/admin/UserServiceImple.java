@@ -65,5 +65,10 @@ public class UserServiceImple implements UserService{
         userMapper.deleteUser(uid);
     }
 
+    @Override
+    public int checkNick(String nickname) {
+        return userMapper.checkNick(nickname);
+    }
+
 
 }

@@ -5,10 +5,7 @@ import com.haebub.service.one.OneSerivce;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -80,6 +77,17 @@ public class OneController {
         OneDTO  oneDetail=oneSerivce.oneDetail(ono);
         model.addAttribute("oneDetail",oneDetail);
         return "/one/onedetail";
+    }
+    @PostMapping("/onedetail_result")
+    public String oneDetailinsert(@ModelAttribute OneDTO dto){
+        System.out.println("eee"+dto.getOno());
+        oneSerivce.oneDetailinsert(dto);
+        return "redirect:/index/onelist";
+    }
+    @GetMapping("/onelist/delete/{ono}")
+    public String onedelete(@PathVariable int ono){
+        oneSerivce.onedelete(ono);
+        return "redirect:/index/onelist";
     }
 
 

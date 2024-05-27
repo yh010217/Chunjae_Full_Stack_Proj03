@@ -36,6 +36,7 @@
               ,ocontent
               ,oregdate
                 ,osecret
+                ,owriter
                 ,oans
         from one
     </select>
@@ -50,6 +51,16 @@
         from one
         where ono=#{ono}
     </select>
+    <update id="oneDetailinsert" parameterType="com.haebub.dto.one.OneDTO">
+       update one
+        set oans=#{oans}
+            ,owriter=#{owriter}
+        where ono=#{ono}
+    </update>
+    <delete id="onedelete" parameterType="int">
+        delete from one
+        where ono=#{ono}
+    </delete>
 
 
 </mapper>

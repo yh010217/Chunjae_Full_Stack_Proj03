@@ -32,4 +32,5 @@ public interface UserMapper {
     void deleteUser(int uid);
 
 
+    int checkNick(String nickname);
 }

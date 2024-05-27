@@ -41,4 +41,14 @@ public class OneServiceImple implements OneSerivce {
         return dto;
     }
 
+    @Override
+    public void oneDetailinsert(OneDTO dto) {
+       oneMapper.oneDetailinsert(dto);
+    }
+
+    @Override
+    public void onedelete(int ono) {
+        oneMapper.onedelete(ono);
+    }
+
 }

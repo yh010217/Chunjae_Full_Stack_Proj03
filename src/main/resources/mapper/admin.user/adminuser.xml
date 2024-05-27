@@ -69,6 +69,11 @@
         delete from user
         where uid =#{uid}
     </delete>
+    <select id="checkNick" resultType="int" parameterType="string">
+        select count(*)
+        from user
+        where nickname=#{nickname}
+    </select>
 <!--    <select id="getUid" parameterType="string" resultType="int">-->
 <!--        select uid-->
 <!--        from user-->

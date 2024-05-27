@@ -15,14 +15,14 @@
     <aside id="side_bar">
         <div id="side_bar_header">
             <img class="header_img" src="/resources/image/admin/main/HB-logo.png">
-            <a href="#" class="header_title">해법학원</a>
+            <a href="/admin/main" class="header_title">해법학원</a>
         </div>
         <div id="side_bar_menus">
             <a href="/admin/user" class="side_bar_menu">
                 <img class="side_bar_menu_image" src="/resources/image/admin/main/user-gray.png" alt="회원 관리">
                 <span class="side_bar_menu_name">회원 관리</span>
             </a>
-            <a href="#" class="side_bar_menu">
+            <a href="/admin/teacher" class="side_bar_menu">
                 <img class="side_bar_menu_image" src="/resources/image/admin/main/teacher-gray.png" alt="강사 관리">
                 <span class="side_bar_menu_name">강사 관리</span>
             </a>
@@ -35,6 +35,7 @@
 
     <div id="content_container">
         <h1>공지사항</h1>
+        <a href="/index/onelist">일대일문의</a>
         <div class="table">
             <button type="button" id="append">글쓰기</button>
             <div class="tr">

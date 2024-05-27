@@ -29,4 +29,5 @@ public interface UserService {
 
     void deleteUser(int uid);
 
+    int checkNick(String nickname);
 }

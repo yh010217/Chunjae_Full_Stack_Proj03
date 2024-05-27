@@ -3,6 +3,7 @@ package com.haebub.service.mypage;
 import com.haebub.dto.User.UserDTO;
 import com.haebub.dto.mypage.LectureListDTO;
 import com.haebub.dto.mypage.PaidDTO;
+import com.haebub.dto.one.OneDTO;
 
 import java.util.List;
 
@@ -28,4 +29,7 @@ public interface MypageService {
 
     /** 닉네임 중복 체크 */
     int CheckNickname(int uid);
+    /** 일대일 게시판*/
+    List<OneDTO> getoneList(int uid);
+
 }

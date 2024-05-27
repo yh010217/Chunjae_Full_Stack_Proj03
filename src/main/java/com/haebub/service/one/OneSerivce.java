@@ -13,4 +13,8 @@ public interface OneSerivce {
     List<OneDTO> onelist();
 
     OneDTO oneDetail(int ono);
+
+    void oneDetailinsert(OneDTO dto);
+
+    void onedelete(int ono);
 }

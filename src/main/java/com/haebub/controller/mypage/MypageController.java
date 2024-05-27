@@ -6,6 +6,7 @@ import com.haebub.dto.User.UserDTO;
 import com.haebub.dto.comingsoon.CalendarDTO;
 import com.haebub.dto.mypage.LectureListDTO;
 import com.haebub.dto.mypage.PaidDTO;
+import com.haebub.dto.one.OneDTO;
 import com.haebub.service.mypage.MypageService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -167,6 +168,19 @@ public class MypageController {
         model.addAttribute("paidList", paidList);
 
         return "/mypage/refund";
+    }
+    /** (고객센터)일대일 게시판 리스트*/
+    @GetMapping("/mypage/onelist")
+    public String onelist(Model model, HttpServletRequest request){
+        HttpSession session=request.getSession(false);
+        String id = (String) session.getAttribute("id");
+
+        UserDTO userDTO=mypageService.getUid(id);
+
+        List<OneDTO> oneList=mypageService.getoneList(userDTO.getUid());
+        model.addAttribute("uid",userDTO.getUid());
+        model.addAttribute("oneList",oneList);
+        return "/mypage/onelist";
     }
 
 }

@@ -53,10 +53,8 @@ public class LoginController {
         String name=service.logincheck(dto);
         ModelAndView mav=new ModelAndView();
         if (name!= null){
-
-            session.setAttribute("id",dto.getId());
-            session.setAttribute("name",name);
             mav.setViewName("redirect:/index");
+
         }else {
             mav.setViewName("redirect:/index/login");
             mav.addObject("message","error");
