@@ -29,4 +29,6 @@ public interface PaymentMapper {
     HashMap<String, Object> getCartItem(HashMap<String, Object> hm);
 
     int refundUpdate(String piid);
+
+    void deleteFav(String lid);
 }

@@ -24,4 +24,6 @@ public interface PaymentService {
     HashMap<String, Object> getCartItem(String pid, String piid);
 
     int refundUpdate(String piid);
+
+    void deleteFav(String lid_attached);
 }

@@ -138,4 +138,13 @@ public class PaymentServiceImple implements PaymentService {
         return result;
     }
 
+    @Override
+    public void deleteFav(String lid_attached) {
+        String[] lids = lid_attached.split("_");
+        int size = lids.length;
+        for(int i = 0 ; i < size ; i ++){
+            paymentMapper.deleteFav(lids[i]);
+        }
+    }
+
 }

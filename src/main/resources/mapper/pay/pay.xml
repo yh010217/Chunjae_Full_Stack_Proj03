@@ -72,5 +72,9 @@
             ,rdate = now()
         where piid = #{piid}
     </update>
+    <delete id="deleteFav" parameterType="string">
+        delete from fav
+        where lid = #{lid}
+    </delete>
 
 </mapper>

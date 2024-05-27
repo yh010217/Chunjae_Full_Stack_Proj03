@@ -159,6 +159,10 @@ public class PayController {
             @RequestParam String status
             얘네들은 jsp의 param.으로 감당 가능
         */
+        // 이제 이걸 샀다는 거니깐 fav 에서 지우기
+
+        paymentService.deleteFav(lid_attached);
+
         model.addAttribute("lid_attached", lid_attached);
 
 
