@@ -1,61 +1,120 @@
-#wrap{
-    min-height: 100vh;
-    position: relative;
+#content_title{
+    display: block;
+    border-bottom : 1px solid gainsboro;
+    padding: 20px 0px 20px 36px;
+    margin : 0 4px;
+    font-size: 22px;
+}
+#top_div{
     display: flex;
+    justify-content: space-between;
+    min-width: 550px;
+    max-width: 800px;
+    margin : 24px auto 0;
 }
 
+#total_div{
+    padding-top: 20px;
+    font-size: 18px;
+    color : #1D152D;
+    margin : 0 32px
+}
+#top_button > button{
+    border : 0;
+    width : 144px;
+    height : 56px;
+    font-size: 18px;
+    border-radius: 16px;
+    font-weight: 700;
+}
 
-#sidebar_container{
-    display: inline-block;
-    min-height: 100vh;
-    height: 100%;
-    min-width: 300px;
-    width:300px;
+#multi_button{
+    background-color : #FFB15C;
+    color : white;
+    margin-right: 12px;
+}
+#selectAll{
+    background-color : #F0EEEF;
+    color : #1D152D;
+    margin-right: 8px;
+}
+
+#all_box{
+    padding : 24px 32px;
+}
+.full_box{
+    box-sizing: border-box;
+    display: flex;
+    min-width: 530px;
+    max-width: 800px;
+    min-height: 140px;
+    margin : 24px auto;
+    border: 1px solid #bbbbbb;
+    box-shadow: 4px 4px 5px -4px #999999;
+    border-radius: 10px;
+    padding : 16px 0;
     position: relative;
+}
+
+.check_area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 80px;
+    width : 80px;
     flex-grow: 0;
+    text-align: center;
 }
-
-#sidebar{
-    position: fixed;
-    width: 245px;/*
-    height: 765px;*/
-    text-align: left;
-    padding-top: 30px;
-    margin: 30px 0 30px 30px;
-    border: 1px solid #A2A2A2;
+.check_area label{
+    text-align: center;
+    color: #999999;
 }
 
 
-#sidebar .side_title {
-    font-size: 23px;
-    font-weight: bolder;
-    margin: 0px 0px 20px 38px;
-}
-
-#sidebar .menu {
-    margin: 0;
-    padding: 0;
-}
-
-#sidebar .menu li {
-    padding: 15px 10px 15px 40px;
-    font-size: 19px;
-}
-
-#sidebar .menu li:hover {
-    font-weight: bolder;
-}
-
-.menu_title {
-    border-top: 1px solid #A2A2A2;
-    border-bottom: 1px solid #A2A2A2;
-    padding-left: 10px;
-}
-
-
-#content{
-    width: 100%;
-    display: inline-block;
-    border : 1px solid silver;
+.item_box{
     flex-grow: 1;
+    min-width: 450px;
+    padding-left: 16px;
 }
+
+.teacher_title{
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.period{
+    font-size: 16px;
+}
+.price{
+    padding-top: 8px;
+    font-size: 18px;
+}
+
+.item_right{
+    position: absolute;
+    right : 24px;
+    bottom : 16px;
+    text-align: center;
+}
+
+.purchase_one{
+    padding : 8px 20px;
+    background-color: #F0EEEF;
+    color : black;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 12px;
+}
+
+.delete{
+    margin-top: 16px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #999999;
+}
+
+
+
+
+
+

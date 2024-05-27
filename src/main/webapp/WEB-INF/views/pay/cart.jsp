@@ -11,12 +11,15 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/pay/cart.css">
+    <link rel="stylesheet" href="/resources/css/mypage/mypage_template2.css">
 </head>
 <body>
 
 
 <div id="wrap">
     <%-- 왼쪽 사이드바  --%>
+
+    <div id="sidebar_margin"></div>
     <div id="sidebar_container">
         <div id="sidebar">
             <ul>
@@ -32,44 +35,56 @@
             </ul>
         </div>
     </div>
+
+
     <%-- content 영역  --%>
     <div id="content">
-        <span id="totalIs">총 가격 : </span>
-        <div id="total_price"></div>
+        <h3 id="content_title">장바구니</h3>
 
-        <form method="post" action="/cart_buy">
-            <button type="button" id="multi_button">선택 항목 결제</button>
+        <div id="top_div">
+            <div id="total_div">
+                <span id="totalIs">총 가격 : </span><span id="total_price">0 원</span>
+            </div>
+            <div id="top_button">
+                <button type="button" id="selectAll">전체 선택</button>
+                <button type="button" id="multi_button">선택 항목 결제</button>
+            </div>
+        </div>
+        <div id="all_box">
             <c:forEach items="${hmlist}" var="item" varStatus="status">
-                <div class="item_box">
-                    <input type="checkbox" id="${item.lid}"
-                           value="${item.lid}_${item.lprice}"
-                           name="lid" onclick="total_change('${item.lid}')">
-                    <c:out value="${item.lid}"/><br>
-                    <c:out value="${item.lprice}"/><br>
-                    <c:out value="${item.name}"/><br>
-                    <c:out value="${status.index}"/><br><br><br>
+
+                <div class="full_box">
+                    <div class="check_area">
+                        <input type="checkbox" id="${item.lid}"
+                               value="${item.lid}_${item.lprice}"
+                               name="lid" onclick="total_change('${item.lid}')">
+                        <label for="${item.lid}">선택하기</label>
+                    </div>
+                    <div class="item_box">
+                        <div class="teacher_title">
+                            <c:out value="[${item.tsubject}] ${item.name} 선생님"/><br>
+                            <a href="/index/lecdetail/${item.lid}">
+                                <c:out value="${item.ltitle}"/>
+                            </a>
+                        </div>
+                        <div class="period">
+                            <c:out value="수강 기간 : ${item.lperiod} 일"/>
+                        </div>
+                        <div class="price">
+                            <c:out value="가격 : ${item.lprice} 원"/><br>
+                        </div>
+                        <div class="item_right">
+                            <a href="/pay/purchase_one?lid=${item.lid}" class="purchase_one">즉시 구매하기</a>
+                            <br><br>
+                            <a href="/pay/delete_fav/${item.lid}" class="delete">삭제하기</a>
+                        </div>
+                    </div>
                 </div>
             </c:forEach>
-
-        </form>
+        </div>
     </div>
 
 </div>
-
-<script>
-    let str_list_size = '${hmlist.size()}';
-    let list_size = parseInt(str_list_size);
-    let total_change = function (lid) {
-        document.getElementById(lid).classList.toggle('cart_checked');
-
-        let cart_arr = document.querySelectorAll('.cart_checked');
-        let sum = 0;
-        for(let i = 0 ; i < cart_arr.length ; i++){
-            sum += parseInt(cart_arr[i].value.split('_')[1]);
-        }
-        document.getElementById('total_price').innerHTML = sum;
-    }
-</script>
 
 <script src="/resources/js/pay/cart.js"></script>
 </body>
