@@ -38,20 +38,18 @@
         <a href="/index/onelist">일대일문의</a>
         <div class="table">
             <button type="button" id="append">글쓰기</button>
-            <div class="tr">
+            <div class="thead">
                 <div class="th">글번호</div>
                 <div class="th">제목</div>
                 <div class="th">글내용</div>
                 <div class="th">등록날짜</div>
             </div>
-            <div class="tr">
+            <div class="tbody">
                 <c:forEach var="item" items="${noticelist}">
-                    <div class="td">
-                        <a href="/admin/noticelist/detail/${item.nno}"><c:out value="${item.nno}"/></a>
-                        <c:out value="${item.ntitle}"/>
-                        <c:out value="${item.ncontent}"/>
-                        <c:out value="${item.ndate}"/>
-                    </div>
+                    <div class="td"><a href="/admin/noticelist/detail/${item.nno}"><c:out value="${item.nno}"/></a></div>
+                    <div class="td"><c:out value="${item.ntitle}"/></div>
+                    <div class="td"><c:out value="${item.ncontent}"/></div>
+                    <div class="td"> <c:out value="${item.ndate}"/></div>
                 </c:forEach>
             </div>
         </div>

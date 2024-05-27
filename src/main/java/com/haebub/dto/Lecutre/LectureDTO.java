@@ -31,4 +31,5 @@ public class LectureDTO {
     private String tsubject;
     private String tintro;
     private String name;
+    private String id;
 }

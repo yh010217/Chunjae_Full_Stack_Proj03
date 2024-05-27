@@ -9,21 +9,21 @@
     <link rel="stylesheet" href="/resources/css/notice/notice.css">
 </head>
 <body>
+<div id="wrap">
+    <h1>공지사항</h1>
 <div class="table">
     <div class="tr">
         <div class="th">글번호</div>
         <div class="th">제목</div>
-        <div class="th">글내용</div>
         <div class="th">등록날짜</div>
+<%--        <div class="th">글내용</div>--%>
+
     </div>
-    <div class="tr">
+    <div class="tr_1">
         <c:forEach var="item" items="${noticelist}">
-            <div class="td">
-                <a href="/index/notdetail/${item.nno}"><c:out value="${item.nno}"/></a>
-                <c:out value="${item.ntitle}"/>
-                <c:out value="${item.ncontent}"/>
-                <c:out value="${item.ndate}"/>
-            </div>
+            <div class="td"><a href="/admin/noticelist/detail/${item.nno}"><c:out value="${item.nno}"/></a></div>
+            <div class="td"><c:out value="${item.ntitle}"/></div>
+            <div class="td"> <c:out value="${item.ndate}"/></div>
         </c:forEach>
     </div>
 </div>
@@ -57,7 +57,7 @@
 
 
 
-
+</div>
 </body>
 </html>
     

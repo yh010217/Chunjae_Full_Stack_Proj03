@@ -22,7 +22,7 @@
         <div class="th">작성자: ${oneDetail.owriter}</div>
     </div>
     <div class="oneform">
-        <form method="post" action="/onedetail_result">
+        <form method="post" action="/onedetail_result?lid=${lid}">
             <h3>일대일문의답변</h3>
             <input type="hidden" name="ono" value="${oneDetail.ono}"/>
             <div class="form-group row">
@@ -45,7 +45,7 @@
             </div>
         </form>
         <div class="delete">
-            <a href="/onelist/delete/${oneDetail.ono}">삭제하기</a>
+            <a href="/onelist/delete/${oneDetail.ono}?lid=${lid}">삭제하기</a>
         </div>
     </div>
 

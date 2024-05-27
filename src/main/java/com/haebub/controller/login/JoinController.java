@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
 
@@ -19,11 +20,20 @@ public class JoinController {
     public JoinController(JoinService service) {
         this.service = service;
     }
-
+    /** 약관동의 */
     @GetMapping("/signup")
     public String Singup() {
         return "login/signup";
     }
+//    @PostMapping("/signup_result")
+//    public String signupresult(@RequestParam(value = "agree",defaultValue = "false")Boolean agree) throws Exception{
+//        if (!agree){
+//            ModelAndView mv=new ModelAndView("login/signup");
+//        }
+//        ModelAndView mv=new ModelAndView("login/join");
+//        mv.addObject("registerRequest", new RegisterRequst());
+//        return "redirect:login/join";
+//    }
 
     @GetMapping("/join")
     public String Join() {

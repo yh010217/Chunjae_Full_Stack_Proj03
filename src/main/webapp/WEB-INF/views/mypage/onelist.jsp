@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>고객센터</title>
     <link rel="stylesheet" href="/resources/css/mypage/mypage_template.css">
+    <link rel="stylesheet" href="/resources/css/mypage/onelist.css">
 </head>
 <body>
 <div id="wrap">
     <%-- 왼쪽 사이드바  --%>
     <div id="sidebar">
         <ul>
-            <li class="side_title">안녕하세요!<br>님</li>
+            <li class="side_title">안녕하세요!<br><c:out value="${nickname}"/>님</li>
         </ul>
         <ul class="menu">
             <li class="menu_title"><a href="/index/mypage">내 강의 보기</a></li>
@@ -27,10 +28,11 @@
     <%-- content 영역  --%>
     <div id="content">
         <h1>일대일 문의</h1>
-        <h3>문의 내용</h3>
+        <div id="line"></div>
         <div class="oneform">
             <c:forEach var="item" items="${oneList}">
                 <div class="td">
+                    <h3>문의 내용</h3>
                     <ul>
                         <li>제목: <c:out value="${item.otitle}"/></li>
                         <li>내용: <c:out value="${item.ocontent}"/></li>
@@ -38,6 +40,7 @@
                     </ul>
                 </div>
                 <div class="ans">
+                    <h3>답변</h3>
                     <ul>
                         <li>답변 내용: <c:out value="${item.oans}"/></li>
                         <li>작성자: <c:out value="${item.owriter}"/></li>

@@ -30,8 +30,8 @@ public class OneServiceImple implements OneSerivce {
     }
 
     @Override
-    public List<OneDTO> onelist() {
-        List<OneDTO> list=oneMapper.onelist();
+    public List<OneDTO> onelist(int lid) {
+        List<OneDTO> list=oneMapper.onelist(lid);
         return list;
     }
 
@@ -49,6 +49,11 @@ public class OneServiceImple implements OneSerivce {
     @Override
     public void onedelete(int ono) {
         oneMapper.onedelete(ono);
+    }
+
+    @Override
+    public int getLTeacher(int lid) {
+        return oneMapper.getLTeacher(lid);
     }
 
 }

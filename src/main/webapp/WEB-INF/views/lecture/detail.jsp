@@ -82,11 +82,11 @@
         <div class="one">
             <c:choose>
             <%--관리자 로그인시 리스트가 보이도록--%>
-                <c:when test="${sessionScope.id == 'admin'}">
+                <c:when test="${sessionScope.id == 'admin' || dto.id == sessionScope.id}">
                     <ul>
                         <li>
                             <h3>일대일문의답변</h3>
-                            <a href="/index/onelist">일대일문의리스트</a>
+                            <a href="/index/onelist/${item.lid}">일대일문의리스트</a>
                         </li>
                     </ul>
                 </c:when>

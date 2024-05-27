@@ -49,7 +49,7 @@ public class OneController {
 //        return "redirect:/index";
 //    }
     @PostMapping("/one_result")
-    public String oneinsert(HttpServletRequest request, OneDTO dto,Model model){
+    public String oneinsert(HttpServletRequest request, OneDTO dto,Model model,@RequestParam String lid){
 
        //HttpSession session=request.getSession();
 
@@ -62,32 +62,45 @@ public class OneController {
       model.addAttribute("otitle",otitle);
       model.addAttribute("ocontent",ocontent);*/
 
-        return "redirect:/index";
+        return "redirect:/index/lecdetail/"+lid;
     }
 
-    @GetMapping("/onelist")
-    public String onelist(Model model){
+    @GetMapping("/onelist/{lid}")
+    public String onelist(@PathVariable int lid,Model model){
 
-        List<OneDTO> list=oneSerivce.onelist();
+        List<OneDTO> list=oneSerivce.onelist(lid);
         model.addAttribute("list",list);
+        model.addAttribute("lid",lid);
         return "/one/onelist";
     }
     @GetMapping("/onedetail/{ono}")
-    public String oneDetail(@PathVariable int ono,Model model){
+    public String oneDetail(@PathVariable int ono
+            ,@RequestParam String lid, HttpServletRequest request
+                            ,Model model){
+       /*
+       HttpSession session=request.getSession();
+        String id=(String) session.getAttribute("id");
+        int uid=oneSerivce.getuid(id);
+
+        //int tuid = oneSerivce.getLTeacher(lid);
+
+*/
+        model.addAttribute("lid",lid);
+
         OneDTO  oneDetail=oneSerivce.oneDetail(ono);
         model.addAttribute("oneDetail",oneDetail);
         return "/one/onedetail";
     }
     @PostMapping("/onedetail_result")
-    public String oneDetailinsert(@ModelAttribute OneDTO dto){
-        System.out.println("eee"+dto.getOno());
+    public String oneDetailinsert(@ModelAttribute OneDTO dto,@RequestParam String lid){
+        System.out.println("eee"+lid);
         oneSerivce.oneDetailinsert(dto);
-        return "redirect:/index/onelist";
+        return "redirect:/index/onelist/"+lid;
     }
     @GetMapping("/onelist/delete/{ono}")
-    public String onedelete(@PathVariable int ono){
+    public String onedelete(@PathVariable int ono, @RequestParam String lid){
         oneSerivce.onedelete(ono);
-        return "redirect:/index/onelist";
+        return "redirect:/index/onelist/"+lid;
     }
 
 

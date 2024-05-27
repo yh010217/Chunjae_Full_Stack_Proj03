@@ -39,6 +39,7 @@
                 ,owriter
                 ,oans
         from one
+        where lid = #{lid}
     </select>
     <select id="oneDetail" parameterType="int" resultType="com.haebub.dto.one.OneDTO">
         select   ono
@@ -61,6 +62,12 @@
         delete from one
         where ono=#{ono}
     </delete>
+    <select id="getLTeacher" parameterType="int" resultType="int">
+        SELECT u.uid
+        FROM lecture l INNER JOIN teacher t ON l.tid = t.tid
+        INNER JOIN user u ON t.uid = u.uid
+        WHERE l.lid = #{lid}
+    </select>
 
 
 </mapper>

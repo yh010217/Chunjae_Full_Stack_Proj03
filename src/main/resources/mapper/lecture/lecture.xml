@@ -42,6 +42,7 @@
             , t.tintro
             , t.tsubject
             , u.name
+            , u.id
         FROM lecture l INNER JOIN teacher t ON l.tid = t.tid INNER
                              JOIN user u ON t.uid = u.uid
         WHERE lid = #{lid}

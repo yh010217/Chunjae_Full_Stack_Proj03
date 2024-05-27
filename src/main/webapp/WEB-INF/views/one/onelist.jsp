@@ -23,7 +23,7 @@
     <div class="tr">
         <c:forEach var="item" items="${list}">
             <div class="td">
-                <a href="/index/onedetail/${item.ono}"><c:out value="${item.ono}"/></a>
+                <a href="/index/onedetail/${item.ono}?lid=${lid}"><c:out value="${item.ono}"/></a>
                 <c:out value="${item.otitle}"/>
                 <c:out value="${item.ocontent}"/>
                 <c:out value="${item.oregdate}"/>

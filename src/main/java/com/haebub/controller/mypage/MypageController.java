@@ -178,7 +178,7 @@ public class MypageController {
         UserDTO userDTO=mypageService.getUid(id);
 
         List<OneDTO> oneList=mypageService.getoneList(userDTO.getUid());
-        model.addAttribute("uid",userDTO.getUid());
+        model.addAttribute("nickname", userDTO.getNickname());
         model.addAttribute("oneList",oneList);
         return "/mypage/onelist";
     }
