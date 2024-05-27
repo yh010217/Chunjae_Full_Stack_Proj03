@@ -79,8 +79,7 @@
                 <div class="button_div">
                     <button id="user_chart">유저
                     </button
-                    >
-                    <button id="pur_week_chart">주간 결제
+                    ><button id="pur_week_chart">주간 결제
                     </button>
                 </div>
                 <div id="myChartContainer">
