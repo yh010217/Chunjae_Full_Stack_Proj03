@@ -13,13 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(data => { // FullCalendar를 초기화하고 이벤트 데이터를 설정
             var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                selectable: true,
-                headerToolbar: {
+                initialView: 'dayGridMonth'
+                ,selectable: true
+                ,headerToolbar: {
                     left: 'today',
                     center: 'title',
                     right: 'prev,next'
                 }
+                ,locale : 'ko'
            /*     , eventDidMount: function(info) {   // 과목별 색상 다르게 설정
                     var gColor = 'lightGreen';
                     var bColor = 'lightBlue';

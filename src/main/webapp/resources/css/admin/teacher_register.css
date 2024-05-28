@@ -214,9 +214,6 @@ label {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    position: relative;
-    left: 9.2vw;
-    margin-top: 2vh;
 }
 
 /* 입력 필드 스타일 */
@@ -266,18 +263,6 @@ h2 {
     left: -127px;
 }
 
-/* 아이디 존재하는 경우 */
-.id_input_re_1{
-    color : green;
-    display : none;
-}
-/* 아이디 존재하지 않는 경우 */
-.id_input_re_2{
-    color : red;
-    display : none;
-}
-
-/* 미디어 쿼리를 사용하여 반응형 디자인 적용 */
 @media (max-width: 600px) {
     .teacher_form {
         padding: 20px;

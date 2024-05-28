@@ -42,13 +42,15 @@
                     <li>
                         <label for="nickname">닉네임</label>
                         <input type="text" id="nickname" value="${dto.nickname}" name="nickname">
-                        <button class="nicknameCk" name="nicknameCk" id="nicknameCk" type="button">중복 체크</button><br>
+                        <button class="nicknameCk" name="nicknameCk" id="nicknameCk" type="button">중복 체크</button>
+                        <br>
                         <span id="nickname_check_result"></span>
                     </li>
                     <li>
                         <label for="email">이메일</label>
                         <input type="text" id="email" value="${dto.email}" name="email">
-                        <button class="emailCk" name="emailCk" id="emailCk" type="button">중복 체크</button><br>
+                        <button class="emailCk" name="emailCk" id="emailCk" type="button">중복 체크</button>
+                        <br>
                         <span id="email_check_result"></span>
 
                     </li>
@@ -57,7 +59,9 @@
                         <input type="text" id="tel" value="${dto.tel}" name="tel">
                     </li>
                     <li>
-                        <button type="submit">수정 완료</button>
+                        <div class="modify_btn">
+                            <button class="modify" type="submit">수정 완료</button>
+                        </div>
                     </li>
                 </ul>
             </form>
