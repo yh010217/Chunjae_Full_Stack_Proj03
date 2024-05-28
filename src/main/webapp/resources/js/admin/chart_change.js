@@ -191,7 +191,3 @@ per_week_button.onclick = function () {
     });
 }
 
-
-
-
-

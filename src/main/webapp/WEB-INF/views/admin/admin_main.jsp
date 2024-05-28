@@ -29,6 +29,9 @@
                 <img class="side_bar_menu_image" src="/resources/image/admin/main/board-gray.png" alt="고객 지원 관리">
                 <span class="side_bar_menu_name">고객 지원 관리</span>
             </a>
+            <a href="/index" class="go_index">
+                홈페이지로
+            </a>
         </div>
     </aside>
     <div id="content_container">
@@ -91,7 +94,7 @@
         <div class="recent_row">
             <div id="table_top">
                 <span class="recent_title">Recent</span>
-                <div class="button_div">
+                <div class="button_div recent_button">
                     <button id="user_recent">신규 유저
                     </button
                     ><button id="pay_recent">최근 결제</button>
@@ -103,7 +106,8 @@
                 <tbody>
                 </tbody>
             </table>
-            <div class="table_paging"></div>
+            <div class="table_paging">
+            </div>
         </div>
     </div>
 </div>
