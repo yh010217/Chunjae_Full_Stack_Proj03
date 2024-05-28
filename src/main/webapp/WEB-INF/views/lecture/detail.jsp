@@ -81,6 +81,30 @@
             <a href="${item.lbook}">구매하러 가기</a>
             <div>주의할 점 : 지금은 누르면 오류뜸 (링크 안 넣어서...), 책 링크 DB 만들기</div>
         </div>
+        <%-- 일대일문의--%>
+        <div class="one">
+            <c:choose>
+            <%--관리자 로그인시 리스트가 보이도록--%>
+                <c:when test="${sessionScope.id == 'admin' || dto.id == sessionScope.id}">
+                    <ul>
+                        <li>
+                            <h3>일대일문의답변</h3>
+                            <a href="/index/onelist/${item.lid}">일대일문의리스트</a>
+                        </li>
+                    </ul>
+                </c:when>
+            <%--로그인시 등록하기--%>
+                <c:when test="${sessionScope.id != null || !sessionScope.id == 'admin'}">
+                    <ul>
+                        <li>
+                            <h3>일대일문의</h3>
+                            <a href="/index/oneinsert?lid=${item.lid}">일대일문의 등록하기</a>
+                        </li>
+                    </ul>
+                </c:when>
+            </c:choose>
+
+        </div>
 
         <div>
             <c:if test="${sessionScope.id == 'admin' || sessionScope.id == tid}">

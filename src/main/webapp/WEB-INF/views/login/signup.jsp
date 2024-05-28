@@ -59,18 +59,17 @@
 2. 구매계약이 체결된 재화 또는 용역의 배송
 3. 기타 “몰”이 정하는 업무
             </textarea>
-
+        <form method="post" action="/signup_result">
             <figcaption>
-                <label>
-                    이용약관에 동의하십니까?
-                    <input type="checkbox" required>
-                    동의함 (필수)
-                </label>
+                <label>이용약관에 동의하십니까?
+                    <input type="checkbox" name="agree" value="true">동의함 (필수)</label>
             </figcaption>
+        </form>
         </figure>
         <!-- figure  -->
         </wrap>
         <!-- div#wrap 끝 -->
+<%--        <button type="submit" class="next">다음 단계</button>--%>
         <div class="next">
             <a href="join">다음</a>
         </div>

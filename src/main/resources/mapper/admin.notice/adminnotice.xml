@@ -61,14 +61,31 @@
 
     </insert>
     <select id="detadetailNot" parameterType="int" resultType="com.haebub.dto.notice.NoticeDTO">
+             select nno
+                   ,ntitle
+                   ,ncontent
+                    ,ndate
+             from notice
+              where nno=#{nno}
+    </select>
+    <delete id="noticedelete" parameterType="int">
+        delete from notice
+        where nno=#{nno}
+    </delete>
+    <select id="noticemodify" parameterType="int" resultType="com.haebub.dto.notice.NoticeDTO">
         select nno
-        ,ntitle
-        ,ncontent
-        ,ndate
+               ,ntitle
+               ,ncontent
+               ,ndate
         from notice
         where nno=#{nno}
     </select>
-
-
+    <update id="noticemodifyresult" parameterType="com.haebub.dto.notice.NoticeDTO">
+        update notice
+        set    ntitle   =  #{ntitle}
+              ,ncontent = #{ncontent}
+              ,ndate    = #{ndate}
+        where nno=#{nno}
+    </update>
 
 </mapper>

@@ -3,12 +3,19 @@
 /* 검정 #1D152D*/
 /* 연한 회색 #F0EEEF*/
 /* 핑크  #F0C9CE*/
-#wrap{
+#content_container{
     /*width: 1000px;*/
     height: 1000px;
     width: 90%;
-    margin: 10px auto;
+    margin: 5px auto;
     text-align: center;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+*{
+    list-style: none;
 }
 h1{
     text-align: center;

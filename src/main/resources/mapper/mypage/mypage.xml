@@ -167,9 +167,28 @@
         , tel = #{tel}
         WHERE uid = #{uid}
     </update>
+
+    <!-- 일대일 게시판 -->
+    <select id="oneList" parameterType="int" resultType="com.haebub.dto.one.OneDTO">
+        select   ono
+                ,otitle
+                ,ocontent
+                ,oregdate
+                ,osecret
+                ,owriter
+                ,oans
+                ,o.lid
+                ,o.uid
+        from one o
+             inner join lecture l on o.lid=l.lid
+             inner join user u  on o.uid=u.uid
+        where o.uid=#{uid}
+    </select>
+
     <select id="CheckNickname" parameterType="String" resultType="int">
         SELECT count(*)
         from user
         where nickname = #{nickname}
     </select>
+
 </mapper>

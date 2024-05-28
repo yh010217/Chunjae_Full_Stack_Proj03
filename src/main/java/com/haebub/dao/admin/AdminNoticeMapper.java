@@ -17,4 +17,9 @@ public interface AdminNoticeMapper {
 
     NoticeDTO detadetailNot(int nno);
 
+    void noticedelete(int nno);
+
+    NoticeDTO noticemodify(int nno);
+
+    void noticemodifyresult(NoticeDTO dto);
 }

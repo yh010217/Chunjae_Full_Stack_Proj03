@@ -4,6 +4,7 @@ import com.haebub.dao.mypage.MypageMapper;
 import com.haebub.dto.User.UserDTO;
 import com.haebub.dto.mypage.LectureListDTO;
 import com.haebub.dto.mypage.PaidDTO;
+import com.haebub.dto.one.OneDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -53,5 +54,10 @@ public class MypageServiceImple implements MypageService {
     @Override
     public int CheckNickname(String nickname) {
         return mypageMapperr.CheckNickname(nickname);
+    }
+
+    @Override
+    public List<OneDTO> getoneList(int uid) {
+        return mypageMapperr.oneList(uid);
     }
 }

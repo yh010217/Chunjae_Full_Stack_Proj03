@@ -49,12 +49,9 @@ public class JoinServiceImple implements JoinService {
    @Override
    public String logincheck(UserDTO dto) {
       String name=joinMapper.logincheck(dto);
-      if (!name.equals("0")){
-
-         return name;
-      }
-      return null;
-   }
+      System.out.println(name+"eee");
+        return name;
+    }
 
 
 //   @Override

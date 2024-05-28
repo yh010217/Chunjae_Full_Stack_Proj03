@@ -1,0 +1,26 @@
+#wrap{
+    /*width: 1000px;*/
+    height: 1000px;
+    width: 90%;
+    margin: 10px auto;
+}
+#detail{
+    margin: 10px auto;
+    padding: 5px;
+}
+#line{
+    border: #bbbbbb 1px solid;
+}
+h2{
+   text-align: left;
+    font-size: 35px;
+}
+.title{
+    padding:20px;
+}
+.date{
+    padding: 20px;
+}
+.content{
+    padding: 20px;
+}

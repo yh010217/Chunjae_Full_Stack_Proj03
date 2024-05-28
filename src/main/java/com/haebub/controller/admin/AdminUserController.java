@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -68,6 +69,12 @@ public class AdminUserController {
     public String delete(@PathVariable int uid){
         userService.deleteUser(uid);
         return "redirect:/admin/user";
+    }
+    @GetMapping("/nickcheck2")
+    public @ResponseBody HashMap<String, Object> checkNick(@RequestParam("nickname")String nickname){
+        HashMap<String,Object> hm=new HashMap<>();
+        hm.put("result",userService.checkNick(nickname));
+        return hm;
     }
 
 

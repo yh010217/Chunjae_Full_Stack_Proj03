@@ -40,7 +40,7 @@ public class PayController {
 
         int result = paymentService.makeCustomer(email, sp_uid);
 
-        return "redirect:/login";
+        return "redirect:/index/login";
     }
 
     @GetMapping("/pay/success_product")

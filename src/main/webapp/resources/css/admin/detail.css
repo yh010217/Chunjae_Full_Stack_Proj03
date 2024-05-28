@@ -1,0 +1,47 @@
+#wrap{
+    /*width: 1000px;*/
+    height: 1000px;
+    width: 90%;
+    margin: 10px auto;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+*{
+    list-style: none;
+}
+#detail{
+    margin: 10px auto;
+    padding: 5px;
+}
+#line{
+    border: #bbbbbb 1px solid;
+}
+h2{
+   text-align: left;
+    font-size: 35px;
+}
+.title{
+    padding:20px;
+}
+.date{
+    padding: 20px;
+}
+.content{
+    padding: 20px;
+}
+.modify{
+   width: 69px;
+    position: fixed;
+    right: 170px;
+    top: 144px;
+}
+.del{
+    width: 69px;
+    color: #f88686;
+    position: fixed;
+    right: 84px;
+    top: 144px;
+
+}
