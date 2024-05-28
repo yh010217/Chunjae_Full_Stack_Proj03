@@ -14,7 +14,7 @@
     <aside id="side_bar">
         <div id="side_bar_header">
             <img class="header_img" src="/resources/image/admin/main/HB-logo.png">
-            <a href="#" class="header_title">해법학원</a>
+            <a href="/admin/main" class="header_title">해법학원</a>
         </div>
         <div id="side_bar_menus">
             <a href="/admin/user" class="side_bar_menu">
