@@ -13,4 +13,11 @@ public interface TeacherService {
     List<TeacherDTO> teacherList();
 
 
+    /** 강사 id 존재 확인*/
+    int idExist(String id);
+
+    /** 선생님 삭제 */
+    void deleteTeacher(int tid);
+
+
 }

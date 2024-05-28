@@ -1,0 +1,92 @@
+/* 머스타드색 #FFB15c */
+/* 초록 #469B72*/
+/* 검정 #1D152D*/
+/* 연한 회색 #F0EEEF*/
+/* 핑크  #F0C9CE*/
+#wrap{
+    /*width: 1000px;*/
+    height: 1000px;
+    width: 90%;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.test {
+    width: 950px;
+    margin: 0 auto;
+}
+
+.font {
+    font-size: 20px;
+}
+
+.test > form {
+    text-align: start;
+}
+
+.select {
+    font-weight: bolder;
+}
+
+h1{
+    text-align: center;
+    font-size: 30px;
+}
+.table{
+    margin: 5px auto;
+    display: table;
+    width: 950px;
+    /*width: 70vw;*/
+    border-top: 2px solid silver;
+    /*border-left: 2px solid silver;*/
+    /*border-right: 2px solid silver;*/
+    /*border-bottom: 1px solid silver;*/
+}
+
+.tr{
+    text-align: center;
+    display: table-row;
+    font-size: 20px;
+}
+.tr1{
+    background-color: #cccccc;
+}
+.td{
+    display: table-cell;
+    text-align: center;
+    border-bottom: 1px solid silver;
+    vertical-align: middle;
+    padding: 10px 0;
+}
+
+.td:nth-child(1) {
+    width: 100px;
+}
+.td:nth-child(2) {
+    width: 500px;
+}
+
+.td:nth-child(3) {
+    width: 200px;
+}
+
+.searchtxt{
+    height: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 40px;
+    padding: 5px;
+    border: 1px solid #bbbbbb;
+}
+
+.search-btn{
+    width: 40px;
+    height: 100%;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+}
+
+.searchform{
+    padding: 15px;
+}

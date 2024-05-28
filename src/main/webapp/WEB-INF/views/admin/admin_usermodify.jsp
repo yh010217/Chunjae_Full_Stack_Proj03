@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/admin/template.css">
+    <script defer src="/resources/js/admin/usercheck.js"></script>
 </head>
 <body>
 <div id="container">
@@ -14,14 +15,14 @@
     <aside id="side_bar">
         <div id="side_bar_header">
             <img class="header_img" src="/resources/image/admin/main/HB-logo.png">
-            <a href="#" class="header_title">해법학원</a>
+            <a href="/admin/main" class="header_title">해법학원</a>
         </div>
         <div id="side_bar_menus">
             <a href="/admin/user" class="side_bar_menu">
                 <img class="side_bar_menu_image" src="/resources/image/admin/main/user-gray.png" alt="회원 관리">
                 <span class="side_bar_menu_name">회원 관리</span>
             </a>
-            <a href="#" class="side_bar_menu">
+            <a href="/admin/teacher" class="side_bar_menu">
                 <img class="side_bar_menu_image" src="/resources/image/admin/main/teacher-gray.png" alt="강사 관리">
                 <span class="side_bar_menu_name">강사 관리</span>
             </a>
@@ -41,7 +42,8 @@
                 <li>
                     <label for="nickname">닉네임</label>
                     <input type="text" id="nickname" value="${dto.nickname}" name="nickname">
-                    <button type="button">중복 체크</button>
+                    <button type="button" name="nickname_check" id="nickname_check">중복 체크</button>
+                    <span id="nickname_check_result"></span>
                 </li>
                 <li>이메일: ${dto.email}</li>
                 <li>전화번호: ${dto.tel}</li>

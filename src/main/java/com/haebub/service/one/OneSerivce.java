@@ -10,7 +10,13 @@ public interface OneSerivce {
 
     int getuid(String id);
 
-    List<OneDTO> onelist();
+    List<OneDTO> onelist(int lid);
 
     OneDTO oneDetail(int ono);
+
+    void oneDetailinsert(OneDTO dto);
+
+    void onedelete(int ono);
+
+    int getLTeacher(int lid);
 }

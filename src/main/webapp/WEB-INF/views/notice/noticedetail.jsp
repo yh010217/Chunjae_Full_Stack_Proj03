@@ -9,14 +9,16 @@
 <html>
 <head>
     <title>공지사항</title>
+    <link rel="stylesheet" href="/resources/css/notice/detail.css">
 </head>
 <body>
-<div class="table">
-    <div class="tr">
-        <div class="th">제목 :${detailNot.ntitle}</div>
-        <div class="th">내용 :${detailNot.ncontent}</div>
-        <div class="th">등록날짜: ${detailNot.ndate}</div>
+    <div id="wrap">
+        <div id="detail">
+            <div class="title"><h2>${detailNot.ntitle}</h2></div>
+            <div class="date"> 등록날짜: ${detailNot.ndate}</div>
+            <div id="line"></div>
+            <div class="content">내용 :${detailNot.ncontent}</div>
+        </div>
     </div>
-</div>
 </body>
 </html>

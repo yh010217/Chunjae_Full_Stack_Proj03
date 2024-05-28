@@ -3,6 +3,7 @@ package com.haebub.dao.mypage;
 import com.haebub.dto.User.UserDTO;
 import com.haebub.dto.mypage.LectureListDTO;
 import com.haebub.dto.mypage.PaidDTO;
+import com.haebub.dto.one.OneDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -26,7 +27,12 @@ public interface MypageMapper {
     /** 회원 정보 수정 */
     int userModify(UserDTO dto);
 
+
+    /** 일대일 게시판*/
+    List<OneDTO> oneList(int uid);
+
+  
     /** 닉네임 중복 체크 */
-    int CheckNickname(int uid);
+    int CheckNickname(String nickname);
 
 }

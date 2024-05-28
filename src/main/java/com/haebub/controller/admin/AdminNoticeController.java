@@ -5,10 +5,7 @@ import com.haebub.service.admin.AdminNoticeSerivce;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -70,6 +67,22 @@ public class AdminNoticeController {
         NoticeDTO detailNot=adminNoticeSerivce.detadetailNot(nno);
         model.addAttribute("detailNot",detailNot);
         return "admin/admin_noticelistdetail";
+    }
+    @GetMapping("/admin/noticelist/delete/{nno}")
+    public String noticedelete(@PathVariable int nno){
+        adminNoticeSerivce.noticedelete(nno);
+        return "redirect:/admin/noticelist";
+    }
+    @GetMapping("/admin/noticelist/modify/{nno}")
+    public String noticemodify(@PathVariable int nno, Model model){
+        NoticeDTO dto=adminNoticeSerivce.noticemodify(nno);
+        model.addAttribute("dto",dto);
+        return "admin/admin_noticelistmodify";
+    }
+    @PostMapping("/noticemodify_result")
+    public String noticemodifyresult(@ModelAttribute NoticeDTO dto){
+        adminNoticeSerivce.noticemodifyresult(dto);
+        return "redirect:/admin/noticelist";
     }
 
 

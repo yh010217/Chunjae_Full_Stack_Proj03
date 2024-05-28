@@ -1,0 +1,70 @@
+/* 머스타드색 #FFB15c */
+/* 초록 #469B72*/
+/* 검정 #1D152D*/
+/* 연한 회색 #F0EEEF*/
+/* 핑크  #F0C9CE*/
+#content_container{
+    /*width: 1000px;*/
+    height: 1000px;
+    width: 90%;
+    margin: 5px auto;
+    text-align: center;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+*{
+    list-style: none;
+}
+h1{
+    text-align: center;
+    font-size: 30px;
+}
+.table{
+    margin: 5px auto;
+    display: table;
+    width: 950px;
+    height: 700px;
+    /*width: 70vw;*/
+    border-top: 2px solid silver;
+    /*border-left: 2px solid silver;*/
+    /*border-right: 2px solid silver;*/
+    /*border-bottom: 1px solid silver;*/
+}
+
+.tr{
+    text-align: center;
+    display: table-row;
+    font-size: 20px;
+}
+.tr1{
+    background-color: #cccccc;
+}
+.td{
+    display: table-cell;
+    text-align: center;
+    border-bottom: 1px solid silver;
+    vertical-align: middle;
+}
+
+.searchtxt{
+    height: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 40px;
+    padding: 5px;
+    border: 1px solid #bbbbbb;
+}
+
+.search-btn{
+    width: 40px;
+    height: 100%;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+}
+
+.searchform{
+    padding: 15px;
+}

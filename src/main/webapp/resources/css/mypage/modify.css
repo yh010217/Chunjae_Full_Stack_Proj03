@@ -43,9 +43,12 @@ button:hover {
 
 /* id=form에 대한 그림자 효과 */
 #form {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* 그림자 효과 */
-    transition: 0.3s; /* 그림자 변화 애니메이션 */
-    padding: 20px; /* 내부 여백 */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    padding: 20px;
+    margin: auto;
+    width: 39rem;
+    height: 31rem;
 }
 
 #form:hover {
@@ -70,7 +73,7 @@ form label {
 form input[type="text"],
 form input[type="email"],
 form input[type="tel"] {
-    width: calc(100% - 22px);
+    width: calc(100% - 105px);
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -95,4 +98,21 @@ form button[type="button"] {
 form button[type="submit"]:hover,
 form button[type="button"]:hover {
     opacity: 0.9;
+}
+
+span {
+    margin-top: 5px;
+    color: #0056b3;
+}
+
+.modify {
+    margin: auto;
+}
+
+#nickname_check_result, #email_check_result {
+    padding: 4px;
+}
+
+.modify_btn {
+    margin: auto;
 }

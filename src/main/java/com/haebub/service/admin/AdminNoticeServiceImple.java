@@ -46,4 +46,19 @@ public class AdminNoticeServiceImple implements AdminNoticeSerivce{
         NoticeDTO dto=mapper.detadetailNot(nno);
         return dto;
     }
+
+    @Override
+    public void noticedelete(int nno) {
+        mapper.noticedelete(nno);
+    }
+
+    @Override
+    public NoticeDTO noticemodify(int nno) {
+        return mapper.noticemodify(nno);
+    }
+
+    @Override
+    public void noticemodifyresult(NoticeDTO dto) {
+        mapper.noticemodifyresult(dto);
+    }
 }

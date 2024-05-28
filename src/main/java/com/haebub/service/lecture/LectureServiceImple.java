@@ -2,6 +2,8 @@ package com.haebub.service.lecture;
 
 import com.haebub.dao.Lecture.LectureMapper;
 import com.haebub.dto.Lecutre.LectureDTO;
+import com.haebub.dto.User.UserDTO;
+import com.haebub.dto.mypage.PaidDTO;
 import com.haebub.dto.video.VideoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -45,6 +48,26 @@ public class LectureServiceImple implements LectureService {
     @Override // 디테일 화면에서 강의 리스트 출력하기
     public List<VideoDTO> video(int lid) {
         return lecMapper.video(lid);
+    }
+
+    @Override // 선생님 아이디 알아오기
+    public String tec_id(int lid) {
+        return lecMapper.tec_id(lid);
+    }
+
+    @Override
+    public String id(HashMap<String, Object> o) {
+        return lecMapper.id(o);
+    }
+
+    @Override // uid 알아오기
+    public int uid(String id) {
+        return lecMapper.uid(id);
+    }
+
+    @Override
+    public int lecDelete(int lid) {
+        return lecMapper.lecDelete(lid);
     }
 
     @Override

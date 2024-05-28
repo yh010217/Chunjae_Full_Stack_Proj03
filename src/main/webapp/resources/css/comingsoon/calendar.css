@@ -1,19 +1,19 @@
 #wrap{
     width: 1000px;
-    height: 1100px;
+    min-height: 1100px;
     margin: auto;   /* 좌우 margin 동일하게 */
 }
 
 #cal_wrap {
     width: 1000px;
-    height: 750px;
+    min-height: 750px;
     border: 1px solid #797878;
     padding: 15px;
 }
 
 #calendar{
     width: 950px;
-    height: 700px;
+    min-height: 700px;
     padding-top: 50px;
     margin: auto;
 }
@@ -35,7 +35,8 @@
 }
 
 h4 {
-    margin-top: 60px ;
+    margin-top: 60px;
+    margin-bottom: 24px;
 }
 
 h4 span {
