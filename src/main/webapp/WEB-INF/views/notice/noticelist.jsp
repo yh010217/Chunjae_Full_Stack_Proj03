@@ -13,34 +13,37 @@
 
     <h1>공지사항</h1>
     <!-- 검색 -->
-    <form method="get" action="/index/noticelist" class="searchform">
-        <select name="search">
-            <option value="nno">글번호</option>
-            <option value="ntitle">제목</option>
-            <option value="ncontent">내용</option>
-        </select>
-        <input type="text" name="searchtxt" class="searchtxt">
-        <button type="submit" class="search-btn">검색</button>
-    </form>
+    <div class="test">
+        <form method="get" action="/index/noticelist" class="searchform">
+            <select name="search">
+                <option value="nno">글번호</option>
+                <option value="ntitle">제목</option>
+                <option value="ncontent">내용</option>
+            </select>
+            <input type="text" name="searchtxt" class="searchtxt">
+            <button type="submit" class="search-btn">검색</button>
+        </form>
 
-<div class="table">
+        <div class="table">
 
-    <div class="tr tr1">
-        <div class="td">글번호</div>
-        <div class="td">제목</div>
-        <div class="td">등록날짜</div>
+            <div class="tr tr1">
+                <div class="td">글번호</div>
+                <div class="td">제목</div>
+                <div class="td">등록날짜</div>
+
+            </div>
+
+            <c:forEach var="item" items="${noticelist}">
+                <div class="tr">
+                    <div class="td"><a href="/index/notdetail/${item.nno}"><c:out value="${item.nno}"/></a></div>
+                    <div class="td"><a href="/index/notdetail/${item.nno}"><c:out value="${item.ntitle}"/></a></div>
+                    <div class="td"> <c:out value="${item.ndate}"/></div>
+                </div>
+            </c:forEach>
+
+        </div>
 
     </div>
-
-        <c:forEach var="item" items="${noticelist}">
-          <div class="tr">
-            <div class="td"><a href="/index/notdetail/${item.nno}"><c:out value="${item.nno}"/></a></div>
-            <div class="td"><c:out value="${item.ntitle}"/></div>
-            <div class="td"> <c:out value="${item.ndate}"/></div>
-           </div>
-        </c:forEach>
-
-</div>
 
 
     <c:if test="${startblock>1}">
@@ -49,10 +52,10 @@
     <c:forEach var="index" begin="${startblock}" end="${endblock}">
         <c:choose>
             <c:when test="${currpage==index}">
-                ${index}
+                <span class="font select"> ${index} </span>
             </c:when>
             <c:otherwise>
-                <a href="/index/noticelist/${index}?serach">${index}</a>
+                <a class="font" href="/index/noticelist/${index}?serach">${index}</a>
             </c:otherwise>
         </c:choose>
     </c:forEach>
