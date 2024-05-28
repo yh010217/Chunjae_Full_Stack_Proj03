@@ -20,19 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     center: 'title',
                     right: 'prev,next'
                 }
-                ,locale : 'ko'
-           /*     , eventDidMount: function(info) {   // 과목별 색상 다르게 설정
-                    var gColor = 'lightGreen';
-                    var bColor = 'lightBlue';
-                    // console.log(info.event.extendedProps.subject);
-                    if (info.event.extendedProps.subject == '영어') {
-                        info.el.style.backgroundColor = gColor;
-                    } else if(info.event.extendedProps.subject == '수학') {
-                        info.el.style.backgroundColor = bColor;
-                    }
-                }*/
-                ,events: data,   // title, start 값 들어옴
-                dateClick: function(info) { // 날짜 클릭 시 실행
+                ,events: data   // title, start 값 들어옴
+                ,dateClick: function(info) { // 날짜 클릭 시 실행
                     // 선택된 날짜에 해당하는 이벤트 데이터 필터링
                     var clickedDate = info.dateStr; // YYYY-MM-DD
                     var filteredEvents = data.filter(event => event.start.startsWith(clickedDate));
@@ -48,15 +37,42 @@ document.addEventListener('DOMContentLoaded', function () {
                         li.classList.add('center-align'); // CSS 클래스 추가
                         // 제목, 날짜, 선생님 이름, 과목
                         li.innerHTML = `${event.start} 
-                                        <a href="/index/lecdetail/${event.lid}"> 
-                                        ${event.subject}                  
-                                        ${event.name} 선생님 
+                                        <a id="teacher" href="/index/lecdetail/${event.lid}">                 
+                                        ${event.name} 선생님
+                                        </a> 
+                                         <a id="title" href="/index/lecdetail/${event.lid}">    
                                         ${event.title}
                                         </a>`;
                         eventList.appendChild(li);
                     });
                 }
+                ,locale : 'ko'
+                ,dayCellContent : function (info) {
+                    var number = document.createElement("a");
+                    number.classList.add("fc-daygrid-day-number");
+                    number.innerHTML = info.dayNumberText.replace("일","");
+                    if(info.view.type === "dayGridMonth") {
+                        return {
+                            html: number.outerHTML
+                        };
+                    }
+                    return {
+                        domNodes: []
+                    };
+                }
+                ,eventContent: function(arg) { // 과목별 배경색 설정
+                    var colors = {
+                        '영어': '#259a64',
+                        '수학': '#67c7ee',
+                        '국어': 'lightCoral',
+                        '기타': 'lightGoldenRodYellow'
+                    };
 
+                    var backgroundColor = colors[arg.event._def.extendedProps.subject] || 'white'; // 과목에 따른 배경색 설정, 매칭되는 색상이 없으면 기본값으로 'white' 설정
+
+                    // 이벤트 내용과 배경색을 설정한 HTML 요소 반환
+                    return { html: `<div class='fc-event-main' style='background-color: ${backgroundColor};'>${arg.event.title}</div>` };
+                }
             });
             // 캘린더를 화면에 렌더링
             calendar.render();

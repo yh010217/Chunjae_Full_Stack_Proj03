@@ -1,3 +1,4 @@
+
 #wrap{
     width: 1000px;
     min-height: 1100px;
@@ -25,13 +26,13 @@
     align-items: center;
     text-align: center;
     width: 96.5%;
-    font-size: 20px;
+    font-size: 18px;
     padding: 15px 10px 15px 55px;
     border: 1px solid;
 }
 
 .center-align a {
-    padding-left: 15px;
+    padding-left: 40px;
 }
 
 h4 {
@@ -72,3 +73,15 @@ h4 span {
     text-decoration: none;
 }
 
+
+/* 링크 스타일 */
+#eventList li a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #333; /* 텍스트 색상 */
+    font-weight: bold; /* 글씨 굵게 */
+}
+
+/* 호버 효과 */
+#eventList li:hover {
+    background-color: #f0f0f0; /* 배경색 변경 */
+}
