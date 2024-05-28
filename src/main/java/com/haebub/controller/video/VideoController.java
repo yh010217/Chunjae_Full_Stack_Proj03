@@ -40,7 +40,6 @@ public class VideoController {
         model.addAttribute("link", link);
         System.out.println(link + ">>>>>>> link");
 
-
         List<VideoDTO> list = service.videoResult(lid);
         VideoDTO title = service.lecTitle(lid);
         model.addAttribute("list", list); // 비디오 제목들

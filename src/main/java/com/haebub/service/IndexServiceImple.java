@@ -2,6 +2,7 @@ package com.haebub.service;
 
 import com.haebub.dao.index.IndexMapper;
 import com.haebub.dto.IndexDTO;
+import com.haebub.dto.Lecutre.LectureDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,5 +29,10 @@ public class IndexServiceImple implements IndexService {
     @Override
     public List<IndexDTO> popTeacher() {
         return mapper.popTeacher();
+    }
+
+    @Override
+    public List<LectureDTO> searchResult(String search) {
+        return mapper.searchResult(search);
     }
 }

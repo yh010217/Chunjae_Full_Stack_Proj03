@@ -102,5 +102,22 @@
         WHERE lid = #{lid}
     </delete>
 
+    <!-- 검색기능 -->
+    <select id="searchResult" parameterType="string" resultType="com.haebub.dto.Lecutre.LectureDTO">
+        SELECT ltitle
+            , u.name
+            , t.tsubject
+            , l.lid
+        FROM lecture l
+        INNER JOIN teacher t ON l.tid = t.tid
+        INNER JOIN user u ON t.uid = u.uid
+        WHERE ltitle LIKE CONCAT('%', #{search}, '%')
+    </select>
+
+    <select id="lecCount" parameterType="int" resultType="int">
+        SELECT lcount
+        FROM lecture
+        WHERE lid = #{lid}
+    </select>
 </mapper>
 

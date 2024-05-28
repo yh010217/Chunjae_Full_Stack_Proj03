@@ -1,6 +1,7 @@
 package com.haebub.controller;
 
 import com.haebub.dto.IndexDTO;
+import com.haebub.dto.Lecutre.LectureDTO;
 import com.haebub.service.IndexService;
 import lombok.RequiredArgsConstructor;
 import org.aspectj.apache.bcel.classfile.Module;
@@ -14,6 +15,8 @@ import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.FileInputStream;
@@ -99,6 +102,13 @@ public class indexController {
             entity=new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         return entity;
+    }
+
+    // 검색 기능 구현하기
+    @GetMapping("/mainlistjson")
+    @ResponseBody
+    public List<LectureDTO> listJson(@RequestParam(required = false) String main_search) {
+        return indService.searchResult(main_search);
     }
 
 }

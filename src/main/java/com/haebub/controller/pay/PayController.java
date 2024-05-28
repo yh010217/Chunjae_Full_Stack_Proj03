@@ -93,7 +93,7 @@ public class PayController {
         //여기서 그냥 purchase_test에 까지 넣고 있었음
         paymentService.insertOnePay(suid, lid, order_code);
 
-        return "redirect:/index/lecturelist";
+        return "redirect:/pay/success";
     }
 
     @GetMapping("/insert_cart")

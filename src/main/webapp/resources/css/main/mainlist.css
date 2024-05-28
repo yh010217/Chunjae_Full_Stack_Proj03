@@ -1,3 +1,7 @@
+input {
+    outline: none;
+}
+
 .wrap {
     width: 85%;
     position: relative;
@@ -24,6 +28,29 @@
     position: absolute;
     top: 13px;
     left: 11px;
+}
+
+/* 검색 결과가 있을 때 적용할 스타일 */
+.search_result_active {
+    position: absolute;
+    padding: 17px 40px;
+    background-color: #f5f5f5;
+    width: 100%;
+    top: 46px;
+    border: 1px solid #bbb;
+}
+
+/* 검색 결과가 없을 때 적용할 스타일 */
+.search_result_inactive {
+    display: none;
+}
+
+#article_1 a:hover{
+    color: #726E6E;
+}
+
+#result_search li {
+    margin: 10px 0;
 }
 
 .main_02 {

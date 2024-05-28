@@ -78,8 +78,7 @@
         <%-- 교재 --%>
         <div class="book">
             <h3>함께 보면 좋은 교재</h3>
-            <a href="${item.lbook}">구매하러 가기</a>
-            <div>주의할 점 : 지금은 누르면 오류뜸 (링크 안 넣어서...), 책 링크 DB 만들기</div>
+            ${item.lbook}
         </div>
         <%-- 일대일문의--%>
         <div class="one">

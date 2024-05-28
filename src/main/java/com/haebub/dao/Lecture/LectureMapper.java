@@ -26,4 +26,8 @@ public interface LectureMapper {
     int uid(String id);
 
     int lecDelete(int lid);
+
+    List<LectureDTO> searchResult(String search);
+
+    int lecCount(int lid);
 }

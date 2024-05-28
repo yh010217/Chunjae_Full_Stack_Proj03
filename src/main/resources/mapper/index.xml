@@ -28,6 +28,21 @@
         INNER JOIN user u ON t.uid = u.uid
         GROUP BY t.tid
         ORDER BY COUNT(p.lid) desc
-
     </select>
+
+    <!-- 검색기능 -->
+    <select id="searchResult" parameterType="string" resultType="com.haebub.dto.Lecutre.LectureDTO">
+        SELECT ltitle
+        , u.name
+        , t.tsubject
+        , l.lid
+        , t.tid
+        FROM lecture l
+            INNER JOIN teacher t ON l.tid = t.tid
+            INNER JOIN user u ON t.uid = u.uid
+        WHERE ltitle LIKE CONCAT('%', #{search}, '%')
+            || t.tsubject LIKE CONCAT('%', #{search}, '%')
+            || u.name LIKE CONCAT('%', #{search}, '%')
+    </select>
+
 </mapper>

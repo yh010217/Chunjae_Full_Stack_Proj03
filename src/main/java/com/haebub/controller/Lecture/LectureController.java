@@ -15,9 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -118,6 +116,27 @@ public class LectureController {
         // 해당 강의 선생님 알아오기
         String tid = lecService.tec_id(lid);
         model.addAttribute("tid", tid);
+
+       /* // 만약 총 강의 갯수보다...
+        int count = lecService.lecCount(lid); // 현재 lid에 있는 lcount 체크
+
+        // 최대 쿼리수를 넘는지 확인하고 삽입 결정
+        int maxQueryCount = ...; // 최대 쿼리수를 설정
+        if (count >= maxQueryCount) {
+            throw new RuntimeException("동영상 삽입 실패: 추가 못함");
+        }
+
+        // 쿼리수가 허용 한도 내에 있으면 동영상을 삽입
+        */
+
+
         return "/lecture/detail";
+    }
+
+    // 검색 기능 구현하기
+    @GetMapping("/listjson")
+    @ResponseBody
+    public List<LectureDTO> listJson(@RequestParam(required = false) String insert_search) {
+        return lecService.searchResult(insert_search);
     }
 }
