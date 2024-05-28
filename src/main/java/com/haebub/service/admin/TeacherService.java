@@ -11,6 +11,4 @@ public interface TeacherService {
 
     /** 강사 리스트*/
     List<TeacherDTO> teacherList();
-
-
 }
