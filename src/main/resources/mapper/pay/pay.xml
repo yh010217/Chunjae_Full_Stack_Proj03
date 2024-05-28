@@ -11,14 +11,14 @@
 
     <update id="makeProduct" parameterType="hashmap">
         UPDATE lecture
-            SET sp_pcode = #{sp_pcode}
-            ,sp_pplan = #{sp_pplan}
+        SET sp_pcode = #{sp_pcode}
+        ,sp_pplan = #{sp_pplan}
         WHERE lid = #{lid}
     </update>
 
     <insert id="purchaseOne" parameterType="hashmap">
-        INSERT INTO purchase_test(ptime  ,uid  , sp_ocode)
-        VALUES(NOW()  ,#{uid} , #{order_code} )
+        INSERT INTO purchase_test(ptime ,uid , sp_ocode)
+        VALUES(NOW() ,#{uid} , #{order_code} )
     </insert>
 
     <insert id="insertItemOne" parameterType="hashmap">
@@ -31,6 +31,11 @@
         select l.lprice, p.sp_oitem
         from pitem p INNER JOIN lecture l ON p.lid = l.lid
         where p.piid = #{piid} and p.pistatus = 'one'
+    </select>
+    <select id="cartIn" parameterType="hashmap" resultType="int">
+        SELECT count(*)
+        FROM fav
+        WHERE uid = #{uid} AND lid = #{lid}
     </select>
 
     <insert id="insertCart" parameterType="hashmap">
@@ -59,24 +64,43 @@
 
     <insert id="insertItem" parameterType="hashmap">
         insert into pitem(sp_oitem , lid , pid , pistatus)
-            values( #{sp_oitem}, #{lid} , #{pid} , 'cart' )
+        values( #{sp_oitem}, #{lid} , #{pid} , 'cart' )
     </insert>
 
     <select id="getCartItem" parameterType="hashmap" resultType="hashmap">
         select l.lprice, pit.sp_oitem, p.sp_ocode
         from pitem pit INNER JOIN lecture l ON pit.lid = l.lid
-            INNER JOIN purchase_test p on pit.pid = p.pid
+        INNER JOIN purchase_test p on pit.pid = p.pid
         where pit.piid = #{piid} and pit.pistatus = 'cart'
     </select>
     <update id="refundUpdate" parameterType="string">
         update pitem
         set pistatus = 'refund'
-            ,rdate = now()
+        ,rdate = now()
         where piid = #{piid}
     </update>
     <delete id="deleteFav" parameterType="hashmap">
         delete from fav
         where lid = #{lid} and uid = #{uid}
     </delete>
+    <select id="canRefund" parameterType="hashmap" resultType="string">
+
+        <![CDATA[
+            SELECT
+            CASE
+            WHEN
+            CURDATE() < DATE_ADD(
+            CASE
+            WHEN DATE(l.lopendate) > DATE(p.ptime) THEN DATE(l.lopendate)
+            ELSE DATE(p.ptime) END
+            ,INTERVAL + 7 DAY)  THEN 'can_refund'
+            ELSE 'cannot_refund' END  AS 'can_refund'
+            FROM purchase_test p
+            INNER JOIN user up ON p.uid = up.uid
+            INNER JOIN pitem pit ON p.pid = pit.pid
+            INNER JOIN lecture l ON pit.lid = l.lid
+            WHERE up.uid = #{uid} AND p.pid = #{pid} AND piid = #{piid}
+        ]]>
+    </select>
 
 </mapper>

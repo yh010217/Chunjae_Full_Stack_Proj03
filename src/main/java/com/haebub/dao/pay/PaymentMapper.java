@@ -31,4 +31,8 @@ public interface PaymentMapper {
     int refundUpdate(String piid);
 
     void deleteFav(HashMap<String,Object> hm);
+
+    int cartIn(HashMap<String, Object> hm);
+
+    String canRefund(HashMap<String, Object> hm);
 }

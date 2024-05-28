@@ -9,8 +9,13 @@ document.getElementById('multi_button').onclick = function (){
     }
     str_lid += purchase_arr[i].id;
 
-    location.href = 'purchase_cart?lid='+str_lid;
+    //location.href = 'purchase_cart?lid='+str_lid;
+    openCart(str_lid);
+}
 
+function openCart (lids) {
+    const options = 'width=320, height=625, top=50, left=50, scrollbars=no, resizable=no, location=no, toolbars=no, status=no, directories=no'
+    window.open('/mypage/purchase_cart?lid='+lids,'_blank', options)
 }
 
 let isItCheck = false;

@@ -66,15 +66,16 @@
 }
 
 /* 환불 신청 링크 스타일 */
-#bill_content li a {
+#bill_content li button {
     background-color: #aac9ee; /* 배경색 */
     color: #fff; /* 글자색 */
     padding: 5px 10px; /* 안쪽 여백 */
     text-decoration: none; /* 밑줄 제거 */
     border-radius: 5px; /* 모서리 둥글게 */
     transition: background-color 0.3s; /* 배경색 변경 애니메이션 */
+    border : 0;
 }
 
-#bill_content li a:hover {
+#bill_content li button:hover {
     background-color: #0056b3; /* 배경색 변경 */
 }

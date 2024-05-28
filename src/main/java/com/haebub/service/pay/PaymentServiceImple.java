@@ -75,7 +75,10 @@ public class PaymentServiceImple implements PaymentService {
         HashMap<String, Object> hm = new HashMap<>();
         hm.put("uid", uid);
         hm.put("lid", lid);
-        int result = paymentMapper.insertCart(hm);
+        int result = 0;
+        if(paymentMapper.cartIn(hm) == 0){
+            result = paymentMapper.insertCart(hm);
+        }
         return result;
     }
 
@@ -153,6 +156,20 @@ public class PaymentServiceImple implements PaymentService {
             hm.put("uid",uid);
             hm.put("lid",lids[i]);
             paymentMapper.deleteFav(hm);
+        }
+    }
+
+    @Override
+    public boolean canRefund(String uid, String pid, String piid) {
+        HashMap<String,Object> hm = new HashMap<>();
+        hm.put("uid",uid);
+        hm.put("pid",pid);
+        hm.put("piid",piid);
+        String result = paymentMapper.canRefund(hm);
+        if("can_refund".equals(result)){
+            return true;
+        }else{
+            return false;
         }
     }
 

@@ -198,9 +198,10 @@ public class PayController {
 
     @GetMapping("/pay/refund/{pistatus}/{pid}/{piid}")
     public String refund(Model model
-        ,@PathVariable String pistatus
-        ,@PathVariable String pid
-        ,@PathVariable String piid){
+            , HttpServletRequest request
+            , @PathVariable String pistatus
+            , @PathVariable String pid
+            , @PathVariable String piid) {
         /*
         pistatus가 one 이면 굳이 pid 까지도 안보고 piid 로 sp_oitem만으로 환불 진행 가능
         pistatus가 cart 면 pid 로 sp_ocode까지 가져오고 piid의 sp_oitem을 가져와야 환불 진행 가능
@@ -211,22 +212,35 @@ public class PayController {
         뭐 자바스크립트 함수를 두개 만들어놓고 jstl의 if 로 실행시키면 되지 않을까
         */
 
-        if(pistatus.equals("one")){
-            HashMap<String,Object> hm = paymentService.getOneItem(piid);
-            model.addAttribute("hm",hm);
-        }else if(pistatus.equals("cart")){
-            HashMap<String,Object> hm = paymentService.getCartItem(pid,piid);
-            model.addAttribute("hm",hm);
+
+        HttpSession session = request.getSession();
+        String id = (String) session.getAttribute("id");
+
+
+        int uid = (Integer) userService.getUid(id).get("uid");
+        String suid = uid + "";
+        if (paymentService.canRefund(suid, pid, piid)) {
+            if (pistatus.equals("one")) {
+                HashMap<String, Object> hm = paymentService.getOneItem(piid);
+                model.addAttribute("hm", hm);
+            } else if (pistatus.equals("cart")) {
+                HashMap<String, Object> hm = paymentService.getCartItem(pid, piid);
+                model.addAttribute("hm", hm);
+            }
+        }
+        else{
+            return "pay/refund_error";
         }
 
-        model.addAttribute("piid",piid);
-        model.addAttribute("pistatus",pistatus);
+
+        model.addAttribute("piid", piid);
+        model.addAttribute("pistatus", pistatus);
 
         return "pay/refund"; // 이 페이지에서 js fetch 로 환불 진행
     }
 
     @GetMapping("pay/refund_success/{piid}")
-    public String refundSuccess(@PathVariable String piid){
+    public String refundSuccess(@PathVariable String piid) {
         //refund 성공시 refund 테이블에 insert
         //pitem 테이블에서 해당 piid의 status를 refund로 update
 
@@ -236,7 +250,7 @@ public class PayController {
     }
 
     @GetMapping("/pay/delete_fav/{lid}")
-    public String deleteFav(@PathVariable String lid, HttpServletRequest request){
+    public String deleteFav(@PathVariable String lid, HttpServletRequest request) {
 
         HttpSession session = request.getSession();
         String id = (String) session.getAttribute("id");
@@ -244,7 +258,7 @@ public class PayController {
         int uid = (Integer) userService.getUid(id).get("uid");
         String suid = uid + "";
 
-        paymentService.deleteFav(lid,suid);
+        paymentService.deleteFav(lid, suid);
 
         return "redirect:/index/mypage/cart";
     }

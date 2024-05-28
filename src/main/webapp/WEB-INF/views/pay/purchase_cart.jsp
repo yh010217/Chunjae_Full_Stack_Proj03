@@ -5,13 +5,12 @@
     <title>Title</title>
     <style>
         iframe{
-            width: 500px;
-            height: 700px;
+            width: 300px;
+            height: 600px;
         }
     </style>
 </head>
 <body>
-떠라 결제창
 <div id="purchase_window"></div>
 <script>
 

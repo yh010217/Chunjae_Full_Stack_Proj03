@@ -1,5 +1,6 @@
 import com.haebub.dao.pay.PayUserMapper;
 import com.haebub.dao.pay.PaymentMapper;
+import com.haebub.service.pay.PaymentService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -41,6 +42,12 @@ public class PayUserTest {
     public void test4() {
         List<HashMap<String, Object>> hmlist = paymentMapper.getCartList("559");
         System.out.println(hmlist);
+    }
+    @Autowired
+    private PaymentService paymentService;
+    @Test
+    public void test5(){
+        System.out.println(paymentService.canRefund("559","2","3"));
     }
 
 }
