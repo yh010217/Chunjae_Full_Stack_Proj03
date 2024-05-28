@@ -26,10 +26,22 @@
                     <label>썸네일 등록</label> <br>
                     <input type="file" id="file" name="file">
                 </li>
-                <li>
-                    <label>선생님 코드</label>
-                    <input type="text" id="lid" name="lid" value="${tid}" readonly>
-                </li>
+                <div class="test1">
+                    <li class="input_tea">
+                        <label>선생님 코드</label>
+                        <input type="text" id="lid" name="lid" value="${tid}" readonly>
+                    </li>
+                    <li>
+                        <label>과목</label>
+                        <input type="text" id="tsubject" name="tsubject" value="${dto.tsubject}" readonly>
+                    </li>
+                    <li>
+                        <label>선생님 이름</label>
+                        <input type="text" id="name" name="name" value="${dto.name}" readonly>
+                    </li>
+                </div>
+
+
                 <li>
                     <label for="ltitle">강의 제목</label> <br>
                     <input type="text" id="ltitle" name="ltitle" placeholder="오타 주의">
@@ -70,7 +82,7 @@
                     <label for="lcount">총 강의 수</label> <br>
                     <input type="text" id="lcount" name="lcount" placeholder="숫자로만 적어주세요.">
                 </li>
-                <li>
+                <li class="last_li">
                     <input type="submit" value="추가하기">
                     <input type="reset" value="삭제하기">
                 </li>

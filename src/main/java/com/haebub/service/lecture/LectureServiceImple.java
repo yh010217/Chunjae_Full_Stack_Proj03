@@ -66,6 +66,11 @@ public class LectureServiceImple implements LectureService {
     }
 
     @Override
+    public int lecDelete(int lid) {
+        return lecMapper.lecDelete(lid);
+    }
+
+    @Override
     public void insertData(String path, LectureDTO dto) throws IOException {
         if(dto.getFile() != null) {
             String fnames = fileUpload(path, dto);

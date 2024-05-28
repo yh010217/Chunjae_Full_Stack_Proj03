@@ -19,4 +19,10 @@ public interface TeacherMapper2 {
     int getTid(int tid);
 
     int getLid();
+
+    TeacherDTO getInfo(int tid);
+
+    List<LectureDTO> getLecList(int tid);
+
+    int getTotal(int tid);
 }

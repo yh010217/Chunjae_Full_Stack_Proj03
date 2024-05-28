@@ -52,6 +52,14 @@ public class LectureController {
         return "/lecture/list";
     }
 
+    // 삭제하기
+    @GetMapping("/lectureDelete/{lid}")
+    public String lectureDelete(@PathVariable(required = false) int lid) {
+
+        lecService.lecDelete(lid);
+        return "/lecture/list";
+    }
+
     // 추가하기
     @GetMapping("/lectureinsert")
     public String lectureInsert(LectureDTO dto, Model model) {

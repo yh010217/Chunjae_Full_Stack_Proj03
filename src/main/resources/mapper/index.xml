@@ -18,7 +18,7 @@
         FROM lecture l INNER JOIN purchase p ON l.lid = p.lid
         GROUP BY p.lid
         ORDER BY COUNT(p.lid) desc
-        LIMIT 2
+        LIMIT 3
     </select>
 
     <select id="popTeacher" resultType="com.haebub.dto.IndexDTO">

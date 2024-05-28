@@ -25,7 +25,10 @@
         <%-- 이벤트 배너 --%>
 
         <div class="main_02">
-            <img src="/resources/image/main/event.png" alt="이벤트 배너"/>
+            <picture>
+                <source media="(min-width: 1800px)" srcset="/resources/image/main/event2.png">
+                <img src="/resources/image/main/event.png" alt="People">
+            </picture>
 
             <div class="main_self">
                 <div class="main_self_div1">
@@ -85,8 +88,8 @@
                 <c:forEach var="item" items="${popTea}">
                     <ul>
                         <li class="tea_li1"><img src="/getImg/${item.tprofile}" alt="${item.tprofile}"></li>
-                        <li class="tea_li2">${item.tsubject}선생님</li>
-                        <li class="tea_li3">${item.name}</li>
+                        <li class="tea_li2">${item.tsubject}</li>
+                        <li class="tea_li3">${item.name}선생님</li>
                         <li class="tea_li4">${item.tintro}</li>
                     </ul>
                 </c:forEach>
@@ -99,7 +102,7 @@
                     <h1>BEST 강의</h1>
                     <a class="morelec" href="/index/lecturelist">더보기</a>
                 </div>
-                <div class="lecture_list">
+                <div class="lecture_list more">
                     <c:forEach var="item" items="${popList}">
                         <ul>
                             <li class="li_1"><img class="lecList_img" src="/getImage/${item.lprofile}" alt="${item.lprofile}"></li>

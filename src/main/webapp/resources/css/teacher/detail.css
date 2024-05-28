@@ -1,0 +1,109 @@
+#tea_detail {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.border_bottom, .tea_lecList {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#tea_detail .tea_name {
+    font-size: 52px;
+}
+
+#tea_detail .t_intro span {
+    font-weight: bold;
+}
+
+#tea_detail .t_intro {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    top: 60px;
+    left: 60px;
+}
+
+#tea_detail .tea_intro {
+    font-size: 32px;
+}
+
+.top1 {
+    background-color: #c6dbda;
+}
+
+.top2 {
+    background-color: #e4c4b7;
+}
+
+.top3 {
+    background-color: #ecd5e3;
+}
+
+.top4 {
+    background-color: #ffffb5;
+}
+
+.tea_top > img {
+    position: absolute;
+    left: 41%;
+}
+
+.tea_top {
+    height: 95vh;
+
+}
+
+
+
+/* 하위 */
+.border_bottom {
+    border-bottom: 4px solid black;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tea_lecList ul li {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    padding: 10px 50px;
+    border-bottom: 2px solid #495057;
+}
+
+.tea_lecList .lecList_li1 {
+    flex-grow: 1;
+    width: 100px;
+}
+
+/* 학년별 색상 */
+.tea_lecList .one {
+    color: #FFB15c;
+}
+
+.tea_lecList .two {
+    color: #F0C9CE;
+}
+
+.tea_lecList .three {
+    color: #0056b3;
+}
+
+.tea_lecList .lecList_li2 {
+    flex-grow: 2;
+    width: 400px;
+}
+
+.tea_lecList .lecList_li2 .book {
+    color: #495057;
+    font-size: 16px;
+}
+
+.tea_lecList .lecList_li3 {
+    flex-grow: 1;
+    width: 100px;
+    text-align: end;
+}

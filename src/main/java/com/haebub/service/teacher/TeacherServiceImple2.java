@@ -60,6 +60,21 @@ public class TeacherServiceImple2 implements TeacherService{
         return mapper.getTid(tid);
     }
 
+    @Override
+    public TeacherDTO getInfo(int tid) {
+        return mapper.getInfo(tid);
+    }
+
+    @Override
+    public List<LectureDTO> getLecList(int tid) {
+        return mapper.getLecList(tid);
+    }
+
+    @Override
+    public int getCount(int tid) {
+        return mapper.getTotal(tid);
+    }
+
     private String fileUpload(String path, LectureDTO dto) {
         UUID uuid = UUID.randomUUID();
 

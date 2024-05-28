@@ -43,6 +43,7 @@
                 <c:when test="${sessionScope.id == 'admin' || sessionScope.id == tid}"> <%-- 관리자 & 과목 선생님--%>
                     <li class="lec_result">
                         <a href="/index/videoinsert/${item.lid}"> 강의 등록</a>
+                        <a href="/index/video/${item.lid}">강의 보기</a>
                     </li>
                 </c:when>
                 <c:when test="${sessionScope.id == userid}"> <%-- 결제한 사람 --%>
@@ -69,14 +70,7 @@
             <h3>강의 들어오는 자리</h3>
             <ul>
                 <c:forEach var="video" items="${video}">
-                    <c:choose>
-                        <c:when test="${video.size(1)}">
-                            <li>등록된 강의가 없습니다.</li>
-                        </c:when>
-                        <c:otherwise>
-                            <li>${video.vtitle}</li>
-                        </c:otherwise>
-                    </c:choose>
+                    <li>${video.vtitle}</li>
                 </c:forEach>
             </ul>
         </div>
@@ -86,6 +80,12 @@
             <h3>함께 보면 좋은 교재</h3>
             <a href="${item.lbook}">구매하러 가기</a>
             <div>주의할 점 : 지금은 누르면 오류뜸 (링크 안 넣어서...), 책 링크 DB 만들기</div>
+        </div>
+
+        <div>
+            <c:if test="${sessionScope.id == 'admin' || sessionScope.id == tid}">
+                <button onclick="removeCheck()"> 강의 삭제</button> <%-- 강의 전체가 지워짐 --%>
+            </c:if>
         </div>
 
     </article>
@@ -123,6 +123,15 @@
     function openWindow () {
         const options = 'width=320, height=625, top=50, left=50, scrollbars=no, resizable=no, location=no, toolbars=no, status=no, directories=no'
         window.open('/pay/purchase_one?lid=${item.lid}','_blank', options)
+    }
+
+    function removeCheck() {
+        if (confirm("강의를 삭제하시겠습니까?") == true) {    // 정말 삭제할 건지 확인
+            location.href='/lectureDelete/${item.lid}';
+            location.href='/index/lecturelist'
+        } else {   //취소
+            return false;
+        }
     }
 
 </script>
