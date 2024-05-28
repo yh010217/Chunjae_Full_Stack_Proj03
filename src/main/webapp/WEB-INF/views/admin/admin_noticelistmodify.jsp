@@ -29,6 +29,10 @@
                 <img class="side_bar_menu_image" src="/resources/image/admin/main/board-gray.png" alt="고객 지원 관리">
                 <span class="side_bar_menu_name">고객 지원 관리</span>
             </a>
+
+            <a href="/index" class="go_index">
+                홈페이지로
+            </a>
         </div>
     </aside>
 

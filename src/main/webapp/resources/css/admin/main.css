@@ -12,6 +12,7 @@
     max-width: 500px;
     margin-right : 24px;
     margin-bottom : 24px;
+    margin-top: 32px;
     /*여기에 할 애가 많아지면 스크롤으로 처리하지 뭐*/
     height: 380px;
 
@@ -26,12 +27,12 @@
     padding-left: 24px;
     font-weight: 600;
 }
-.history_title{
+.history_title, .recent_title{
     box-sizing: border-box;
     display: inline-block;
     height: 36px;
     font-size: 24px;
-    padding-top: 2px;
+    padding-top: 4px;
     padding-left: 20px;
     font-weight: 600;
 }
@@ -85,8 +86,9 @@
     flex-grow: 2;
     height: 380px;
     border-radius: 8px;
+    margin-top: 32px;
 
-    box-shadow: 4px 4px 10px -5px #FFB15C;
+    box-shadow: 4px 4px 10px -6px #FFB15C;
 }
 .button_div{
     box-sizing: border-box;
@@ -146,10 +148,68 @@
 
 .recent_row{
     height: 500px;
-    border: 1px solid red;
+    width:90%;
+    margin: 24px auto;
+    min-width: 700px;
+    max-width: 1000px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    box-shadow: 4px 4px 10px -5px #FFB15C;
+
 }
 #table_top{
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+#recent_table{
+    margin: 10px auto;
+    width: 95%;
+}
+
+#recent_table th{
+    font-size: 20px;
+    font-weight: 600;
+}
+#recent_table td{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+#recent_table tr{
+    height: 34px;
+}
+
+#recent_table th:nth-child(1),#recent_table td:nth-child(1){
+    min-width: 120px;
+}
+#recent_table th:nth-child(2),#recent_table td:nth-child(2){
+    min-width: 120px;
+}
+#recent_table th:nth-child(4),#recent_table td:nth-child(4){
+    min-width: 160px;
+}
+
+#recent_table th:nth-child(4),#recent_table td:nth-child(4){
+    min-width: 120px;
+}
+
+.table_paging{
+    width : 480px;
+    position:relative;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.page_button{
+    width:40px;
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+}
+.where_page{
+    position: absolute;
+    right: 0;
 }

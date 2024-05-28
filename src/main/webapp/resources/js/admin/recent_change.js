@@ -137,6 +137,14 @@ let upage_func = function (page) {
 let ruser_button = document.getElementById('user_recent');
 
 ruser_button.onclick = function(){
+
+    let selected_button = document.querySelector('.recent_button .selected');
+
+    if(selected_button != null){
+        selected_button.classList.toggle('selected');
+    }
+    ruser_button.classList.toggle("selected");
+
     upage_func(1);
 }
 
@@ -278,5 +286,12 @@ let ppage_func = function (page){
 let rpay_button = document.getElementById('pay_recent');
 
 rpay_button.onclick=function (){
+
+    let selected_button = document.querySelector('.recent_button .selected');
+
+    if(selected_button != null){
+        selected_button.classList.toggle('selected');
+    }
+    rpay_button.classList.toggle("selected");
     ppage_func(1);
 }
