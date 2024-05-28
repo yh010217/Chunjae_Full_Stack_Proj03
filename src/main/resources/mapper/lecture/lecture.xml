@@ -80,7 +80,7 @@
 
     <select id="id" parameterType="hashmap" resultType="String">
         SELECT up.id
-        FROM purchase p
+        FROM purchase_test p
             INNER JOIN user up ON p.uid = up.uid
             INNER JOIN pitem pit ON p.pid = pit.pid
             INNER JOIN lecture l ON pit.lid = l.lid
