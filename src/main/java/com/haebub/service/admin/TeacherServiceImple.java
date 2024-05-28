@@ -50,11 +50,11 @@ public class TeacherServiceImple implements TeacherService{
         if (!isUidExist(uid)) {
             dto.setUid(uid);
             // uid가 존재하지 않는 경우에만 등록 처리
-            System.out.println("-----uid 받아와서 처리-------");
+//            System.out.println("-----uid 받아와서 처리-------");
             teacherMapper.teacherRegister(dto);
-            System.out.println("-----teacher insert 완료-------");
+//            System.out.println("-----teacher insert 완료-------");
             teacherMapper.updateUsertype(uid);
-            System.out.println("-----usertype update 완료-------");
+//            System.out.println("-----usertype update 완료-------");
 
         } else {
             // uid가 이미 존재
@@ -68,6 +68,18 @@ public class TeacherServiceImple implements TeacherService{
     @Override
     public List<TeacherDTO> teacherList() {
         return teacherMapper.getTeacherList();
+    }
+
+    /** 강사 id 존재 확인 */
+    @Override
+    public int idExist(String id) {
+        return teacherMapper.idExist(id);
+    }
+
+    /** 선생님 삭제 */
+    @Override
+    public void deleteTeacher(int tid) {
+        teacherMapper.deleteTeacher(tid);
     }
 
     /** 파일 업로드 */

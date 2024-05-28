@@ -96,3 +96,8 @@ form button[type="submit"]:hover,
 form button[type="button"]:hover {
     opacity: 0.9;
 }
+
+span {
+    margin-top: 5px;
+    color: #0056b3;
+}
