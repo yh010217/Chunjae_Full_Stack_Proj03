@@ -30,7 +30,7 @@
 <section>
     <c:choose>
         <c:when test="${page ==null || empty page || page == ''}">
-            <jsp:include page="main/mainlist.jsp"/>
+            <jsp:include page="/mainlist"/>
         </c:when>
         <c:otherwise>
             <jsp:include page="/${page}/${lid}"/>
