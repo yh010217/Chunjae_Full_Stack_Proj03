@@ -8,6 +8,7 @@
     <title>고객지원관리</title>
     <link rel="stylesheet" href="/resources/css/admin/template.css">
     <script defer src="/resources/js/admin/adminins.js"></script>
+    <link rel="stylesheet" href="/resources/css/admin/adminnotice.css">
 </head>
 <body>
 <div id="container">
@@ -35,24 +36,7 @@
 
     <div id="content_container">
         <h1>공지사항</h1>
-        <a href="/index/onelist">일대일문의</a>
-        <div class="table">
-            <button type="button" id="append">글쓰기</button>
-            <div class="thead">
-                <div class="th">글번호</div>
-                <div class="th">제목</div>
-                <div class="th">글내용</div>
-                <div class="th">등록날짜</div>
-            </div>
-            <div class="tbody">
-                <c:forEach var="item" items="${noticelist}">
-                    <div class="td"><a href="/admin/noticelist/detail/${item.nno}"><c:out value="${item.nno}"/></a></div>
-                    <div class="td"><c:out value="${item.ntitle}"/></div>
-                    <div class="td"><c:out value="${item.ncontent}"/></div>
-                    <div class="td"> <c:out value="${item.ndate}"/></div>
-                </c:forEach>
-            </div>
-        </div>
+        <button type="button" id="append">글쓰기</button>
         <form method="get" action="/admin/noticelist">
             <select name="search">
                 <option value="nno">글번호</option>
@@ -62,6 +46,25 @@
             <input type="text" name="searchtxt">
             <button type="submit">검색</button>
         </form>
+
+        <div class="table">
+            <div class="tr tr1">
+                <div class="td">글번호</div>
+                <div class="td">제목</div>
+                <div class="td">등록날짜</div>
+            </div>
+
+                <c:forEach var="item" items="${noticelist}">
+                   <div class="tr">
+                    <div class="td"><a href="/admin/noticelist/detail/${item.nno}"><c:out value="${item.nno}"/></a></div>
+                    <div class="td"><c:out value="${item.ntitle}"/></div>
+<%--                    <div class="td"><c:out value="${item.ncontent}"/></div>--%>
+                    <div class="td"> <c:out value="${item.ndate}"/></div>
+                   </div>
+                </c:forEach>
+
+        </div>
+
         <c:if test="${startblock>1}">
             <a href="/admin/noticelist/${startblock-1}?search=${search}&searchtxt=${searchtxt}">이전</a>
         </c:if>

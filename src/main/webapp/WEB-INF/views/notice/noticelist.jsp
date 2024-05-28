@@ -10,33 +10,39 @@
 </head>
 <body>
 <div id="wrap">
+
     <h1>공지사항</h1>
+    <!-- 검색 -->
+    <form method="get" action="/index/noticelist" class="searchform">
+        <select name="search">
+            <option value="nno">글번호</option>
+            <option value="ntitle">제목</option>
+            <option value="ncontent">내용</option>
+        </select>
+        <input type="text" name="searchtxt" class="searchtxt">
+        <button type="submit" class="search-btn">검색</button>
+    </form>
+
 <div class="table">
-    <div class="tr">
-        <div class="th">글번호</div>
-        <div class="th">제목</div>
-        <div class="th">등록날짜</div>
-<%--        <div class="th">글내용</div>--%>
+
+    <div class="tr tr1">
+        <div class="td">글번호</div>
+        <div class="td">제목</div>
+        <div class="td">등록날짜</div>
 
     </div>
-    <div class="tr_1">
+
         <c:forEach var="item" items="${noticelist}">
-            <div class="td"><a href="/admin/noticelist/detail/${item.nno}"><c:out value="${item.nno}"/></a></div>
+          <div class="tr">
+            <div class="td"><a href="/index/notdetail/${item.nno}"><c:out value="${item.nno}"/></a></div>
             <div class="td"><c:out value="${item.ntitle}"/></div>
             <div class="td"> <c:out value="${item.ndate}"/></div>
+           </div>
         </c:forEach>
-    </div>
+
 </div>
-<!-- 검색 -->
-<form method="get" action="/index/noticelist">
-    <select name="search">
-        <option value="nno">글번호</option>
-        <option value="ntitle">제목</option>
-        <option value="ncontent">내용</option>
-    </select>
-    <input type="text" name="searchtxt">
-    <button type="submit">검색</button>
-</form>
+
+
     <c:if test="${startblock>1}">
         <a href="/index/noticelist/${startblock-1}?search=${search}&searchtxt=${searchtxt}">이전</a>
     </c:if>
