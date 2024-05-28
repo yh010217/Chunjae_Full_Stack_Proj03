@@ -51,7 +51,7 @@ public class MypageServiceImple implements MypageService {
 
     /** 닉네임 중복 체크 */
     @Override
-    public int CheckNickname(int uid) {
-        return mypageMapperr.CheckNickname(uid);
+    public int CheckNickname(String nickname) {
+        return mypageMapperr.CheckNickname(nickname);
     }
 }

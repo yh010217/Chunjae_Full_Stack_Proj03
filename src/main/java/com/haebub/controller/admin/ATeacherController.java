@@ -11,9 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.FileInputStream;
@@ -21,7 +19,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -88,4 +88,31 @@ public class ATeacherController {
         }
         return entity;
     }
+
+    /** 강사 삭제 */
+    @RequestMapping(value = "/admin/deleteTeacher/{tid}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public Map<String, Boolean> deleteTeacher(@PathVariable int tid) {
+        Map<String, Boolean> response = new HashMap<>();
+        try {
+            // 강사 삭제 로직 구현
+            teacherService.deleteTeacher(tid);
+            response.put("success", true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.put("success", false);
+        }
+        return response;
+    }
+
+    /** 강사 등록 id 존재 체크 */
+    @GetMapping("/idcheck")
+    public @ResponseBody HashMap<String,Object> checkNick(@RequestParam("id") String id){
+        HashMap<String,Object> hm = new HashMap<>();
+        hm.put("result",teacherService.idExist(id));
+        return hm;
+    }
+
+
+
 }

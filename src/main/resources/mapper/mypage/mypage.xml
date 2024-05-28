@@ -154,4 +154,9 @@
         , tel = #{tel}
         WHERE uid = #{uid}
     </update>
+    <select id="CheckNickname" parameterType="String" resultType="int">
+        SELECT count(*)
+        from user
+        where nickname = #{nickname}
+    </select>
 </mapper>

@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="/resources/css/admin/teacher.css">
     <link rel="icon" href="/resources/image/icon_love.png">
     <title>해법학원 | 강사관리</title></head>
-    <script src="/resources/js/admin/teacher.js"></script>
 <body>
 
 <div id="container">
@@ -33,17 +32,24 @@
     </aside>
 
     <div id="content_container">
-            <a href="/admin/register">강사 등록</a>
+        <a href="/admin/register">강사 등록</a>
         <div class="teacher">
-            <h2>전체 강사</h2>
-            <ul>
+            <h3>강사 관리</h3>
+            <ul class="teacher_title">
+                <li>프로필 사진</li>
+                <li>번호</li>
+                <li>과목</li>
+                <li>이름</li>
+                <li>삭제 버튼</li>
+            </ul>
+            <ul class="teacher_list">
                 <c:forEach var="item" items="${list}">
-                    <li>
+                    <li class="teacher_block">
+                        <img class="teacher_img" src="/getImg/${item.tprofile}" alt="${item.tprofile}">
                         <p class="t_1"><c:out value="${item.tid}"/> </p>
                         <p class="t_2"><c:out value="${item.tsubject}"/></p>
-                        <img class="teacher_img" src="/getImg/${item.tprofile}" alt="${item.tprofile}">
                         <p class="t_3"><c:out value="${item.name}"/></p>
-                        <p class="t_4"><c:out value="${item.tintro}"/></p>
+                        <button class="delete_btn" onclick="deleteTeacher('${item.tid}')">삭제</button>
                     </li>
                 </c:forEach>
             </ul>
@@ -52,4 +58,25 @@
 </div>
 
 </body>
+<script>
+
+        function deleteTeacher(tid) {
+        if(confirm('정말 삭제하시겠습니까?')) {
+        fetch('/admin/deleteTeacher/' + tid, {
+        method: 'DELETE'
+    })
+        .then(response => response.json())
+        .then(data => {
+        if(data.success) {
+        alert('삭제되었습니다.');
+        window.location.reload(); // 페이지 새로고침으로 목록 갱신
+    } else {
+        alert('삭제 실패. 다시 시도해주세요.');
+    }
+    })
+        .catch(error => console.error('Error:', error));
+    }
+    }
+
+</script>
 </html>

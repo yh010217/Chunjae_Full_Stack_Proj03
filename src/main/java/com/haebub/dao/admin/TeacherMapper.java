@@ -22,4 +22,10 @@ public interface TeacherMapper {
 
     /** 강사 리스트 */
     List<TeacherDTO> getTeacherList();
+
+    /** 선생님 등록시 id 존재 여부 */
+    int idExist(String id);
+
+    /** 선생님 삭제 */
+    void deleteTeacher(int tid);
 }

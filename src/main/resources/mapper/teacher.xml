@@ -28,6 +28,11 @@
         from teacher
         where uid = #{uid}
     </select>
+    <select id="idExist" parameterType="String" resultType="int">
+        SELECT count(*)
+        FROM user
+        where id = #{id}
+    </select>
     <select id="getTeacherList" resultType="com.haebub.dto.admin.TeacherDTO">
         SELECT   tprofile
                , tsubject
@@ -37,4 +42,8 @@
         FROM   teacher t
             INNER JOIN user u ON t.uid = u.uid
     </select>
+    <delete id="deleteTeacher" parameterType="int">
+        DELETE FROM teacher
+        WHERE tid = #{tid}
+    </delete>
 </mapper>
