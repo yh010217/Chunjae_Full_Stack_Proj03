@@ -1,5 +1,7 @@
 package com.haebub.dao.admin;
 
+import com.haebub.dto.admin.PayTableDTO;
+import com.haebub.dto.admin.UserTableDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.HashMap;
@@ -20,4 +22,10 @@ public interface ChartMapper {
     int getPayPerWeek();
 
     int getLectureCount();
+
+    List<UserTableDTO> getRecentUser(HashMap<String, Object> hm);
+
+    int getPayCount();
+
+    List<PayTableDTO> getRecentPay(HashMap<String, Object> hm);
 }

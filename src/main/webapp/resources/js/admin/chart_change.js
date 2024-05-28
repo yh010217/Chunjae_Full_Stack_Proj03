@@ -1,4 +1,6 @@
 window.onload = function () {
+    upage_func(1);
+
     const ctx = document.getElementById('myChart');
     let labels_user = [];
     let data_user = [];
@@ -123,20 +125,16 @@ u_button.onclick = function () {
 
 
 
+let per_week_button = document.getElementById('per_week_chart');
 
-
-
-
-let pur_week_button = document.getElementById('pur_week_chart');
-
-pur_week_button.onclick = function () {
+per_week_button.onclick = function () {
 
     let selected_button = document.querySelector('.site_chart .selected');
 
     if(selected_button != null){
         selected_button.classList.toggle('selected');
     }
-    pur_week_button.classList.toggle("selected");
+    per_week_button.classList.toggle("selected");
 
 
     const ctx = document.getElementById('myChart');

@@ -144,7 +144,12 @@
 
 
 
-.table_row{
+.recent_row{
     height: 500px;
     border: 1px solid red;
+}
+#table_top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

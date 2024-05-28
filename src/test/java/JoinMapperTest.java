@@ -2,6 +2,7 @@
 import com.haebub.dao.join.JoinMapper;
 import com.haebub.dto.User.UserDTO;
 //import com.haebub.service.join.JoinServiceImple;
+import com.haebub.service.admin.ChartService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -46,6 +47,15 @@ public class JoinMapperTest {
         dto.setSp_uid("test");
         joinMapper.joinresult(dto);
         //assertEquals(1,joinMapper.joinresult(dto));
+    }
+
+
+    @Autowired
+    private ChartService chartService;
+
+    @Test
+    public void test2(){
+        System.out.println(chartService.getRecentUser(2,10));
     }
 
 }

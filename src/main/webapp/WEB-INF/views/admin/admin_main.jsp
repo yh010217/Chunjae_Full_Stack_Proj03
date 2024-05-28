@@ -79,7 +79,7 @@
                 <div class="button_div">
                     <button id="user_chart">유저
                     </button
-                    ><button id="pur_week_chart">주간 결제
+                    ><button id="per_week_chart">주간 결제
                     </button>
                 </div>
                 <div id="myChartContainer">
@@ -88,13 +88,28 @@
             </div>
         </div>
 
-        <div class="content_row table_row">
-
+        <div class="recent_row">
+            <div id="table_top">
+                <span class="recent_title">Recent</span>
+                <div class="button_div">
+                    <button id="user_recent">신규 유저
+                    </button
+                    ><button id="pay_recent">최근 결제</button>
+                </div>
+            </div>
+            <table id="recent_table">
+                <thead>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="table_paging"></div>
         </div>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="/resources/js/admin/chart_change.js"></script>
+<script src="/resources/js/admin/recent_change.js"></script>
 </body>
 </html>
