@@ -17,9 +17,21 @@
     </update>
 
     <insert id="purchaseOne" parameterType="hashmap">
-        INSERT INTO purchase(ptime  ,uid  ,lid  ,pstatus  ,sp_ocode)
-        VALUES(NOW()  ,#{uid}  ,#{lid}  ,  #{success}  ,#{order_code} )
+        INSERT INTO purchase_test(ptime  ,uid  , sp_ocode)
+        VALUES(NOW()  ,#{uid} , #{order_code} )
     </insert>
+
+    <insert id="insertItemOne" parameterType="hashmap">
+        insert into pitem(sp_oitem , lid , pid , pistatus)
+        values( #{sp_oitem}, #{lid} , #{pid} , 'one' )
+    </insert>
+
+
+    <select id="getOneItem" parameterType="string" resultType="hashmap">
+        select l.lprice, p.sp_oitem
+        from pitem p INNER JOIN lecture l ON p.lid = l.lid
+        where p.piid = #{piid} and p.pistatus = 'one'
+    </select>
 
     <insert id="insertCart" parameterType="hashmap">
         INSERT INTO fav(uid,lid)
@@ -50,16 +62,6 @@
             values( #{sp_oitem}, #{lid} , #{pid} , 'cart' )
     </insert>
 
-    <insert id="insertItemOne" parameterType="hashmap">
-        insert into pitem(sp_oitem , lid , pid , pistatus)
-        values( #{sp_oitem}, #{lid} , #{pid} , 'one' )
-    </insert>
-
-    <select id="getOneItem" parameterType="string" resultType="hashmap">
-        select l.lprice, p.sp_oitem
-        from pitem p INNER JOIN lecture l ON p.lid = l.lid
-        where p.piid = #{piid} and p.pistatus = 'one'
-    </select>
     <select id="getCartItem" parameterType="hashmap" resultType="hashmap">
         select l.lprice, pit.sp_oitem, p.sp_ocode
         from pitem pit INNER JOIN lecture l ON pit.lid = l.lid

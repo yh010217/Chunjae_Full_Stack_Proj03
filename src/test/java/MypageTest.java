@@ -1,6 +1,8 @@
+import com.haebub.controller.admin.AdminController;
 import com.haebub.dao.comingsoon.CalendarMapper;
 import com.haebub.dao.mypage.MypageMapper;
 import com.haebub.dto.User.UserDTO;
+import com.haebub.service.admin.ChartService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +39,11 @@ public class MypageTest {
     }
 
 
+    @Autowired
+    ChartService chartService;
+    @Test
+    public void test4(){
+        System.out.println(chartService.getPayChart());
+    }
 
 }

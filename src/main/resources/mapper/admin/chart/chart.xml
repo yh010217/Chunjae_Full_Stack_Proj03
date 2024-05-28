@@ -20,4 +20,77 @@
         FROM user;
         ]]>
     </select>
+    <select id="getPayChart" resultType="hashmap">
+
+        SELECT
+        SUM(if(DATE(ptime) = (CURDATE() - INTERVAL 6 day),lprice,0)) AS unit1
+        ,SUM(if(DATE(ptime) = (CURDATE() - INTERVAL 5 day),lprice,0)) AS unit2
+        ,SUM(if(DATE(ptime) = (CURDATE() - INTERVAL 4 day),lprice,0)) AS unit3
+        ,SUM(if(DATE(ptime) = (CURDATE() - INTERVAL 3 day),lprice,0)) AS unit4
+        ,SUM(if(DATE(ptime) = (CURDATE() - INTERVAL 2 day),lprice,0)) AS unit5
+        ,SUM(if(DATE(ptime) = (CURDATE() - INTERVAL 1 day),lprice,0)) AS unit6
+        ,SUM(if(DATE(ptime) = CURDATE(),lprice,0)) AS unit7
+        FROM lecture l INNER JOIN pitem pit ON l.lid = pit.lid
+        inner JOIN purchase_test p ON p.pid = pit.pid
+    </select>
+
+    <select id="getStudentCount" resultType="int">
+        SELECT COUNT(*)
+        FROM user
+        WHERE usertype = 0
+    </select>
+
+    <select id="getTeacherCount" resultType="int">
+        SELECT COUNT(*)
+        FROM user
+        WHERE usertype = 2
+    </select>
+
+    <select id="getPayPerWeek" resultType="int">
+        SELECT SUM(lprice)
+        FROM lecture l INNER JOIN pitem pit ON l.lid = pit.lid
+        inner JOIN purchase_test p ON p.pid = pit.pid
+        WHERE ptime BETWEEN CURDATE() - INTERVAL 1 WEEK AND CURDATE()
+    </select>
+
+    <select id="getLectureCount" resultType="int">
+        SELECT count(*)
+        FROM lecture
+    </select>
+
+    <select id="getRecentUser" resultType="com.haebub.dto.admin.UserTableDTO">
+        SELECT id, name ,email, date(joindate) AS joindate,sp_uid
+        FROM user
+        WHERE usertype = 0
+        ORDER BY joindate DESC
+        LIMIT #{start}, #{count}
+    </select>
+
+    <select id="getPayCount" resultType="int">
+        <![CDATA[
+
+        SELECT count(*)
+        FROM purchase_test p INNER JOIN pitem pit ON p.pid = pit.pid
+        INNER JOIN lecture l ON pit.lid = l.lid
+        INNER JOIN teacher t ON l.tid = t.tid
+        INNER JOIN user u ON u.uid = t.uid
+        WHERE pit.pistatus <> 'refund'
+
+        ]]>
+    </select>
+
+
+    <select id="getRecentPay" resultType="com.haebub.dto.admin.PayTableDTO">
+        <![CDATA[
+
+            SELECT ltitle, date(ptime) as ptime , lprice, sp_ocode, u.name AS user
+            FROM purchase_test p INNER JOIN pitem pit ON p.pid = pit.pid
+            		INNER JOIN lecture l ON pit.lid = l.lid
+            		INNER JOIN user u ON p.uid = u.uid
+            WHERE pit.pistatus <> 'refund'
+            ORDER BY ptime desc
+            limit #{start}, #{count}
+        ]]>
+    </select>
+
 </mapper>
