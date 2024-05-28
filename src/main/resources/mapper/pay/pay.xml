@@ -27,7 +27,7 @@
     </insert>
 
     <select id="getCartList" parameterType="string" resultType="hashmap">
-        SELECT l.lid, l.ltitle, l.lprice , t.tid, u.name
+        SELECT l.lid, l.ltitle, l.lprice , t.tid, u.name , t.tsubject , l.lperiod
         from fav f INNER JOIN lecture l ON f.lid = l.lid
         INNER JOIN teacher t ON l.tid = t.tid
         INNER JOIN user u ON t.uid = u.uid
@@ -54,5 +54,27 @@
         insert into pitem(sp_oitem , lid , pid , pistatus)
         values( #{sp_oitem}, #{lid} , #{pid} , 'one' )
     </insert>
+
+    <select id="getOneItem" parameterType="string" resultType="hashmap">
+        select l.lprice, p.sp_oitem
+        from pitem p INNER JOIN lecture l ON p.lid = l.lid
+        where p.piid = #{piid} and p.pistatus = 'one'
+    </select>
+    <select id="getCartItem" parameterType="hashmap" resultType="hashmap">
+        select l.lprice, pit.sp_oitem, p.sp_ocode
+        from pitem pit INNER JOIN lecture l ON pit.lid = l.lid
+            INNER JOIN purchase_test p on pit.pid = p.pid
+        where pit.piid = #{piid} and pit.pistatus = 'cart'
+    </select>
+    <update id="refundUpdate" parameterType="string">
+        update pitem
+        set pistatus = 'refund'
+            ,rdate = now()
+        where piid = #{piid}
+    </update>
+    <delete id="deleteFav" parameterType="hashmap">
+        delete from fav
+        where lid = #{lid} and uid = #{uid}
+    </delete>
 
 </mapper>

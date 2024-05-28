@@ -23,4 +23,12 @@ public interface PaymentMapper {
     int insertItem(HashMap<String, Object> itemhm);
 
     int insertItemOne(HashMap<String, Object> itemhm);
+
+    HashMap<String, Object> getOneItem(String piid);
+
+    HashMap<String, Object> getCartItem(HashMap<String, Object> hm);
+
+    int refundUpdate(String piid);
+
+    void deleteFav(HashMap<String,Object> hm);
 }

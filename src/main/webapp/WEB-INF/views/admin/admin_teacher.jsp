@@ -32,7 +32,7 @@
     </aside>
 
     <div id="content_container">
-        <a href="/admin/register">강사 등록</a>
+            <a href="/admin/register">강사 등록</a>
         <div class="teacher">
             <h3>강사 관리</h3>
             <ul class="teacher_title">
