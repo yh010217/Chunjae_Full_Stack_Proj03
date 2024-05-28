@@ -55,6 +55,10 @@ public class indexController {
         List<IndexDTO> popList = indService.popList();
         model.addAttribute("popList", popList);
 
+        // 선생님 인기순
+        List<IndexDTO> popTea = indService.popTeacher();
+        model.addAttribute("popTea", popTea);
+
         return "/main/mainlist";
     }
 
@@ -63,15 +67,19 @@ public class indexController {
     @GetMapping( value="/getImage/{lid}", produces = {MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_PNG_VALUE})
     public ResponseEntity<byte[]> getImage(@PathVariable String lid
             , HttpServletRequest request) {
-        String path="/uploadImg";
+        String path="/uploadImg2";
         String realpath= request.getSession().getServletContext().getRealPath(path);
+        System.out.println("realpath >>>>>>>>>> " + realpath);
         String fname = "";
+        // fname = URLEncoder.encode(lid, StandardCharsets.UTF_8).replace("+", "%20");
+
         if (lid.contains("_")) {
             String[] truename = lid.split("_");
             fname = URLEncoder.encode(truename[1], StandardCharsets.UTF_8).replace("+", "%20");
         } else {
             fname = URLEncoder.encode(lid, StandardCharsets.UTF_8).replace("+", "%20");
         }
+
         InputStream in = null;
         // System.out.println(fname + ">>>>>>>>>>> fname");
         ResponseEntity<byte[]> entity=null;

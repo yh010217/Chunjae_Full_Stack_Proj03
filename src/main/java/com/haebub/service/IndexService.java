@@ -8,4 +8,6 @@ public interface IndexService {
     List<IndexDTO> newlist();
 
     List<IndexDTO> popList();
+
+    List<IndexDTO> popTeacher();
 }

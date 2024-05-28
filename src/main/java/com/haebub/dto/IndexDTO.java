@@ -15,4 +15,9 @@ public class IndexDTO {
     private int lprice;
     private int lid;
     private int uid;
+    private int tid;
+    private String tprofile;
+    private String tsubject;
+    private String tintro;
+    private String name;
 }

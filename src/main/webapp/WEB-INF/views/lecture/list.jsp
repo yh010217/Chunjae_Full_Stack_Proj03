@@ -14,7 +14,7 @@
 </head>
 <body>
 <article id="lecList">
-    <a href="/index/lectureinsert">추가하기</a>
+    <%--<a href="/index/lectureinsert">추가하기</a>--%>
     <div class="lecList_top">
         <%-- 상단부 왼쪽--%>
         <div class="lecList_search">

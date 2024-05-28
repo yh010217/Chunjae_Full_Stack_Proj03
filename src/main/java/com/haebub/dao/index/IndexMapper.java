@@ -10,4 +10,6 @@ public interface IndexMapper {
     List<IndexDTO> newList();
 
     List<IndexDTO> popList();
+
+    List<IndexDTO> popTeacher();
 }

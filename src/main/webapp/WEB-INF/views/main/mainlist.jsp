@@ -81,7 +81,16 @@
                 <h1>대표강사진</h1>
                 <a class="morelec" href="/index/teacher">더보기</a>
             </div>
-
+            <div class="tea_title">
+                <c:forEach var="item" items="${popTea}">
+                    <ul>
+                        <li class="tea_li1"><img src="/getImg/${item.tprofile}" alt="${item.tprofile}"></li>
+                        <li class="tea_li2">${item.tsubject}선생님</li>
+                        <li class="tea_li3">${item.name}</li>
+                        <li class="tea_li4">${item.tintro}</li>
+                    </ul>
+                </c:forEach>
+            </div>
         </article>
 
         <article id="main_04">

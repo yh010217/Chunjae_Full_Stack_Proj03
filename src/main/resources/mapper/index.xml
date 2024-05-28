@@ -20,4 +20,14 @@
         ORDER BY COUNT(p.lid) desc
         LIMIT 2
     </select>
+
+    <select id="popTeacher" resultType="com.haebub.dto.IndexDTO">
+        SELECT t.tid, tprofile, tsubject, tintro, ltitle, name
+        FROM teacher t INNER JOIN lecture l ON t.tid = l.tid
+        INNER JOIN purchase p ON l.lid = p.lid
+        INNER JOIN user u ON t.uid = u.uid
+        GROUP BY t.tid
+        ORDER BY COUNT(p.lid) desc
+
+    </select>
 </mapper>

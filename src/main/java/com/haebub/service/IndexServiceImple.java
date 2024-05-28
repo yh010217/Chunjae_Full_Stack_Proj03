@@ -24,4 +24,9 @@ public class IndexServiceImple implements IndexService {
     public List<IndexDTO> popList() {
         return mapper.popList();
     }
+
+    @Override
+    public List<IndexDTO> popTeacher() {
+        return mapper.popTeacher();
+    }
 }
