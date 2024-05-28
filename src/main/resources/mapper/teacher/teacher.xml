@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haebub.dao.teacher.TeacherMapper2">
+    <select id="getList" resultType="com.haebub.dto.admin.TeacherDTO">
+        SELECT tprofile
+                , tsubject
+                , tintro
+                , name
+                , tid
+        FROM teacher t inner join user u on t.uid = u.uid
+    </select>
+
+    <select id="getDetailList" resultType="com.haebub.dto.admin.TeacherDTO" parameterType="int">
+        SELECT NAME
+                , t.tintro
+                , t.tsubject
+                , t.tid
+                , t.tprofile
+        FROM teacher t INNER JOIN user u ON t.uid = u.uid
+        WHERE tid = #{tid}
+    </select>
+
+    <insert id="insertData" parameterType="hashmap"> <!-- 추가하기 -->
+        insert into lecture (ltitle
+            , lprofile
+            , lintro
+            , lbook
+            , lprice
+            , lopendate
+            , lperiod
+            , lcount
+            , tid
+            , lgrade)
+        values(#{ltitle}, #{lprofile}, #{lintro}, #{lbook}, #{lprice}, #{lopendate}, #{lperiod}, #{lcount}, #{tid}, #{lgrade})
+    </insert>
+
+    <select id="getTid" parameterType="int" resultType="int">
+        select tid
+        from teacher
+        where tid = #{tid}
+    </select>
+
+    <select id="getLid" resultType="int">
+        select max(lid)
+        from lecture
+    </select>
+
+    <select id="getInfo" resultType="com.haebub.dto.admin.TeacherDTO" parameterType="int">
+        SELECT NAME
+                , tsubject
+        FROM teacher t INNER JOIN user u ON t.uid = u.uid
+        WHERE tid = #{tid}
+    </select>
+
+    <select id="getLecList" resultType="com.haebub.dto.Lecutre.LectureDTO" parameterType="int">
+        SELECT l.lgrade
+                , l.ltitle
+                , l.lbook
+                , l.lprice
+                , lid
+        FROM lecture l INNER JOIN teacher t ON l.tid = t.tid
+        WHERE t.tid = #{tid}
+    </select>
+
+    <select id="getTotal" parameterType="int" resultType="int">
+        SELECT COUNT(l.ltitle) AS total
+        FROM lecture l INNER JOIN teacher t ON l.tid = t.tid
+        WHERE t.tid = #{tid}
+    </select>
+
+</mapper>

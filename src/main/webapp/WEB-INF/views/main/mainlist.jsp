@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/resources/css/main/mainlist.css">
 </head>
 <body>
+<div class="wrap">
     <article id="article_1">
         <div class="main_01">
             <label>
@@ -24,7 +25,10 @@
         <%-- 이벤트 배너 --%>
 
         <div class="main_02">
-            <img src="/resources/image/main/event.png" alt="이벤트 배너"/>
+            <picture>
+                <source media="(min-width: 1800px)" srcset="/resources/image/main/event2.png">
+                <img src="/resources/image/main/event.png" alt="People">
+            </picture>
 
             <div class="main_self">
                 <div class="main_self_div1">
@@ -74,21 +78,59 @@
         </div>
     </article>
 
-    <article id="main_03">
-        <h1>대표강사진</h1>
-        <span>더보기</span>
-    </article>
 
-    <article id="main_04">
-        <div>
-            <h1>BEST 강의</h1>
-            <a href="/index/lecturelist">더 많은 강의 보러 가기</a>
-        </div>
-        <div>
-            <h1>신규 강의</h1>
-            <a href="index/lecturelist">더 많은 강의 보러 가기</a>
-        </div>
-    </article>
+        <article id="main_03">
+            <div class="lec_title">
+                <h1>대표강사진</h1>
+                <a class="morelec" href="/index/teacher">더보기</a>
+            </div>
+            <div class="tea_title">
+                <c:forEach var="item" items="${popTea}">
+                    <ul>
+                        <li class="tea_li1"><img src="/getImg/${item.tprofile}" alt="${item.tprofile}"></li>
+                        <li class="tea_li2">${item.tsubject}</li>
+                        <li class="tea_li3">${item.name}선생님</li>
+                        <li class="tea_li4">${item.tintro}</li>
+                    </ul>
+                </c:forEach>
+            </div>
+        </article>
+
+        <article id="main_04">
+            <div class="bestLecture">
+                <div class="lec_title">
+                    <h1>BEST 강의</h1>
+                    <a class="morelec" href="/index/lecturelist">더보기</a>
+                </div>
+                <div class="lecture_list more">
+                    <c:forEach var="item" items="${popList}">
+                        <ul>
+                            <li class="li_1"><img class="lecList_img" src="/getImage/${item.lprofile}" alt="${item.lprofile}"></li>
+                            <li class="li_2">${item.lgrade}학년</li>
+                            <li class="li_3">${item.ltitle}</li>
+                            <li class="li_4">${item.lprice}</li>
+                        </ul>
+                    </c:forEach>
+                </div>
+            </div>
+            <div class="newLecture">
+                <div class="lec_title">
+                    <h1>신규 강의</h1>
+                    <a class="morelec" href="/index/comingsoon">더보기</a>
+                </div>
+                <div class="lecture_list">
+                    <c:forEach var="item" items="${newList}">
+                        <ul>
+                            <li class="li_1"><img class="lecList_img" src="/getImage/${item.lprofile}" alt="${item.lprofile}"></li>
+                            <li class="li_2">${item.lgrade}학년</li>
+                            <li class="li_3">${item.ltitle}</li>
+                            <li class="li_4">${item.lprice}</li>
+                        </ul>
+                    </c:forEach>
+                </div>
+            </div>
+        </article>
+
 
     <article id="main_05">
         <div class="main_05_1">
@@ -110,5 +152,6 @@
             </ul>
         </div>
     </article>
+    </div>
 </body>
 </html>

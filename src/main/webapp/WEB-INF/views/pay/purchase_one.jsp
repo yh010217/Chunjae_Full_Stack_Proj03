@@ -17,7 +17,6 @@
     </style>
 </head>
 <body>
-아마 이 밑에 결제창이 뜰 거임
 <div id="purchase_window"></div>
 <script>
 
@@ -57,10 +56,6 @@
         return response.json();
     })
         .then(data => {
-            console.log(data.orderId);
-            console.log(data.orderCode);
-            console.log(data.items);
-
             let oid = data.orderId;
 
             let ifr = document.createElement('iframe');

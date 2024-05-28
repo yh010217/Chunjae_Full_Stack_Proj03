@@ -71,5 +71,36 @@
         where lid = #{lid}
     </select>
 
+    <select id="tec_id" parameterType="int" resultType="String">
+        SELECT u.id
+        FROM teacher t INNER JOIN lecture l ON t.tid = l.tid
+                INNER JOIN user u ON t.uid = u.uid
+        WHERE l.lid = #{lid}
+    </select>
+
+    <select id="id" parameterType="hashmap" resultType="String">
+        SELECT up.id
+        FROM purchase p
+            INNER JOIN user up ON p.uid = up.uid
+            INNER JOIN pitem pit ON p.pid = pit.pid
+            INNER JOIN lecture l ON pit.lid = l.lid
+        WHERE
+            DATE(NOW()) &lt;= DATE_ADD(DATE(ptime), INTERVAL l.lperiod DAY)
+            AND pit.pistatus &lt;&gt; 'refund'
+            AND l.lid = #{lid}
+            AND up.uid = #{uid}
+    </select>
+
+    <select id="uid" parameterType="String" resultType="int">
+        select uid
+        from user
+        where id = #{id}
+    </select>
+
+    <delete id="lecDelete" parameterType="int">
+        DELETE FROM lecture
+        WHERE lid = #{lid}
+    </delete>
+
 </mapper>
 

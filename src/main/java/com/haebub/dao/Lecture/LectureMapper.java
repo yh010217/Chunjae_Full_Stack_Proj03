@@ -4,6 +4,7 @@ import com.haebub.dto.Lecutre.LectureDTO;
 import com.haebub.dto.video.VideoDTO;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Mapper
@@ -17,4 +18,12 @@ public interface LectureMapper {
     List<LectureDTO> freeList();
 
     List<VideoDTO> video(int lid);
+
+    String tec_id(int lid);
+
+    String id(HashMap<String, Object> o);
+
+    int uid(String id);
+
+    int lecDelete(int lid);
 }

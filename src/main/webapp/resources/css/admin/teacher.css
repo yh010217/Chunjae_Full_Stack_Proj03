@@ -1,9 +1,74 @@
-ul li {
+
+#content_container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.teacher {
+    margin-top: 20px;
+}
+
+.teacher h3 {
+    color: #333;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+}
+
+.teacher_title, .teacher_list {
     list-style: none;
-    padding: 4px;
+    padding: 0;
+    margin: 0;
+}
+
+.teacher_title {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+}
+
+.teacher_title li {
+    font-weight: bold;
+    color: #666;
+}
+
+.teacher_list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .teacher_img {
-    width: 300px;
-    height: 200px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.teacher_block p {
+    margin: 0 10px;
+}
+
+.delete_btn {
+    padding: 5px 10px;
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete_btn:hover {
+    background-color: #ff7875;
 }

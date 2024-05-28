@@ -54,12 +54,23 @@
     width: 48px;
 }
 .status_item .status_item_title{
+
+    display: inline-block;
+    text-align: center;
+    min-width: 106px;
+    width:106px;
     font-size: 24px;
     font-weight: 700;
     margin: auto 0;
 }
 
 .status_item .status_item_content{
+
+    display: inline-block;
+    text-align: center;
+    min-width: 96px;
+    width:96px;
+
     font-size: 20px;
     font-weight: 600;
     margin: auto 0;
@@ -133,7 +144,12 @@
 
 
 
-.table_row{
+.recent_row{
     height: 500px;
     border: 1px solid red;
+}
+#table_top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

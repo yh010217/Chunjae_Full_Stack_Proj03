@@ -2,27 +2,37 @@
     min-height: 100vh;
     position: relative;
     display: flex;
+    padding-right : 30px;
 }
 
+
+#sidebar_margin{
+    display: inline-block;
+    min-height: 100vh;
+    flex-grow: 1;
+    min-width: 40px;
+    max-width: 160px;
+    position: relative;
+}
 
 #sidebar_container{
     display: inline-block;
     min-height: 100vh;
     height: 100%;
     min-width: 300px;
-    width:20%;
     position: relative;
     flex-grow: 0;
 }
 
+
 #sidebar{
     position: fixed;
-    width: 245px;/*
-    height: 765px;*/
+    width: 245px;
+    /*height: 765px;*/
     text-align: left;
     padding-top: 30px;
 
-    margin: 30px 10px 30px 8%;
+    margin: 30px 10px 30px 0;
     border: 1px solid #A2A2A2;
 }
 
@@ -56,8 +66,9 @@
 
 #content{
     width: 84%;
-    margin: 30px 8%;
+    max-width: 1000px;
+    margin: 30px auto;
     display: inline-block;
     border : 1px solid silver;
-    flex-grow: 1;
+    flex-grow: 10;
 }

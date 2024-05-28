@@ -23,11 +23,19 @@
         SET     usertype = 2
         WHERE   uid = #{uid}
     </update>
+    <!-- 선생님 uid 존재 여부 -->
     <select id="isUidExist" parameterType="int" resultType="int">
         SELECT count(*)
         from teacher
         where uid = #{uid}
     </select>
+    <!-- user id 존재 여부 -->
+    <select id="idExist" parameterType="String" resultType="int">
+        SELECT count(*)
+        FROM user
+        where id = #{id}
+    </select>
+    <!-- 선생님 목록 -->
     <select id="getTeacherList" resultType="com.haebub.dto.admin.TeacherDTO">
         SELECT   tprofile
                , tsubject
@@ -37,4 +45,9 @@
         FROM   teacher t
             INNER JOIN user u ON t.uid = u.uid
     </select>
+    <!-- 선생님 삭제  -->
+    <delete id="deleteTeacher" parameterType="int">
+        DELETE FROM teacher
+        WHERE tid = #{tid}
+    </delete>
 </mapper>

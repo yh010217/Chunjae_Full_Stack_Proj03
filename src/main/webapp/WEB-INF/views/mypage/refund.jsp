@@ -3,24 +3,27 @@
 <html>
 <head>
     <title>마이페이지</title>
-    <link rel="stylesheet" href="/resources/css/mypage/mypage_template.css">
-    <link rel="stylesheet" href="/resources/css/mypage/paid.css">
+    <link rel="stylesheet" href="/resources/css/mypage/mypage_template2.css">
+    <link rel="stylesheet" href="/resources/css/mypage/paid2.css">
 </head>
 <body>
 <div id="wrap">
     <%-- 왼쪽 사이드바  --%>
-    <div id="sidebar">
-        <ul>
-            <li class="side_title">안녕하세요!<br><c:out value="${nickname}"/> 님</li>
-        </ul>
-        <ul class="menu">
-            <li class="menu_title"><a href="/index/mypage">내 강의 보기</a></li>
-            <li class="menu_title"><a href="/index/mypage/paid">거래 내역</a></li>
-            <li class="menu_title"><a href="/index/mypage/cart">장바구니</a></li>
-            <li class="menu_title"><a href="/index/mypage/modify">회원 정보 수정</a></li>
-            <li class="menu_title"><a href="/index/mypage/onelist">고객센터</a></li>
-            <li class="menu_title"><a href="/logout">로그아웃</a></li>
-        </ul>
+        <div id="sidebar_margin"></div>
+    <div id="sidebar_container">
+        <div id="sidebar">
+            <ul>
+                <li class="side_title">안녕하세요!<br><c:out value="${nickname}"/> 님</li>
+            </ul>
+            <ul class="menu">
+                <li class="menu_title"><a href="/index/mypage">내 강의 보기</a></li>
+                <li class="menu_title"><a href="/index/mypage/paid">거래 내역</a></li>
+                <li class="menu_title"><a href="/index/mypage/cart">장바구니</a></li>
+                <li class="menu_title"><a href="/index/mypage/modify">회원 정보 수정</a></li>
+                <li class="menu_title"><a href="/index/mypage/onelist">고객센터</a></li>
+                <li class="menu_title"><a href="/logout">로그아웃</a></li>
+            </ul>
+        </div>
     </div>
     <%-- content 영역  --%>
     <div id="content">
@@ -37,8 +40,10 @@
                         <ul>
                             <li>환불 완료</li>
                             <li><c:out value="${item.ptime}"/></li>
+                            <a href="/index/lecdetail/${item.lid}">
+                                <li><c:out value="${item.ltitle}"/></li>
+                            </a>
                             <li>[<c:out value="${item.tsubject}"/>]<c:out value="${item.name}"/> 선생님</li>
-                            <li>수강 기간 : <c:out value="${item.startDate}"/> ~ <c:out value="${item.endDate}"/></li>
                             <li>결제 금액 : <c:out value="${item.lprice}"/></li>
                             <li><a href="#">환불 완료</a></li>
                         </ul>

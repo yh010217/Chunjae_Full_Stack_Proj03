@@ -28,8 +28,11 @@ public interface MypageService {
     int userModify(UserDTO dto);
 
     /** 닉네임 중복 체크 */
-    int CheckNickname(int uid);
+    int CheckNickname(String nickname);
+  
     /** 일대일 게시판*/
     List<OneDTO> getoneList(int uid);
+
+    
 
 }

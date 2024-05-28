@@ -38,16 +38,35 @@ public class PaymentServiceImple implements PaymentService {
     }
 
     @Override
-    public int purchaseOne(String order_code, String status, String uid, String lid) {
+    public int purchaseOne(String order_code, String uid) {
 
         HashMap<String, Object> hm = new HashMap<>();
         hm.put("order_code", order_code);
-        hm.put("success", status);
         hm.put("uid", uid);
-        hm.put("lid", lid);
 
         int result = paymentMapper.purchaseOne(hm);
         return result;
+    }
+
+
+    @Override
+    public void insertOnePay(String uid, String lid, String order_code) {
+
+        HashMap<String,Object> orderhm = new HashMap<>();
+        orderhm.put("uid",uid);
+        orderhm.put("sp_ocode",order_code);
+
+        paymentMapper.insertCartOrder(orderhm);
+
+        int pid = paymentMapper.getPid(order_code);
+
+
+        HashMap<String,Object> itemhm= new HashMap<>();
+        itemhm.put("sp_oitem",order_code);
+        itemhm.put("lid",lid);
+        itemhm.put("pid",pid);
+        paymentMapper.insertItemOne(itemhm);
+
     }
 
     @Override
@@ -92,29 +111,49 @@ public class PaymentServiceImple implements PaymentService {
             itemhm.put("sp_oitem",oicodes[i]);
             itemhm.put("lid",lids[i]);
             itemhm.put("pid",pid);
+            System.out.println("===========");
+            System.out.println(oicodes[i]);
+            System.out.println(lids[i]);
+            System.out.println(pid);
             paymentMapper.insertItem(itemhm);
         }
 
     }
 
     @Override
-    public void insertOnePay(String uid, String lid, String order_code) {
+    public HashMap<String, Object> getOneItem(String piid) {
+        HashMap<String,Object> itemhm = paymentMapper.getOneItem(piid);
+        return itemhm;
+    }
 
-        HashMap<String,Object> orderhm = new HashMap<>();
-        orderhm.put("uid",uid);
-        orderhm.put("sp_ocode",order_code);
+    @Override
+    public HashMap<String, Object> getCartItem(String pid, String piid) {
+        HashMap<String,Object> hm = new HashMap<>();
+        hm.put("pid",pid);
+        hm.put("piid",piid);
+        HashMap<String,Object> itemhm = paymentMapper.getCartItem(hm);
+        return itemhm;
+    }
 
-        paymentMapper.insertCartOrder(orderhm);
+    @Override
+    public int refundUpdate(String piid) {
+        int result = paymentMapper.refundUpdate(piid);
+        return result;
+    }
 
-        int pid = paymentMapper.getPid(order_code);
+    @Override
+    public void deleteFav(String lid_attached, String uid) {
+        HashMap<String, Object> hm;
 
+        String[] lids = lid_attached.split("_");
+        int size = lids.length;
 
-        HashMap<String,Object> itemhm= new HashMap<>();
-        itemhm.put("sp_oitem",order_code);
-        itemhm.put("lid",lid);
-        itemhm.put("pid",pid);
-        paymentMapper.insertItemOne(itemhm);
-
+        for(int i = 0 ; i < size ; i ++){
+            hm = new HashMap<>();
+            hm.put("uid",uid);
+            hm.put("lid",lids[i]);
+            paymentMapper.deleteFav(hm);
+        }
     }
 
 }
