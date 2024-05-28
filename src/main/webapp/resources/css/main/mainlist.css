@@ -1,5 +1,5 @@
 .wrap {
-    width: 80%;
+    width: 85%;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -29,6 +29,7 @@
 .main_02 {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .main_02 .main_self {
@@ -88,6 +89,10 @@
     margin : 15px 0;
 }
 
+#main_03 {
+    margin-bottom: 30px;
+}
+
 #main_03 .tea_title {
     display: flex;
     justify-content: space-between;
@@ -127,14 +132,20 @@
     font-size: 14px;
 }
 
-
 #main_04 {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 #main_04 h1, #main_03 h1 {
     font-size: 42px;
+}
+
+#main_04 img {
+    width: 253px;
+    height: 150px;
+    OBJECT-FIT: COVER;
 }
 
 /* 색 etc... */
@@ -160,7 +171,7 @@
     padding: 10px;
 }
 
-#main_04 .lecture_list ul:first-child {
+#main_04 .lecture_list ul:nth-child(1), .lecture_list ul:nth-child(2) {
     margin-right: 15px;
 }
 
@@ -196,6 +207,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 #main_05 .main_05_1 h3 {
@@ -217,3 +229,9 @@
 }
 
 
+@media all and (max-width: 1800px) {
+    #main_04 .more ul:last-child {
+        display: none;
+    }
+
+}

@@ -4,7 +4,7 @@
 
 #lecInsert {
     width: 670px;
-    height: 850px;
+    height: 900px;
     background: #fff;
     border: 1px solid #000;
     border-radius: 20px;
@@ -18,7 +18,7 @@
     align-items: center;
 }
 
-#lecInsert > .lecInsert_form > h1, ul > li > .thumbnail, li:last-child {
+#lecInsert > .lecInsert_form > h1, ul > li > .thumbnail, .last_li {
     text-align: center;
 }
 
@@ -38,6 +38,23 @@
     border-bottom: 1px solid #CFCFCF;
     width: 466px;
     height: 30px;
+}
+
+#lid, #tsubject, #name {
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #CFCFCF;
+    width: 100px;
+    height: 30px;
+}
+
+.test1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.test1 li {
+    width: 100px;
 }
 
 .lgrade {

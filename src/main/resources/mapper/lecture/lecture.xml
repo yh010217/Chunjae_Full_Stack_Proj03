@@ -96,5 +96,10 @@
         where id = #{id}
     </select>
 
+    <delete id="lecDelete" parameterType="int">
+        DELETE FROM lecture
+        WHERE lid = #{lid}
+    </delete>
+
 </mapper>
 

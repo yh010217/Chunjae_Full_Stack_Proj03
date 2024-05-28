@@ -34,18 +34,31 @@ public class teacherController {
     public String teacherDetail(@PathVariable(required = false) int tid
                                 , Model model) {
 
-        // 대충 출력하고... 집에 있는 걸로 복붙 ㄱ
+        // 리스트 뽑기
         TeacherDTO list = teaService.getdetailList(tid);
         model.addAttribute("list", list);
+
+        // 강좌 보기
+        List<LectureDTO> dto = teaService.getLecList(tid);
+        model.addAttribute("lec", dto);
+
+        // 개설 강의 몇 개?
+        int result = teaService.getCount(tid);
+        model.addAttribute("total", result);
 
         return "/teacher/detail";
     }
 
     @GetMapping("/lecInsert/{tid}")
-    public String lectureInsert(@PathVariable(required = false) int tid, LectureDTO dto, Model model) {
-        int id = teaService.getTid(tid);
-        model.addAttribute("tid", id);
+    public String lectureInsert(@PathVariable(required = false) int tid, Model model) {
+
+        // 선생님 이름, 과목 얻어오기
+        TeacherDTO dto = teaService.getInfo(tid);
         model.addAttribute("dto", dto);
+
+        // 선생님 번호
+        int id = teaService.getTid(tid); // tid
+        model.addAttribute("tid", id);
         return "/teacher/insert";
     }
 

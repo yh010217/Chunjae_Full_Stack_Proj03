@@ -14,4 +14,10 @@ public interface TeacherService {
     void insertData(String realpath, LectureDTO dto, int tid) throws IOException;
 
     int getTid(int tid);
+
+    TeacherDTO getInfo(int tid);
+
+    List<LectureDTO> getLecList(int tid);
+
+    int getCount(int tid);
 }

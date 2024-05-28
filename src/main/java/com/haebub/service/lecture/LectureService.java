@@ -25,4 +25,6 @@ public interface LectureService {
     String id(HashMap<String, Object> o);
 
     int uid(String id);
+
+    int lecDelete(int lid);
 }
