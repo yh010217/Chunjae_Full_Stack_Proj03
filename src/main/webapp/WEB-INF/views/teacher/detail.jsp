@@ -68,9 +68,10 @@
 
         <div class="border_bottom">
             <h2 > 강좌 보기 </h2>
-            <c:if test="${sessionScope.id == 'admin' || sessionScope.id == tid}">
+            <a href="/index/lecInsert/${item.tid}">추가하기</a>
+            <%--<c:if test="${sessionScope.id == 'admin' || sessionScope.id == tid}">
                 <a href="/index/lecInsert/${item.tid}">추가하기</a>
-            </c:if>
+            </c:if>--%>
         </div>
         <div class="tea_lecList">
             <ul>

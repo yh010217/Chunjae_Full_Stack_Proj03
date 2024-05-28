@@ -10,6 +10,24 @@
     margin: 10px auto;
     text-align: center;
 }
+
+.test {
+    width: 950px;
+    margin: 0 auto;
+}
+
+.font {
+    font-size: 20px;
+}
+
+.test > form {
+    text-align: start;
+}
+
+.select {
+    font-weight: bolder;
+}
+
 h1{
     text-align: center;
     font-size: 30px;
@@ -18,7 +36,6 @@ h1{
     margin: 5px auto;
     display: table;
     width: 950px;
-    height: 700px;
     /*width: 70vw;*/
     border-top: 2px solid silver;
     /*border-left: 2px solid silver;*/
@@ -39,6 +56,18 @@ h1{
     text-align: center;
     border-bottom: 1px solid silver;
     vertical-align: middle;
+    padding: 10px 0;
+}
+
+.td:nth-child(1) {
+    width: 100px;
+}
+.td:nth-child(2) {
+    width: 500px;
+}
+
+.td:nth-child(3) {
+    width: 200px;
 }
 
 .searchtxt{
