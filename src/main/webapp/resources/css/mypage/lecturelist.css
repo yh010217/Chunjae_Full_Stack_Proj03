@@ -1,4 +1,5 @@
 /* content */
+/*
 #content {
     width: 953px;
     min-height: 760px;
@@ -6,6 +7,7 @@
     padding: 30px 5px 5px 5px;
     margin: 30px;
 }
+*/
 
 #line {
     border-bottom: 1px solid gainsboro;
@@ -13,6 +15,7 @@
 h3 {
     padding: 4px 0px 22px 48px;
     font-size: 21px;
+    margin-top: 20px;
 }
 .lecture_btn {
     display: inline-block;

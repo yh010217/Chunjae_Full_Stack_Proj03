@@ -17,7 +17,7 @@ window.onload = function () {
 
             if (data.result == 0) {
                 able.innerHTML = '';
-                let text = document.createTextNode('회원 가입 후 등록이 가능합니다.');
+                let text = document.createTextNode('회원만 강사 등록이 가능합니다.');
                 able.appendChild(text);
             } else {
                 able.innerHTML = '';

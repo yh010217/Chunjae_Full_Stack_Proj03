@@ -72,3 +72,12 @@
 .delete_btn:hover {
     background-color: #ff7875;
 }
+
+#register {
+    text-decoration: none;
+    background-color: #000000;
+    color: white;
+    padding: 9px 22px;
+    margin-left: 7px;
+    text-align: center;
+}
