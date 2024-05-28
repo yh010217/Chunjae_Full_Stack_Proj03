@@ -75,6 +75,22 @@ public class TeacherServiceImple2 implements TeacherService{
         return mapper.getTotal(tid);
     }
 
+    @Override
+    public int totalCount() {
+        return mapper.totalCount();
+    }
+
+    @Override
+    public List<LectureDTO> lecList(int startrow, int pagesize, int tid) {
+        HashMap<String, Object> o = new HashMap<>();
+        o.put("startrow", startrow);
+        o.put("pagesize", pagesize);
+        o.put("tid", tid);
+
+        List<LectureDTO> index = mapper.lecList(o);
+        return index;
+    }
+
     private String fileUpload(String path, LectureDTO dto) {
         UUID uuid = UUID.randomUUID();
 

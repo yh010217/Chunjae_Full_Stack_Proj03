@@ -17,15 +17,15 @@
     <h2>해영 대표 강사진</h2>
     <div class="tea_list">
         <ul>
-            <%-- 필요한 것 : 사진, 과목, 선생 이름, 소개--%>
             <c:forEach var="item" items="${list}">
-                <li>
-                  <div class="teaList_img"> <img src="/getImg/${item.tprofile}" alt="${item.tprofile}"> </div>
-                  <p class="teaList_p1">${item.tsubject}</p>
-                  <a class="teaList_a" href="/index/teacher/${item.tid}" style="color: #00AE68"> ${item.name}선생님 </a>
-                  <p class="teaList_p2">${item.tintro}</p>
+                <li class="li1" style="background-image: url('/getImg/${item.tprofile}')">
+                    <p class="teaList_p1">${item.tsubject}</p>
+                    <a class="teaList_a" href="/index/teacher/${item.tid}"> ${item.name}선생님 </a> <br>
+                    <span class="teaList_span">${item.tintro}</span>
                 </li>
             </c:forEach>
+            <%-- 필요한 것 : 사진, 과목, 선생 이름, 소개--%>
+
         </ul>
     </div>
 </article>

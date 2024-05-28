@@ -30,8 +30,9 @@ public class teacherController {
         return "/teacher/list";
     }
 
-    @GetMapping("/teacher/{tid}")
+    @GetMapping(value = {"/teacher/{tid}/{page}", "/teacher/{tid}"})
     public String teacherDetail(@PathVariable(required = false) int tid
+                                , @RequestParam(required = false) String page
                                 , Model model) {
 
         // 리스트 뽑기
@@ -45,6 +46,31 @@ public class teacherController {
         // 개설 강의 몇 개?
         int result = teaService.getCount(tid);
         model.addAttribute("total", result);
+
+        // 강의... 페이징 처리
+        int currpage=1; // 현재 페이지
+        if(page!=null)
+            currpage=Integer.parseInt(page);
+
+        int pagesize=7;
+        int pageblock=5;
+        int startrow = (currpage - 1) * pagesize;
+
+        int totalpage = (int)Math.ceil(result/(float)pagesize);
+
+        int startblock = ((currpage-1) / pageblock) * pageblock + 1;
+        int endblock = startblock + pageblock - 1;
+        if (totalpage < endblock) {
+            endblock = totalpage;
+        }
+
+        List<LectureDTO> lecList = teaService.lecList(startrow, pagesize, tid);
+        model.addAttribute("lecList",lecList);
+        model.addAttribute("currpage",currpage);
+        model.addAttribute("startblock",startblock);
+        model.addAttribute("endblock",endblock);
+        model.addAttribute("totalpage",totalpage);
+
 
         return "/teacher/detail";
     }

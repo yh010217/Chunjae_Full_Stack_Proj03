@@ -18,12 +18,12 @@
     font-weight: bold;
 }
 
+
 #tea_detail .t_intro {
     width: 80%;
     margin: 0 auto;
     position: relative;
     top: 60px;
-    left: 60px;
 }
 
 #tea_detail .tea_intro {
@@ -52,11 +52,12 @@
 }
 
 .tea_top {
-    height: 95vh;
-
+    height: 700px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
 }
-
-
 
 /* 하위 */
 .border_bottom {
@@ -77,21 +78,8 @@
 .tea_lecList .lecList_li1 {
     flex-grow: 1;
     width: 100px;
+    color: black;
 }
-
-/* 학년별 색상 */
-.tea_lecList .one {
-    color: #FFB15c;
-}
-
-.tea_lecList .two {
-    color: #F0C9CE;
-}
-
-.tea_lecList .three {
-    color: #0056b3;
-}
-
 .tea_lecList .lecList_li2 {
     flex-grow: 2;
     width: 400px;
@@ -106,4 +94,29 @@
     flex-grow: 1;
     width: 100px;
     text-align: end;
+}
+
+.t_lec {
+    position: relative;
+    top: 60px;
+    right: 20px;
+}
+
+/* 페이징처리한 곳 */
+.page {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.page .page_text {
+    font-size: 20px;
+}
+
+.page .now {
+    font-weight: bold;
+    color: #495057;
+}
+
+.page .other{
+    color: #495057;
 }

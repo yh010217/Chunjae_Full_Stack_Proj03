@@ -20,4 +20,8 @@ public interface TeacherService {
     List<LectureDTO> getLecList(int tid);
 
     int getCount(int tid);
+
+    int totalCount();
+
+    List<LectureDTO> lecList(int startrow, int pagesize, int tid);
 }

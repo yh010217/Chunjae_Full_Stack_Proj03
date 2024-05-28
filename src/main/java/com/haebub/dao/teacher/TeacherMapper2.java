@@ -25,4 +25,8 @@ public interface TeacherMapper2 {
     List<LectureDTO> getLecList(int tid);
 
     int getTotal(int tid);
+
+    int totalCount();
+
+    List<LectureDTO> lecList(HashMap<String, Object> o);
 }

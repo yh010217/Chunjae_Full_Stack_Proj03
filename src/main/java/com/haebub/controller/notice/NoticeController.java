@@ -41,6 +41,7 @@ public class NoticeController {
         if (totalpage < endblock)
             endblock=totalpage;
         List<NoticeDTO> noticelist=noticeService.noticelist(startrow,pagesize,search,searchtxt);
+
         model.addAttribute("noticelist",noticelist);
         model.addAttribute("currpage",currpage);
         model.addAttribute("search",search);
