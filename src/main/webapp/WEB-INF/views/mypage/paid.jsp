@@ -51,7 +51,7 @@
                             <li>수강 기간 : <c:out value="${item.startDate}"/> ~ <c:out value="${item.endDate}"/></li>
                             <li>결제 금액 : <c:out value="${item.lprice}"/></li>
                             <c:if test="${item.can_refund eq 'can_refund'}">
-                                <li><a href="/pay/refund/${item.pistatus}/${item.pid}/${item.piid}">환불 신청</a></li>
+                                <li><button onclick="refund_func('${item.pistatus}','${item.pid}','${item.piid}')">환불 신청</button></li>
                             </c:if>
                         </ul>
                     </c:if>
@@ -61,5 +61,15 @@
         </div>
     </div>
 </div>
+<script>
+    refund_func = function(status,pid,piid){
+        if (confirm("정말로 환불하시겠습니까?") == true) {    // 정말 환불할 건지 확인
+            location.href = "/pay/refund/"+status+"/"+pid+"/"+piid;
+        } else {   //취소
+            return false;
+        }
+    }
+
+</script>
 </body>
 </html>
