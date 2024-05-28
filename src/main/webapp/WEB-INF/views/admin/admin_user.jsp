@@ -35,28 +35,8 @@
     </aside>
 
     <div id="content_container">
-        <div class="usertable">
-            <div class="tr">
-                <div class="th">회원번호</div>
-                <div class="th">이름</div>
-                <div class="th">닉네임</div>
-                <div class="th">아이디</div>
-                <div class="th">이메일</div>
-                <div class="th">회원계정삭제</div>
-            </div>
-            <div class="tr">
-                <c:forEach var="item" items="${userDTOList}">
-                    <div class="td">
-                        <a href="/admin/user/modify/${item.uid}"><c:out value="${item.uid}"/></a>
-                        <c:out value="${item.name}"/>
-                        <c:out value="${item.nickname}"/>
-                        <c:out value="${item.id}"/>
-                        <c:out value="${item.email}"/>
-                        <a href="/admin/user/delete/${item.uid}">삭제하기</a>
-                    </div>
-                </c:forEach>
-            </div>
-        </div> <!--회원리스트끝 -->
+        <h1>회원관리</h1>
+        <div class="test">
         <form method="get" action="/admin/user">
             <select name="search">
                 <option value="uid">회원번호</option>
@@ -66,16 +46,39 @@
             <input type="text" name="searchtxt">
             <button type="submit">검색</button>
         </form>
+        <div class="usertable">
+            <div class="tr tr1">
+                <div class="td">회원번호</div>
+                <div class="td">이름</div>
+                <div class="td">닉네임</div>
+                <div class="td">아이디</div>
+                <div class="td">이메일</div>
+                <div class="td">회원계정삭제</div>
+            </div>
+
+                <c:forEach var="item" items="${userDTOList}">
+                  <div class="tr">
+                       <div class="td"><a href="/admin/user/modify/${item.uid}"><c:out value="${item.uid}"/></a></div>
+                       <div class="td"><c:out value="${item.name}"/></div>
+                        <div class="td"><c:out value="${item.nickname}"/></div>
+                        <div class="td"><c:out value="${item.id}"/></div>
+                        <div class="td"><c:out value="${item.email}"/></div>
+                        <div class="td"><a class="del" href="/admin/user/delete/${item.uid}">삭제하기</a></div>
+                    </div>
+                </c:forEach>
+            </div> <!--회원리스트끝 -->
+        </div>
+
         <c:if test="${startblock>1}">
             <a href="/admin/user/${startblock-1}?search=${search}&searchtxt=${searchtxt}">이전</a>
         </c:if>
         <c:forEach var="index" begin="${startblock}" end="${endblock}">
             <c:choose>
                 <c:when test="${currpage==index}">
-                    ${index}
+                    <span class="font select"> ${index} </span>
                 </c:when>
                 <c:otherwise>
-                    <a href="/admin/user/${index}?serach">${index}</a>
+                    <a class="font" href="/admin/user/${index}?serach">${index}</a>
                 </c:otherwise>
             </c:choose>
         </c:forEach>

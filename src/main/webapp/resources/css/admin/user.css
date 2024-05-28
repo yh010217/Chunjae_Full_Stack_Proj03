@@ -1,8 +1,115 @@
-
-.usertable{
-    display: table;
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: normal;
+}
+*{
+    list-style: none;
+    font-family: 'Pretendard-Regular', 'sans-serif';
+    color: black;
+    text-decoration: none;
+}
+#content_container{
+    /*width: 1000px;*/
+    height: 1000px;
+    width: 90%;
+    margin: 10px auto;
+    text-align: center;
+}
+.test {
+    width: 950px;
+    margin: 0 auto;
+}
+.font {
+    font-size: 20px;
+}
+.test > form {
+    text-align: start;
+}
+.select {
+    font-weight: bolder;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+    color: inherit;
+}
+a:hover,a:focus{
+    color:silver;
+    text-decoration: underline;
 }
 
-.th{
+h1{
+    text-align: center;
+    font-size: 30px;
+}
+.usertable{
+    margin: 5px auto;
+    display: table;
+    width: 950px;
+    /*width: 70vw;*/
+    border-top: 2px solid silver;
+    /*border-left: 2px solid silver;*/
+    /*border-right: 2px solid silver;*/
+    /*border-bottom: 1px solid silver;*/
+}
+
+.tr{
+    text-align: center;
+    display: table-row;
+    font-size: 20px;
+}
+.tr1{
+    background-color: #cccccc;
+}
+.td{
     display: table-cell;
+    text-align: center;
+    border-bottom: 1px solid silver;
+    vertical-align: middle;
+    padding: 10px 0;
+}
+.td:nth-child(1) {
+    width: 100px;
+}
+.td:nth-child(2) {
+    width: 300px;
+}
+
+.td:nth-child(3) {
+    width: 200px;
+}
+.td:nth-child(4) {
+    width: 200px;
+}
+.td:nth-child(5) {
+    width: 200px;
+}
+.td:nth-child(6) {
+    width: 200px;
+}
+.del{
+    background-color: #f88686;
+}
+.searchtxt{
+    height: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 40px;
+    padding: 5px;
+    border: 1px solid #bbbbbb;
+}
+
+.search-btn{
+    width: 40px;
+    height: 100%;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+}
+
+.searchform{
+    padding: 15px;
 }

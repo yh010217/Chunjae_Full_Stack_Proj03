@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: normal;
+}
+*{
+    list-style: none;
+    font-family: 'Pretendard-Regular', 'sans-serif';
+    color: black;
+    text-decoration: none;
+}
+
+
+#append{
+    border: none;
+    background-color: #CFCFCF;
+    padding: 5px 0;
+    color: black;
+    font-weight: bolder;
+    font-size: 16px;
+}
+#append:hover{
+    background-color: #6699f8;
+}
+#nno{
+    width: calc(100px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 15px;
+    font-size: 15px;
+}
+#ntitle{
+    width: calc(500px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 15px;
+    font-size: 15px;
+}
+#ncontent{
+    width: calc(100% - 105px);
+    height: 20vh;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 15px;
+    font-size: 15px;
+}
+#ndate{
+    width: calc(150px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 15px;
+    font-size: 15px;
+}
+label[for="ncontent"]{
+    position: relative;
+    top: -173px;
+}

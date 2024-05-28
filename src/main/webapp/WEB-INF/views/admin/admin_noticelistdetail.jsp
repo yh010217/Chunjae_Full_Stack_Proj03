@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
     <link rel="stylesheet" href="/resources/css/admin/template.css">
-    <link rel="stylesheet" href="/resources/css/admin/detail.css">
+    <link rel="stylesheet" href="/resources/css/admin/notice_detail.css">
 </head>
 <body>
 <div id="container">

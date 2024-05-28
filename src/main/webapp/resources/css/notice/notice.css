@@ -27,7 +27,15 @@
 .select {
     font-weight: bolder;
 }
-
+a {
+    text-decoration: none;
+    display: inline-block;
+    color: inherit;
+}
+a:hover,a:focus{
+    color:silver;
+    text-decoration: underline;
+}
 h1{
     text-align: center;
     font-size: 30px;
