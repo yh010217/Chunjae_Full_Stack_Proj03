@@ -40,8 +40,6 @@
                         <input type="text" id="name" name="name" value="${dto.name}" readonly>
                     </li>
                 </div>
-
-
                 <li>
                     <label for="ltitle">강의 제목</label> <br>
                     <input type="text" id="ltitle" name="ltitle" placeholder="오타 주의">

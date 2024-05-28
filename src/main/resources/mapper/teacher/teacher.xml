@@ -70,4 +70,17 @@
         WHERE t.tid = #{tid}
     </select>
 
+    <select id="lecList" parameterType="hashmap" resultType="com.haebub.dto.Lecutre.LectureDTO">
+        SELECT l.lgrade
+                , l.ltitle
+                , l.lbook
+                , l.lprice
+                , lid
+        FROM lecture l INNER JOIN teacher t ON l.tid = t.tid
+        where t.tid = #{tid}
+        <![CDATA[
+            limit #{startrow}, #{pagesize}
+        ]]>
+    </select>
+
 </mapper>

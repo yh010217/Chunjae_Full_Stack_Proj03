@@ -1,6 +1,6 @@
 #lecList {
     width: 90%;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 #lecList a:hover{
     color: gray;
@@ -51,11 +51,12 @@
 }
 
 #lecList .all_lecture ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, auto));
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 #lecList .all_lecture ul li {
@@ -64,7 +65,7 @@
     flex-direction: column;
     border: 1px solid #000000;
     padding: 17px;
-    margin: 20px 20px 20px 0;
+    margin: 20px 0;
 }
 
 #lecList .lecList_img {

@@ -30,7 +30,6 @@
                 <div class="td">글번호</div>
                 <div class="td">제목</div>
                 <div class="td">등록날짜</div>
-
             </div>
 
             <c:forEach var="item" items="${noticelist}">
