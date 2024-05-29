@@ -43,7 +43,7 @@ public class CalendarController {
 
             HashMap<String, Object> hm = new HashMap<>();
             hm.put("start", dto.getLopendate());
-            hm.put("title", dto.getLtitle());
+            hm.put("title", "["+dto.getTsubject()+"] "+dto.getLtitle());
             hm.put("subject", dto.getTsubject());
             hm.put("name", dto.getName());
             hm.put("lid", dto.getLid());
