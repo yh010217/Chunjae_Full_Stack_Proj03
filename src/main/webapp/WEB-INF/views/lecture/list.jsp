@@ -42,6 +42,7 @@
     </div>
     <%-- 전체 강의 리스트--%>
     <div class="all_lecture">
+
         <h2>전체 강의</h2>
         <ul>
         <c:forEach var="item" items="${list}">

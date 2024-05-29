@@ -88,11 +88,18 @@
             </div>
             <div class="tea_title">
                 <c:forEach var="item" items="${popTea}">
-                    <ul>
+                    <%--<ul>
                         <li class="tea_li1"><img src="/getImg/${item.tprofile}" alt="${item.tprofile}"></li>
                         <li class="tea_li2">${item.tsubject}</li>
-                        <li class="tea_li3">${item.name}선생님</li>
+                        <li class="tea_li3">${item.name} 선생님</li>
                         <li class="tea_li4">${item.tintro}</li>
+                    </ul>--%>
+                    <ul class="li1" style="background-image: url('/getImg/${item.tprofile}')">
+                        <li>
+                            <p class="tea_li2">${item.tsubject}</p>
+                            <a class="tea_li3" href="/index/teacher/${item.tid}"> ${item.name} 선생님 </a> <br>
+                            <span class="tea_li4">${item.tintro}</span>
+                        </li>
                     </ul>
                 </c:forEach>
             </div>
@@ -110,7 +117,7 @@
                             <li class="li_1"><img class="lecList_img" src="/getImage/${item.lprofile}" alt="${item.lprofile}"></li>
                             <li class="li_2">${item.lgrade}학년</li>
                             <li class="li_3">${item.ltitle}</li>
-                            <li class="li_4">${item.lprice}</li>
+                            <li class="li_4">${item.lprice}원</li>
                         </ul>
                     </c:forEach>
                 </div>
@@ -126,7 +133,7 @@
                             <li class="li_1"><img class="lecList_img" src="/getImage/${item.lprofile}" alt="${item.lprofile}"></li>
                             <li class="li_2">${item.lgrade}학년</li>
                             <li class="li_3">${item.ltitle}</li>
-                            <li class="li_4">${item.lprice}</li>
+                            <li class="li_4">${item.lprice}원</li>
                         </ul>
                     </c:forEach>
                 </div>
