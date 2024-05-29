@@ -16,7 +16,7 @@
     text-align: center;
 }
 
-h2{
+#join h2{
     text-align: center;
 }
 
@@ -237,7 +237,7 @@ h2{
 }
 /* 아이디 사용가능 */
 .id_check_re_1{
- color: green;
+    color: green;
     list-style: none;
     display: none;
 }
@@ -246,3 +246,96 @@ h2{
     color: red;
     list-style: none;
 }
+
+/*
+#join ul {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#join ul li {
+    list-style: none;
+    padding: 20px;
+}
+
+#join h2{
+    text-align: center;
+}
+
+
+!* input type 정렬 *!
+#id, #pwd, #memberpwconfirm, #name, #nickname, #sample6_address, #sample6_postcode
+    , #sample6_detailAddress, #sample6_extraAddress, #tel, #email, #birthday {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 300px;
+}
+
+input:focus {
+    border-color: #FFB15c;
+}
+
+!* 버튼 정렬 *!
+#id_check, #nickname_check2, #sample6_postcode2, #email_check2 {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color:  #FFB15c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color
+}
+
+#joinBtn{
+    background-color: #469B72;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border:none;
+    font-weight: bold;
+    width: 300px;
+    height: 50px;
+}
+#down_btn {
+    position: relative;
+    left: 500px;
+    top: 20px;
+    background-color: #eaebef;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    width: 300px;
+    text-align: center;
+
+}
+#next{
+    position: relative;
+    left: 1000px;
+    top: -50px;
+    background-color: #FFB15c;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    width: 300px;
+    text-align: center;
+}
+!* 아이디 사용가능 *!
+ .id_check_re_1{
+     color: green;
+     list-style: none;
+     display: none;
+ }
+!* 아이디 불가능 *!
+ .id_check_re_2{
+     color: red;
+     list-style: none;
+ }*/

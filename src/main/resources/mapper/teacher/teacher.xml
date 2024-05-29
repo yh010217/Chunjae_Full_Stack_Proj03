@@ -78,6 +78,7 @@
                 , lid
         FROM lecture l INNER JOIN teacher t ON l.tid = t.tid
         where t.tid = #{tid}
+        order by lid desc
         <![CDATA[
             limit #{startrow}, #{pagesize}
         ]]>

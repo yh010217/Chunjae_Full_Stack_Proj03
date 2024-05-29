@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'GongGothicMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 #wrap{
     width: 1000px;
@@ -41,6 +47,7 @@ h4 {
 }
 
 h4 span {
+    font-family: 'GongGothicMedium';
     font-size: 30px;
     margin-right: 10px;
     letter-spacing: 5px;
@@ -57,9 +64,9 @@ h4 span {
 }
 
 /* 일정 배경 */
-.fc-event-title-container {
+/*.fc-event-title-container {
     background-color: #556CE8;
-}
+}*/
 
 /* 일요일 */
 .fc-day-sun a {
@@ -84,4 +91,9 @@ h4 span {
 /* 호버 효과 */
 #eventList li:hover {
     background-color: #f0f0f0; /* 배경색 변경 */
+}
+
+/* 배경 파란색 없애기 */
+.fc-h-event {
+    border: none;
 }

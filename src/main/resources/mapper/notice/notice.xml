@@ -5,9 +5,9 @@
 <mapper namespace="com.haebub.dao.notice.NoticeMapper">
     <select id="noticelist"  parameterType="hashmap" resultType="com.haebub.dto.notice.NoticeDTO">
         select nno
-              ,ntitle
-              ,ncontent
-              ,ndate
+            ,ntitle
+            ,ncontent
+            ,ndate
         from notice
         <where>
             <if test="searchtxt!='' and !''.equals(searchtxt)">

@@ -26,8 +26,13 @@
         /* 링크 스타일 */
         #eventList li #title {
             text-decoration: none; /* 링크 밑줄 제거 */
-            color: #007bff; /* 링크 색상 설정 */
+            color: black; /* 링크 색상 설정 */
         }
+        #eventList li #title:hover {
+            text-decoration: none; /* 링크 밑줄 제거 */
+            color: silver; /* 링크 색상 설정 */
+        }
+
 
         #eventList li #teacher {
             text-decoration: none; /* 링크 밑줄 제거 */

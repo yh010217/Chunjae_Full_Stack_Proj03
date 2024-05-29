@@ -34,6 +34,11 @@
             </li>
             <li class="lec_price">${item.lprice}원</li>
 
+
+            <c:if test="${open > 0}">
+                개강까지 D-${open}일 남았습니다.
+            </c:if>
+
             <c:choose>
                 <c:when test="${sessionScope.id == null}"> <%-- 로그인 안 한 상태 --%>
                     <li class="lec_result">
@@ -42,13 +47,32 @@
                 </c:when>
                 <c:when test="${sessionScope.id == 'admin' || sessionScope.id == tid}"> <%-- 관리자 & 과목 선생님--%>
                     <li class="lec_result">
-                        <a href="/index/videoinsert/${item.lid}"> 강의 등록</a>
-                        <a href="/index/video/${item.lid}">강의 보기</a>
+                        <c:choose>
+                            <c:when test="${videoCount > item.lcount}">
+                                <a href="#" onclick="alert('더이상 등록할 수 없습니다.')"> 강의 등록</a>
+                                <a href="/index/video/${item.lid}">강의 보기</a>
+                            </c:when>
+                            <c:when test="${videoCount == item.lcount}">
+                                <a href="/index/videoinsert/${item.lid}" onclick="alert('마지막 등록입니다.')"> 강의 등록</a>
+                                <a href="/index/video/${item.lid}">강의 보기</a>
+                            </c:when>
+                            <c:otherwise>
+                                <a href="/index/videoinsert/${item.lid}"> 강의 등록</a>
+                                <a href="/index/video/${item.lid}">강의 보기</a>
+                            </c:otherwise>
+                        </c:choose>
                     </li>
                 </c:when>
                 <c:when test="${sessionScope.id == userid}"> <%-- 결제한 사람 --%>
                     <li class="lec_result">
-                        <a href="/index/video/${item.lid}">강의 보기</a>
+                        <c:choose>
+                            <c:when test="${open > 0}">
+                                <a href="#" onclick="alert('개강이 ${open}일 남았습니다.')">강의 보기</a>
+                            </c:when>
+                            <c:otherwise>
+                                <a href="/index/video/${item.lid}">강의 보기</a>
+                            </c:otherwise>
+                        </c:choose>
                     </li>
                 </c:when>
                 <c:when test="${sessionScope != null}"> <%-- 로그인은 했는데 결제는 안 한 상태--%>
@@ -62,6 +86,10 @@
                 </c:otherwise>
             </c:choose>
             <br> <br>
+            <c:if test="${sessionScope.id == 'admin' || sessionScope.id == tid}">
+                <button class="delete" onclick="removeCheck()"> 강의 삭제</button> <%-- 강의 전체가 지워짐 --%>
+            </c:if>
+            <br> <br>
 
         </ul>
 
@@ -69,34 +97,44 @@
         <div class="class">
             <h3>강의 들어오는 자리</h3>
             <ul>
-                <c:forEach var="video" items="${video}">
-                    <li>${video.vtitle}</li>
-                </c:forEach>
+                <c:choose>
+                    <c:when test="${empty video}">
+                        <li> >> 진행된 강의가 없습니다. </li>
+                    </c:when>
+                    <c:otherwise>
+                        <c:forEach var="video" items="${video}">
+                            <li>${video.vtitle}</li>
+                        </c:forEach>
+                    </c:otherwise>
+                </c:choose>
             </ul>
         </div>
 
         <%-- 교재 --%>
         <div class="book">
             <h3>함께 보면 좋은 교재</h3>
-            ${item.lbook}
+            <div class="lec_book">
+                <img src="/resources/image/Shopping.png" alt="쇼핑 사진">
+                <p> ${item.lbook} </p>
+            </div>
         </div>
         <%-- 일대일문의--%>
-        <div class="one">
+        <div class="one_table">
             <c:choose>
             <%--관리자 로그인시 리스트가 보이도록--%>
                 <c:when test="${sessionScope.id == 'admin' || dto.id == sessionScope.id}">
+                    <h3>일대일문의답변</h3>
                     <ul>
                         <li>
-                            <h3>일대일문의답변</h3>
                             <a href="/index/onelist/${item.lid}">일대일문의리스트</a>
                         </li>
                     </ul>
                 </c:when>
             <%--로그인시 등록하기--%>
                 <c:when test="${sessionScope.id != null || !sessionScope.id == 'admin'}">
+                    <h3>일대일문의</h3>
                     <ul>
                         <li>
-                            <h3>일대일문의</h3>
                             <a href="/index/oneinsert?lid=${item.lid}">일대일문의 등록하기</a>
                         </li>
                     </ul>
@@ -106,9 +144,7 @@
         </div>
 
         <div>
-            <c:if test="${sessionScope.id == 'admin' || sessionScope.id == tid}">
-                <button onclick="removeCheck()"> 강의 삭제</button> <%-- 강의 전체가 지워짐 --%>
-            </c:if>
+
         </div>
 
     </article>

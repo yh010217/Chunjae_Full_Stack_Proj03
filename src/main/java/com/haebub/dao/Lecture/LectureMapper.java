@@ -30,4 +30,8 @@ public interface LectureMapper {
     List<LectureDTO> searchResult(String search);
 
     int lecCount(int lid);
+
+    int getOpenDate(int lid);
+
+    int getVideoCount(int lid);
 }

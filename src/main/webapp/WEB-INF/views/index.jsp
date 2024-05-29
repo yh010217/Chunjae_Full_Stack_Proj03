@@ -21,6 +21,14 @@
             font-style: normal;
         }
 
+        @font-face {
+            font-family: 'MapoDPPA';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoDPPA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
         * {
             font-family: 'Pretendard-Regular', 'sans-serif';
             color: black;
