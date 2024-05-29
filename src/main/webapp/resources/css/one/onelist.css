@@ -25,12 +25,12 @@
 .select {
     font-weight: bolder;
 }
-a {
+#wrap a {
     text-decoration: none;
     display: inline-block;
     color: inherit;
 }
-a:hover,a:focus{
+#wrap a:hover,a:focus{
     color:silver;
     text-decoration: underline;
 }

@@ -31,20 +31,24 @@
         <div id="line"></div>
         <div class="oneform">
             <c:forEach var="item" items="${oneList}">
-                <div class="td">
-                    <h3>문의 내용</h3>
-                    <ul>
-                        <li>제목: <c:out value="${item.otitle}"/></li>
-                        <li>내용: <c:out value="${item.ocontent}"/></li>
-                        <li>등록일: <c:out value="${item.oregdate}"/></li>
-                    </ul>
-                </div>
-                <div class="ans">
-                    <h3>답변</h3>
-                    <ul>
-                        <li>답변 내용: <c:out value="${item.oans}"/></li>
-                        <li>작성자: <c:out value="${item.owriter}"/></li>
-                    </ul>
+                <div class="oneone">
+                    <div class="td">
+                        <h3>문의 내용</h3>
+
+                        <ul>
+                            <li>제목: <c:out value="${item.otitle}"/></li>
+                            <li>내용: <c:out value="${item.ocontent}"/></li>
+                            <li>등록일: <c:out value="${item.oregdate}"/></li>
+                        </ul>
+                    </div>
+                    <div id="line1"></div>
+                    <div class="ans">
+                        <h3>답변</h3>
+                        <ul>
+                            <li>답변 내용: <c:out value="${item.oans}"/></li>
+                            <li>작성자: <c:out value="${item.owriter}"/></li>
+                        </ul>
+                    </div>
                 </div>
             </c:forEach>
         </div>

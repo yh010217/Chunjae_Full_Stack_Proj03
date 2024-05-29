@@ -193,7 +193,7 @@ public class PayController {
 
         paymentService.insertCartPay(suid, order_code, lid_attached, order_item_code);
 
-        return "redirect:/index";
+        return "redirect:/pay/success";
     }
 
     @GetMapping("/pay/refund/{pistatus}/{pid}/{piid}")

@@ -102,18 +102,7 @@
     cursor: pointer;
     transition: background-color
 }
-#teacher_school{
-    padding: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-    transition: border-color 0.3s;
-    width: 300px;
-}
-#teacher_school:focus{
-    border-color: #FFB15c;
-}
+
 
 #sample6_postcode{
     padding: 5px;
@@ -173,18 +162,7 @@
 #sample6_extraAddress:focus{
     border-color: #FFB15c;
 }
-#fav_region {
-    padding: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-    transition: border-color 0.3s;
-    width: 300px;
-}
-#fav_region:focus{
-    border-color:  #FFB15c;
-}
+
 
 #tel{
     padding: 5px;
