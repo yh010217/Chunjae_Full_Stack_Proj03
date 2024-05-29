@@ -17,7 +17,7 @@ public class UserInterrupt implements HandlerInterceptor {
         logger.info("prehandler!!!");
         HttpSession session=request.getSession(false);
         if(session==null || session.getAttribute("id")==null) {
-            response.sendRedirect("/login");
+            response.sendRedirect("/index/login");
             return false;
         }
         return true;

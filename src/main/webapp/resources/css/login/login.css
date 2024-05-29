@@ -5,6 +5,9 @@
     text-align: center;
     padding: 200px 0;
 }
+#form-signupin ul li {
+    list-style: none;
+}
 
 #form-singin h1 {
     font-size: 25px;
