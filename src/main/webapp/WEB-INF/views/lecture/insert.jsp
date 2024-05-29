@@ -29,7 +29,7 @@
                     </li>
                     <li>
                         <label for="ltitle">강의 제목</label> <br>
-                        <input type="text" id="ltitle" name="ltitle" placeholder="오타 주의">
+                        <input type="text" id="ltitle" name="ltitle" placeholder="오타에 주의하세요.">
                     </li>
                     <li>
                         <label for="lintro">강의 소개</label> <br>
@@ -37,7 +37,7 @@
                     </li>
                     <li>
                         <label for="lbook">강의 교재</label> <br>
-                        <input type="text" id="lbook" name="lbook" placeholder="교재 이름만...? 링크도 받아야?">
+                        <input type="text" id="lbook" name="lbook" placeholder="교재 이름 적어주세요.">
                     </li>
                     <li>
                         <label for="lprice">가격</label><br>

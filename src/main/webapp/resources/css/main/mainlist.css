@@ -121,8 +121,9 @@ input {
 }
 
 #main_03 .tea_title {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, auto));
+    justify-items: center;
 }
 
 #main_03 .tea_title ul {

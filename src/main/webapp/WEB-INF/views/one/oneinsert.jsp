@@ -26,7 +26,7 @@
                     <label for="ocontent" class="col-sm-2 col-form-label">내용</label>
                     <textarea type="text" name="ocontent" class="form-control" id="ocontent"></textarea>
                 </div>
-                <input type="hidden" name="owriter" class="form-control" value="${sessionScope.id}"/>
+<%--                <input type="hidden" name="owriter" class="form-control" value="${sessionScope.id}"/>--%>
                 <input type="hidden" class="form-control" id="uid" name="uid" value="${uid}"/>
                 <input type="hidden" class="form-control" id="lid" name="lid" value="${lid}"/>
                 <input id="append" type="submit" role="button" value="글쓰기" />

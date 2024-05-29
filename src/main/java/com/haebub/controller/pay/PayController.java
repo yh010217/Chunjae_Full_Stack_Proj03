@@ -118,6 +118,7 @@ public class PayController {
         HttpSession session = request.getSession();
         String id = (String) session.getAttribute("id");
 
+
         HashMap<String, Object> hm = userService.getUid(id);
         int uid = (Integer) hm.get("uid");
         String suid = uid + "";
@@ -125,10 +126,11 @@ public class PayController {
         List<HashMap<String, Object>> hmlist = paymentService.getCartList(suid);
         model.addAttribute("hmlist", hmlist);
 
+        model.addAttribute("nickname",hm.get("nickname"));
+
         System.out.println(hmlist);
         return "/pay/cart";
     }
-
     @GetMapping("/mypage/purchase_cart")
     public String purchaseCart(HttpServletRequest request, Model model) {
 

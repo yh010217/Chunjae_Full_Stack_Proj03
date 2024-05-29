@@ -56,6 +56,13 @@
             <mvc:exclude-mapping path="/index/**"/>
             <mvc:exclude-mapping path="/mainlist"/>
             <mvc:exclude-mapping path="/signup"/>
+
+            <mvc:exclude-mapping path="/listjson/**"/>
+            <mvc:exclude-mapping path="/checkId2/**"/>
+            <mvc:exclude-mapping path="/nickcheck/**"/>
+            <mvc:exclude-mapping path="/echeck/**"/>
+            <mvc:exclude-mapping path="/mainlistjson/**"/>
+
             <mvc:exclude-mapping path="/resources/js/**"/>
             <mvc:exclude-mapping path="/resources/css/**"/>
             <mvc:exclude-mapping path="/resources/image/**"/>
