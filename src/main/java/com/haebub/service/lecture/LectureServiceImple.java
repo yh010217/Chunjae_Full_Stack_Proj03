@@ -70,6 +70,16 @@ public class LectureServiceImple implements LectureService {
         return lecMapper.lecDelete(lid);
     }
 
+    @Override // 그 뭐냐,,, 그,,, 검색 기능
+    public List<LectureDTO> searchResult(String search) {
+        return lecMapper.searchResult(search);
+    }
+
+    @Override
+    public int lecCount(int lid) {
+        return lecMapper.lecCount(lid);
+    }
+
     @Override
     public void insertData(String path, LectureDTO dto) throws IOException {
         if(dto.getFile() != null) {

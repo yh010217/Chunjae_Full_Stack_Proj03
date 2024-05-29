@@ -93,7 +93,7 @@ public class PayController {
         //여기서 그냥 purchase_test에 까지 넣고 있었음
         paymentService.insertOnePay(suid, lid, order_code);
 
-        return "redirect:/index/lecturelist";
+        return "redirect:/pay/success";
     }
 
     @GetMapping("/insert_cart")
@@ -261,6 +261,11 @@ public class PayController {
         paymentService.deleteFav(lid, suid);
 
         return "redirect:/index/mypage/cart";
+    }
+
+    @GetMapping("/pay/success")
+    public String success() {
+        return "/pay/success";
     }
 
 }

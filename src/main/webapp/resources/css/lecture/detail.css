@@ -3,6 +3,11 @@ body {
     padding: 0;
 }
 
+#lecDetail {
+    width: 80%;
+    margin: 0 auto;
+}
+
 #lecDetail .lec_title{
     text-align: center;
 }

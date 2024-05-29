@@ -11,6 +11,7 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/main/mainlist.css">
+    <script defer src="/resources/js/main/mainlist.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -20,6 +21,7 @@
                 <input class="main_search" id="main_search" name="main_search" type="text" placeholder="검색어를 입력하세요.">
             </label>
             <img src="/resources/image/main/search.png" alt="search">
+            <div id="result_search"></div>
         </div>
 
         <%-- 이벤트 배너 --%>

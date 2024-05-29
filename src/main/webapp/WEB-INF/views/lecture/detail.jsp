@@ -78,8 +78,7 @@
         <%-- 교재 --%>
         <div class="book">
             <h3>함께 보면 좋은 교재</h3>
-            <a href="${item.lbook}">구매하러 가기</a>
-            <div>주의할 점 : 지금은 누르면 오류뜸 (링크 안 넣어서...), 책 링크 DB 만들기</div>
+            ${item.lbook}
         </div>
         <%-- 일대일문의--%>
         <div class="one">
@@ -145,7 +144,7 @@
     }
 
     function openWindow () {
-        const options = 'width=320, height=625, top=50, left=50, scrollbars=no, resizable=no, location=no, toolbars=no, status=no, directories=no'
+        const options = 'width=320, height=625, top=50, left=50, scrollbars=no, location=no, toolbars=no, status=no, directories=no'
         window.open('/pay/purchase_one?lid=${item.lid}','_blank', options)
     }
 
@@ -157,6 +156,11 @@
             return false;
         }
     }
+
+    let change = function () {
+
+    }
+
 
 </script>
 </body>
