@@ -9,7 +9,6 @@
         ,ncontent
         ,ndate
         from notice
-        order by nno desc
         <where>
             <if test="searchtxt!='' and !''.equals(searchtxt)">
                 <choose>
@@ -25,6 +24,7 @@
                 </choose>
             </if>
         </where>
+        order by nno desc
         <![CDATA[
             limit #{startrow}, #{pagesize}
        ]]>
