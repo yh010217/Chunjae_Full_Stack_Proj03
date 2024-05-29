@@ -11,7 +11,7 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/video/video.css">
-    <script src="/resources/js/video/video.js"></script>
+    <script defer src="/resources/js/video/video.js"></script>
 </head>
 <body>
     <article id="videoarticle">
@@ -28,10 +28,7 @@
             </ul>
         </div>
         <div class="videoresult">
-            <%-- 동영상 출력 --%>
-            <%--<video controls width="100%" id="streaming">
 
-            </video>--%>
         </div>
     </article>
 

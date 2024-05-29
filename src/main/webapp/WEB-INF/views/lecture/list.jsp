@@ -47,7 +47,7 @@
         <ul>
         <c:forEach var="item" items="${list}">
             <li>
-                <img class="lecList_img" src="/getImage/${item.lprofile}" alt="${item.lprofile}">
+                <img class="lecList_img" src="/getImage/${item.lprofile}" alt="${item.ltitle}">
                 <p class="li_2"> ${item.lgrade}학년 </p>
                 <a class="li_3" href="/index/lecdetail/${item.lid}"> ${item.ltitle} </a>
                 <p class="li_4"> ${item.lprice}원</p>

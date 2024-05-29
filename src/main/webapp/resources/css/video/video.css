@@ -3,12 +3,10 @@
     display: flex;
     justify-content: space-between;
     padding: 50px;
-    height: 580px;
+    height: 90vh;
+    overflow: hidden;
 }
 
-.videolist {
-    width: 30%;
-}
 
 .videolist > a {
     font-size: 30px;
