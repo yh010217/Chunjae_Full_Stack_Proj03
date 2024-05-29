@@ -83,13 +83,14 @@ public class VideoController {
         String realpath = request.getSession().getServletContext().getRealPath(path);
         System.out.println(filename + ">>>>>>>>>>> filename");
 
-        String fname = "";
+        String fname = URLEncoder.encode(filename, StandardCharsets.UTF_8).replace("+", "%20");
+        /*String fname = "";
         if (filename.contains("_")) {
             String[] truename = filename.split("_");
             fname = URLEncoder.encode(truename[1], StandardCharsets.UTF_8).replace("+", "%20");
         } else {
             fname = URLEncoder.encode(filename, StandardCharsets.UTF_8).replace("+", "%20");
-        }
+        }*/
 
         System.out.println(fname + " >>>>>>>>>>>>> fname");
         InputStream in = null;

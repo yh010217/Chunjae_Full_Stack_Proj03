@@ -1,6 +1,10 @@
 
 const li = document.querySelector('video')
+let videoresult = document.querySelector('.videoresult');
+let video = document.createElement('video');
 
+let time = video.duration
+console.log(time)
 let loadVideo =  function(videoId, link, lprofile) {
     fetch('/video/' + videoId, {
         method: 'GET',
@@ -17,8 +21,6 @@ let loadVideo =  function(videoId, link, lprofile) {
         // console.log(data);
         console.log(link)
         if (data) {
-            let videoresult = document.querySelector('.videoresult');
-            let video = document.createElement('video');
             video.src = "/getVideo/" + link;
             video.width = 1440;
             video.controls = true

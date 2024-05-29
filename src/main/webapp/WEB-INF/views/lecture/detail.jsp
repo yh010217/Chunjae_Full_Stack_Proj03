@@ -29,7 +29,16 @@
             <div class="division-line"></div> <%-- 구분선 --%>
             <li class="lecDetail_etc">
                 <span>${item.lgrade}학년</span>
-                <span>총 ${item.lcount}강</span>
+                <span>
+                    <c:choose>
+                        <c:when test="${videoCount == item.lcount}">
+                            완강
+                        </c:when>
+                        <c:when test="${videoCount < item.lcount}">
+                            ${videoCount}/${item.lcount}
+                        </c:when>
+                    </c:choose>
+                </span>
                 <span>${item.lperiod}일</span>
             </li>
             <li class="lec_price">${item.lprice}원</li>
@@ -48,12 +57,8 @@
                 <c:when test="${sessionScope.id == 'admin' || sessionScope.id == tid}"> <%-- 관리자 & 과목 선생님--%>
                     <li class="lec_result">
                         <c:choose>
-                            <c:when test="${videoCount > item.lcount}">
+                            <c:when test="${videoCount >= item.lcount}">
                                 <a href="#" onclick="alert('더이상 등록할 수 없습니다.')"> 강의 등록</a>
-                                <a href="/index/video/${item.lid}">강의 보기</a>
-                            </c:when>
-                            <c:when test="${videoCount == item.lcount}">
-                                <a href="/index/videoinsert/${item.lid}" onclick="alert('마지막 등록입니다.')"> 강의 등록</a>
                                 <a href="/index/video/${item.lid}">강의 보기</a>
                             </c:when>
                             <c:otherwise>
@@ -95,7 +100,7 @@
 
         <%-- 강의 리스트 --%>
         <div class="class">
-            <h3>강의 들어오는 자리</h3>
+            <h3>강의</h3>
             <ul>
                 <c:choose>
                     <c:when test="${empty video}">
@@ -103,7 +108,9 @@
                     </c:when>
                     <c:otherwise>
                         <c:forEach var="video" items="${video}">
-                            <li>${video.vtitle}</li>
+                            <div style="display: flex; justify-content: space-between">
+                                <li>${video.vtitle}</li>
+                            </div>
                         </c:forEach>
                     </c:otherwise>
                 </c:choose>
