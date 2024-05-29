@@ -21,10 +21,11 @@
 #content h3{
     margin-bottom: 20px;
 }
-#content #line {
-    border-bottom: 1px solid #726E6E;
-    margin-bottom: 20px;
-}
+/*.oneform #line {*/
+/*    border-bottom: 1px solid #726E6E;*/
+/*    margin-bottom: 20px;*/
+/*    width: 700px;*/
+/*}*/
 
 .td{
     border: 1px solid #726E6E;
@@ -41,4 +42,7 @@
 }
 .ans h3{
     color: #469B72;
+}
+.oneform{
+    border: 1px solid #726E6E;
 }

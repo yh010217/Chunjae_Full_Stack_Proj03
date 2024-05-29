@@ -33,6 +33,7 @@
             <c:forEach var="item" items="${oneList}">
                 <div class="td">
                     <h3>문의 내용</h3>
+
                     <ul>
                         <li>제목: <c:out value="${item.otitle}"/></li>
                         <li>내용: <c:out value="${item.ocontent}"/></li>
