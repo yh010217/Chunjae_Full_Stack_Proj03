@@ -47,7 +47,7 @@ public class indexController {
     }
 
     // 메인 중앙
-    @GetMapping(value = "mainlist")
+    @GetMapping(value = "/mainlist")
     public String mainlist(Model model) {
         
         // 최신순
@@ -74,14 +74,14 @@ public class indexController {
         String realpath= request.getSession().getServletContext().getRealPath(path);
         System.out.println("realpath >>>>>>>>>> " + realpath);
         String fname = "";
-        // fname = URLEncoder.encode(lid, StandardCharsets.UTF_8).replace("+", "%20");
+        fname = URLEncoder.encode(lid, StandardCharsets.UTF_8).replace("+", "%20");
 
-        if (lid.contains("_")) {
+        /*if (lid.contains("_")) {
             String[] truename = lid.split("_");
             fname = URLEncoder.encode(truename[1], StandardCharsets.UTF_8).replace("+", "%20");
         } else {
             fname = URLEncoder.encode(lid, StandardCharsets.UTF_8).replace("+", "%20");
-        }
+        }*/
 
         InputStream in = null;
         // System.out.println(fname + ">>>>>>>>>>> fname");

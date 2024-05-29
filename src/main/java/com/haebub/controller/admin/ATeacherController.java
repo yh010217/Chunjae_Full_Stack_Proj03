@@ -71,13 +71,13 @@ public class ATeacherController {
         String realpath= request.getSession().getServletContext().getRealPath(path);
 
         String fname = "";
-        if (tid.contains("_")) {
+        /*if (tid.contains("_")) {
             String[] truename = tid.split("_");
             fname = URLEncoder.encode(truename[1], StandardCharsets.UTF_8).replace("+", "%20");
         } else {
             fname = URLEncoder.encode(tid, StandardCharsets.UTF_8).replace("+", "%20");
-        }
-        // String fname = URLEncoder.encode(tid, StandardCharsets.UTF_8).replace("+", "%20");
+        }*/
+        fname = URLEncoder.encode(tid, StandardCharsets.UTF_8).replace("+", "%20");
         InputStream in = null;
         ResponseEntity<byte[]> entity=null;
         try {

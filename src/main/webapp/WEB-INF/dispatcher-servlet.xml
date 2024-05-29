@@ -25,8 +25,7 @@
     </bean>
     <context:component-scan base-package="com.haebub.controller"/>
     <bean id="authInterrupt" class="com.haebub.interrupt.UserInterrupt"/>
-    <!--
-    <mvc:interceptors>
+   <!-- <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/*"/>
             <mvc:exclude-mapping path="/login*"/>
@@ -35,15 +34,40 @@
             <mvc:exclude-mapping path="/index"/>
             <mvc:exclude-mapping path="/signup"/>
             <mvc:exclude-mapping path="/resources/js/**"/>
-            <mvc:exclude-mapping path="/css/**"/>
-            <mvc:exclude-mapping path="/image/**"/>
+            <mvc:exclude-mapping path="/resources/css/**"/>
+            <mvc:exclude-mapping path="/resources/image/**"/>
             <mvc:exclude-mapping path="/join_result"/>
             <mvc:exclude-mapping path="/lectureinsert"/>
             <mvc:exclude-mapping path="/leturelist"/>
             <mvc:exclude-mapping path="/insertresult"/>
             <ref bean="authInterrupt"/>
         </mvc:interceptor>
+    </mvc:interceptors>-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/*"/>
+            <mvc:mapping path="/admin/**"/>
+            <mvc:mapping path="/video/**"/>
+            <mvc:exclude-mapping path="/index/login"/>
+            <mvc:exclude-mapping path="/login_check"/>
+            <mvc:exclude-mapping path="/login"/>
+            <mvc:exclude-mapping path="/logout"/>
+            <mvc:exclude-mapping path="/join"/>
+            <mvc:exclude-mapping path="/index/**"/>
+            <mvc:exclude-mapping path="/mainlist"/>
+            <mvc:exclude-mapping path="/signup"/>
+            <mvc:exclude-mapping path="/resources/js/**"/>
+            <mvc:exclude-mapping path="/resources/css/**"/>
+            <mvc:exclude-mapping path="/resources/image/**"/>
+            <mvc:exclude-mapping path="/join_result"/>
+            <mvc:exclude-mapping path="/leturelist"/>
+            <mvc:exclude-mapping path="/index/teacher"/>
+            <mvc:exclude-mapping path="/getImg/**"/>
+            <mvc:exclude-mapping path="/getImage/**"/>
+            <mvc:exclude-mapping path="/getVideo/**"/>
+            <mvc:exclude-mapping path="/noticelist"/>
+            <ref bean="authInterrupt"/>
+        </mvc:interceptor>
     </mvc:interceptors>
--->
 
 </beans>
