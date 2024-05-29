@@ -10,12 +10,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -104,4 +107,20 @@ public class VideoController {
         }
         return entity;
     }
+
+    /*// 주소 검색 막기 http://localhost:8080/index/video/12
+    @GetMapping("/index/video/{vid}")
+    public ModelAndView showAdminPage (ModelAndView modelAndView, HttpSession httpSession, HttpServletRequest requese
+                                       , @PathVariable(required = false) int vid){
+        // logger.info("관리자  일반페이지 접속 시도 {}", modelAndView);
+        User user = (user)httpSession.getAttribute("loginUser");
+
+        if(ObjectUtils.isEmpty(user) || !"Y".equals(user.getAdminCheck())){
+            String errorMsg = "권한이 없습니다";
+            modelAndView.addObject("errorMsg", errorMsg);
+            modelAndView.addObject("redirectUrl", "/user/loginView");
+            modelAndView.setViewName("/common/error");
+            // logger.warn("권한이 없는 사용자의 관리자 페이지 접근 > IP address : {}", request.getRemoteAddr());
+            return modelAndView;
+        }*/
 }

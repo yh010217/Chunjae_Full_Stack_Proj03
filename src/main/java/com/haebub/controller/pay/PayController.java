@@ -263,4 +263,9 @@ public class PayController {
         return "redirect:/index/mypage/cart";
     }
 
+    @GetMapping("/pay/success")
+    public String success() {
+        return "/pay/success";
+    }
+
 }

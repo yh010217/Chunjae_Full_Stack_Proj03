@@ -144,7 +144,7 @@
     }
 
     function openWindow () {
-        const options = 'width=320, height=625, top=50, left=50, scrollbars=no, resizable=no, location=no, toolbars=no, status=no, directories=no'
+        const options = 'width=320, height=625, top=50, left=50, scrollbars=no, location=no, toolbars=no, status=no, directories=no'
         window.open('/pay/purchase_one?lid=${item.lid}','_blank', options)
     }
 
@@ -156,6 +156,11 @@
             return false;
         }
     }
+
+    let change = function () {
+
+    }
+
 
 </script>
 </body>
