@@ -30,7 +30,7 @@
 <body>
 
 
-<article id="form-singin">
+<article id="form-signupin">
     <div>
         <form class="writeForm" method="post" action="/login_check">
             <h1>로그인</h1>

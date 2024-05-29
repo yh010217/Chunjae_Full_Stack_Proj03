@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항쓰기</title>
     <link rel="stylesheet" href="/resources/css/admin/template.css">
+    <link rel="stylesheet" href="/resources/css/admin/notice_form.css">
 
 </head>
 <body>
@@ -39,9 +40,18 @@
     <div id="content_container">
         <h2>공지사항 작성</h2>
         <form action="noticelist_result" method="post" style="text-align:center;" onsubmit="return writeCheck();">
-            제목 : <input type="text" name="ntitle"><br>
-            내용 : <br> <textarea rows="30" cols="100" name = "ncontent"></textarea> <br>
-            <input type = "submit" value = "공지사항 작성" />
+            <ul>
+                <li>
+                    <label for="ntitle">제목 </label>
+                    <input type="text" name="ntitle" id="ntitle">
+                </li>
+                <li>
+                    <label for="ncontent">글내용</label>
+                    <textarea rows="30" cols="100" name = "ncontent" id="ncontent"></textarea>
+                </li>
+                <input type = "submit" value = "공지사항 작성" id="append"/>
+            </ul>
+
         </form>
     </div>
 </div>

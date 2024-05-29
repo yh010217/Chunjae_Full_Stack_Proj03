@@ -3,20 +3,49 @@
 /* 검정 #1D152D*/
 /* 연한 회색 #F0EEEF*/
 /* 핑크  #F0C9CE*/
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: normal;
+}
+*{
+    list-style: none;
+    font-family: 'Pretendard-Regular', 'sans-serif';
+    color: black;
+    text-decoration: none;
+}
 #content_container{
     /*width: 1000px;*/
     height: 1000px;
     width: 90%;
-    margin: 5px auto;
+    margin: 10px auto;
     text-align: center;
 }
-a{
-    color: inherit;
+.test {
+    width: 950px;
+    margin: 0 auto;
+}
+.font {
+    font-size: 20px;
+}
+.test > form {
+    text-align: start;
+}
+.select {
+    font-weight: bolder;
+}
+a {
     text-decoration: none;
+    display: inline-block;
+    color: inherit;
 }
-*{
-    list-style: none;
+a:hover,a:focus{
+    color:silver;
+    text-decoration: underline;
 }
+
 h1{
     text-align: center;
     font-size: 30px;
@@ -25,7 +54,6 @@ h1{
     margin: 5px auto;
     display: table;
     width: 950px;
-    height: 700px;
     /*width: 70vw;*/
     border-top: 2px solid silver;
     /*border-left: 2px solid silver;*/
@@ -46,8 +74,18 @@ h1{
     text-align: center;
     border-bottom: 1px solid silver;
     vertical-align: middle;
+    padding: 10px 0;
+}
+.td:nth-child(1) {
+    width: 100px;
+}
+.td:nth-child(2) {
+    width: 500px;
 }
 
+.td:nth-child(3) {
+    width: 200px;
+}
 .searchtxt{
     height: 20px;
     width: 300px;
@@ -67,4 +105,17 @@ h1{
 
 .searchform{
     padding: 15px;
+}
+#append{
+    position: relative;
+    right: -450px;
+    border: none;
+    background-color: #CFCFCF;
+    padding: 5px 0;
+    color: black;
+    font-weight: bolder;
+    font-size: 18px;
+}
+#append:hover{
+    background-color: #FFB15c; /* 마우스 오버 시 색상 변경 */
 }

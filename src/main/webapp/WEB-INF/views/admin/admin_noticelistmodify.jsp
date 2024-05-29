@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/admin/template.css">
+    <link rel="stylesheet" href="/resources/css/admin/notice_modify.css">
+
 </head>
 <body>
 <div id="container">
@@ -38,26 +40,31 @@
 
 
     <div id="content_container">
-        <form method="post" action="/noticemodify_result">
-            <ul>
+        <div id="form">
+            <form method="post" action="/noticemodify_result">
+                <ul>
                     <li>
-                        <input type="text" name="nno" value="${dto.nno}"/>
+                        <label for="nno">글번호</label>
+                        <input type="text" name="nno" id="nno" value="${dto.nno}"/>
                     </li>
                     <li><label for="ntitle">제목</label>
-                        <input type="text" name="ntitle" value="${dto.ntitle}" id="ntitle"/>
+                        <input type="text" name="ntitle"  value="${dto.ntitle}" id="ntitle"/>
                     </li>
-                   <li><label for="ncontent">내용</label>
-                    <input type="text" name="ncontent" value="${dto.ncontent}" id="ncontent"/>
-                   </li>
-                    <li><label for="ndate">작성일</label>
-                    <input type="date" name="ndate" value="${dto.ndate}" id="ndate"/>
-                   </li>
                     <li>
-                        <button type="submit">수정 완료</button>
-                    </li>
+                        <label for="ncontent">내용</label>
+                        <textarea rows="30" cols="100" name = "ncontent" id="ncontent">${dto.ncontent}</textarea>
 
-            </ul>
-        </form>
+                    </li>
+                    <li><label for="ndate">작성일</label>
+                        <input type="date" name="ndate"  value="${dto.ndate}" id="ndate"/>
+                    </li>
+                    <li>
+                        <button type="submit" id="append">수정 완료</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+
 
 
     </div><!--content_container-->

@@ -10,16 +10,19 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="/resources/css/one/onedatail.css">
 </head>
 <body>
-<div class="table">
-    <div class="tr">
+<div id="wrap">
+<h1>일대일 문의</h1>
+    <div class="line"></div>
+    <div class="oneform">
         <h3>문의내용</h3>
-        <div class="th">제목 :${oneDetail.otitle}</div>
-        <div class="th">내용 :${oneDetail.ocontent}</div>
-        <div class="th">등록날짜: ${oneDetail.oregdate}</div>
-        <div class="th">답변: ${oneDetail.oans}</div>
-        <div class="th">작성자: ${oneDetail.owriter}</div>
+        <div class="td">제목 :${oneDetail.otitle}</div>
+        <div class="td">내용 :${oneDetail.ocontent}</div>
+        <div class="td">등록날짜: ${oneDetail.oregdate}</div>
+        <div class="td">답변: ${oneDetail.oans}</div>
+        <div class="td">작성자: ${oneDetail.owriter}</div>
     </div>
     <div class="oneform">
         <form method="post" action="/onedetail_result?lid=${lid}">
@@ -47,8 +50,9 @@
         <div class="delete">
             <a href="/onelist/delete/${oneDetail.ono}?lid=${lid}">삭제하기</a>
         </div>
-    </div>
+          </div>
 
+   </div>
 </div>
 </body>
 </html>

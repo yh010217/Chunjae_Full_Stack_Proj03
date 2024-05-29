@@ -8,7 +8,7 @@
     <title>고객지원관리</title>
     <link rel="stylesheet" href="/resources/css/admin/template.css">
     <script defer src="/resources/js/admin/adminins.js"></script>
-    <link rel="stylesheet" href="/resources/css/admin/adminnotice.css">
+    <link rel="stylesheet" href="/resources/css/admin/admin_notice.css">
 </head>
 <body>
 <div id="container">
@@ -40,6 +40,7 @@
 
     <div id="content_container">
         <h1>공지사항</h1>
+        <div class="test">
         <button type="button" id="append">글쓰기</button>
         <form method="get" action="/admin/noticelist">
             <select name="search">
@@ -61,29 +62,29 @@
                 <c:forEach var="item" items="${noticelist}">
                    <div class="tr">
                     <div class="td"><a href="/admin/noticelist/detail/${item.nno}"><c:out value="${item.nno}"/></a></div>
-                    <div class="td"><c:out value="${item.ntitle}"/></div>
+                       <div class="td"><a href="/admin/noticelist/detail/${item.nno}"><c:out value="${item.ntitle}"/></a></div>
 <%--                    <div class="td"><c:out value="${item.ncontent}"/></div>--%>
                     <div class="td"> <c:out value="${item.ndate}"/></div>
                    </div>
                 </c:forEach>
 
         </div>
-
+        </div> <!--test -->
         <c:if test="${startblock>1}">
-            <a href="/admin/noticelist/${startblock-1}?search=${search}&searchtxt=${searchtxt}">이전</a>
+            <a class="font" href="/admin/noticelist/${startblock-1}?search=${search}&searchtxt=${searchtxt}">이전</a>
         </c:if>
         <c:forEach var="index" begin="${startblock}" end="${endblock}">
             <c:choose>
                 <c:when test="${currpage==index}">
-                    ${index}
+                    <span class="font select"> ${index} </span>
                 </c:when>
                 <c:otherwise>
-                    <a href="/admin/noticelist/${index}?serach">${index}</a>
+                    <a class="font" href="/admin/noticelist/${index}?serach">${index}</a>
                 </c:otherwise>
             </c:choose>
         </c:forEach>
         <c:if test="${endblock<totalpage}">
-            <a href="/admin/noticelist/${endblock+1}?serach=&${search}&searchtxt=${searchtxt}">다음</a>
+            <a class="font" href="/admin/noticelist/${endblock+1}?serach=&${search}&searchtxt=${searchtxt}">다음</a>
         </c:if>
 
 

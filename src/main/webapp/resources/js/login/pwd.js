@@ -23,7 +23,7 @@ pwd.addEventListener("input", ()=>{
         //비밀번호가 유효하게 작성된 상태에서
         // 비밀번호 확인이 입력되지 않았을 때
         if(memberpwconfirm.value.trim().length ==0){
-            pwmessage.innerText="우효한 비밀번호 형식입니다.";
+            pwmessage.innerText="유효한 비밀번호 형식입니다.";
             pwmessage.classList.add("confirm");
             pwmessage.classList.remove("error");
         }else {

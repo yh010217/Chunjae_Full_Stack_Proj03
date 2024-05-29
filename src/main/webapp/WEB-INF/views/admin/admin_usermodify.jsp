@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/admin/template.css">
+    <link rel="stylesheet" href="/resources/css/admin/user_modify.css">
     <script defer src="/resources/js/admin/usercheck.js"></script>
 </head>
 <body>
@@ -38,24 +39,26 @@
 
 
     <div id="content_container">
-        <form method="post" action="/modify_result">
-            <ul>
-                <input type="hidden" name="uid" value="${dto.uid}"/>
-                <li>아이디 : ${dto.id}</li>
-                <li>
-                    <label for="nickname">닉네임</label>
-                    <input type="text" id="nickname" value="${dto.nickname}" name="nickname">
-                    <button type="button" name="nickname_check" id="nickname_check">중복 체크</button>
-                    <span id="nickname_check_result"></span>
-                </li>
-                <li>이메일: ${dto.email}</li>
-                <li>전화번호: ${dto.tel}</li>
-                <li>
-                    <button type="submit">수정 완료</button>
-                </li>
-            </ul>
-        </form>
-
+        <div id="form">
+            <form method="post" action="/modify_result" name="user_modifyform">
+                <ul>
+                    <input type="hidden" name="uid" value="${dto.uid}"/>
+                    <li>아이디 : ${dto.id}</li>
+                    <li>
+                        <label for="nickname"><span class="required">닉네임</span></label>
+                        <input type="text" id="nickname" value="${dto.nickname}" name="nickname">
+                        <button type="button" name="nickname_check" id="nickname_check">중복 체크</button>
+                        <span id="nickname_check_result"></span>
+<%--                        <span class="signUp-message" id="nickMessage">중복체크를 해주세요</span>--%>
+                    </li>
+                    <li>이메일: ${dto.email}</li>
+                    <li>전화번호: ${dto.tel}</li>
+                    <li>
+                        <button type="submit" id="append">수정 완료</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
 
     </div><!--content_container-->
 

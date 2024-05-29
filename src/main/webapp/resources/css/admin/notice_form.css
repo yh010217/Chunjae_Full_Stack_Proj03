@@ -1,0 +1,62 @@
+/* 머스타드색 #FFB15c */
+/* 초록 #469B72*/
+/* 검정 #1D152D*/
+/* 연한 회색 #F0EEEF*/
+/* 핑크  #F0C9CE*/
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: normal;
+}
+*{
+    list-style: none;
+    font-family: 'Pretendard-Regular', 'sans-serif';
+    color: black;
+    text-decoration: none;
+}
+
+h2{
+    text-align: center;
+    font-size: 25px;
+}
+#append{
+    /*position: relative;*/
+    /*right: -450px;*/
+    border: none;
+    background-color: #CFCFCF;
+    padding: 5px 0;
+    color: black;
+    font-weight: bolder;
+    font-size: 16px;
+
+}
+#append:hover{
+    background-color: #FFB15c;
+}
+
+#ntitle{
+    width: calc(500px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 15px;
+    font-size: 15px;
+}
+#ncontent{
+    width: calc(100% - 105px);
+    height: 20vh;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 15px;
+    font-size: 15px;
+}
+label[for="ncontent"]{
+    position: relative;
+    top:-174.5px
+}
+

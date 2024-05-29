@@ -9,6 +9,7 @@
         ,ncontent
         ,ndate
         from notice
+        order by nno desc
         <where>
             <if test="searchtxt!='' and !''.equals(searchtxt)">
                 <choose>
