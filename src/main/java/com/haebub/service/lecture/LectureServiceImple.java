@@ -81,6 +81,16 @@ public class LectureServiceImple implements LectureService {
     }
 
     @Override
+    public int getOpenDate(int lid) {
+        return lecMapper.getOpenDate(lid);
+    }
+
+    @Override
+    public int getVideoCount(int lid) {
+        return lecMapper.getVideoCount(lid);
+    }
+
+    @Override
     public void insertData(String path, LectureDTO dto) throws IOException {
         if(dto.getFile() != null) {
             String fnames = fileUpload(path, dto);

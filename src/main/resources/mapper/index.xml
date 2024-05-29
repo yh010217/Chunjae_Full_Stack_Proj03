@@ -6,15 +6,15 @@
 
     <!-- 최신 강의 자르기 -->
     <select id="newList" resultType="com.haebub.dto.IndexDTO">
-        SELECT lprofile, lgrade, ltitle, lprice, lopendate
+        SELECT lprofile, lgrade, ltitle, lprice, lopendate, lid
         FROM lecture
-        ORDER BY lopendate DESC
+        ORDER BY lid DESC
         LIMIT 2
     </select>
 
     <!-- 인기 강의 자르기 -->
     <select id="popList" resultType="com.haebub.dto.IndexDTO">
-        SELECT lprofile, lgrade, ltitle, lprice
+        SELECT lprofile, lgrade, ltitle, lprice, l.lid
         FROM lecture l INNER JOIN purchase p ON l.lid = p.lid
         GROUP BY p.lid
         ORDER BY COUNT(p.lid) desc

@@ -12,6 +12,11 @@
 
 #tea_detail .tea_name {
     font-size: 52px;
+    font-family: 'MapoDPPA';
+}
+
+#tea_detail .tea_name span {
+    font-family: 'MapoDPPA';
 }
 
 #tea_detail .t_intro span {
@@ -55,6 +60,7 @@
     height: 700px;
     background-repeat: no-repeat;
     background-position: bottom;
+    background-position-x: 639px;
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
@@ -119,4 +125,19 @@
 
 .page .other{
     color: #495057;
+}
+
+/* 왼쪽 메뉴 */
+#tea_detail .m {
+    padding-top: 68px;
+}
+
+#tea_detail .m ul {
+    width: 23%;
+}
+
+#tea_detail .m ul li {
+    border-bottom: 1px solid;
+    font-size: 22px;
+    padding: 10px;
 }

@@ -43,7 +43,7 @@
                 <div class="title"><h2>${detailNot.ntitle}</h2></div>
                 <div class="date"> 등록날짜: ${detailNot.ndate}</div>
                 <div id="line"></div>
-                <div class="content">내용 :${detailNot.ncontent}</div>
+                <div class="content"><pre>내용 :${detailNot.ncontent}</pre></div>
                 <div class="modify"><a href="/admin/noticelist/modify/${detailNot.nno}">수정하기</a></div>
                 <div class="del"><a href="/admin/noticelist/delete/${detailNot.nno}">삭제하기</a></div>
             </div>

@@ -17,8 +17,20 @@
             <div class="title"><h2>${detailNot.ntitle}</h2></div>
             <div class="date"> 등록날짜: ${detailNot.ndate}</div>
             <div id="line"></div>
-            <div class="content">내용 :${detailNot.ncontent}</div>
+            <div class="content"><pre>내용 :${detailNot.ncontent}</pre></div>
         </div>
     </div>
+
+    <%--<script>
+        // DB에서 가져온 텍스트
+        let textFromDB = '${detailNot.ncontent}';
+        console.log(textFromDB)
+
+        // 줄바꿈 처리
+        let textForDisplay = textFromDB.replace(/\n/g, "<br>");
+
+        // 화면에 표시
+        document.querySelector(".content").innerHTML = textForDisplay;
+    </script>--%>
 </body>
 </html>

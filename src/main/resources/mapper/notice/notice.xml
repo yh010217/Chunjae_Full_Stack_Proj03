@@ -5,11 +5,10 @@
 <mapper namespace="com.haebub.dao.notice.NoticeMapper">
     <select id="noticelist"  parameterType="hashmap" resultType="com.haebub.dto.notice.NoticeDTO">
         select nno
-        ,ntitle
-        ,ncontent
-        ,ndate
+            ,ntitle
+            ,ncontent
+            ,ndate
         from notice
-        order by nno desc
         <where>
             <if test="searchtxt!='' and !''.equals(searchtxt)">
                 <choose>
@@ -25,6 +24,7 @@
                 </choose>
             </if>
         </where>
+        order by nno desc
         <![CDATA[
             limit #{startrow}, #{pagesize}
        ]]>

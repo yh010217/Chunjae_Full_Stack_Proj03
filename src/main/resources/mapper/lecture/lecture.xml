@@ -10,6 +10,7 @@
                 , ltitle
                 , lprice
         from lecture
+        order by lid desc
     </select>
 
     <!-- 나중에 선생 아이디 받아서 넣어야 됨-->
@@ -118,6 +119,24 @@
         SELECT lcount
         FROM lecture
         WHERE lid = #{lid}
+    </select>
+
+    <select id="getOpenDate" parameterType="int" resultType="int">
+        SELECT 0 AS DAY
+        FROM lecture
+        WHERE CURDATE() &gt;= lopendate and lid = #{lid}
+
+        UNION ALL
+
+        SELECT DATEDIFF(lopendate, CURDATE()) AS DAY
+        FROM lecture
+        WHERE CURDATE() &lt; lopendate AND lid = #{lid};
+    </select>
+
+    <select id="getVideoCount" parameterType="int" resultType="int">
+        SELECT COUNT(*)
+        FROM video v INNER JOIN lecture l ON v.lid = l.lid
+        WHERE l.lid = #{lid}
     </select>
 </mapper>
 

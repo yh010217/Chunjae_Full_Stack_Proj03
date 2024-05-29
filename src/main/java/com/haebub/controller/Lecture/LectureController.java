@@ -47,6 +47,7 @@ public class LectureController {
         // 무료 리스트
         List<LectureDTO> free= lecService.freeList();
         model.addAttribute("free", free);
+
         return "/lecture/list";
     }
 
@@ -129,6 +130,13 @@ public class LectureController {
         // 쿼리수가 허용 한도 내에 있으면 동영상을 삽입
         */
 
+        // 개강 안 한 애들 며칠 남았는지 출력하는 어쩌고...
+        int open = lecService.getOpenDate(lid);
+        model.addAttribute("open", open);
+
+        // 해당 강의 video 총 갯수 알아오기...
+        int videoCount = lecService.getVideoCount(lid);
+        model.addAttribute("videoCount", videoCount);
 
         return "/lecture/detail";
     }

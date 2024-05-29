@@ -62,10 +62,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 ,eventContent: function(arg) { // 과목별 배경색 설정
                     var colors = {
-                        '영어': '#259a64',
-                        '수학': '#67c7ee',
-                        '국어': 'lightCoral',
-                        '기타': 'lightGoldenRodYellow'
+                        '영어': '#F88F5A',
+                        '수학': '#5DB461',
+                        '국어': '#6D9BDF',
+                        '기타': '#FFEE98'
                     };
 
                     var backgroundColor = colors[arg.event._def.extendedProps.subject] || 'white'; // 과목에 따른 배경색 설정, 매칭되는 색상이 없으면 기본값으로 'white' 설정

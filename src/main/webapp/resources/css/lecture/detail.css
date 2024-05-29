@@ -11,6 +11,11 @@ body {
 #lecDetail .lec_title{
     text-align: center;
 }
+#lecDetail .lecDetail_img {
+    width: 700px;
+    height: 370px;
+    margin: 0 auto;
+}
 
 #lecDetail .lecDetail_img img {
     width: 700px;
@@ -81,18 +86,61 @@ body {
 
 /* 강의 들어오는 자리 */
 #lecDetail .class {
+    padding: 10px 0;
+}
 
+#lecDetail ul {
+    margin-top: 10px;
+}
+
+#lecDetail ul li {
+    font-size: 20px;
+    padding: 5px 0;
 }
 
 
 /* 교재 */
-
 #lecDetail .class, .book {
     margin: 0 auto;
     width: 95%;
 }
 
+#lecDetail .book p {
+    font-size: 20px;
+}
+
 #lecDetail .book h3, .class h3{
     font-size: 23px;
     border-bottom: 3px solid black;
+    padding-bottom: 10px;
 }
+
+.lec_book img {
+    width: 35px;
+    height: 35px;
+    margin-right: 30px;
+}
+.lec_book {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+
+/* 일대일 게시판 */
+.one_table {
+    margin: 0 auto;
+    width: 95%;
+}
+.one_table h3{
+    font-size: 23px;
+    border-bottom: 3px solid black;
+}
+
+/* 삭제하기 버튼 */
+#lecDetail .delete {
+    border: 0;
+    background-color: transparent;
+}
+
+

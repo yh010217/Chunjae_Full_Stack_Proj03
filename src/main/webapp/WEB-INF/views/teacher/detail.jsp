@@ -13,6 +13,16 @@
             <p class="tea_name"> <span>${item.tsubject} ${item.name}</span> 선생님 </p><br>
             <p class="tea_intro">${item.tintro}</p>
             <p class="tea_intro"><span>개설 강좌</span>: ${total}개</p>
+
+            <div class="m">
+                <ul>
+                    <li><a href="#">커리큘럼</a></li>
+                    <li><a href="#">최신소식</a></li>
+                    <li><a href="#">수강평</a></li>
+                    <li><a href="#">학습자료실</a></li>
+                    <li><a href="#">선생님 Q&A</a></li>
+                </ul>
+            </div>
         </div>
         <div class="t_lec">
             <div class="border_bottom">

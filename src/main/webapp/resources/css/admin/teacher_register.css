@@ -16,6 +16,7 @@
     max-width: 500px;
     width: 100%;
     text-align: left; /* 텍스트는 기본적으로 왼쪽 정렬 */
+    position: relative;
 }
 
 .teacher_ul {
@@ -105,20 +106,21 @@ h2 {
     border: none;
     cursor: auto;
 }
-
+/*
 #id {
     margin-left: 27px;
-}
+}*/
 
-#tsubject, #tintro{
+#tsubject, #tintro, #id{
     margin-right: 92px;
     margin-left: 26px;
 }
 
 #idCheck {
+    position: absolute;
     padding: 11px 20px;
-    margin-left: 21px;
     border: none;
+    right: 40px;
 }
 
 #idCheck:hover {
@@ -133,6 +135,7 @@ h2 {
 @media (max-width: 600px) {
     .teacher_form {
         padding: 20px;
+        position: relative;
     }
 
     .teacher_ul li {

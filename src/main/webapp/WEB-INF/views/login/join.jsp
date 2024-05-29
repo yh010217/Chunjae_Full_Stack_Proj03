@@ -23,7 +23,6 @@
                     <input type="text" name="id" id="id" placeholder="아이디를 입력해주세요" required>
                     <button type="button" name="id_check" id="id_check">중복확인</button>
                     <span id="id_check_result"></span>
-
                 </div>
             </li>
             <li>

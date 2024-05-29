@@ -67,11 +67,11 @@
                         <c:otherwise>
                             <%-- session 있다는 뜻 --%>
                             <div class="board_1">
-                                <a href="#" class="main_self_box">찜확인</a>
-                                <a href="#" class="main_self_mon">고객센터</a>
+                                <a href="/index/mypage/cart" class="main_self_box">찜확인</a>
+                                <a href="/index/mypage/onelist" class="main_self_mon">고객센터</a>
                             </div>
                             <a href="/index/mypage" class="main_self_mypage">마이페이지 바로 가기</a>
-                            <a href="#" class="main_self_myclass">내 강의 확인하기</a>
+                            <a href="/index/mypage" class="main_self_myclass">내 강의 확인하기</a>
                         </c:otherwise>
                     </c:choose>
 
@@ -116,7 +116,7 @@
                         <ul>
                             <li class="li_1"><img class="lecList_img" src="/getImage/${item.lprofile}" alt="${item.lprofile}"></li>
                             <li class="li_2">${item.lgrade}학년</li>
-                            <li class="li_3">${item.ltitle}</li>
+                            <li class="li_3"><a href="/index/lecdetail/${item.lid}"> ${item.ltitle} </a></li>
                             <li class="li_4">${item.lprice}원</li>
                         </ul>
                     </c:forEach>
@@ -132,7 +132,7 @@
                         <ul>
                             <li class="li_1"><img class="lecList_img" src="/getImage/${item.lprofile}" alt="${item.lprofile}"></li>
                             <li class="li_2">${item.lgrade}학년</li>
-                            <li class="li_3">${item.ltitle}</li>
+                            <li class="li_3"><a href="/index/lecdetail/${item.lid}"> ${item.ltitle} </a></li>
                             <li class="li_4">${item.lprice}원</li>
                         </ul>
                     </c:forEach>
