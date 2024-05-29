@@ -14,13 +14,13 @@
 </head>
 <body>
 <article id="teaList">
-    <h2>해영 대표 강사진</h2>
+    <div id="container"><h1 class="style-3">해영 대표 강사진</h1></div>
     <div class="tea_list">
         <ul>
             <c:forEach var="item" items="${list}">
                 <li class="li1" style="background-image: url('/getImg/${item.tprofile}')">
                     <p class="teaList_p1">${item.tsubject}</p>
-                    <a class="teaList_a" href="/index/teacher/${item.tid}"> ${item.name}선생님 </a> <br>
+                    <a class="teaList_a" href="/index/teacher/${item.tid}"> ${item.name} 선생님 </a> <br>
                     <span class="teaList_span">${item.tintro}</span>
                 </li>
             </c:forEach>

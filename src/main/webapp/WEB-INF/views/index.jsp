@@ -13,6 +13,14 @@
             font-weight: 400;
             font-style: normal;
         }
+
+        @font-face {
+            font-family: 'GangwonEduPowerExtraBoldA';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         * {
             font-family: 'Pretendard-Regular', 'sans-serif';
             color: black;

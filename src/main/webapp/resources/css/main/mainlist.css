@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'MapoDPPA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoDPPA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 input {
     outline: none;
 }
@@ -126,16 +133,20 @@ input {
 }
 
 #main_03 .tea_title ul {
-    border: 1px solid black;
     width: 210px;
     height: 320px;
     padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 0 4px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 19px;
+    background-size: cover;
+    background-position-x: 38px;
+    background-position-y: 30px;
+    background-repeat: no-repeat;
 }
 
 #main_03 .tea_title .tea_li1 {
     width: 210px;
     height: 210px;
-    background-color: #726E6E;
     margin-bottom: 12px;
 }
 
@@ -152,6 +163,8 @@ input {
 
 #main_03 .tea_title .tea_li3 {
     font-size: 28px;
+    margin-top: 3px;
+    font-family: 'GangwonEduPowerExtraBoldA';
 }
 
 #main_03 .tea_title .tea_li4 {
@@ -166,7 +179,10 @@ input {
 }
 
 #main_04 h1, #main_03 h1 {
-    font-size: 42px;
+    font-size: 36px;
+    font-weight: 100;
+    font-family: 'MapoDPPA';
+
 }
 
 #main_04 img {
@@ -193,9 +209,9 @@ input {
 }
 
 #main_04 .lecture_list ul {
-    border: 1px solid black;
-    border-radius: 5px;
     padding: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 0 4px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 19px;
 }
 
 #main_04 .lecture_list ul:nth-child(1), .lecture_list ul:nth-child(2) {
@@ -219,7 +235,8 @@ input {
 #main_04 .li_3 {
     font-size: 1.4rem;
     font-weight: bolder;
-    margin: 0;
+    margin-top: 3px;
+    font-family: 'GangwonEduPowerExtraBoldA';
 }
 
 #main_04 .li_4{
