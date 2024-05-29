@@ -11,6 +11,7 @@
     padding: 30px 2px;
     margin: 30px auto;
     text-align: center;
+    height: 60vh;
 }
 div#wrap {
     width: 1000px;
@@ -70,6 +71,5 @@ input[type=checkbox] {
     border: none;
     font-weight: bold;
     width: 460px;
-    height: 30px;
     text-align: center;
 }

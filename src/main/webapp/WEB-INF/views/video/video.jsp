@@ -16,7 +16,7 @@
 <body>
     <article id="videoarticle">
         <div class="videolist">
-            <a href="/index/video/${title.lid}" id="title"> ${title.ltitle} </a> <%-- 타이틀 제목 --%>
+            <a href="/index/lecdetail/${title.lid}" id="title"> ${title.ltitle} </a> <span>클릭하면 강의 페이지로 이동</span>
             <div class="division-line"></div>
             <ul>
                 <%-- 동영상 리스트 출력 --%>

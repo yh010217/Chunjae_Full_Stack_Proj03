@@ -60,7 +60,7 @@
 
             let ifr = document.createElement('iframe');
             ifr.src = 'https://api.steppay.kr/api/public/orders/'
-                +oid+'/pay?successUrl=http://localhost:8080/pay/'+'${lid}'+'/success_one';
+                +oid+'/pay?successUrl=http://54.180.154.178/pay/'+'${lid}'+'/success_one';
 
             let divp = document.getElementById('purchase_window');
             divp.appendChild(ifr);

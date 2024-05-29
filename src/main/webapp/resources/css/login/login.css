@@ -1,10 +1,15 @@
-
 #form-signupin {
-    width: 100%;
     margin: 0 auto;
     text-align: center;
-    padding: 200px 0;
+    height: 75vh;
+    display:table;
 }
+
+#form-signupin .div1 {
+    display:table-cell ;
+    vertical-align:middle;
+}
+
 #form-signupin ul li {
     list-style: none;
 }

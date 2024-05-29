@@ -31,7 +31,7 @@
 
 
 <article id="form-signupin">
-    <div>
+    <div class="div1">
         <form class="writeForm" method="post" action="/login_check">
             <h1>로그인</h1>
             <div>
