@@ -15,9 +15,9 @@
     <!-- 인기 강의 자르기 -->
     <select id="popList" resultType="com.haebub.dto.IndexDTO">
         SELECT lprofile, lgrade, ltitle, lprice, l.lid
-        FROM lecture l INNER JOIN purchase p ON l.lid = p.lid
+        FROM lecture l INNER JOIN pitem p ON l.lid = p.lid
         GROUP BY p.lid
-        ORDER BY COUNT(p.lid) desc
+        ORDER BY COUNT(p.lid) desc, p.pid
         LIMIT 3
     </select>
 
@@ -32,7 +32,7 @@
         INNER JOIN pitem p ON p.lid = l.lid
         INNER JOIN user u ON t.uid = u.uid
         GROUP BY t.tid
-        ORDER BY COUNT(p.lid) DESC
+        ORDER BY COUNT(p.lid) DESC, p.pid
         LIMIT 5
     </select>
 
