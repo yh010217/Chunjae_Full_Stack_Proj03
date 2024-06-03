@@ -26,6 +26,7 @@
 <a href="https://ibb.co/1QT4yWH"><img src="https://i.ibb.co/6wFq9C6/ERD.png" alt="ERD" border="0"></a>
 
 ## ✔️ 프로젝트 산출물
+- 유스케이스 다이어그램
 - [스토리 보드](https://github.com/yh010217/Chunjae_Full_Stack_Proj03/blob/main/document/%EC%8A%A4%ED%86%A0%EB%A6%AC%EB%B3%B4%EB%93%9C.md) <br>
 - [기능명세서](https://github.com/yh010217/Chunjae_Full_Stack_Proj03/blob/main/document/%ED%95%B4%EC%98%81_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD.pdf)
 - 시퀀스 다이어그램
