@@ -1,6 +1,6 @@
 # 🌞 해영 : 해법 학원 시범강의 예약 웹 서비스 개발
 
-## ✔️ 소개  영상 보기 : (유튜브 영상 찍으면 올리기)
+## ✔️ 소개  영상 보기 : https://youtu.be/1BZOJmPXAnQ
 ## ✔️ 프로젝트 진행 기간
 2024.05.20(월) ~ 2024.05.30(목) <br>
 천재교육 풀스택 5기 K2CH
@@ -26,9 +26,11 @@
 <a href="https://ibb.co/1QT4yWH"><img src="https://i.ibb.co/6wFq9C6/ERD.png" alt="ERD" border="0"></a>
 
 ## ✔️ 프로젝트 산출물
-[스토리 보드](https://github.com/yh010217/Chunjae_Full_Stack_Proj03/blob/main/document/%EC%8A%A4%ED%86%A0%EB%A6%AC%EB%B3%B4%EB%93%9C.md)
+- 유스케이스 다이어그램
+- [스토리 보드](https://github.com/yh010217/Chunjae_Full_Stack_Proj03/blob/main/document/%EC%8A%A4%ED%86%A0%EB%A6%AC%EB%B3%B4%EB%93%9C.md) <br>
+- [기능명세서](https://github.com/yh010217/Chunjae_Full_Stack_Proj03/blob/main/document/%ED%95%B4%EC%98%81_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD.pdf)
 - 시퀀스 다이어그램
-[기능명세서](https://github.com/yh010217/Chunjae_Full_Stack_Proj03/blob/main/document/%ED%95%B4%EC%98%81_%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD.pdf)
 - 클래스 다이어그램
 
 ## ✔️ 주요 기능
+1. 
