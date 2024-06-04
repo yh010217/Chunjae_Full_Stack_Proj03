@@ -2,9 +2,9 @@
 
 ## ✔️ 소개  영상 보기 : https://youtu.be/1BZOJmPXAnQ
 ## ✔️ 프로젝트 진행 기간
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fyh010217%2FChunjae_Full_Stack_Proj03&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) <br>
 2024.05.20(월) ~ 2024.05.30(목) <br>
 천재교육 풀스택 5기 K2CH
-                                                [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgjbae1212%2Fhit-counter)](https://hits.seeyoufarm.com)                    
 
 | [김채원](https://github.com/HEYWONY) | [최용훈](https://github.com/yh010217) | [홍유나](https://github.com/yuyuyu1123) | [권수향](https://github.com/Suhayng) |
 |-----------------------------|------------------------------------|--------------------------------------|-----------------------------------|
