@@ -24,7 +24,7 @@
 ![title](https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white) ![title](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)   ![title](https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)   ![title](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)   ![title](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
 
 ## ✔️ ERD
-<a href="https://ibb.co/1QT4yWH"><img src="https://i.ibb.co/6wFq9C6/ERD.png" alt="ERD" border="0"></a>
+![img](https://i.ibb.co/6wFq9C6/ERD.png)
 
 ## ✔️ 프로젝트 산출물
 - [유스케이스 다이어그램](https://github.com/yh010217/Chunjae_Full_Stack_Proj03/blob/main/document/%EC%9C%A0%EC%8A%A4%EC%BC%80%EC%9D%B4%EC%8A%A4%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8.md)
@@ -34,7 +34,7 @@
 - [클래스 다이어그램](https://github.com/yh010217/Chunjae_Full_Stack_Proj03/blob/main/document/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8.md)
 
 ## ✔️ 전체 기능
-자세한 기능은 하단 `주요 기능` 에 기재 <br>
+자세한 기능은 하단 `주요 기능`에 기재 <br>
 1. 메인 페이지 / 오픈예정 / 공지사항
 
 | ![img](https://imgur.com/oiSCiQH.jpg) | ![img](https://imgur.com/Ey8jxPW.jpg) | ![img](https://imgur.com/mrYnG5P.jpg) |
@@ -84,19 +84,20 @@
 7. [비디오](#비디오)
 
 ### 일대일
-![img](https://imgur.com/BINYnac.gif)
+![img](https://imgur.com/S2CESQh.gif)
+
 - 기능 
 
 ### 차트
-![img](https://imgur.com/3WO1wpX.gif)
+![img](https://imgur.com/U0Ua2Gc.gif)
 - 기능
 
 ### 결제
-![img](https://imgur.com/CQWITd1.gif)
+![img](https://imgur.com/o1j0TL5.gif)
 - 기능
 
 ### 회원가입
-![img](https://imgur.com/wq7WJp0.gif)
+![img](https://imgur.com/6Duvu79.gif)
 - 기능
 
 ### 캘린더
