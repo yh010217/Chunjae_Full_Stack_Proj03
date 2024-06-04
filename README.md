@@ -37,42 +37,52 @@
 자세한 기능은 하단 `주요 기능`에 기재 <br>
 1. 메인 페이지 / 오픈예정 / 공지사항
 
-| ![img](https://imgur.com/oiSCiQH.jpg) | ![img](https://imgur.com/Ey8jxPW.jpg) | ![img](https://imgur.com/mrYnG5P.jpg) |
-| --- | --- | --- |
-| 메인페이지 | 오픈예정 | 공지사항 |
+| ![img](https://imgur.com/oiSCiQH.jpg) | ![img](https://imgur.com/Ey8jxPW.jpg) |
+| --- | --- |
+| 메인페이지 | 오픈예정 |
+![img](https://imgur.com/mrYnG5P.jpg) ||
+| 공지사항 ||
 
 2. 강의 페이지
 
-
-|![img](https://imgur.com/dn4Vnwy.jpg)| ![img](https://imgur.com/YIk4asL.jpg) | ![img](https://imgur.com/hgzHuxf.jpg) | 
-| --- | --- | --- | 
-|강의 목록 페이지 | 강의상세페이지 | 강의추가하기 |
-|  ![img](https://imgur.com/hmFKLh5.jpg) | ![img](https://imgur.com/Djq8DHF.jpg) | ![img](https://imgur.com/dkJMf2R.png) |
-| 동영상페이지 | 결제 화면 | 일대일 문|
+|![img](https://imgur.com/dn4Vnwy.jpg)| ![img](https://imgur.com/YIk4asL.jpg) |  
+| --- | --- | 
+|강의 목록 페이지 | 강의상세페이지 |
+| ![img](https://imgur.com/hmFKLh5.jpg) | ![img](https://imgur.com/hgzHuxf.jpg) |
+| 동영상 페이지 | 강의 추가 하기 |
+| ![img](https://imgur.com/Djq8DHF.jpg) | ![img](https://imgur.com/dkJMf2R.png) |
+| 결제 화면 | 일대일 문의|
 
 3. 선생님 페이지
 
-| ![img](https://imgur.com/vEYsahz.jpg) | ![img](https://imgur.com/5CVMS6W.jpg) | ![img](https://imgur.com/JDswahR.jpg)|
-| --- | --- | --- |
-| 선생님 페이지 | 선생님 상세 페이지 | 동영상 등록 |
+| ![img](https://imgur.com/vEYsahz.jpg) | ![img](https://imgur.com/5CVMS6W.jpg) |
+| --- | --- | 
+| 선생님 페이지 | 선생님 상세 페이지 |
+| ![img](https://imgur.com/JDswahR.jpg)| |
+| 동영상 등록 | |
 
 4. 마이페이지
 
 
-| ![img](https://imgur.com/tlfK4I6.jpg) | ![img](https://imgur.com/MNdnslT.jpg)|![img](https://imgur.com/LahzkkG.jpg)|
-| --- | --- | --- |
-| 내 강의 보기 | 결제 내역 | 장바구니 |
+| ![img](https://imgur.com/tlfK4I6.jpg) | ![img](https://imgur.com/MNdnslT.jpg)|
+| --- | --- |
+| 내 강의 보기 | 결제 내역 |
 | ![img](https://imgur.com/YAdmH0b.jpg) | ![img](https://imgur.com/xM6kJ81.jpg)  |
 | 회원 정보 수정 | 일대일 답변 확인 |
+|![img](https://imgur.com/LahzkkG.jpg)||
+| 장바구니 ||
 
 
 5. 관리자 페이지
 
-| ![img](https://imgur.com/Q6x6jBd.jpg)| ![img](https://imgur.com/Ya5rJfm.jpg) | ![img](https://imgur.com/2uiHkIy.jpg) |
-| --- | --- | --- |
-| 관리자페이지 - 메인 | 관리자페이지 - 회원관리 | 관리자페이지 - 공지사항 |
-| ![img](https://imgur.com/3qhxnnM.jpg) | ![img](https://imgur.com/ju4va5Z.jpg) |  |
-| 관리자페이지 - 선생님 리스트 | 관리자페이지 - 강사 등록  |  |
+| ![img](https://imgur.com/Q6x6jBd.jpg)| ![img](https://imgur.com/Ya5rJfm.jpg) | 
+| --- | --- |
+| 관리자페이지 - 메인 | 관리자페이지 - 회원관리 | 
+| ![img](https://imgur.com/3qhxnnM.jpg) | ![img](https://imgur.com/ju4va5Z.jpg) |  
+| 관리자페이지 - 선생님 리스트 | 관리자페이지 - 강사 등록  | 
+|![img](https://imgur.com/2uiHkIy.jpg) ||
+|관리자페이지 - 공지사항 ||
+
 
 ## ✔️ 주요 기능
 1. [일대일](#일대일)
