@@ -86,30 +86,30 @@
 ### 일대일
 ![img](https://imgur.com/BINYnac.gif)
 - 기능 
----
+
 ### 차트
 ![img](https://imgur.com/3WO1wpX.gif)
 - 기능
----
+
 ### 결제
 ![img](https://imgur.com/CQWITd1.gif)
 - 기능
----
+
 ### 회원가입
 ![img](https://imgur.com/wq7WJp0.gif)
 - 기능
----
+
 ### 캘린더
 ![img](https://imgur.com/lkGqszc.gif)
 - 기능
----
+
 ### 검색
 1. 메인 페이지 검색
    ![img](https://imgur.com/lVXPwBD.gif)
 2. 강의 페이지 검색
    ![img](https://imgur.com/QYX19Qm.gif)
 - 기능
----
+
 ### 비디오
 
 
