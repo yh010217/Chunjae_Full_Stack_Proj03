@@ -33,23 +33,84 @@
 - [시퀀스 다이어그램](https://github.com/yh010217/Chunjae_Full_Stack_Proj03/blob/main/document/%EC%8B%9C%ED%80%80%EC%8A%A4%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8.md)
 - [클래스 다이어그램](https://github.com/yh010217/Chunjae_Full_Stack_Proj03/blob/main/document/%ED%81%B4%EB%9E%98%EC%8A%A4%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8.md)
 
+## ✔️ 전체 기능
+자세한 기능은 하단 `주요 기능` 에 기재 <br>
+1. 메인 페이지 / 오픈예정 / 공지사항
+
+| ![img](https://imgur.com/oiSCiQH.jpg) | ![img](https://imgur.com/Ey8jxPW.jpg) | ![img](https://imgur.com/mrYnG5P.jpg) |
+| --- | --- | --- |
+| 메인페이지 | 오픈예정 | 공지사항 |
+
+2. 강의 페이지
+
+
+|![img](https://imgur.com/dn4Vnwy.jpg)| ![img](https://imgur.com/YIk4asL.jpg) | ![img](https://imgur.com/hgzHuxf.jpg) | 
+| --- | --- | --- | 
+|강의 목록 페이지 | 강의상세페이지 | 강의추가하기 |
+|  ![img](https://imgur.com/hmFKLh5.jpg) | ![img](https://imgur.com/Djq8DHF.jpg) | ![img](https://imgur.com/dkJMf2R.png) |
+| 동영상페이지 | 결제 화면 | 일대일 문|
+
+3. 선생님 페이지
+
+| ![img](https://imgur.com/vEYsahz.jpg) | ![img](https://imgur.com/5CVMS6W.jpg) | ![img](https://imgur.com/JDswahR.jpg)|
+| --- | --- | --- |
+| 선생님 페이지 | 선생님 상세 페이지 | 동영상 등록 |
+
+4. 마이페이지
+
+
+| ![img](https://imgur.com/tlfK4I6.jpg) | ![img](https://imgur.com/MNdnslT.jpg)|![img](https://imgur.com/LahzkkG.jpg)|
+| --- | --- | --- |
+| 내 강의 보기 | 결제 내역 | 장바구니 |
+| ![img](https://imgur.com/YAdmH0b.jpg) | ![img](https://imgur.com/xM6kJ81.jpg)  |
+| 회원 정보 수정 | 일대일 답변 확인 |
+
+
+5. 관리자 페이지
+
+| ![img](https://imgur.com/Q6x6jBd.jpg)| ![img](https://imgur.com/Ya5rJfm.jpg) | ![img](https://imgur.com/2uiHkIy.jpg) |
+| --- | --- | --- |
+| 관리자페이지 - 메인 | 관리자페이지 - 회원관리 | 관리자페이지 - 공지사항 |
+| ![img](https://imgur.com/3qhxnnM.jpg) | ![img](https://imgur.com/ju4va5Z.jpg) |  |
+| 관리자페이지 - 선생님 리스트 | 관리자페이지 - 강사 등록  |  |
+
 ## ✔️ 주요 기능
-1. [일대일](#일대일) 
-2. [차트](#차트) 
-3. [결제](#결제) 
-4. [로그인/회원가입](#로그인-회원가입) 
-5. [캘린더](#캘린더) 
-6. [검색](#검색) 
+1. [일대일](#일대일)
+2. [차트](#차트)
+3. [결제](#결제)
+4. [회원가입](#회원가입)
+5. [캘린더](#캘린더)
+6. [검색](#검색)
 7. [비디오](#비디오)
 
+### 일대일
+![img](https://imgur.com/BINYnac.gif)
+- 기능 
+---
+### 차트
+![img](https://imgur.com/3WO1wpX.gif)
+- 기능
+---
+### 결제
+![img](https://imgur.com/CQWITd1.gif)
+- 기능
+---
 ### 회원가입
-집에 가서 배속 없애버리기...
-![img](https://imgur.com/bRUIJcl.gif)
-
+![img](https://imgur.com/wq7WJp0.gif)
+- 기능
+---
+### 캘린더
+![img](https://imgur.com/lkGqszc.gif)
+- 기능
+---
 ### 검색
 1. 메인 페이지 검색
-![img](https://imgur.com/lVXPwBD.gif)
-2. 강의 페이지 검색 
-![img](https://imgur.com/QYX19Qm.gif)
+   ![img](https://imgur.com/lVXPwBD.gif)
+2. 강의 페이지 검색
+   ![img](https://imgur.com/QYX19Qm.gif)
+- 기능
+---
+### 비디오
+
 
 자세한 내용은 [영상](https://youtu.be/1BZOJmPXAnQ)을 참고하세요.
