@@ -100,11 +100,14 @@
 
 ### 차트
 ![img](https://imgur.com/U0Ua2Gc.gif)
-- 기능
+- Chart.js 를 통해 사이트의 정보를 볼 수 있는 차트 기능 구현
+- fetch를 통해 페이지 전체의 새로고침이 아닌 자연스러운 차트, 통계 정보 갱신
 
 ### 결제
 ![img](https://imgur.com/o1j0TL5.gif)
-- 기능
+- STEPPAY 결제 API 사용
+- API와 연동되는 회원, 상품 정보를 저장하여 결제, 환불 자동화
+- 장바구니를 통한 일괄 구매, 일괄 구매 상품 개별 품목 부분 환불 가능
 
 ### 회원가입
 ![img](https://imgur.com/6Duvu79.gif)
