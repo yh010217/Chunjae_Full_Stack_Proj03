@@ -97,7 +97,8 @@
 ### 일대일
 ![img](https://imgur.com/S2CESQh.gif)
 
-- 기능 
+- 강의페이지에서 일대일로 문의를 남길 수 있는 기능 구현
+- 마이페이지에서 본인의 문의내용과 답변을 볼 수 있도록 구현
 
 ### 차트
 ![img](https://imgur.com/U0Ua2Gc.gif)
@@ -116,7 +117,8 @@
 
 ### 회원가입
 ![img](https://imgur.com/6Duvu79.gif)
-- 기능
+- 카카오지도API를 사용
+- 아이디, 닉네임, 이메일을 중복 체크 기능 구
 
 ### 캘린더
 ![img](https://imgur.com/lkGqszc.gif)
