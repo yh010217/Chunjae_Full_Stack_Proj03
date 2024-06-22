@@ -118,7 +118,7 @@
 ### 회원가입
 ![img](https://imgur.com/6Duvu79.gif)
 - 카카오지도API를 사용
-- 아이디, 닉네임, 이메일을 중복 체크 기능 구
+- 아이디, 닉네임, 이메일을 중복 체크 기능 구현
 
 ### 캘린더
 ![img](https://imgur.com/lkGqszc.gif)
